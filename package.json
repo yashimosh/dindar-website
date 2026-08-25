@@ -1,0 +1,15 @@
+{
+  "name": "dindar-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal site for Dindar Ahmed — Marketing Manager, Mithra Production",
+  "scripts": {
+    "build": "npm run build:css && node build.js",
+    "build:css": "tailwindcss -i css/tailwind.src.css -o css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i css/tailwind.src.css -o css/tailwind.css --watch",
+    "deploy": "npm run build && wrangler pages deploy . --project-name dindar-ahmed --branch main"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

@@ -1,0 +1,129 @@
+/* =========================================================
+   Source stylesheet for dindarahmed.com
+
+   EDIT THIS FILE, not css/tailwind.css (which is generated).
+   After editing run:   npm run build:css
+   Live-rebuild while working:   npm run watch:css
+
+   Design tokens (colours, type scale, spacing) live in
+   ../tailwind.config.js
+   ========================================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dindar Ahmed — shared styles on top of the Tailwind design system */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.ambient-shadow {
+  box-shadow: 0 16px 32px rgba(25, 28, 30, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.ambient-shadow:hover {
+  box-shadow: 0 24px 48px rgba(25, 28, 30, 0.08);
+  transform: translateY(-2px);
+}
+
+/* vertical rule behind the career timeline */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  background-color: #e0e3e6;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline-line::before {
+    left: 50%;
+    margin-left: -1px;
+  }
+}
+
+/* ---------- RTL (Persian / Kurdish Sorani / Arabic) ---------- */
+
+html[dir="rtl"] body,
+html[dir="rtl"] .font-body-md,
+html[dir="rtl"] .font-body-lg,
+html[dir="rtl"] .font-label-bold {
+  font-family: "Noto Naskh Arabic", Tahoma, sans-serif !important;
+}
+
+html[dir="rtl"] .font-display-lg,
+html[dir="rtl"] .font-headline-lg,
+html[dir="rtl"] .font-headline-md,
+html[dir="rtl"] .font-headline-lg-mobile {
+  font-family: "Noto Kufi Arabic", Tahoma, sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+/* Latin-only bits stay Latin inside RTL pages */
+html[dir="rtl"] .latin {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+html[dir="rtl"] .timeline-line::before {
+  left: auto;
+  right: 20px;
+}
+
+@media (min-width: 768px) {
+  html[dir="rtl"] .timeline-line::before {
+    right: 50%;
+    left: auto;
+    margin-left: 0;
+    margin-right: -1px;
+  }
+}
+
+html[dir="rtl"] .tl-dot {
+  left: auto;
+  right: 11px;
+}
+
+@media (min-width: 768px) {
+  html[dir="rtl"] .tl-dot {
+    right: 50%;
+    left: auto;
+    margin-right: -9px;
+    margin-left: 0;
+  }
+}
+
+/* ---------- keyboard focus ---------- */
+
+:focus-visible {
+  outline: 3px solid #0040e0;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* on the dark panels the cobalt ring is too low-contrast */
+.bg-primary :focus-visible,
+.closing :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ---------- respect reduced-motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .group:hover img,
+  .ambient-shadow:hover { transform: none !important; }
+}

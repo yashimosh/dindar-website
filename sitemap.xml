@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dindarahmed.com/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/"/>
+  </url>
+  <url><loc>https://dindarahmed.com/fa/</loc><lastmod>2026-08-25</lastmod></url>
+  <url><loc>https://dindarahmed.com/ku/</loc><lastmod>2026-08-25</lastmod></url>
+  <url><loc>https://dindarahmed.com/ar/</loc><lastmod>2026-08-25</lastmod></url>
+</urlset>
