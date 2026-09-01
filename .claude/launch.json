@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "dindar", "runtimeExecutable": "npx", "runtimeArgs": ["-y", "http-server", ".", "-p", "4181", "-c-1"], "port": 4181 }
+  ]
+}
