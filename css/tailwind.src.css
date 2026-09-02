@@ -37,7 +37,7 @@
   top: 24px;
   bottom: 0;
   width: 2px;
-  background-color: #e0e3e6;
+  background-color: #d9d3c6;
   z-index: 0;
 }
 
@@ -50,24 +50,30 @@
 
 /* ---------- RTL (Persian / Kurdish Sorani / Arabic) ---------- */
 
+/* IBM Plex Sans Arabic covers Arabic script (incl. the Persian and
+   Kurdish Sorani extra letters پ چ ژ گ ک ی ڕ ڵ ۆ ێ ھ ە, both digit
+   sets ٠-٩ / ۰-۹, and full Latin) — one family for every RTL page,
+   matching the Latin pages' single-family (IBM Plex Sans) approach.
+   Noto is kept only as a silent fallback, never expected to fire. */
 html[dir="rtl"] body,
 html[dir="rtl"] .font-body-md,
 html[dir="rtl"] .font-body-lg,
 html[dir="rtl"] .font-label-bold {
-  font-family: "Noto Naskh Arabic", Tahoma, sans-serif !important;
+  font-family: "IBM Plex Sans Arabic", "Noto Naskh Arabic", Tahoma, sans-serif !important;
 }
 
 html[dir="rtl"] .font-display-lg,
 html[dir="rtl"] .font-headline-lg,
 html[dir="rtl"] .font-headline-md,
 html[dir="rtl"] .font-headline-lg-mobile {
-  font-family: "Noto Kufi Arabic", Tahoma, sans-serif !important;
+  font-family: "IBM Plex Sans Arabic", "Noto Kufi Arabic", Tahoma, sans-serif !important;
   letter-spacing: 0 !important;
 }
 
-/* Latin-only bits stay Latin inside RTL pages */
+/* Latin fragments (email, agency name) use the same Arabic-variant
+   family — its Latin cut is drawn to match, so nothing looks mixed. */
 html[dir="rtl"] .latin {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif !important;
 }
 
 html[dir="rtl"] .timeline-line::before {
@@ -101,15 +107,14 @@ html[dir="rtl"] .tl-dot {
 /* ---------- keyboard focus ---------- */
 
 :focus-visible {
-  outline: 3px solid #0040e0;
+  outline: 3px solid #13294b;
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* on the dark panels the cobalt ring is too low-contrast */
-.bg-primary :focus-visible,
-.closing :focus-visible {
-  outline-color: #ffffff;
+/* on navy panels, an amber ring reads clearly against the dark fill */
+.bg-primary :focus-visible {
+  outline-color: #f4ae37;
 }
 
 /* ---------- respect reduced-motion ---------- */
