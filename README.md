@@ -41,14 +41,18 @@ file. No HTML edit is needed.
 
 ## Design system
 
-- Tokens (colours, fonts): `tailwind.config.js`. The lime accent (`accent`) is one
-  value there; change it and every button, band and highlight follows. Use it as a
-  fill or as text on dark grounds only (it is too light to read on white).
-- Shared CSS (headline line reveal, image shimmer, marquees, service rows, RTL
-  font rules): `css/tailwind.src.css`
+- Tokens: `tailwind.config.js`. The fire palette (ink black, night bordeaux,
+  black cherry, oxblood, brick ember, red ochre, cayenne, deep saffron, orange,
+  amber flame) is listed there by name.
+- Shared CSS: `css/tailwind.src.css`. Gradients (`.fire`, `.fire-text`,
+  `.btn-fire`, `.hi`), frosted glass (`.glass`, `.glass-dark`), blurred glows
+  (`.orb`), headline reveal, marquees, service rows, RTL font rules.
 - `css/tailwind.css` is generated. Do not edit it.
-- Fonts: Archivo Expanded (big uppercase headlines), Geist (text), IBM Plex Sans
-  Arabic (all Kurdish, Arabic and Persian text).
+- Fonts: Archivo Expanded (big Latin headlines), Geist (Latin text), Noto Kufi
+  Arabic (all Kurdish, Arabic and Persian text; covers every Sorani letter).
+- 29LT Bukra was requested but its licence forbids modifying the font and needs
+  a separate 29LT web licence (WOFF files from 29LT) for any website use. If that
+  licence is bought, swap the RTL `font-family` in `css/tailwind.src.css`.
 - Behaviour: `js/scripts.js` (headline and scroll reveals, count-up numbers,
   mobile menu, click-to-load YouTube, client logos).
 

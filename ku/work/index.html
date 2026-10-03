@@ -13,7 +13,7 @@
 <link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/work/"/>
 <link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/work/"/>
 <link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/work/"/>
-<meta name="theme-color" content="#141414"/>
+<meta name="theme-color" content="#03071e"/>
 <meta property="og:type" content="profile"/>
 <meta property="og:site_name" content="دیندار ئەحمەد"/>
 <meta property="og:locale" content="ckb_IQ"/>
@@ -29,34 +29,36 @@
 <meta name="twitter:image" content="https://dindarahmed.com/assets/img/portrait.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="/css/tailwind.css?v=840b7071" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
+<link href="/css/tailwind.css?v=7249aced" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
-<body data-loc="ku" class="bg-white text-ink antialiased overflow-x-hidden">
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:bg-accent focus:text-ink focus:px-4 focus:py-2">بازدان بۆ ناوەڕۆک</a>
-<header class="absolute inset-x-0 top-0 z-50 text-white mix-blend-difference">
-<div class="wrap pt-6 md:pt-8 flex items-center justify-between gap-6">
+<body data-loc="ku" class="bg-ink text-white antialiased overflow-x-hidden">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:rounded-full focus:px-4 focus:py-2">بازدان بۆ ناوەڕۆک</a>
+<header class="fixed inset-x-0 top-0 z-50 pt-3 md:pt-4">
+<div class="wrap">
+<div class="site-head glass rounded-full ps-5 pe-3 md:ps-7 md:pe-4 h-14 md:h-16 flex items-center justify-between gap-6">
 <a href="/ku/" class="display text-[15px] md:text-[17px]">دیندار ئەحمەد</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
 <a href="/ku/" class="opacity-60 hover:opacity-100 transition-opacity">سەرەتا</a>
-<a href="/ku/work/" class=" transition-opacity" aria-current="page">کارەکان</a>
+<a href="/ku/work/" class="fire-text transition-opacity" aria-current="page">کارەکان</a>
 <a href="/ku/about/" class="opacity-60 hover:opacity-100 transition-opacity">دەربارە</a>
 <a href="#contact" class="opacity-60 hover:opacity-100 transition-opacity">پەیوەندی</a>
 </nav>
 <div class="hidden md:flex items-center gap-4 text-[13px]" aria-label="زمان">
 <a href="/work/" lang="en" hreflang="en" class="opacity-60 hover:opacity-100 transition-opacity">EN</a>
-<a href="/ku/work/" lang="ckb" hreflang="ckb" class="" aria-current="true">کوردی</a>
+<a href="/ku/work/" lang="ckb" hreflang="ckb" class="text-accent" aria-current="true">کوردی</a>
 <a href="/ar/work/" lang="ar" hreflang="ar" class="opacity-60 hover:opacity-100 transition-opacity">العربية</a>
 <a href="/fa/work/" lang="fa" hreflang="fa" class="opacity-60 hover:opacity-100 transition-opacity">فارسی</a>
 </div>
-<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px]" aria-controls="menu" aria-expanded="false" data-open="کردنەوەی لیست" data-close="داخستنی لیست"><span>کردنەوەی لیست</span></button>
+<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[40px] px-4 rounded-full btn-fire" aria-controls="menu" aria-expanded="false" data-open="کردنەوەی لیست" data-close="داخستنی لیست"><span>کردنەوەی لیست</span></button>
+</div>
 </div>
 </header>
-<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-dark text-white overflow-y-auto">
+<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-ink/80 backdrop-blur-2xl text-white overflow-y-auto">
 <nav class="wrap pt-28 display text-[40px]" aria-label="Main">
 <a href="/ku/" class="block py-1 text-white">سەرەتا</a>
-<a href="/ku/work/" class="block py-1 text-accent" aria-current="page">کارەکان</a>
+<a href="/ku/work/" class="block py-1 fire-text" aria-current="page">کارەکان</a>
 <a href="/ku/about/" class="block py-1 text-white">دەربارە</a>
 <a href="#contact" class="block py-1 text-white">پەیوەندی</a>
 </nav>
@@ -68,10 +70,14 @@
 </div>
 </div>
 <main id="main">
-<section class="wrap pt-32 md:pt-48 pb-16 md:pb-24">
+<section class="relative overflow-hidden">
+<div class="orb orb-a" style="width:600px;height:600px;top:-240px;inset-inline-end:-120px" aria-hidden="true"></div>
+<div class="orb orb-b" style="width:380px;height:380px;top:40px;inset-inline-end:22%;opacity:.3" aria-hidden="true"></div>
+<div class="wrap above pt-36 md:pt-52 pb-16 md:pb-24">
 <p class="rv lbl text-muted mb-8"><span class="text-accent" aria-hidden="true">◆</span> کارەکان</p>
-<h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="">نموونەی کارەکان</span></span></h1>
+<h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="fire-text">نموونەی کارەکان</span></span></h1>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-muted max-w-2xl">چۆن کارەکانمان ئەنجامی کردارییان بۆ براندەکان لێ کەوتەوە.</p>
+</div>
 </section>
 
 <section id="approach" class="wrap">
@@ -82,13 +88,13 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv">
-<div class="sk overflow-hidden "><img src="/assets/img/hero.jpg" alt="دیندار ئەحمەد لەگەڵ تیمی کڕیار لە شوێنی بەرهەمهێنان" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/hero.jpg" alt="دیندار ئەحمەد لەگەڵ تیمی کڕیار لە شوێنی بەرهەمهێنان" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">کەمپینەکان <span class="text-accent" aria-hidden="true">◆</span> ستراتیج</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">ستراتیجی براند و کەمپین</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">کەمپینەکان تەنها بۆ سەرنجڕاکێشان نین، بەڵکو چیرۆکی براندێک دەگێڕنەوە و ئەنجامە گرنگەکان بەدەست دەهێنن.</p>
 </article>
 <article class="rv">
-<div class="sk overflow-hidden "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">سۆشیاڵ میدیا <span class="text-accent" aria-hidden="true">◆</span> ڕیکلامی سەرشەقام</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">ناوەڕۆک و گێڕانەوەی چیرۆک</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">لە میترا پرۆدەکشن، کەمپین تەنها ڕیکلامێک نییە، بەڵکو چیرۆکی سەرکەوتنی براندەکەیە کە لە ڕێی هەموو کەناڵەکانەوە دەیگێڕینەوە.</p>
@@ -105,51 +111,52 @@
 </div>
 <div class="border-b border-card">
 <article id="case-kiasa" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
-<p class="display text-[56px] md:text-[80px] ol-ink" aria-hidden="true">٠١</p>
+<p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">٠١</p>
 <p class="mt-4 lbl text-muted">پێداویستییەکانی ناوماڵ <span class="text-accent" aria-hidden="true">◆</span> ئابی ٢٠٢٥ تا ئازاری ٢٠٢٦</p>
 <h3 class="mt-3 display text-[34px] md:text-[44px]">کیاسا</h3>
-<p class="mt-5 text-[17px] leading-[1.65] text-ink/80">هەر لە سەرەتای کارکردنمانەوە لەگەڵ کیاسا، بە وردی گوێمان لە نیگەرانی و داواکارییەکانیان گرت و بەتەواوی لێیان تێگەیشتین. پشتبەست بە ئەزموونی پێشوومان و تیمە شارەزا و پیشەگەرەکەمان، توانیمان پلانێکی ستراتیجییان پێشکەش بکەین. دوای پەسەندکردنی پلانەکە، لە ١ی ئابی ٢٠٢٥ دەستمان بە کار کرد و تا ٣١ی ئازاری ٢٠٢٦، توانیمان تەنها بە یەک کەمپەین فرۆشیان بە ڕێژەی ٦٠٪ بەرز بکەینەوە.</p>
-<p class="mt-6 text-[20px] font-medium"><span class="bg-accent px-2 box-decoration-clone">+٦٠٪ گەشەی فرۆش</span></p>
+<p class="mt-5 text-[17px] leading-[1.65] text-white/80">هەر لە سەرەتای کارکردنمانەوە لەگەڵ کیاسا، بە وردی گوێمان لە نیگەرانی و داواکارییەکانیان گرت و بەتەواوی لێیان تێگەیشتین. پشتبەست بە ئەزموونی پێشوومان و تیمە شارەزا و پیشەگەرەکەمان، توانیمان پلانێکی ستراتیجییان پێشکەش بکەین. دوای پەسەندکردنی پلانەکە، لە ١ی ئابی ٢٠٢٥ دەستمان بە کار کرد و تا ٣١ی ئازاری ٢٠٢٦، توانیمان تەنها بە یەک کەمپەین فرۆشیان بە ڕێژەی ٦٠٪ بەرز بکەینەوە.</p>
+<p class="mt-6 text-[20px] font-medium"><span class="hi">+٦٠٪ گەشەی فرۆش</span></p>
 </div>
 </article>
 <article id="case-banu" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
-<p class="display text-[56px] md:text-[80px] ol-ink" aria-hidden="true">٠٢</p>
+<p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">٠٢</p>
 <p class="mt-4 lbl text-muted">خۆراک و پێداویستیی ڕۆژانە <span class="text-accent" aria-hidden="true">◆</span> دروستکردنی براند و خستنەبازاڕ</p>
 <h3 class="mt-3 display text-[34px] md:text-[44px]">بانو</h3>
-<p class="mt-5 text-[17px] leading-[1.65] text-ink/80">هەر لەو کاتەوە کە بانو تەنها بیرۆکەیەک بوو، هاوبەش بووین لە دروستکردنی براندەکە و داڕشتنی ستراتیژەکەیدا. بۆ ماوەی سێ مانگ لە قۆناغی خستنەبازاڕیدا، کارمان لەسەر ناساندنی براندەکە بە بەکارهێنەران لە سەرتاسەری کوردستاندا کرد. لە ماوەی کەمتر لە ساڵێکدا، توانیمان بانو بکەینە پێشەنگی بازاڕی بەرهەمە خۆراکییەکان.</p>
-<p class="mt-6 text-[20px] font-medium"><span class="bg-accent px-2 box-decoration-clone">پێشەنگی پۆلێنەکەی لە کەمتر لە ساڵێکدا</span></p>
+<p class="mt-5 text-[17px] leading-[1.65] text-white/80">هەر لەو کاتەوە کە بانو تەنها بیرۆکەیەک بوو، هاوبەش بووین لە دروستکردنی براندەکە و داڕشتنی ستراتیژەکەیدا. بۆ ماوەی سێ مانگ لە قۆناغی خستنەبازاڕیدا، کارمان لەسەر ناساندنی براندەکە بە بەکارهێنەران لە سەرتاسەری کوردستاندا کرد. لە ماوەی کەمتر لە ساڵێکدا، توانیمان بانو بکەینە پێشەنگی بازاڕی بەرهەمە خۆراکییەکان.</p>
+<p class="mt-6 text-[20px] font-medium"><span class="hi">پێشەنگی پۆلێنەکەی لە کەمتر لە ساڵێکدا</span></p>
 </div>
 </article>
 <article id="case-runaki" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
-<p class="display text-[56px] md:text-[80px] ol-ink" aria-hidden="true">٠٣</p>
+<p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">٠٣</p>
 <p class="mt-4 lbl text-muted">فێرکاری <span class="text-accent" aria-hidden="true">◆</span> لە ٢٠١٩ـەوە تا ئێستا</p>
 <h3 class="mt-3 display text-[34px] md:text-[44px]">پەیمانگەی ڕوناکی</h3>
-<p class="mt-5 text-[17px] leading-[1.65] text-ink/80">پەیمانگەی ڕوناکی یەکێکە لە مشتەرییە دێرینەکانی میترا پرۆدەکشن، و لە ساڵی ٢٠١٩ـەوە بەشێوەیەکی بەردەوام کارمان بۆ کردوون.</p>
-<p class="mt-6 text-[20px] font-medium"><span class="bg-accent px-2 box-decoration-clone">کارکردنی هاوبەش لە ٢٠١٩ـەوە</span></p>
+<p class="mt-5 text-[17px] leading-[1.65] text-white/80">پەیمانگەی ڕوناکی یەکێکە لە مشتەرییە دێرینەکانی میترا پرۆدەکشن، و لە ساڵی ٢٠١٩ـەوە بەشێوەیەکی بەردەوام کارمان بۆ کردوون.</p>
+<p class="mt-6 text-[20px] font-medium"><span class="hi">کارکردنی هاوبەش لە ٢٠١٩ـەوە</span></p>
 </div>
 </article>
 </div>
 </div>
 </section>
 
-<section id="campaigns" class="bg-dark text-white on-dark">
-<div class="wrap py-20 md:py-32">
+<section id="campaigns" class="relative overflow-hidden">
+<div class="orb orb-a" style="width:560px;height:560px;top:10%;inset-inline-end:-160px" aria-hidden="true"></div><div class="orb orb-d" style="width:520px;height:520px;bottom:-120px;inset-inline-start:-160px" aria-hidden="true"></div>
+<div class="wrap above py-20 md:py-32">
 <div class="grid gap-6 md:grid-cols-12 md:items-end mb-12 md:mb-20">
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7"><span class="hl"><span class="">دواین کەمپەینەکان</span></span></h2>
 <p class="rv md:col-span-5 md:justify-self-end text-[17px] leading-[1.6] text-white/60 md:max-w-md">کارە بازرگانییەکانی ئەمساڵ بە هاوکاریی میترا پرۆدەکشن: ڕیکلامی تەلەفزیۆنی لە بوارەکانی کاڵای بەکاربەر، ئەپ و پەروەردە.</p>
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv">
-<div class="sk relative overflow-hidden aspect-video" data-yt="ohWLkd8xecs" data-yt-title="ڕۆنی سروشتی بانو: کەمپەینی بەم زووانە">
+<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="ohWLkd8xecs" data-yt-title="ڕۆنی سروشتی بانو: کەمپەینی بەم زووانە">
 <img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="لێدان: ڕۆنی سروشتی بانو: کەمپەینی بەم زووانە">
-<span class="inline-flex items-center gap-3 bg-accent text-ink px-4 py-3 group-hover:bg-white transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span class="lbl">بینین</span><span class="text-[13px] text-ink/60" dir="ltr">1:21</span></span>
+<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">بینین</span><span class="text-[13px] text-white/60" dir="ltr">1:21</span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -157,10 +164,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">کەمپەینی تیزەر بۆ ڕۆنی سروشتیی بانو.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="بەرهەمی جلشۆری کیاسا">
+<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="بەرهەمی جلشۆری کیاسا">
 <img src="/assets/img/tvc-02.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="لێدان: بەرهەمی جلشۆری کیاسا">
-<span class="inline-flex items-center gap-3 bg-accent text-ink px-4 py-3 group-hover:bg-white transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span class="lbl">بینین</span><span class="text-[13px] text-ink/60" dir="ltr">0:44</span></span>
+<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">بینین</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -168,10 +175,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">ڕیکلامی بازرگانی بۆ بەرهەمەکانی جلشۆریی کیاسا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden aspect-video" data-yt="jjXe4ino1YU" data-yt-title="ئەپی پایا">
+<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jjXe4ino1YU" data-yt-title="ئەپی پایا">
 <img src="/assets/img/tvc-03.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="لێدان: ئەپی پایا">
-<span class="inline-flex items-center gap-3 bg-accent text-ink px-4 py-3 group-hover:bg-white transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span class="lbl">بینین</span><span class="text-[13px] text-ink/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">بینین</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -179,10 +186,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">ڕیکلامی خستنەبازاڕی ئەپلیکەیشنی پایا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="کیاسا">
+<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="کیاسا">
 <img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="لێدان: کیاسا">
-<span class="inline-flex items-center gap-3 bg-accent text-ink px-4 py-3 group-hover:bg-white transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span class="lbl">بینین</span><span class="text-[13px] text-ink/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">بینین</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -190,10 +197,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">ڕیکلامی بازرگانی بۆ براندی کیاسا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="پەیمانگەی ڕوناکی">
+<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="پەیمانگەی ڕوناکی">
 <img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="لێدان: پەیمانگەی ڕوناکی">
-<span class="inline-flex items-center gap-3 bg-accent text-ink px-4 py-3 group-hover:bg-white transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span class="lbl">بینین</span><span class="text-[13px] text-ink/60" dir="ltr">1:11</span></span>
+<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">بینین</span><span class="text-[13px] text-white/60" dir="ltr">1:11</span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -213,77 +220,77 @@
 </div>
 <div class="max-w-[960px] grid grid-cols-3 gap-x-2 gap-y-8 sm:gap-x-4 sm:gap-y-10">
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVB1ZNuiNWt/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-01.jpg" alt="بە زمانی کڕیار قسە بکە" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-01.jpg" alt="بە زمانی کڕیار قسە بکە" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">بە زمانی کڕیار بدوێ</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">مارکێتینگ لەبەرکردنی تیۆری نییە، بەڵکو گۆڕینی پەیامەکەتە بۆ زمانی دڵی کڕیار.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVOxG69iMxr/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-02.jpg" alt="وازبهێنە لە شەڕی نرخ" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-02.jpg" alt="وازبهێنە لە شەڕی نرخ" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">واز لە کێبڕکێی نرخ بهێنە</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">کاتێک کڕیار تەنها نرخ بەراورد دەکات، داشکاندن خۆکوشتنە. چیرۆک و جیاوازی قازانج دەپارێزن.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DYPx5Q7oRHC/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-03.jpg" alt="مارکێتینگی زانستی یان بڕیاری شەخسی؟" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-03.jpg" alt="مارکێتینگی زانستی یان بڕیاری شەخسی؟" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">مارکێتینگی زانستی یان هەست و سۆز</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">زۆربەی بودجەی ڕیکلام بەهۆی بڕیاری کەسییەوە بەفیڕۆ دەچێت، نەک داتا. لێرەدا چۆن بودجەکەت دەپارێزیت.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZH2Jicqq/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-14.jpg" alt="فارمۆنا: بەرهەمەکە بە سێ ڕەهەند" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-14.jpg" alt="فارمۆنا: بەرهەمەکە بە سێ ڕەهەند" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمۆنا: بەرهەمەکە بە سێ ڕەهەند</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">ڕیکلامێکی سێ ڕەهەندی بۆ دژەخۆری فارمۆنا، بەرهەمهێنانی میترا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZXLWgC_E/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-13.jpg" alt="فارمۆنا: بۆ ڕەفی دژەخۆر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-13.jpg" alt="فارمۆنا: بۆ ڕەفی دژەخۆر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمۆنا: بۆ ڕەفی دژەخۆر</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">بەرهەمهێنانی ڤیدیۆی ڕیکلامی بۆ دژەخۆری بڕاندی فارمۆنا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZnXpAPBu/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-15.jpg" alt="فارمۆنا: ناساندنی دژەخۆر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-15.jpg" alt="فارمۆنا: ناساندنی دژەخۆر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمۆنا: ناساندنی دژەخۆر</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">کارێکی تری بەرهەمهێنانمان بۆ ناساندنی دژەخۆری براندی فارمۆنا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwPjZJDe4g/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: گێڕانەوەی نوێی پەرفۆرمانس" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: گێڕانەوەی نوێی پەرفۆرمانس" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: پێناسەکردنەوەی چیرۆکگێڕانی کارایی</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">داتای ڕاهێنان کراوە بە چیرۆکێک کە وەرزشوان هەستی پێدەکات.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQlCCCkLx/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: دیزاینی وردی سێ ڕەهەندی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: دیزاینی وردی سێ ڕەهەندی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">WHOOP 5.0: دیزاینێکی وردی سێ ڕەهەندی</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فیلمێکی بەرهەمی سێ ڕەهەندی بۆ نیشاندانی وردەکارییەکانی بەندەکە.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQ78BEbA9/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: فراوانکردنی سنووری داهێنان" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: فراوانکردنی سنووری داهێنان" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: فراوانکردنی سنوورەکانی داهێنان</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فیلمێکی دەستپێک بۆ Strap Iraq، فرۆشیاری فەرمیی WHOOP.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi7sbSDaTP/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-04.jpg" alt="برنجی کورمانج: نهێنی چێشتلێنەر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-04.jpg" alt="برنجی کورمانج: نهێنی چێشتلێنەر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">برنجی کورمانج: نهێنیی چێشتلێنەر</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">نهێنیی چێشتلێنەر بۆ تەواوی. ڕیکلامی برنجی کورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8VQXkegn/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-05.jpg" alt="برنجی کورمانج: کوڵاوە بە خۆشەویستی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-05.jpg" alt="برنجی کورمانج: کوڵاوە بە خۆشەویستی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">برنجی کورمانج: بە خۆشەویستی کوڵاوە</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">بە خۆشەویستی کوڵاوە، بە بایەخ پێشکەش کراوە. ڕیکلامی برنجی کورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8tVYFdVD/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-06.jpg" alt="برنجی کورمانج: تامێکی مانەوە" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-06.jpg" alt="برنجی کورمانج: تامێکی مانەوە" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">برنجی کورمانج: تامێکی هەمیشەیی</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">تامێکی هەمیشەیی بە درێژایی نەوەکان. ڕیکلامی برنجی کورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbybqHBjhPX/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-07.jpg" alt="کۆمەڵگەی ڕوناکی: ڕەگ لە زانستدا" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-07.jpg" alt="کۆمەڵگەی ڕوناکی: ڕەگ لە زانستدا" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">کۆمەڵگەی ڕوناکی: لە زانستەوە سەرچاوە دەگرێت</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">لە زانست، پەروەردە و کەلتوورەوە سەرچاوە دەگرێت. ڕیکلام بۆ کۆمەڵگەی پەروەردەیی ڕوناکی.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycZValFYQ/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-08.jpg" alt="کۆمەڵگەی ڕوناکی: سەرکەوتن لە بواری بازرگانی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-08.jpg" alt="کۆمەڵگەی ڕوناکی: سەرکەوتن لە بواری بازرگانی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">کۆمەڵگەی ڕوناکی: سەرکەوتن لە بواری کارگێڕیدا</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">لە بیرۆکەی پۆلەوە بۆ سەرکەوتن لە بواری کارگێڕیدا. بەرهەم هێنراوە بۆ کۆمەڵگەی پەروەردەیی ڕوناکی.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycpDDDR9q/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden "><img src="/assets/img/reel-09.jpg" alt="کۆمەڵگەی ڕوناکی: ڕزگارکردنی ژیان" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-09.jpg" alt="کۆمەڵگەی ڕوناکی: ڕزگارکردنی ژیان" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">کۆمەڵگەی ڕوناکی: ڕزگارکردنی ژیان</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">لە خەونی منداڵییەوە بۆ ڕزگارکردنی ژیان. بەرهەم هێنراوە بۆ کۆمەڵگەی پەروەردەیی ڕوناکی.</p>
 </a>
@@ -292,27 +299,28 @@
 </section>
 
 </main>
-<footer id="contact" class="bg-dark text-white on-dark overflow-hidden">
-<div class="wrap pt-24 md:pt-36 pb-10">
+<footer id="contact" class="relative overflow-hidden border-t border-line">
+<div class="orb orb-a" style="width:620px;height:620px;top:-120px;inset-inline-start:-180px" aria-hidden="true"></div><div class="orb orb-b" style="width:520px;height:520px;bottom:-160px;inset-inline-end:-120px" aria-hidden="true"></div><div class="orb orb-c" style="width:360px;height:360px;bottom:120px;inset-inline-start:35%" aria-hidden="true"></div>
+<div class="wrap above pt-24 md:pt-36 pb-10">
 <p class="rv lbl text-accent mb-8">◆ دەست بە گفتوگۆ بکە</p>
-<h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="">با شتێک دروست بکەین کە سەرکەوتوو بێت.</span></span></h2>
+<h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">با شتێک دروست بکەین کە سەرکەوتوو بێت.</span></span></h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">جا دەتەوێت ستراتیژی براندەکەت نوێ بکەیتەوە، پەرە بە کارەکانت بدەیت، یان کەمپینێک دروست بکەیت کە بەڕاستی سەرکەوتوو بێت، با قسە بکەین.</p>
-<div class="mt-16 md:mt-24 grid gap-14 md:grid-cols-2">
-<div class="rv">
+<div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
+<div class="rv glass rounded-3xl p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">نامەی ڕاستەوخۆ بنێرە</p>
 <a href="mailto:Dindar.Ahmed@mithra.agency" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">Dindar.Ahmed@mithra.agency</a>
 </div>
-<div class="rv">
+<div class="rv glass rounded-3xl p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">پەیوەندی ڕاستەوخۆ</p>
-<ul class="text-[16px] border-b border-edge">
-<li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.instagram.com/dindar_ahmad/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">Instagram</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">@dindar_ahmad</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.linkedin.com/in/dindar-ahmad-36ba57205/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">LinkedIn</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">دیندار ئەحمەد <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.youtube.com/@mithra.production/videos" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">YouTube</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">کەناڵی میترا پرۆدەکشن <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<ul class="text-[16px]">
+<li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.instagram.com/dindar_ahmad/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">Instagram</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">@dindar_ahmad</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.linkedin.com/in/dindar-ahmad-36ba57205/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">LinkedIn</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">دیندار ئەحمەد <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.youtube.com/@mithra.production/videos" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">YouTube</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">کەناڵی میترا پرۆدەکشن <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
 </ul>
 </div>
 </div>
-<p class="display text-[8.4vw] 2xl:text-[134px] leading-[0.85] mt-24 md:mt-36 text-center whitespace-nowrap select-none" aria-hidden="true">دیندار ئەحمەد<span class="text-accent">.</span></p>
+<p class="display fire-text text-[8.4vw] 2xl:text-[134px] leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" aria-hidden="true">دیندار ئەحمەد.</p>
 <div class="mt-12 pt-6 pb-16 sm:pb-0 sm:pe-20 border-t border-edge flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[14px] text-white/50">
 <p>© ٢٠٢٦ دیندار ئەحمەد. هەموو مافەکان پارێزراون.</p>
 <div class="flex flex-wrap gap-4" aria-label="زمان">
@@ -324,10 +332,10 @@
 </div>
 </div>
 </footer>
-<a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="wa fixed bottom-5 end-5 z-40 inline-flex items-center gap-2 h-14 ps-4 pe-4 rounded-full bg-accent text-ink shadow-lg hover:shadow-xl transition-shadow" aria-label="WhatsApp +964 771 992 2486">
+<a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="wa fixed bottom-5 end-5 z-40 inline-flex items-center gap-2 h-14 ps-4 pe-4 rounded-full btn-fire" aria-label="WhatsApp +964 771 992 2486">
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
-<script src="/js/scripts.js?v=5c6b954b" defer></script>
+<script src="/js/scripts.js?v=915b5ac6" defer></script>
 </body>
 </html>

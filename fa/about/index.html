@@ -13,7 +13,7 @@
 <link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/about/"/>
 <link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/about/"/>
 <link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/about/"/>
-<meta name="theme-color" content="#141414"/>
+<meta name="theme-color" content="#03071e"/>
 <meta property="og:type" content="profile"/>
 <meta property="og:site_name" content="دیندار احمد"/>
 <meta property="og:locale" content="fa_IR"/>
@@ -29,35 +29,37 @@
 <meta name="twitter:image" content="https://dindarahmed.com/assets/img/portrait.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="/css/tailwind.css?v=840b7071" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
+<link href="/css/tailwind.css?v=7249aced" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
-<body data-loc="fa" class="bg-white text-ink antialiased overflow-x-hidden">
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:bg-accent focus:text-ink focus:px-4 focus:py-2">پرش به محتوا</a>
-<header class="absolute inset-x-0 top-0 z-50 text-white mix-blend-difference">
-<div class="wrap pt-6 md:pt-8 flex items-center justify-between gap-6">
+<body data-loc="fa" class="bg-ink text-white antialiased overflow-x-hidden">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:rounded-full focus:px-4 focus:py-2">پرش به محتوا</a>
+<header class="fixed inset-x-0 top-0 z-50 pt-3 md:pt-4">
+<div class="wrap">
+<div class="site-head glass rounded-full ps-5 pe-3 md:ps-7 md:pe-4 h-14 md:h-16 flex items-center justify-between gap-6">
 <a href="/fa/" class="display text-[15px] md:text-[17px]">دیندار احمد</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
 <a href="/fa/" class="opacity-60 hover:opacity-100 transition-opacity">خانه</a>
 <a href="/fa/work/" class="opacity-60 hover:opacity-100 transition-opacity">نمونه‌کارها</a>
-<a href="/fa/about/" class=" transition-opacity" aria-current="page">درباره</a>
+<a href="/fa/about/" class="fire-text transition-opacity" aria-current="page">درباره</a>
 <a href="#contact" class="opacity-60 hover:opacity-100 transition-opacity">تماس</a>
 </nav>
 <div class="hidden md:flex items-center gap-4 text-[13px]" aria-label="زبان">
 <a href="/about/" lang="en" hreflang="en" class="opacity-60 hover:opacity-100 transition-opacity">EN</a>
 <a href="/ku/about/" lang="ckb" hreflang="ckb" class="opacity-60 hover:opacity-100 transition-opacity">کوردی</a>
 <a href="/ar/about/" lang="ar" hreflang="ar" class="opacity-60 hover:opacity-100 transition-opacity">العربية</a>
-<a href="/fa/about/" lang="fa" hreflang="fa" class="" aria-current="true">فارسی</a>
+<a href="/fa/about/" lang="fa" hreflang="fa" class="text-accent" aria-current="true">فارسی</a>
 </div>
-<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px]" aria-controls="menu" aria-expanded="false" data-open="باز کردن منو" data-close="بستن منو"><span>باز کردن منو</span></button>
+<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[40px] px-4 rounded-full btn-fire" aria-controls="menu" aria-expanded="false" data-open="باز کردن منو" data-close="بستن منو"><span>باز کردن منو</span></button>
+</div>
 </div>
 </header>
-<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-dark text-white overflow-y-auto">
+<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-ink/80 backdrop-blur-2xl text-white overflow-y-auto">
 <nav class="wrap pt-28 display text-[40px]" aria-label="Main">
 <a href="/fa/" class="block py-1 text-white">خانه</a>
 <a href="/fa/work/" class="block py-1 text-white">نمونه‌کارها</a>
-<a href="/fa/about/" class="block py-1 text-accent" aria-current="page">درباره</a>
+<a href="/fa/about/" class="block py-1 fire-text" aria-current="page">درباره</a>
 <a href="#contact" class="block py-1 text-white">تماس</a>
 </nav>
 <div class="wrap mt-12 flex flex-wrap gap-5 text-[16px]">
@@ -68,30 +70,36 @@
 </div>
 </div>
 <main id="main">
-<section class="wrap pt-32 md:pt-48 pb-16 md:pb-24">
+<section class="relative overflow-hidden">
+<div class="orb orb-a" style="width:600px;height:600px;top:-240px;inset-inline-end:-120px" aria-hidden="true"></div>
+<div class="orb orb-b" style="width:380px;height:380px;top:40px;inset-inline-end:22%;opacity:.3" aria-hidden="true"></div>
+<div class="wrap above pt-36 md:pt-52 pb-16 md:pb-24">
 <p class="rv lbl text-muted mb-8"><span class="text-accent" aria-hidden="true">◆</span> باور اصلی</p>
-<h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="">جلب توجه هدف نیست</span></span></h1>
+<h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="fire-text">جلب توجه هدف نیست</span></span></h1>
 
+</div>
 </section>
 
 <section class="wrap pb-20 md:pb-32">
 <div class="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
 <div class="rv relative lg:col-span-5">
-<div class="sk overflow-hidden "><img src="/assets/img/portrait-square.jpg" alt="Dindar Ahmed, Marketing Manager at Mithra Production" width="1200" height="1200" fetchpriority="high" decoding="async" class="block w-full aspect-square object-cover"/></div>
-<div class="absolute bottom-0 end-0 bg-accent text-ink px-6 py-5"><p class="display text-[44px]" data-count>۱۰+</p><p class="lbl mt-2 max-w-[11rem]">سال در این بازار</p></div>
+<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/portrait-square.jpg" alt="Dindar Ahmed, Marketing Manager at Mithra Production" width="1200" height="1200" fetchpriority="high" decoding="async" class="block w-full aspect-square object-cover"/></div>
+<div class="absolute bottom-4 end-4 glass-dark rounded-2xl px-6 py-5"><p class="display text-[44px] fire-text" data-count>۱۰+</p><p class="lbl mt-2 max-w-[11rem]">سال در این بازار</p></div>
 </div>
 <div class="lg:col-span-7">
 <p class="rv lbl text-muted mb-6"><span class="text-accent" aria-hidden="true">◆</span> اطلاعات</p>
 <p class="rv text-[22px] leading-[1.5] md:text-[28px] md:leading-[1.45] font-medium tracking-[-0.01em]">بیشتر افراد با یک نشانه می‌آیند. فروش متوقف شده، یا کمپین لایک گرفته و هیچ چیز دیگر. کار من پیدا کردن علت است، پیش از آنکه کسی یک دینار خرج تبلیغات کند. ده سال در این بازار: سه سال فروش رودررو، هفت سال ساخت برند در میترا پروداکشن. برای کیاسا این کار به ۶۰٪ افزایش فروش در هشت ماه رسید.</p>
 <p class="rv mt-8 text-[18px] leading-[1.65] md:text-[20px] text-muted">بهترین استراتژی بازاریابی همان است که مستقیماً به فروش و رشد کسب‌وکار گره خورده. دیده‌شدن فقط آغاز راه است.</p>
-<div class="rv mt-10 flex flex-wrap gap-2.5"><span class="lbl border border-card px-4 py-2.5">مشکل واقعاً کجاست</span><span class="lbl border border-card px-4 py-2.5">کمپین‌های شبکه‌های اجتماعی</span><span class="lbl border border-card px-4 py-2.5">هویت برند</span><span class="lbl border border-card px-4 py-2.5">ویدیو و تولید</span><span class="lbl border border-card px-4 py-2.5">رشد مبتنی بر فروش</span></div>
+<div class="rv mt-10 flex flex-wrap gap-2.5"><span class="lbl glass rounded-full px-4 py-2.5">مشکل واقعاً کجاست</span><span class="lbl glass rounded-full px-4 py-2.5">کمپین‌های شبکه‌های اجتماعی</span><span class="lbl glass rounded-full px-4 py-2.5">هویت برند</span><span class="lbl glass rounded-full px-4 py-2.5">ویدیو و تولید</span><span class="lbl glass rounded-full px-4 py-2.5">رشد مبتنی بر فروش</span></div>
 </div>
 </div>
 </section>
-<section class="bg-dark text-white on-dark">
-<div class="wrap py-24 md:py-36">
+<section class="relative overflow-hidden border-y border-line">
+<div class="orb orb-a" style="width:560px;height:560px;top:-200px;inset-inline-end:-120px" aria-hidden="true"></div>
+<div class="orb orb-c" style="width:340px;height:340px;bottom:-160px;inset-inline-start:10%" aria-hidden="true"></div>
+<div class="wrap above py-24 md:py-36">
 <blockquote class="rv max-w-6xl">
-<p class="text-accent display text-[64px] md:text-[96px] leading-none" aria-hidden="true">“</p>
+<p class="fire-text display text-[64px] md:text-[96px] leading-none" aria-hidden="true">“</p>
 <p class="text-[28px] leading-[1.25] md:text-[48px] md:leading-[1.15] font-semibold tracking-[-0.02em]">مردم برای کمپین پیش من می‌آیند. اولین سؤالم این است که واقعاً می‌خواهند چه چیزی را درست کنند. اغلب پاسخ، چیزی را که می‌سازیم تغییر می‌دهد.</p>
 <footer class="mt-10 flex flex-wrap gap-x-4 gap-y-1"><span class="lbl text-accent">دیندار احمد</span><span class="text-[15px] text-white/60">مدیر بازاریابی و مشاور، میترا پروداکشن</span></footer>
 </blockquote>
@@ -107,12 +115,12 @@
 <div class="rv border-t border-card py-10 md:py-12 grid gap-4 md:grid-cols-12 md:gap-6">
 <p class="lbl text-muted md:col-span-3 md:pt-3">۷ سال، همچنان</p>
 <div class="md:col-span-4"><h3 class="display text-[28px] md:text-[36px]">مدیر بازاریابی</h3><p class="mt-3 text-[15px] text-muted">میترا پروداکشن</p></div>
-<p class="md:col-span-5 text-[17px] leading-[1.65] text-ink/80">عضو تیم خلاق میترا، تبدیل بنیان فروش به کمپین‌هایی که مستقیماً به رشد متصل‌اند. هر استراتژی با معیار تأثیرش بر کسب‌وکار سنجیده می‌شود، نه فقط ظاهرش.</p>
+<p class="md:col-span-5 text-[17px] leading-[1.65] text-white/80">عضو تیم خلاق میترا، تبدیل بنیان فروش به کمپین‌هایی که مستقیماً به رشد متصل‌اند. هر استراتژی با معیار تأثیرش بر کسب‌وکار سنجیده می‌شود، نه فقط ظاهرش.</p>
 </div>
 <div class="rv border-t border-card py-10 md:py-12 grid gap-4 md:grid-cols-12 md:gap-6">
 <p class="lbl text-muted md:col-span-3 md:pt-3">۳ سال</p>
 <div class="md:col-span-4"><h3 class="display text-[28px] md:text-[36px]">فروش</h3><p class="mt-3 text-[15px] text-muted">توسعه کسب‌وکار · شرکت بخور (جیپسی لوسی) · شرکت قیمت الماسیه</p></div>
-<p class="md:col-span-5 text-[17px] leading-[1.65] text-ink/80">جایی که مسیر ورود به کسب‌وکار آغاز شد. تجربه‌ی مستقیم در درک دقیق نیاز مشتری و آنچه واقعاً او را به خرید می‌رساند.</p>
+<p class="md:col-span-5 text-[17px] leading-[1.65] text-white/80">جایی که مسیر ورود به کسب‌وکار آغاز شد. تجربه‌ی مستقیم در درک دقیق نیاز مشتری و آنچه واقعاً او را به خرید می‌رساند.</p>
 </div>
 </div>
 </div>
@@ -126,27 +134,27 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
 <figure class="rv">
-<div class="sk overflow-hidden bg-line"><img src="/assets/img/cert-01.jpg" alt="Hiwa Foundation certificate" width="1280" height="933" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5 bg-line"/></div>
+<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-01.jpg" alt="Hiwa Foundation certificate" width="1280" height="933" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Hiwa Foundation</p><p class="mt-2 text-[18px] leading-snug font-medium">فروش و تبدیل‌شدن به فروشنده‌ای مؤثر</p><p class="mt-1 text-[14px] text-muted">کارگاه سه‌روزه · فوریه ۲۰۲۳</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden bg-line"><img src="/assets/img/cert-02.jpg" alt="Canadian Training Center of Human Development certificate" width="1280" height="885" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5 bg-line"/></div>
+<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-02.jpg" alt="Canadian Training Center of Human Development certificate" width="1280" height="885" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Canadian Training Center of Human Development</p><p class="mt-2 text-[18px] leading-snug font-medium">دیپلم فروش و بازاریابی</p><p class="mt-1 text-[14px] text-muted">گواهی دستاورد، ۴۰ ساعت · ژوئیه ۲۰۱۹</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden bg-line"><img src="/assets/img/cert-03.jpg" alt="REACH Organization  Diakonie Katastrophenhilfe certificate" width="1280" height="928" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5 bg-line"/></div>
+<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-03.jpg" alt="REACH Organization  Diakonie Katastrophenhilfe certificate" width="1280" height="928" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">REACH Organization &amp; Diakonie Katastrophenhilfe</p><p class="mt-2 text-[18px] leading-snug font-medium">مدیریت پروژه و بازاریابی</p><p class="mt-1 text-[14px] text-muted">مرکز اجتماعی لیزا، سلیمانیه · اوت ۲۰۱۹</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden bg-line"><img src="/assets/img/cert-04.jpg" alt="U.S. Department of State  American Corner Sulaymaniyah certificate" width="1280" height="895" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5 bg-line"/></div>
+<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-04.jpg" alt="U.S. Department of State  American Corner Sulaymaniyah certificate" width="1280" height="895" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">U.S. Department of State, American Corner Sulaymaniyah</p><p class="mt-2 text-[18px] leading-snug font-medium">مدیریت پروژه و بازاریابی</p><p class="mt-1 text-[14px] text-muted">دوره‌ی مهارت‌های زندگی · اوت ۲۰۱۹</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden bg-line"><img src="/assets/img/cert-05.jpg" alt="Leaders Dream certificate" width="750" height="519" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5 bg-line"/></div>
+<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-05.jpg" alt="Leaders Dream certificate" width="750" height="519" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Leaders’ Dream</p><p class="mt-2 text-[18px] leading-snug font-medium">دیپلم فروش و بازاریابی</p><p class="mt-1 text-[14px] text-muted">با Canadian Training Center، John Maxwell و طلال ابوغزاله · دسامبر ۲۰۱۹</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden bg-line"><img src="/assets/img/cert-06.jpg" alt="گواهی Hiwa Foundation" width="1280" height="899" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5 bg-line"/></div>
+<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-06.jpg" alt="گواهی Hiwa Foundation" width="1280" height="899" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Hiwa Foundation</p><p class="mt-2 text-[18px] leading-snug font-medium">مبانی بازاریابی استراتژیک</p><p class="mt-1 text-[14px] text-muted">گواهی تکمیل دوره، ۲۵ ساعت طی پنج جلسه · می ۲۰۲۵</p></figcaption>
 </figure>
 </div>
@@ -160,23 +168,23 @@
 <p class="rv md:col-span-5 md:justify-self-end text-[17px] leading-[1.6] text-muted md:max-w-md">جلسات با مشتری، روزهای تولید، کارگاه‌ها و رویدادهای صنعتی: کاری که پشت کمپین‌ها قرار دارد.</p>
 </div>
 <div class="columns-1 sm:columns-2 lg:columns-3 gap-4">
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-01.webp" alt="Strategy session with the Mithra team" width="968" height="696" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-04.webp" alt="Award presentation" width="1009" height="720" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-02.webp" alt="Client partnership meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-07.webp" alt="Industry trade show" width="960" height="714" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-05.webp" alt="Client meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-09.webp" alt="Internal team workshop" width="1280" height="721" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-06.webp" alt="Evening client visit" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-08.webp" alt="Client conversation" width="1280" height="780" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-10.jpg" alt="Industry trade show floor" width="1000" height="1000" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-11.jpg" alt="Team visit to Pak Simin" width="1400" height="788" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-12.jpg" alt="جلسه با مشتری در غرفه‌ی هانا و فودوی" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-13.jpg" alt="جلسه با تیم کارخانه‌ی فودوی" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-14.jpg" alt="بازدید از خط تولید با تیم مشتری" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-15.jpg" alt="اهدای گواهی در میترا پروداکشن" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-16.jpg" alt="نمایشگاه ساخت عراق" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-17.jpg" alt="جلسه با تیم آلفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-18.jpg" alt="گفت‌وگوی استراتژیک با تیم آلفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-01.webp" alt="Strategy session with the Mithra team" width="968" height="696" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-04.webp" alt="Award presentation" width="1009" height="720" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-02.webp" alt="Client partnership meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-07.webp" alt="Industry trade show" width="960" height="714" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-05.webp" alt="Client meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-09.webp" alt="Internal team workshop" width="1280" height="721" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-06.webp" alt="Evening client visit" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-08.webp" alt="Client conversation" width="1280" height="780" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-10.jpg" alt="Industry trade show floor" width="1000" height="1000" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-11.jpg" alt="Team visit to Pak Simin" width="1400" height="788" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-12.jpg" alt="جلسه با مشتری در غرفه‌ی هانا و فودوی" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-13.jpg" alt="جلسه با تیم کارخانه‌ی فودوی" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-14.jpg" alt="بازدید از خط تولید با تیم مشتری" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-15.jpg" alt="اهدای گواهی در میترا پروداکشن" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-16.jpg" alt="نمایشگاه ساخت عراق" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-17.jpg" alt="جلسه با تیم آلفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-18.jpg" alt="گفت‌وگوی استراتژیک با تیم آلفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
 </div>
 </div>
 </section>
@@ -192,27 +200,28 @@
 </section>
 
 </main>
-<footer id="contact" class="bg-dark text-white on-dark overflow-hidden">
-<div class="wrap pt-24 md:pt-36 pb-10">
+<footer id="contact" class="relative overflow-hidden border-t border-line">
+<div class="orb orb-a" style="width:620px;height:620px;top:-120px;inset-inline-start:-180px" aria-hidden="true"></div><div class="orb orb-b" style="width:520px;height:520px;bottom:-160px;inset-inline-end:-120px" aria-hidden="true"></div><div class="orb orb-c" style="width:360px;height:360px;bottom:120px;inset-inline-start:35%" aria-hidden="true"></div>
+<div class="wrap above pt-24 md:pt-36 pb-10">
 <p class="rv lbl text-accent mb-8">◆ شروع گفتگو</p>
-<h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="">بیایید چیزی بسازیم که می‌فروشد.</span></span></h2>
+<h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">بیایید چیزی بسازیم که می‌فروشد.</span></span></h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">چه بخواهید استراتژی برندتان را بازتعریف کنید، حضورتان را گسترش دهید، یا کمپینی بسازید که واقعاً می‌فروشد، بیایید صحبت کنیم.</p>
-<div class="mt-16 md:mt-24 grid gap-14 md:grid-cols-2">
-<div class="rv">
+<div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
+<div class="rv glass rounded-3xl p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">ایمیل مستقیم</p>
 <a href="mailto:Dindar.Ahmed@mithra.agency" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">Dindar.Ahmed@mithra.agency</a>
 </div>
-<div class="rv">
+<div class="rv glass rounded-3xl p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">تماس مستقیم</p>
-<ul class="text-[16px] border-b border-edge">
-<li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.instagram.com/dindar_ahmad/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">Instagram</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">@dindar_ahmad</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.linkedin.com/in/dindar-ahmad-36ba57205/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">LinkedIn</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">دیندار احمد <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.youtube.com/@mithra.production/videos" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">YouTube</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">کانال میترا پروداکشن <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<ul class="text-[16px]">
+<li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.instagram.com/dindar_ahmad/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">Instagram</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">@dindar_ahmad</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.linkedin.com/in/dindar-ahmad-36ba57205/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">LinkedIn</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">دیندار احمد <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.youtube.com/@mithra.production/videos" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">YouTube</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">کانال میترا پروداکشن <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
 </ul>
 </div>
 </div>
-<p class="display text-[8.4vw] 2xl:text-[134px] leading-[0.85] mt-24 md:mt-36 text-center whitespace-nowrap select-none" aria-hidden="true">دیندار احمد<span class="text-accent">.</span></p>
+<p class="display fire-text text-[8.4vw] 2xl:text-[134px] leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" aria-hidden="true">دیندار احمد.</p>
 <div class="mt-12 pt-6 pb-16 sm:pb-0 sm:pe-20 border-t border-edge flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[14px] text-white/50">
 <p>© ۲۰۲۶ دیندار احمد. تمام حقوق محفوظ است.</p>
 <div class="flex flex-wrap gap-4" aria-label="زبان">
@@ -224,10 +233,10 @@
 </div>
 </div>
 </footer>
-<a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="wa fixed bottom-5 end-5 z-40 inline-flex items-center gap-2 h-14 ps-4 pe-4 rounded-full bg-accent text-ink shadow-lg hover:shadow-xl transition-shadow" aria-label="WhatsApp +964 771 992 2486">
+<a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="wa fixed bottom-5 end-5 z-40 inline-flex items-center gap-2 h-14 ps-4 pe-4 rounded-full btn-fire" aria-label="WhatsApp +964 771 992 2486">
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
-<script src="/js/scripts.js?v=5c6b954b" defer></script>
+<script src="/js/scripts.js?v=915b5ac6" defer></script>
 </body>
 </html>

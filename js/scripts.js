@@ -128,8 +128,8 @@
             data.categories.forEach(function (cat) {
               cat.logos.forEach(function (l) {
                 var cell = document.createElement("div");
-                cell.className = "shrink-0 w-24 h-24 md:w-32 md:h-32 mx-3 md:mx-6 flex items-center justify-center";
-                var img = logoImg(l, "max-w-full max-h-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition");
+                cell.className = "shrink-0 w-24 h-24 md:w-32 md:h-32 mx-2 md:mx-3 p-3 rounded-2xl bg-white flex items-center justify-center";
+                var img = logoImg(l, "max-w-full max-h-full object-contain");
                 if (run) { img.alt = ""; cell.setAttribute("aria-hidden", "true"); }
                 cell.appendChild(img);
                 track.appendChild(cell);
@@ -155,7 +155,7 @@
             grid.className = "grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3";
             cat.logos.forEach(function (l) {
               var cell = document.createElement("div");
-              cell.className = "aspect-square border border-card flex items-center justify-center p-3 bg-white";
+              cell.className = "aspect-square rounded-2xl flex items-center justify-center p-3 bg-white";
               cell.appendChild(logoImg(l, "max-w-full max-h-full object-contain"));
               grid.appendChild(cell);
             });
