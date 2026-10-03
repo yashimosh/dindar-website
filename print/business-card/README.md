@@ -9,6 +9,20 @@
 | `fonts/` | Noto Kufi Arabic (free, SIL Open Font License, see `OFL.txt`). |
 | `build.py`, `print.html` | Regenerate the SVGs and the PDF (only needed if details change). |
 
+## Layout
+
+One grid, few elements, a lot of empty black. Everything hangs off the safe-zone
+corners (7 mm in from the cut on every side) and the middle of each side is left
+clear on purpose:
+
+- Front: name small top-left; "Tell me what isn't selling." in the bottom-left
+  corner; a faint violet glow in the empty top-right.
+- Back: identity block top-left (name, Kurdish name, title); phone, email and
+  website bottom-left; QR bottom-right, its bottom edge level with the last line.
+
+Keep that empty space when editing. Adding lines or enlarging type is what made
+the first version feel crowded.
+
 ## Print spec
 
 - Size: 85 x 55 mm trimmed. Artboard and PDF are 91 x 61 mm: 3 mm bleed on every side.
@@ -28,9 +42,9 @@
 - Change text directly in the SVGs, or edit the details at the top of `build.py` and
   run it (`pip install segno==1.6.1`, then `python build.py`). The script is the
   easiest way to change the QR code.
-- The QR code holds a contact card (vCard): name, mobile, email, website. Scanning it
-  offers to save Dindar as a contact. It was checked to decode correctly. Keep it at
-  23 mm or larger; adding more fields makes it denser and harder to scan.
+- The QR code opens https://dindarahmed.com, where WhatsApp, Instagram and LinkedIn
+  are one tap away. A plain web address keeps the code small and coarse (25 x 25
+  modules, 0.5 mm each at 14.5 mm), so it scans easily. It was checked to decode.
 - PDF from `print.html`:
   `"/Applications/Brave Browser.app/Contents/MacOS/Brave Browser" --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=card-print.pdf print.html`
   (Chrome works the same way.)
