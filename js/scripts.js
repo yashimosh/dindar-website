@@ -153,7 +153,7 @@
             head.appendChild(h3);
             head.appendChild(sub);
             var grid = document.createElement("div");
-            grid.className = "grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3";
+            grid.className = "grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2 sm:gap-3";
             cat.logos.forEach(function (l) {
               var cell = document.createElement("div");
               cell.className = "aspect-square overflow-hidden bg-white";
