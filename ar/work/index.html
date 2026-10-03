@@ -30,14 +30,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
-<link href="/css/tailwind.css?v=38f84b23" rel="stylesheet"/>
+<link href="/css/tailwind.css?v=17c51baa" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-loc="ar" class="bg-ink text-white antialiased overflow-x-hidden">
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:rounded-full focus:px-4 focus:py-2">الانتقال للمحتوى</a>
-<header class="fixed inset-x-0 top-0 z-50 pt-3 md:pt-4">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:px-4 focus:py-2">الانتقال للمحتوى</a>
+<header class="absolute inset-x-0 top-0 z-50">
 <div class="wrap">
-<div class="site-head glass-dark rounded-full ps-5 pe-3 md:ps-7 md:pe-4 h-14 md:h-16 flex items-center justify-between gap-6">
+<div class="h-20 md:h-24 flex items-center justify-between gap-6 border-b border-white/10">
 <a href="/ar/" class="display text-[15px] md:text-[17px]">ديندار أحمد</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
 <a href="/ar/" class="opacity-60 hover:opacity-100 transition-opacity">الرئيسية</a>
@@ -51,12 +51,16 @@
 <a href="/ar/work/" lang="ar" hreflang="ar" class="text-accent" aria-current="true">العربية</a>
 <a href="/fa/work/" lang="fa" hreflang="fa" class="opacity-60 hover:opacity-100 transition-opacity">فارسی</a>
 </div>
-<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[40px] px-4 rounded-full btn-fire" aria-controls="menu" aria-expanded="false" data-open="فتح القائمة" data-close="إغلاق القائمة"><span>فتح القائمة</span></button>
+<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="فتح القائمة" data-close="إغلاق القائمة"><span>فتح القائمة</span></button>
 </div>
 </div>
 </header>
-<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-ink/80 backdrop-blur-2xl text-white overflow-y-auto">
-<nav class="wrap pt-28 display text-[40px]" aria-label="Main">
+<div id="menu" hidden class="md:hidden fixed inset-0 z-[60] bg-ink text-white overflow-y-auto">
+<div class="wrap h-20 flex items-center justify-between border-b border-white/10">
+<span class="display text-[15px]">ديندار أحمد</span>
+<button type="button" data-menu-close class="lbl inline-flex items-center min-h-[44px] px-4 btn-fire">إغلاق القائمة</button>
+</div>
+<nav class="wrap pt-10 display text-[40px]" aria-label="Main">
 <a href="/ar/" class="block py-1 text-white">الرئيسية</a>
 <a href="/ar/work/" class="block py-1 fire-text" aria-current="page">الأعمال</a>
 <a href="/ar/about/" class="block py-1 text-white">نبذة</a>
@@ -71,8 +75,7 @@
 </div>
 <main id="main">
 <section class="relative overflow-hidden">
-<div class="orb orb-a" style="width:600px;height:600px;top:-240px;inset-inline-end:-120px" aria-hidden="true"></div>
-<div class="orb orb-b" style="width:380px;height:380px;top:40px;inset-inline-end:22%;opacity:.3" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:600px;height:600px;top:-280px;inset-inline-end:-160px;opacity:.35" aria-hidden="true"></div>
 <div class="wrap above pt-36 md:pt-52 pb-16 md:pb-24">
 <p class="rv lbl text-muted mb-8"><span class="text-accent" aria-hidden="true">◆</span> الأعمال</p>
 <h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="fire-text">أعمال مختارة</span></span></h1>
@@ -88,13 +91,13 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/hero.jpg" alt="ديندار أحمد مع فريق العميل في موقع الإنتاج" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/hero.jpg" alt="ديندار أحمد مع فريق العميل في موقع الإنتاج" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">حملات <span class="text-accent" aria-hidden="true">◆</span> استراتيجية</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">استراتيجية العلامة التجارية والحملات</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">حملات مصممة لتتجاوز جذب الانتباه، لتروي قصة العلامة التجارية وتؤثر في الأرقام التي تهم فعلاً.</p>
 </article>
 <article class="rv">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">تواصل اجتماعي <span class="text-accent" aria-hidden="true">◆</span> إعلانات خارجية</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">المحتوى وسرد القصص</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">في ميثرا للإنتاج، الحملة ليست مجرد إعلان، إنها قصة نجاح العلامة التجارية وراءها، تُروى عبر كل قناة تعيش فيها.</p>
@@ -111,7 +114,7 @@
 </div>
 <div class="border-b border-card">
 <article id="case-kiasa" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">٠١</p>
 <p class="mt-4 lbl text-muted">منظفات <span class="text-accent" aria-hidden="true">◆</span> ١-٨-٢٠٢٥ إلى ٣١-٣-٢٠٢٦</p>
@@ -121,7 +124,7 @@
 </div>
 </article>
 <article id="case-banu" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">٠٢</p>
 <p class="mt-4 lbl text-muted">أغذية <span class="text-accent" aria-hidden="true">◆</span> بناء العلامة وإطلاقها</p>
@@ -131,7 +134,7 @@
 </div>
 </article>
 <article id="case-runaki" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">٠٣</p>
 <p class="mt-4 lbl text-muted">تعليم <span class="text-accent" aria-hidden="true">◆</span> منذ ٢٠١٩ حتى الآن</p>
@@ -145,7 +148,6 @@
 </section>
 
 <section id="campaigns" class="relative overflow-hidden">
-<div class="orb orb-a" style="width:560px;height:560px;top:10%;inset-inline-end:-160px" aria-hidden="true"></div><div class="orb orb-d" style="width:520px;height:520px;bottom:-120px;inset-inline-start:-160px" aria-hidden="true"></div>
 <div class="wrap above py-16 md:py-24">
 <div class="grid gap-6 md:grid-cols-12 md:items-end mb-10 md:mb-14">
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7"><span class="hl"><span class="">أحدث الحملات</span></span></h2>
@@ -153,10 +155,10 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv md:col-span-2">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video md:aspect-[2.2/1]" data-yt="ohWLkd8xecs" data-yt-title="زيت بانو الطبيعي: حملة قريباً">
+<div class="sk relative overflow-hidden aspect-video md:aspect-[2.2/1]" data-yt="ohWLkd8xecs" data-yt-title="زيت بانو الطبيعي: حملة قريباً">
 <img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="تشغيل: زيت بانو الطبيعي: حملة قريباً">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">1:21</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">1:21</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -164,10 +166,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">حملة تشويقية لزيت بانو الطبيعي.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="منتج الغسيل من كياسا">
+<div class="sk relative overflow-hidden aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="منتج الغسيل من كياسا">
 <img src="/assets/img/tvc-02.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="تشغيل: منتج الغسيل من كياسا">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -175,10 +177,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">إعلان منتج لتشكيلة الغسيل من كياسا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jjXe4ino1YU" data-yt-title="تطبيق بايا">
+<div class="sk relative overflow-hidden aspect-video" data-yt="jjXe4ino1YU" data-yt-title="تطبيق بايا">
 <img src="/assets/img/tvc-03.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="تشغيل: تطبيق بايا">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -186,10 +188,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">إعلان إطلاق تطبيق بايا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="كياسا">
+<div class="sk relative overflow-hidden aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="كياسا">
 <img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="تشغيل: كياسا">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -197,10 +199,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">إعلان العلامة التجارية لكياسا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="معهد روناكي">
+<div class="sk relative overflow-hidden aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="معهد روناكي">
 <img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="تشغيل: معهد روناكي">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">1:11</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">شاهد</span><span class="text-[13px] text-white/60" dir="ltr">1:11</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -220,77 +222,77 @@
 </div>
 <div class="max-w-[960px] mx-auto grid grid-cols-3 gap-x-2 gap-y-8 sm:gap-x-4 sm:gap-y-10">
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVB1ZNuiNWt/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-01.jpg" alt="تحدث بلغة العميل" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-01.jpg" alt="تحدث بلغة العميل" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">تحدث بلغة العميل</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">التسويق ليس تلاوة نظريات؛ إنه ترجمة رسالتك إلى لغة قلب العميل.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVOxG69iMxr/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-02.jpg" alt="توقف عن منافسة السعر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-02.jpg" alt="توقف عن منافسة السعر" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">توقف عن منافسة السعر</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">عندما يقارن العميل السعر فقط، يكون التخفيض انتحاراً. القصة والتمايز هما ما يحمي الهامش.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DYPx5Q7oRHC/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-03.jpg" alt="تسويق علمي أم قرار شخصي؟" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-03.jpg" alt="تسويق علمي أم قرار شخصي؟" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">تسويق علمي أم قرار شخصي؟</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">معظم ميزانيات الإعلانات تُهدر بسبب قرارات شخصية لا بيانات. إليك كيف تحمي ميزانيتك.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZH2Jicqq/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-14.jpg" alt="فارمونا: العبوة بتقنية ثلاثية الأبعاد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-14.jpg" alt="فارمونا: العبوة بتقنية ثلاثية الأبعاد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمونا: العبوة بتقنية ثلاثية الأبعاد</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فيلم منتج ثلاثي الأبعاد لواقي الشمس من فارمونا، من إنتاج ميثرا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZXLWgC_E/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-13.jpg" alt="فارمونا: من أجل رفّ واقي الشمس" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-13.jpg" alt="فارمونا: من أجل رفّ واقي الشمس" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمونا: من أجل رفّ واقي الشمس</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">إنتاج فيديو إعلاني لخط واقي الشمس من فارمونا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZnXpAPBu/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-15.jpg" alt="فارمونا: التعريف بواقي الشمس" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-15.jpg" alt="فارمونا: التعريف بواقي الشمس" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمونا: التعريف بواقي الشمس</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">عمل آخر من إطلاق واقي الشمس من فارمونا، من إنتاج ميثرا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwPjZJDe4g/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: إعادة سرد الأداء" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: إعادة سرد الأداء" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: إعادة سرد الأداء</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">بيانات التدريب تتحوّل إلى قصة يشعر بها الرياضي.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQlCCCkLx/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: هندسة دقيقة ثلاثية الأبعاد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: هندسة دقيقة ثلاثية الأبعاد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">WHOOP 5.0: هندسة دقيقة ثلاثية الأبعاد</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فيلم منتج ثلاثي الأبعاد يُظهر السوار بالتفصيل.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQ78BEbA9/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: توسيع حدود الإبداع" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: توسيع حدود الإبداع" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: توسيع حدود الإبداع</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فيلم إطلاق لـ Strap Iraq، الموزّع الرسمي لـ WHOOP.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi7sbSDaTP/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-04.jpg" alt="أرز كورمانج: سر الشيف" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-04.jpg" alt="أرز كورمانج: سر الشيف" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">أرز كورمانج: سر الشيف</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">سر الشيف للكمال. إعلان لأرز كورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8VQXkegn/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-05.jpg" alt="أرز كورمانج: مطهو بحب" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-05.jpg" alt="أرز كورمانج: مطهو بحب" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">أرز كورمانج: مطهو بحب</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">مطهو بحب، يُقدَّم بعناية. إعلان لأرز كورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8tVYFdVD/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-06.jpg" alt="أرز كورمانج: طعم خالد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-06.jpg" alt="أرز كورمانج: طعم خالد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">أرز كورمانج: طعم خالد</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">طعم خالد عبر الأجيال. إعلان لأرز كورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbybqHBjhPX/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-07.jpg" alt="مجتمع روناكي: متجذر في العلم" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-07.jpg" alt="مجتمع روناكي: متجذر في العلم" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">مجتمع روناكي: متجذر في العلم</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">متجذر في العلم والتعليم والثقافة. إعلان لمجتمع روناكي التعليمي.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycZValFYQ/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-08.jpg" alt="مجتمع روناكي: نجاح في قاعة الإدارة" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-08.jpg" alt="مجتمع روناكي: نجاح في قاعة الإدارة" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">مجتمع روناكي: نجاح في قاعة الإدارة</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">من أفكار الصف إلى النجاح في قاعة الإدارة. أُنتج لمجتمع روناكي التعليمي.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycpDDDR9q/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-09.jpg" alt="مجتمع روناكي: إنقاذ الأرواح" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-09.jpg" alt="مجتمع روناكي: إنقاذ الأرواح" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">مجتمع روناكي: إنقاذ الأرواح</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">من حلم الطفولة إلى إنقاذ الأرواح. أُنتج لمجتمع روناكي التعليمي.</p>
 </a>
@@ -300,19 +302,19 @@
 
 </main>
 <footer id="contact" class="relative overflow-hidden border-t border-line">
-<div class="orb orb-a" style="width:620px;height:620px;top:-120px;inset-inline-start:-180px" aria-hidden="true"></div><div class="orb orb-b" style="width:520px;height:520px;bottom:-160px;inset-inline-end:-120px" aria-hidden="true"></div><div class="orb orb-c" style="width:360px;height:360px;bottom:120px;inset-inline-start:35%" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:620px;height:620px;bottom:-260px;inset-inline-start:-200px;opacity:.3" aria-hidden="true"></div>
 <div class="wrap above pt-24 md:pt-36 pb-10">
 <p class="rv lbl text-accent mb-8">◆ ابدأ محادثة</p>
 <h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">لنبنِ شيئاً يبيع.</span></span></h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">سواء كنت تسعى لإعادة تعريف استراتيجية علامتك، أو توسيع حضورك، أو بناء حملة تبيع فعلاً، لنتحدث.</p>
 <div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">راسل مباشرة</p>
 <a href="mailto:Dindar.Ahmed@mithra.agency" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">Dindar.Ahmed@mithra.agency</a>
 <p class="mt-5 text-[16px] leading-[1.6] text-white/60 max-w-md">أسرع طريقة للوصول إلى ديندار. اكتب عما تبنيه وسيرد عليك.</p>
-<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire rounded-full px-7 py-4">ابدأ مشروعاً <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire px-7 py-4">ابدأ مشروعاً <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">تواصل مباشر</p>
 <ul class="text-[16px]">
 <li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
@@ -338,6 +340,6 @@
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
-<script src="/js/scripts.js?v=f4fbd27b" defer></script>
+<script src="/js/scripts.js?v=5496fe9c" defer></script>
 </body>
 </html>

@@ -30,14 +30,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
-<link href="/css/tailwind.css?v=38f84b23" rel="stylesheet"/>
+<link href="/css/tailwind.css?v=17c51baa" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-loc="ar" class="bg-ink text-white antialiased overflow-x-hidden">
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:rounded-full focus:px-4 focus:py-2">الانتقال للمحتوى</a>
-<header class="fixed inset-x-0 top-0 z-50 pt-3 md:pt-4">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:px-4 focus:py-2">الانتقال للمحتوى</a>
+<header class="absolute inset-x-0 top-0 z-50">
 <div class="wrap">
-<div class="site-head glass-dark rounded-full ps-5 pe-3 md:ps-7 md:pe-4 h-14 md:h-16 flex items-center justify-between gap-6">
+<div class="h-20 md:h-24 flex items-center justify-between gap-6 border-b border-white/10">
 <a href="/ar/" class="display text-[15px] md:text-[17px]">ديندار أحمد</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
 <a href="/ar/" class="opacity-60 hover:opacity-100 transition-opacity">الرئيسية</a>
@@ -51,12 +51,16 @@
 <a href="/ar/about/" lang="ar" hreflang="ar" class="text-accent" aria-current="true">العربية</a>
 <a href="/fa/about/" lang="fa" hreflang="fa" class="opacity-60 hover:opacity-100 transition-opacity">فارسی</a>
 </div>
-<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[40px] px-4 rounded-full btn-fire" aria-controls="menu" aria-expanded="false" data-open="فتح القائمة" data-close="إغلاق القائمة"><span>فتح القائمة</span></button>
+<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="فتح القائمة" data-close="إغلاق القائمة"><span>فتح القائمة</span></button>
 </div>
 </div>
 </header>
-<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-ink/80 backdrop-blur-2xl text-white overflow-y-auto">
-<nav class="wrap pt-28 display text-[40px]" aria-label="Main">
+<div id="menu" hidden class="md:hidden fixed inset-0 z-[60] bg-ink text-white overflow-y-auto">
+<div class="wrap h-20 flex items-center justify-between border-b border-white/10">
+<span class="display text-[15px]">ديندار أحمد</span>
+<button type="button" data-menu-close class="lbl inline-flex items-center min-h-[44px] px-4 btn-fire">إغلاق القائمة</button>
+</div>
+<nav class="wrap pt-10 display text-[40px]" aria-label="Main">
 <a href="/ar/" class="block py-1 text-white">الرئيسية</a>
 <a href="/ar/work/" class="block py-1 text-white">الأعمال</a>
 <a href="/ar/about/" class="block py-1 fire-text" aria-current="page">نبذة</a>
@@ -71,8 +75,7 @@
 </div>
 <main id="main">
 <section class="relative overflow-hidden">
-<div class="orb orb-a" style="width:600px;height:600px;top:-240px;inset-inline-end:-120px" aria-hidden="true"></div>
-<div class="orb orb-b" style="width:380px;height:380px;top:40px;inset-inline-end:22%;opacity:.3" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:600px;height:600px;top:-280px;inset-inline-end:-160px;opacity:.35" aria-hidden="true"></div>
 <div class="wrap above pt-36 md:pt-52 pb-16 md:pb-24">
 <p class="rv lbl text-muted mb-8"><span class="text-accent" aria-hidden="true">◆</span> القناعة الأساسية</p>
 <h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="fire-text">جذب الانتباه ليس الهدف</span></span></h1>
@@ -83,20 +86,19 @@
 <section class="wrap pb-20 md:pb-32">
 <div class="grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
 <div class="rv relative lg:col-span-5">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/portrait-square.jpg" alt="Dindar Ahmed, Marketing Manager at Mithra Production" width="1200" height="1200" fetchpriority="high" decoding="async" class="block w-full aspect-square object-cover"/></div>
-<div class="absolute bottom-4 end-4 glass-dark rounded-2xl px-6 py-5"><p class="display text-[44px] fire-text" data-count>١٠+</p><p class="lbl mt-2 max-w-[11rem]">سنوات في هذا السوق</p></div>
+<div class="sk overflow-hidden "><img src="/assets/img/portrait-square.jpg" alt="Dindar Ahmed, Marketing Manager at Mithra Production" width="1200" height="1200" fetchpriority="high" decoding="async" class="block w-full aspect-square object-cover"/></div>
+<div class="absolute bottom-0 end-0 bg-amber text-ink px-6 py-5"><p class="display text-[44px]" data-count>١٠+</p><p class="lbl mt-2 max-w-[11rem]">سنوات في هذا السوق</p></div>
 </div>
 <div class="lg:col-span-7">
 <p class="rv lbl text-muted mb-6"><span class="text-accent" aria-hidden="true">◆</span> معلومات</p>
 <p class="rv text-[22px] leading-[1.5] md:text-[28px] md:leading-[1.45] font-medium tracking-[-0.01em]">يصل معظم الناس بعَرَض. المبيعات متوقفة، أو الحملة حصدت إعجابات ولا شيء غير ذلك. مهمتي أن أجد السبب قبل أن ينفق أحد ديناراً واحداً على الإعلان. عشر سنوات في هذا السوق: ثلاث في البيع وجهاً لوجه، وسبع في بناء العلامات مع ميثرا للإنتاج. مع كياسا انتهى ذلك بزيادة ٦٠٪ في المبيعات خلال ثمانية أشهر.</p>
 <p class="rv mt-8 text-[18px] leading-[1.65] md:text-[20px] text-muted">أفضل استراتيجية تسويقية هي التي ترتبط مباشرة بالمبيعات ونمو الأعمال. الظهور هو البداية فقط.</p>
-<div class="rv mt-10 flex flex-wrap gap-2.5"><span class="lbl glass rounded-full px-4 py-2.5">أين تكمن المشكلة فعلاً</span><span class="lbl glass rounded-full px-4 py-2.5">حملات التواصل الاجتماعي</span><span class="lbl glass rounded-full px-4 py-2.5">هوية العلامة التجارية</span><span class="lbl glass rounded-full px-4 py-2.5">الفيديو والإنتاج</span><span class="lbl glass rounded-full px-4 py-2.5">النمو القائم على المبيعات</span></div>
+<div class="rv mt-10 flex flex-wrap gap-2.5"><span class="lbl border border-edge px-4 py-2.5">أين تكمن المشكلة فعلاً</span><span class="lbl border border-edge px-4 py-2.5">حملات التواصل الاجتماعي</span><span class="lbl border border-edge px-4 py-2.5">هوية العلامة التجارية</span><span class="lbl border border-edge px-4 py-2.5">الفيديو والإنتاج</span><span class="lbl border border-edge px-4 py-2.5">النمو القائم على المبيعات</span></div>
 </div>
 </div>
 </section>
 <section class="relative overflow-hidden border-y border-line">
-<div class="orb orb-a" style="width:560px;height:560px;top:-200px;inset-inline-end:-120px" aria-hidden="true"></div>
-<div class="orb orb-c" style="width:340px;height:340px;bottom:-160px;inset-inline-start:10%" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:560px;height:560px;top:-240px;inset-inline-end:-160px;opacity:.35" aria-hidden="true"></div>
 <div class="wrap above py-24 md:py-36">
 <blockquote class="rv max-w-6xl">
 <p class="fire-text display text-[64px] md:text-[96px] leading-none" aria-hidden="true">“</p>
@@ -111,14 +113,14 @@
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7"><span class="hl"><span class="">الخبرة</span></span></h2>
 
 </div>
-<div class="grid gap-4">
-<div class="rv glass rounded-3xl p-6 md:p-10 grid gap-4 md:grid-cols-12 md:gap-6">
-<p class="md:col-span-3 md:pt-2"><span class="lbl inline-block rounded-full border border-amber/40 text-amber px-3 py-1.5">٧ سنوات، ومستمر</span></p>
+<div class="border-b border-edge">
+<div class="rv border-t border-edge py-10 md:py-12 grid gap-4 md:grid-cols-12 md:gap-6">
+<p class="md:col-span-3 md:pt-2"><span class="lbl inline-block border border-amber/40 text-amber px-3 py-1.5">٧ سنوات، ومستمر</span></p>
 <div class="md:col-span-4"><h3 class="display text-[28px] md:text-[36px]">مدير تسويق</h3><p class="mt-3 text-[15px] text-muted">ميثرا للإنتاج</p></div>
 <p class="md:col-span-5 text-[17px] leading-[1.65] text-white/80">عضو في الفريق الإبداعي لميثرا، أحوّل أساس المبيعات إلى حملات ترتبط مباشرة بالنمو. كل استراتيجية تُقاس بأثرها على العمل، لا بمظهرها فحسب.</p>
 </div>
-<div class="rv glass rounded-3xl p-6 md:p-10 grid gap-4 md:grid-cols-12 md:gap-6">
-<p class="md:col-span-3 md:pt-2"><span class="lbl inline-block rounded-full border border-amber/40 text-amber px-3 py-1.5">٣ سنوات</span></p>
+<div class="rv border-t border-edge py-10 md:py-12 grid gap-4 md:grid-cols-12 md:gap-6">
+<p class="md:col-span-3 md:pt-2"><span class="lbl inline-block border border-amber/40 text-amber px-3 py-1.5">٣ سنوات</span></p>
 <div class="md:col-span-4"><h3 class="display text-[28px] md:text-[36px]">المبيعات</h3><p class="mt-3 text-[15px] text-muted">تطوير الأعمال · شركة بخور (جبسي لوسي) · شركة قيمة الماسية</p></div>
 <p class="md:col-span-5 text-[17px] leading-[1.65] text-white/80">حيث بدأ المسار في عالم الأعمال. خبرة مباشرة في فهم ما يحتاجه العميل بالضبط، وما يدفعه فعلاً للشراء.</p>
 </div>
@@ -134,27 +136,27 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
 <figure class="rv">
-<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-01.jpg" alt="Hiwa Foundation certificate" width="1280" height="933" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
+<div class="sk overflow-hidden border border-edge bg-night/40"><img src="/assets/img/cert-01.jpg" alt="Hiwa Foundation certificate" width="1280" height="933" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Hiwa Foundation</p><p class="mt-2 text-[18px] leading-snug font-medium">المبيعات وأن تكون بائعاً فعّالاً</p><p class="mt-1 text-[14px] text-muted">ورشة ثلاثة أيام · شباط ٢٠٢٣</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-02.jpg" alt="Canadian Training Center of Human Development certificate" width="1280" height="885" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
+<div class="sk overflow-hidden border border-edge bg-night/40"><img src="/assets/img/cert-02.jpg" alt="Canadian Training Center of Human Development certificate" width="1280" height="885" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Canadian Training Center of Human Development</p><p class="mt-2 text-[18px] leading-snug font-medium">دبلوم في المبيعات والتسويق</p><p class="mt-1 text-[14px] text-muted">شهادة إنجاز، ٤٠ ساعة · تموز ٢٠١٩</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-03.jpg" alt="REACH Organization  Diakonie Katastrophenhilfe certificate" width="1280" height="928" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
+<div class="sk overflow-hidden border border-edge bg-night/40"><img src="/assets/img/cert-03.jpg" alt="REACH Organization  Diakonie Katastrophenhilfe certificate" width="1280" height="928" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">REACH Organization &amp; Diakonie Katastrophenhilfe</p><p class="mt-2 text-[18px] leading-snug font-medium">إدارة المشاريع والتسويق</p><p class="mt-1 text-[14px] text-muted">مركز ليزا المجتمعي، السليمانية · آب ٢٠١٩</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-04.jpg" alt="U.S. Department of State  American Corner Sulaymaniyah certificate" width="1280" height="895" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
+<div class="sk overflow-hidden border border-edge bg-night/40"><img src="/assets/img/cert-04.jpg" alt="U.S. Department of State  American Corner Sulaymaniyah certificate" width="1280" height="895" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">U.S. Department of State, American Corner Sulaymaniyah</p><p class="mt-2 text-[18px] leading-snug font-medium">إدارة المشاريع والتسويق</p><p class="mt-1 text-[14px] text-muted">دورة تدريبية في المهارات الحياتية · آب ٢٠١٩</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-05.jpg" alt="Leaders Dream certificate" width="750" height="519" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
+<div class="sk overflow-hidden border border-edge bg-night/40"><img src="/assets/img/cert-05.jpg" alt="Leaders Dream certificate" width="750" height="519" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Leaders’ Dream</p><p class="mt-2 text-[18px] leading-snug font-medium">دبلوم في المبيعات والتسويق</p><p class="mt-1 text-[14px] text-muted">بالتعاون مع Canadian Training Center وJohn Maxwell وطلال أبو غزالة · كانون الأول ٢٠١٩</p></figcaption>
 </figure>
 <figure class="rv">
-<div class="sk overflow-hidden rounded-2xl glass"><img src="/assets/img/cert-06.jpg" alt="شهادة Hiwa Foundation" width="1280" height="899" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
+<div class="sk overflow-hidden border border-edge bg-night/40"><img src="/assets/img/cert-06.jpg" alt="شهادة Hiwa Foundation" width="1280" height="899" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-contain p-5"/></div>
 <figcaption class="mt-5"><p class="lbl text-muted">Hiwa Foundation</p><p class="mt-2 text-[18px] leading-snug font-medium">أساسيات التسويق الاستراتيجي</p><p class="mt-1 text-[14px] text-muted">شهادة إتمام، ٢٥ ساعة على مدى خمس جلسات · أيار ٢٠٢٥</p></figcaption>
 </figure>
 </div>
@@ -168,23 +170,23 @@
 <p class="rv md:col-span-5 md:justify-self-end text-[17px] leading-[1.6] text-muted md:max-w-md">اجتماعات العملاء وأيام الإنتاج وورش العمل وفعاليات القطاع: العمل الذي يقف خلف الحملات.</p>
 </div>
 <div class="columns-1 sm:columns-2 lg:columns-3 gap-4">
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-01.webp" alt="Strategy session with the Mithra team" width="968" height="696" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-04.webp" alt="Award presentation" width="1009" height="720" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-02.webp" alt="Client partnership meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-07.webp" alt="Industry trade show" width="960" height="714" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-05.webp" alt="Client meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-09.webp" alt="Internal team workshop" width="1280" height="721" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-06.webp" alt="Evening client visit" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-08.webp" alt="Client conversation" width="1280" height="780" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-10.jpg" alt="Industry trade show floor" width="1000" height="1000" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-11.jpg" alt="Team visit to Pak Simin" width="1400" height="788" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-12.jpg" alt="اجتماع مع العميل في جناح هَنا وفودواي" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-13.jpg" alt="اجتماع مع فريق مصنع فودواي" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-14.jpg" alt="زيارة خط الإنتاج مع فريق العميل" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-15.jpg" alt="تسليم شهادة في ميثرا للإنتاج" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-16.jpg" alt="معرض صنع في العراق" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-17.jpg" alt="جلسة مع فريق ألفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
-<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-18.jpg" alt="نقاش استراتيجي مع فريق ألفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-01.webp" alt="Strategy session with the Mithra team" width="968" height="696" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-04.webp" alt="Award presentation" width="1009" height="720" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-02.webp" alt="Client partnership meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-07.webp" alt="Industry trade show" width="960" height="714" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-05.webp" alt="Client meeting" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-09.webp" alt="Internal team workshop" width="1280" height="721" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-06.webp" alt="Evening client visit" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-08.webp" alt="Client conversation" width="1280" height="780" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-10.jpg" alt="Industry trade show floor" width="1000" height="1000" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-11.jpg" alt="Team visit to Pak Simin" width="1400" height="788" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-12.jpg" alt="اجتماع مع العميل في جناح هَنا وفودواي" width="960" height="1280" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-13.jpg" alt="اجتماع مع فريق مصنع فودواي" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-14.jpg" alt="زيارة خط الإنتاج مع فريق العميل" width="1280" height="960" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-15.jpg" alt="تسليم شهادة في ميثرا للإنتاج" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-16.jpg" alt="معرض صنع في العراق" width="787" height="1400" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-17.jpg" alt="جلسة مع فريق ألفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
+<div class="rv mb-4 break-inside-avoid"><div class="sk overflow-hidden "><img src="/assets/img/work-18.jpg" alt="نقاش استراتيجي مع فريق ألفا دنت" width="1400" height="933" loading="lazy" decoding="async" class="block w-full h-auto"/></div></div>
 </div>
 </div>
 </section>
@@ -201,19 +203,19 @@
 
 </main>
 <footer id="contact" class="relative overflow-hidden border-t border-line">
-<div class="orb orb-a" style="width:620px;height:620px;top:-120px;inset-inline-start:-180px" aria-hidden="true"></div><div class="orb orb-b" style="width:520px;height:520px;bottom:-160px;inset-inline-end:-120px" aria-hidden="true"></div><div class="orb orb-c" style="width:360px;height:360px;bottom:120px;inset-inline-start:35%" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:620px;height:620px;bottom:-260px;inset-inline-start:-200px;opacity:.3" aria-hidden="true"></div>
 <div class="wrap above pt-24 md:pt-36 pb-10">
 <p class="rv lbl text-accent mb-8">◆ ابدأ محادثة</p>
 <h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">لنبنِ شيئاً يبيع.</span></span></h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">سواء كنت تسعى لإعادة تعريف استراتيجية علامتك، أو توسيع حضورك، أو بناء حملة تبيع فعلاً، لنتحدث.</p>
 <div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">راسل مباشرة</p>
 <a href="mailto:Dindar.Ahmed@mithra.agency" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">Dindar.Ahmed@mithra.agency</a>
 <p class="mt-5 text-[16px] leading-[1.6] text-white/60 max-w-md">أسرع طريقة للوصول إلى ديندار. اكتب عما تبنيه وسيرد عليك.</p>
-<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire rounded-full px-7 py-4">ابدأ مشروعاً <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire px-7 py-4">ابدأ مشروعاً <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">تواصل مباشر</p>
 <ul class="text-[16px]">
 <li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
@@ -239,6 +241,6 @@
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
-<script src="/js/scripts.js?v=f4fbd27b" defer></script>
+<script src="/js/scripts.js?v=5496fe9c" defer></script>
 </body>
 </html>

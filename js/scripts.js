@@ -73,7 +73,7 @@
       toggle.querySelector("span").textContent = open ? toggle.getAttribute("data-close") : toggle.getAttribute("data-open");
     };
     toggle.addEventListener("click", function () { setOpen(menu.hidden); });
-    menu.querySelectorAll("a").forEach(function (a) {
+    menu.querySelectorAll("a, [data-menu-close]").forEach(function (a) {
       a.addEventListener("click", function () { setOpen(false); });
     });
     document.addEventListener("keydown", function (e) {
@@ -129,7 +129,7 @@
             data.categories.forEach(function (cat) {
               cat.logos.forEach(function (l) {
                 var cell = document.createElement("div");
-                cell.className = "shrink-0 w-24 h-24 md:w-32 md:h-32 mx-2 md:mx-3 rounded-2xl overflow-hidden bg-white";
+                cell.className = "shrink-0 w-24 h-24 md:w-32 md:h-32 mx-2 md:mx-3 overflow-hidden bg-white";
                 var img = logoImg(l, "w-full h-full object-contain", true);
                 if (run) { img.alt = ""; cell.setAttribute("aria-hidden", "true"); }
                 cell.appendChild(img);
@@ -156,7 +156,7 @@
             grid.className = "grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3";
             cat.logos.forEach(function (l) {
               var cell = document.createElement("div");
-              cell.className = "aspect-square rounded-2xl overflow-hidden bg-white";
+              cell.className = "aspect-square overflow-hidden bg-white";
               cell.appendChild(logoImg(l, "w-full h-full object-contain"));
               grid.appendChild(cell);
             });

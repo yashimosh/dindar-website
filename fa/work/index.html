@@ -30,14 +30,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
-<link href="/css/tailwind.css?v=38f84b23" rel="stylesheet"/>
+<link href="/css/tailwind.css?v=17c51baa" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-loc="fa" class="bg-ink text-white antialiased overflow-x-hidden">
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:rounded-full focus:px-4 focus:py-2">پرش به محتوا</a>
-<header class="fixed inset-x-0 top-0 z-50 pt-3 md:pt-4">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:px-4 focus:py-2">پرش به محتوا</a>
+<header class="absolute inset-x-0 top-0 z-50">
 <div class="wrap">
-<div class="site-head glass-dark rounded-full ps-5 pe-3 md:ps-7 md:pe-4 h-14 md:h-16 flex items-center justify-between gap-6">
+<div class="h-20 md:h-24 flex items-center justify-between gap-6 border-b border-white/10">
 <a href="/fa/" class="display text-[15px] md:text-[17px]">دیندار احمد</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
 <a href="/fa/" class="opacity-60 hover:opacity-100 transition-opacity">خانه</a>
@@ -51,12 +51,16 @@
 <a href="/ar/work/" lang="ar" hreflang="ar" class="opacity-60 hover:opacity-100 transition-opacity">العربية</a>
 <a href="/fa/work/" lang="fa" hreflang="fa" class="text-accent" aria-current="true">فارسی</a>
 </div>
-<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[40px] px-4 rounded-full btn-fire" aria-controls="menu" aria-expanded="false" data-open="باز کردن منو" data-close="بستن منو"><span>باز کردن منو</span></button>
+<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="باز کردن منو" data-close="بستن منو"><span>باز کردن منو</span></button>
 </div>
 </div>
 </header>
-<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-ink/80 backdrop-blur-2xl text-white overflow-y-auto">
-<nav class="wrap pt-28 display text-[40px]" aria-label="Main">
+<div id="menu" hidden class="md:hidden fixed inset-0 z-[60] bg-ink text-white overflow-y-auto">
+<div class="wrap h-20 flex items-center justify-between border-b border-white/10">
+<span class="display text-[15px]">دیندار احمد</span>
+<button type="button" data-menu-close class="lbl inline-flex items-center min-h-[44px] px-4 btn-fire">بستن منو</button>
+</div>
+<nav class="wrap pt-10 display text-[40px]" aria-label="Main">
 <a href="/fa/" class="block py-1 text-white">خانه</a>
 <a href="/fa/work/" class="block py-1 fire-text" aria-current="page">نمونه‌کارها</a>
 <a href="/fa/about/" class="block py-1 text-white">درباره</a>
@@ -71,8 +75,7 @@
 </div>
 <main id="main">
 <section class="relative overflow-hidden">
-<div class="orb orb-a" style="width:600px;height:600px;top:-240px;inset-inline-end:-120px" aria-hidden="true"></div>
-<div class="orb orb-b" style="width:380px;height:380px;top:40px;inset-inline-end:22%;opacity:.3" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:600px;height:600px;top:-280px;inset-inline-end:-160px;opacity:.35" aria-hidden="true"></div>
 <div class="wrap above pt-36 md:pt-52 pb-16 md:pb-24">
 <p class="rv lbl text-muted mb-8"><span class="text-accent" aria-hidden="true">◆</span> نمونه‌کارها</p>
 <h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="fire-text">نمونه‌کارهای شاخص</span></span></h1>
@@ -88,13 +91,13 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/hero.jpg" alt="دیندار احمد همراه تیم مشتری در محل تولید" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/hero.jpg" alt="دیندار احمد همراه تیم مشتری در محل تولید" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">کمپین <span class="text-accent" aria-hidden="true">◆</span> استراتژی</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">استراتژی برند و کمپین</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">کمپین‌هایی که فراتر از جلب توجه عمل می‌کنند، طوری طراحی می‌شوند که داستان برند را روایت کنند و بر اعدادی که واقعاً اهمیت دارند تأثیر بگذارند.</p>
 </article>
 <article class="rv">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">شبکه‌های اجتماعی <span class="text-accent" aria-hidden="true">◆</span> تبلیغات محیطی</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">محتوا و روایت‌گری</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">در میترا پروداکشن، کمپین فقط یک تبلیغ نیست، داستان موفقیت برندی است که پشت آن قرار دارد، روایت‌شده در هر کانالی که در آن حضور دارد.</p>
@@ -111,7 +114,7 @@
 </div>
 <div class="border-b border-card">
 <article id="case-kiasa" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">۰۱</p>
 <p class="mt-4 lbl text-muted">شوینده <span class="text-accent" aria-hidden="true">◆</span> ۱-۸-۲۰۲۵ تا ۳۱-۳-۲۰۲۶</p>
@@ -121,7 +124,7 @@
 </div>
 </article>
 <article id="case-banu" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">۰۲</p>
 <p class="mt-4 lbl text-muted">مواد غذایی <span class="text-accent" aria-hidden="true">◆</span> ساخت و لانچ برند</p>
@@ -131,7 +134,7 @@
 </div>
 </article>
 <article id="case-runaki" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">۰۳</p>
 <p class="mt-4 lbl text-muted">آموزش <span class="text-accent" aria-hidden="true">◆</span> از ۲۰۱۹ تاکنون</p>
@@ -145,7 +148,6 @@
 </section>
 
 <section id="campaigns" class="relative overflow-hidden">
-<div class="orb orb-a" style="width:560px;height:560px;top:10%;inset-inline-end:-160px" aria-hidden="true"></div><div class="orb orb-d" style="width:520px;height:520px;bottom:-120px;inset-inline-start:-160px" aria-hidden="true"></div>
 <div class="wrap above py-16 md:py-24">
 <div class="grid gap-6 md:grid-cols-12 md:items-end mb-10 md:mb-14">
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7"><span class="hl"><span class="">کمپین‌های اخیر</span></span></h2>
@@ -153,10 +155,10 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv md:col-span-2">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video md:aspect-[2.2/1]" data-yt="ohWLkd8xecs" data-yt-title="روغن طبیعی بانو: کمپین به‌زودی">
+<div class="sk relative overflow-hidden aspect-video md:aspect-[2.2/1]" data-yt="ohWLkd8xecs" data-yt-title="روغن طبیعی بانو: کمپین به‌زودی">
 <img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="پخش: روغن طبیعی بانو: کمپین به‌زودی">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">1:21</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">1:21</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -164,10 +166,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">کمپین تیزر برای روغن طبیعی بانو.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="محصول شست‌وشوی کیاسا">
+<div class="sk relative overflow-hidden aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="محصول شست‌وشوی کیاسا">
 <img src="/assets/img/tvc-02.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="پخش: محصول شست‌وشوی کیاسا">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -175,10 +177,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">تیزر محصول برای سری شست‌وشوی کیاسا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jjXe4ino1YU" data-yt-title="اپلیکیشن پایا">
+<div class="sk relative overflow-hidden aspect-video" data-yt="jjXe4ino1YU" data-yt-title="اپلیکیشن پایا">
 <img src="/assets/img/tvc-03.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="پخش: اپلیکیشن پایا">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -186,10 +188,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">تیزر معرفی اپلیکیشن پایا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="کیاسا">
+<div class="sk relative overflow-hidden aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="کیاسا">
 <img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="پخش: کیاسا">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -197,10 +199,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">تیزر برند برای کیاسا.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="مؤسسه‌ی روناکی">
+<div class="sk relative overflow-hidden aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="مؤسسه‌ی روناکی">
 <img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="پخش: مؤسسه‌ی روناکی">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">1:11</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">تماشا کنید</span><span class="text-[13px] text-white/60" dir="ltr">1:11</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -220,77 +222,77 @@
 </div>
 <div class="max-w-[960px] mx-auto grid grid-cols-3 gap-x-2 gap-y-8 sm:gap-x-4 sm:gap-y-10">
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVB1ZNuiNWt/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-01.jpg" alt="به زبان مشتری صحبت کن" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-01.jpg" alt="به زبان مشتری صحبت کن" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">به زبان مشتری صحبت کن</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">بازاریابی حفظ‌کردن تئوری نیست؛ ترجمه‌ی پیام تو به زبان دل مشتری است.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVOxG69iMxr/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-02.jpg" alt="رقابت بر سر قیمت را متوقف کن" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-02.jpg" alt="رقابت بر سر قیمت را متوقف کن" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">رقابت بر سر قیمت را متوقف کن</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">وقتی مشتری فقط قیمت را مقایسه می‌کند، تخفیف یعنی خودکشی. داستان و تمایز است که سود را حفظ می‌کند.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DYPx5Q7oRHC/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-03.jpg" alt="بازاریابی علمی یا تصمیم شخصی؟" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-03.jpg" alt="بازاریابی علمی یا تصمیم شخصی؟" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">بازاریابی علمی یا تصمیم شخصی؟</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">بیشتر بودجه‌ی تبلیغات به‌خاطر تصمیم‌های شخصی هدر می‌رود، نه داده. این‌طور بودجه‌ات را حفظ کن.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZH2Jicqq/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-14.jpg" alt="فارمونا: بطری با تکنیک سه‌بعدی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-14.jpg" alt="فارمونا: بطری با تکنیک سه‌بعدی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمونا: بطری با تکنیک سه‌بعدی</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فیلم محصول سه‌بعدی برای ضدآفتاب فارمونا، تولید میترا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZXLWgC_E/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-13.jpg" alt="فارمونا: برای قفسه‌ی ضدآفتاب" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-13.jpg" alt="فارمونا: برای قفسه‌ی ضدآفتاب" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمونا: برای قفسه‌ی ضدآفتاب</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">تولید ویدیوی تبلیغاتی برای خط ضدآفتاب فارمونا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZnXpAPBu/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-15.jpg" alt="فارمونا: معرفی ضدآفتاب" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-15.jpg" alt="فارمونا: معرفی ضدآفتاب" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">فارمونا: معرفی ضدآفتاب</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">کاری دیگر از لانچ ضدآفتاب فارمونا، تولید میترا.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwPjZJDe4g/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: بازتعریف روایت عملکرد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: بازتعریف روایت عملکرد" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: بازتعریف روایت عملکرد</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">داده‌های تمرین به روایتی تبدیل شده که ورزشکار حسش می‌کند.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQlCCCkLx/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: مهندسی دقیق سه‌بعدی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: مهندسی دقیق سه‌بعدی" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">WHOOP 5.0: مهندسی دقیق سه‌بعدی</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فیلم محصول سه‌بعدی برای نمایش جزئیات بند.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQ78BEbA9/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: گسترش مرزهای خلاقیت" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: گسترش مرزهای خلاقیت" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: گسترش مرزهای خلاقیت</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">فیلم معرفی برای Strap Iraq، فروشنده‌ی رسمی WHOOP.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi7sbSDaTP/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-04.jpg" alt="برنج کورمانج: راز سرآشپز" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-04.jpg" alt="برنج کورمانج: راز سرآشپز" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">برنج کورمانج: راز سرآشپز</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">راز سرآشپز برای کمال. تیزر تبلیغاتی برنج کورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8VQXkegn/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-05.jpg" alt="برنج کورمانج: پخته‌شده با عشق" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-05.jpg" alt="برنج کورمانج: پخته‌شده با عشق" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">برنج کورمانج: پخته‌شده با عشق</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">پخته‌شده با عشق، سرو شده با دقت. تیزر تبلیغاتی برنج کورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8tVYFdVD/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-06.jpg" alt="برنج کورمانج: طعمی ماندگار" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-06.jpg" alt="برنج کورمانج: طعمی ماندگار" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">برنج کورمانج: طعمی ماندگار</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">طعمی ماندگار در طول نسل‌ها. تیزر تبلیغاتی برنج کورمانج.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbybqHBjhPX/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-07.jpg" alt="کامیونیتی روناکی: ریشه در دانش" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-07.jpg" alt="کامیونیتی روناکی: ریشه در دانش" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">کامیونیتی روناکی: ریشه در دانش</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">ریشه در علم، آموزش و فرهنگ. تیزر تبلیغاتی کامیونیتی آموزشی روناکی.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycZValFYQ/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-08.jpg" alt="کامیونیتی روناکی: موفقیت در اتاق هیئت‌مدیره" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-08.jpg" alt="کامیونیتی روناکی: موفقیت در اتاق هیئت‌مدیره" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">کامیونیتی روناکی: موفقیت در اتاق هیئت‌مدیره</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">از ایده‌های کلاس درس تا موفقیت در اتاق هیئت‌مدیره. تولیدشده برای کامیونیتی آموزشی روناکی.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycpDDDR9q/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-09.jpg" alt="کامیونیتی روناکی: نجات جان‌ها" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-09.jpg" alt="کامیونیتی روناکی: نجات جان‌ها" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">کامیونیتی روناکی: نجات جان‌ها</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">از رویای کودکی تا نجات جان‌ها. تولیدشده برای کامیونیتی آموزشی روناکی.</p>
 </a>
@@ -300,19 +302,19 @@
 
 </main>
 <footer id="contact" class="relative overflow-hidden border-t border-line">
-<div class="orb orb-a" style="width:620px;height:620px;top:-120px;inset-inline-start:-180px" aria-hidden="true"></div><div class="orb orb-b" style="width:520px;height:520px;bottom:-160px;inset-inline-end:-120px" aria-hidden="true"></div><div class="orb orb-c" style="width:360px;height:360px;bottom:120px;inset-inline-start:35%" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:620px;height:620px;bottom:-260px;inset-inline-start:-200px;opacity:.3" aria-hidden="true"></div>
 <div class="wrap above pt-24 md:pt-36 pb-10">
 <p class="rv lbl text-accent mb-8">◆ شروع گفتگو</p>
 <h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">بیایید چیزی بسازیم که می‌فروشد.</span></span></h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">چه بخواهید استراتژی برندتان را بازتعریف کنید، حضورتان را گسترش دهید، یا کمپینی بسازید که واقعاً می‌فروشد، بیایید صحبت کنیم.</p>
 <div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">ایمیل مستقیم</p>
 <a href="mailto:Dindar.Ahmed@mithra.agency" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">Dindar.Ahmed@mithra.agency</a>
 <p class="mt-5 text-[16px] leading-[1.6] text-white/60 max-w-md">سریع‌ترین راه تماس با دیندار. درباره آنچه می‌سازید بنویسید تا پاسخ دهد.</p>
-<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire rounded-full px-7 py-4">شروع پروژه <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire px-7 py-4">شروع پروژه <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">تماس مستقیم</p>
 <ul class="text-[16px]">
 <li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
@@ -338,6 +340,6 @@
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
-<script src="/js/scripts.js?v=f4fbd27b" defer></script>
+<script src="/js/scripts.js?v=5496fe9c" defer></script>
 </body>
 </html>

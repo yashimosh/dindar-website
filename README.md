@@ -46,8 +46,9 @@ file. No HTML edit is needed.
   black cherry, oxblood, brick ember, red ochre, cayenne, deep saffron, orange,
   amber flame) is listed there by name.
 - Shared CSS: `css/tailwind.src.css`. Gradients (`.fire`, `.fire-text`,
-  `.btn-fire`, `.hi`), frosted glass (`.glass`, `.glass-dark`), blurred glows
-  (`.orb`), headline reveal, marquees, service rows, RTL font rules.
+  `.btn-fire`, `.band-fire`, `.hi`), soft glows (`.orb`), headline reveal,
+  marquees, service rows, RTL font rules. Layout follows lircle.co: square
+  corners, flat ruled rows, solid fills, no frosted glass.
 - `css/tailwind.css` is generated. Do not edit it.
 - Font: Noto Kufi Arabic for every language (English, Kurdish, Arabic, Persian;
   covers every Sorani letter). Loaded from Google Fonts.

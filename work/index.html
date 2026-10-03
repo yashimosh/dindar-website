@@ -30,14 +30,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
-<link href="/css/tailwind.css?v=38f84b23" rel="stylesheet"/>
+<link href="/css/tailwind.css?v=17c51baa" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-loc="en" class="bg-ink text-white antialiased overflow-x-hidden">
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:rounded-full focus:px-4 focus:py-2">Skip to content</a>
-<header class="fixed inset-x-0 top-0 z-50 pt-3 md:pt-4">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:px-4 focus:py-2">Skip to content</a>
+<header class="absolute inset-x-0 top-0 z-50">
 <div class="wrap">
-<div class="site-head glass-dark rounded-full ps-5 pe-3 md:ps-7 md:pe-4 h-14 md:h-16 flex items-center justify-between gap-6">
+<div class="h-20 md:h-24 flex items-center justify-between gap-6 border-b border-white/10">
 <a href="/" class="display text-[15px] md:text-[17px]">Dindar Ahmed</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
 <a href="/" class="opacity-60 hover:opacity-100 transition-opacity">Home</a>
@@ -51,12 +51,16 @@
 <a href="/ar/work/" lang="ar" hreflang="ar" class="opacity-60 hover:opacity-100 transition-opacity">العربية</a>
 <a href="/fa/work/" lang="fa" hreflang="fa" class="opacity-60 hover:opacity-100 transition-opacity">فارسی</a>
 </div>
-<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[40px] px-4 rounded-full btn-fire" aria-controls="menu" aria-expanded="false" data-open="Open menu" data-close="Close menu"><span>Open menu</span></button>
+<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="Open menu" data-close="Close menu"><span>Open menu</span></button>
 </div>
 </div>
 </header>
-<div id="menu" hidden class="md:hidden fixed inset-0 z-40 bg-ink/80 backdrop-blur-2xl text-white overflow-y-auto">
-<nav class="wrap pt-28 display text-[40px]" aria-label="Main">
+<div id="menu" hidden class="md:hidden fixed inset-0 z-[60] bg-ink text-white overflow-y-auto">
+<div class="wrap h-20 flex items-center justify-between border-b border-white/10">
+<span class="display text-[15px]">Dindar Ahmed</span>
+<button type="button" data-menu-close class="lbl inline-flex items-center min-h-[44px] px-4 btn-fire">Close menu</button>
+</div>
+<nav class="wrap pt-10 display text-[40px]" aria-label="Main">
 <a href="/" class="block py-1 text-white">Home</a>
 <a href="/work/" class="block py-1 fire-text" aria-current="page">Work</a>
 <a href="/about/" class="block py-1 text-white">About</a>
@@ -71,8 +75,7 @@
 </div>
 <main id="main">
 <section class="relative overflow-hidden">
-<div class="orb orb-a" style="width:600px;height:600px;top:-240px;inset-inline-end:-120px" aria-hidden="true"></div>
-<div class="orb orb-b" style="width:380px;height:380px;top:40px;inset-inline-end:22%;opacity:.3" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:600px;height:600px;top:-280px;inset-inline-end:-160px;opacity:.35" aria-hidden="true"></div>
 <div class="wrap above pt-36 md:pt-52 pb-16 md:pb-24">
 <p class="rv lbl text-muted mb-8"><span class="text-accent" aria-hidden="true">◆</span> Work</p>
 <h1 class="reveal display text-[44px] sm:text-[72px] lg:text-[112px] max-w-6xl"><span class="hl"><span class="fire-text">Featured Work</span></span></h1>
@@ -88,13 +91,13 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/hero.jpg" alt="Dindar Ahmed with a client team on the production floor" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/hero.jpg" alt="Dindar Ahmed with a client team on the production floor" width="1400" height="980" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">Campaigns <span class="text-accent" aria-hidden="true">◆</span> Strategy</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">Brand &amp; Campaign Strategy</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">Campaigns built to do more than get attention: they tell a brand's story and move the numbers that matter.</p>
 </article>
 <article class="rv">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/work-03.webp" alt="The Mithra Production team on a studio set" width="1280" height="853" loading="lazy" decoding="async" class="block w-full aspect-[4/3] object-cover"/></div>
 <p class="mt-6 lbl text-muted">Social <span class="text-accent" aria-hidden="true">◆</span> OOH</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">Content &amp; Storytelling</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">At Mithra Production, a campaign isn't just an ad. It's the success story of the brand behind it, told across every channel it lives on.</p>
@@ -111,7 +114,7 @@
 </div>
 <div class="border-b border-card">
 <article id="case-kiasa" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">01</p>
 <p class="mt-4 lbl text-muted">Home Care <span class="text-accent" aria-hidden="true">◆</span> Aug 2025 to Mar 2026</p>
@@ -121,7 +124,7 @@
 </div>
 </article>
 <article id="case-banu" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">02</p>
 <p class="mt-4 lbl text-muted">Food &amp; FMCG <span class="text-accent" aria-hidden="true">◆</span> Brand build &amp; launch</p>
@@ -131,7 +134,7 @@
 </div>
 </article>
 <article id="case-runaki" class="rv scroll-mt-8 border-t border-card py-12 md:py-16 grid gap-8 lg:grid-cols-12 lg:gap-12">
-<div class="lg:col-span-7"><div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
+<div class="lg:col-span-7"><div class="sk overflow-hidden "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-video object-cover"/></div></div>
 <div class="lg:col-span-5">
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">03</p>
 <p class="mt-4 lbl text-muted">Education <span class="text-accent" aria-hidden="true">◆</span> 2019 to present</p>
@@ -145,7 +148,6 @@
 </section>
 
 <section id="campaigns" class="relative overflow-hidden">
-<div class="orb orb-a" style="width:560px;height:560px;top:10%;inset-inline-end:-160px" aria-hidden="true"></div><div class="orb orb-d" style="width:520px;height:520px;bottom:-120px;inset-inline-start:-160px" aria-hidden="true"></div>
 <div class="wrap above py-16 md:py-24">
 <div class="grid gap-6 md:grid-cols-12 md:items-end mb-10 md:mb-14">
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7"><span class="hl"><span class="">Recent Campaigns</span></span></h2>
@@ -153,10 +155,10 @@
 </div>
 <div class="grid gap-x-6 gap-y-14 md:grid-cols-2">
 <article class="rv md:col-span-2">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video md:aspect-[2.2/1]" data-yt="ohWLkd8xecs" data-yt-title="Banu Natural Oil  Coming Soon Campaign">
+<div class="sk relative overflow-hidden aspect-video md:aspect-[2.2/1]" data-yt="ohWLkd8xecs" data-yt-title="Banu Natural Oil  Coming Soon Campaign">
 <img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="Play: Banu Natural Oil  Coming Soon Campaign">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">1:21</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">1:21</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -164,10 +166,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">Teaser campaign for Banu natural oil.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="Kiasa Laundry Product">
+<div class="sk relative overflow-hidden aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="Kiasa Laundry Product">
 <img src="/assets/img/tvc-02.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="Play: Kiasa Laundry Product">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -175,10 +177,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">Product commercial for the Kiasa laundry range.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jjXe4ino1YU" data-yt-title="Paya Application">
+<div class="sk relative overflow-hidden aspect-video" data-yt="jjXe4ino1YU" data-yt-title="Paya Application">
 <img src="/assets/img/tvc-03.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="Play: Paya Application">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -186,10 +188,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">App launch commercial for Paya.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="Kiasa">
+<div class="sk relative overflow-hidden aspect-video" data-yt="BzXQoSo0Z08" data-yt-title="Kiasa">
 <img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="Play: Kiasa">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">0:33</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -197,10 +199,10 @@
 <p class="mt-2 text-[15px] leading-[1.6] text-white/60">Brand commercial for Kiasa.</p>
 </article>
 <article class="rv">
-<div class="sk relative overflow-hidden rounded-2xl aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="Runaki Institute">
+<div class="sk relative overflow-hidden aspect-video" data-yt="jsTUhLnALkQ" data-yt-title="Runaki Institute">
 <img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="Play: Runaki Institute">
-<span class="inline-flex items-center gap-3 glass-dark rounded-full text-white ps-2 pe-5 py-2 group-hover:bg-ink/70 transition-colors"><span class="w-9 h-9 rounded-full btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">1:11</span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">Watch</span><span class="text-[13px] text-white/60" dir="ltr">1:11</span></span></span>
 </button>
 </div>
 <p class="mt-5 lbl text-accent">TVC</p>
@@ -220,77 +222,77 @@
 </div>
 <div class="max-w-[960px] mx-auto grid grid-cols-3 gap-x-2 gap-y-8 sm:gap-x-4 sm:gap-y-10">
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVB1ZNuiNWt/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-01.jpg" alt="Speak the Customer’s Language" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-01.jpg" alt="Speak the Customer’s Language" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Speak the Customer’s Language</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">Marketing isn’t reciting theory. It’s translating your message into the language of the customer’s heart.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DVOxG69iMxr/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-02.jpg" alt="Stop Competing on Price" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-02.jpg" alt="Stop Competing on Price" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Stop Competing on Price</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">When customers only compare price, discounting is suicide. Story and differentiation are what protect the margin.</p>
 </a>
 <a href="https://www.instagram.com/dindar_ahmad/reel/DYPx5Q7oRHC/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-03.jpg" alt="Scientific Marketing vs. Gut Feeling" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-03.jpg" alt="Scientific Marketing vs. Gut Feeling" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Scientific Marketing vs. Gut Feeling</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">Most ad budgets get wasted on personal decisions, not data. Here’s how to protect yours.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZH2Jicqq/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-14.jpg" alt="Farmona: The Bottle, Built in 3D" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-14.jpg" alt="Farmona: The Bottle, Built in 3D" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Farmona: The Bottle, Built in 3D</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">A 3D product film for Farmona's sunscreen, produced at Mithra.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZXLWgC_E/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-13.jpg" alt="Farmona: Made for the Sunscreen Aisle" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-13.jpg" alt="Farmona: Made for the Sunscreen Aisle" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Farmona: Made for the Sunscreen Aisle</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">Production of an advertising video for Farmona's sunscreen line.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dc1ZnXpAPBu/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-15.jpg" alt="Farmona: Introducing the Sunscreen" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-15.jpg" alt="Farmona: Introducing the Sunscreen" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Farmona: Introducing the Sunscreen</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">Another piece from the Farmona sunscreen launch, produced at Mithra.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwPjZJDe4g/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: Redefining Performance Storytelling" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-12.jpg" alt="Strap Iraq: Redefining Performance Storytelling" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: Redefining Performance Storytelling</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">Training data turned into a story an athlete can feel.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQlCCCkLx/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: Precision Engineered in 3D" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-11.jpg" alt="WHOOP 5.0: Precision Engineered in 3D" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">WHOOP 5.0: Precision Engineered in 3D</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">A 3D product film built to show the band in detail.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DcwQ78BEbA9/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: Pushing Creative Boundaries" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-10.jpg" alt="Strap Iraq: Pushing Creative Boundaries" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Strap Iraq: Pushing Creative Boundaries</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">A launch film for Strap Iraq, the official WHOOP reseller.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi7sbSDaTP/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-04.jpg" alt="Kurmanj Rice: The Chef’s Secret" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-04.jpg" alt="Kurmanj Rice: The Chef’s Secret" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Kurmanj Rice: The Chef’s Secret</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">The chef’s secret to perfection. Ad spot for Kurmanj Rice.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8VQXkegn/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-05.jpg" alt="Kurmanj Rice: Cooked with Love" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-05.jpg" alt="Kurmanj Rice: Cooked with Love" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Kurmanj Rice: Cooked with Love</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">Cooked with love, served with care. Ad spot for Kurmanj Rice.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/Dbi8tVYFdVD/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-06.jpg" alt="Kurmanj Rice: Timeless Taste" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-06.jpg" alt="Kurmanj Rice: Timeless Taste" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Kurmanj Rice: Timeless Taste</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">A timeless taste across generations. Ad spot for Kurmanj Rice.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbybqHBjhPX/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-07.jpg" alt="Runaki Community: Rooted in Science" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-07.jpg" alt="Runaki Community: Rooted in Science" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Runaki Community: Rooted in Science</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">Rooted in science, education and culture. Ad spot for Runaki Educational Community.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycZValFYQ/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-08.jpg" alt="Runaki Community: Boardroom Success" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-08.jpg" alt="Runaki Community: Boardroom Success" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Runaki Community: Boardroom Success</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">From classroom ideas to boardroom success. Produced for Runaki Educational Community.</p>
 </a>
 <a href="https://www.instagram.com/mithra_production/reel/DbycpDDDR9q/" target="_blank" rel="noopener" class="rv group block">
-<div class="sk overflow-hidden rounded-2xl "><img src="/assets/img/reel-09.jpg" alt="Runaki Community: Saving Lives" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+<div class="sk overflow-hidden "><img src="/assets/img/reel-09.jpg" alt="Runaki Community: Saving Lives" width="360" height="640" loading="lazy" decoding="async" class="block w-full aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
 <h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">Runaki Community: Saving Lives</h3>
 <p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">From a childhood dream to saving lives. Produced for Runaki Educational Community.</p>
 </a>
@@ -300,19 +302,19 @@
 
 </main>
 <footer id="contact" class="relative overflow-hidden border-t border-line">
-<div class="orb orb-a" style="width:620px;height:620px;top:-120px;inset-inline-start:-180px" aria-hidden="true"></div><div class="orb orb-b" style="width:520px;height:520px;bottom:-160px;inset-inline-end:-120px" aria-hidden="true"></div><div class="orb orb-c" style="width:360px;height:360px;bottom:120px;inset-inline-start:35%" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:620px;height:620px;bottom:-260px;inset-inline-start:-200px;opacity:.3" aria-hidden="true"></div>
 <div class="wrap above pt-24 md:pt-36 pb-10">
 <p class="rv lbl text-accent mb-8">◆ Start a Conversation</p>
 <h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">Let's build something that sells.</span></span></h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">Whether you're looking to redefine your brand strategy, scale your presence, or build a campaign that actually sells, let's talk.</p>
 <div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">Email Directly</p>
 <a href="mailto:Dindar.Ahmed@mithra.agency" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">Dindar.Ahmed@mithra.agency</a>
 <p class="mt-5 text-[16px] leading-[1.6] text-white/60 max-w-md">The fastest way to reach Dindar. Send a note about what you're building and he'll get back to you.</p>
-<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire rounded-full px-7 py-4">Start a Project <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire px-7 py-4">Start a Project <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
-<div class="rv glass rounded-3xl p-6 md:p-10">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">Direct Contact</p>
 <ul class="text-[16px]">
 <li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
@@ -338,6 +340,6 @@
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
-<script src="/js/scripts.js?v=f4fbd27b" defer></script>
+<script src="/js/scripts.js?v=5496fe9c" defer></script>
 </body>
 </html>
