@@ -108,11 +108,12 @@
         if (!name) return data.alt_unnamed[loc] || data.alt_unnamed.en;
         return (data.alt[loc] || data.alt.en).replace("{name}", name);
       };
-      var logoImg = function (l, cls) {
+      var logoImg = function (l, cls, eager) {
         var img = document.createElement("img");
         img.src = "/assets/img/clients/" + l.file;
         img.alt = altFor(l.name);
-        img.loading = "lazy";
+        // the marquee slides logos in sideways, which lazy-loading misses
+        img.loading = eager ? "eager" : "lazy";
         img.decoding = "async";
         img.width = 256;
         img.height = 256;
@@ -128,8 +129,8 @@
             data.categories.forEach(function (cat) {
               cat.logos.forEach(function (l) {
                 var cell = document.createElement("div");
-                cell.className = "shrink-0 w-24 h-24 md:w-32 md:h-32 mx-2 md:mx-3 p-3 rounded-2xl bg-white flex items-center justify-center";
-                var img = logoImg(l, "max-w-full max-h-full object-contain");
+                cell.className = "shrink-0 w-24 h-24 md:w-32 md:h-32 mx-2 md:mx-3 rounded-2xl overflow-hidden bg-white";
+                var img = logoImg(l, "w-full h-full object-contain", true);
                 if (run) { img.alt = ""; cell.setAttribute("aria-hidden", "true"); }
                 cell.appendChild(img);
                 track.appendChild(cell);
@@ -144,10 +145,10 @@
             var head = document.createElement("div");
             head.className = "flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 mb-6";
             var h3 = document.createElement("h3");
-            h3.className = "text-[20px] font-medium tracking-tight";
+            h3.className = "display text-[22px] md:text-[26px]";
             h3.textContent = cat.label[loc] || cat.label.en;
             var sub = document.createElement("p");
-            sub.className = "text-[15px] text-muted";
+            sub.className = "lbl text-muted";
             sub.textContent = cat.sub[loc] || cat.sub.en;
             head.appendChild(h3);
             head.appendChild(sub);
@@ -155,8 +156,8 @@
             grid.className = "grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3";
             cat.logos.forEach(function (l) {
               var cell = document.createElement("div");
-              cell.className = "aspect-square rounded-2xl flex items-center justify-center p-3 bg-white";
-              cell.appendChild(logoImg(l, "max-w-full max-h-full object-contain"));
+              cell.className = "aspect-square rounded-2xl overflow-hidden bg-white";
+              cell.appendChild(logoImg(l, "w-full h-full object-contain"));
               grid.appendChild(cell);
             });
             block.appendChild(head);

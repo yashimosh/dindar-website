@@ -32,8 +32,9 @@ when you change one.
 All client logos on every page and in every language come from
 `assets/data/clients.json`. To add a logo:
 
-1. Put a 256x256 PNG in `assets/img/clients/<category>/`.
-2. Add `{"name": "Brand", "file": "<category>/<file>.png"}` to that category in
+1. Put a 256x256 image in `assets/img/clients/<category>/`. WebP keeps the page
+   light (the current logos are WebP); PNG also works.
+2. Add `{"name": "Brand", "file": "<category>/<file>.webp"}` to that category in
    `clients.json`. List order is display order.
 
 Category names, subtitles and alt text for all four languages are in the same

@@ -45,7 +45,8 @@ body { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
   text-transform: uppercase;
 }
 /* outlined display words */
-.ol { color: transparent; -webkit-text-stroke: 1.5px currentColor; }
+/* fill-color, not color, so a text-* utility can still set the stroke colour */
+.ol { -webkit-text-fill-color: transparent; -webkit-text-stroke: 1.5px currentColor; }
 
 /* ---------- fire palette: gradients, glass, glow ----------
    colours come from the palette in tailwind.config.js */

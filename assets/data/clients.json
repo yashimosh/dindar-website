@@ -1,5 +1,5 @@
 {
- "_readme": "Client logos for every page and language. To add a logo: drop a 256x256 PNG in assets/img/clients/<category>/ and add {\"name\", \"file\"} to that category below. Order here is display order. Alt text is built from the 'alt' template per language; a logo with an empty name uses 'alt_unnamed'.",
+ "_readme": "Client logos for every page and language. To add a logo: drop a 256x256 image (WebP or PNG) in assets/img/clients/<category>/ and add {\"name\", \"file\"} to that category below. Order here is display order. Alt text is built from the 'alt' template per language; a logo with an empty name uses 'alt_unnamed'.",
  "alt": {
   "en": "{name} logo",
   "ku": "لۆگۆی {name}",
@@ -30,107 +30,107 @@
    "logos": [
     {
      "name": "AK-Sufi",
-     "file": "food/ak-sufi.png"
+     "file": "food/ak-sufi.webp"
     },
     {
      "name": "ASH",
-     "file": "food/ash.png"
+     "file": "food/ash.webp"
     },
     {
      "name": "Balactan Babies",
-     "file": "food/balactan-babies.png"
+     "file": "food/balactan-babies.webp"
     },
     {
      "name": "Bani Khaylan",
-     "file": "food/bani-khaylan.png"
+     "file": "food/bani-khaylan.webp"
     },
     {
      "name": "Banu",
-     "file": "food/banu.png"
+     "file": "food/banu.webp"
     },
     {
      "name": "Baxisewan",
-     "file": "food/baxisewan.png"
+     "file": "food/baxisewan.webp"
     },
     {
      "name": "BGT",
-     "file": "food/bgt.png"
+     "file": "food/bgt.webp"
     },
     {
      "name": "Bkhor",
-     "file": "food/bkhor.png"
+     "file": "food/bkhor.webp"
     },
     {
      "name": "Daiamil",
-     "file": "food/daiamil.png"
+     "file": "food/daiamil.webp"
     },
     {
      "name": "Dolphin Sea",
-     "file": "food/dolphin-sea.png"
+     "file": "food/dolphin-sea.webp"
     },
     {
      "name": "Empire Basmati Rice",
-     "file": "food/empire-basmati-rice.png"
+     "file": "food/empire-basmati-rice.webp"
     },
     {
      "name": "",
-     "file": "food/food-gold-hexagon.png"
+     "file": "food/food-gold-hexagon.webp"
     },
     {
      "name": "Goran Factory",
-     "file": "food/goran-factory.png"
+     "file": "food/goran-factory.webp"
     },
     {
      "name": "Khanm",
-     "file": "food/khanm.png"
+     "file": "food/khanm.webp"
     },
     {
      "name": "Kirmanj",
-     "file": "food/kirmanj.png"
+     "file": "food/kirmanj.webp"
     },
     {
      "name": "Nini",
-     "file": "food/nini.png"
+     "file": "food/nini.webp"
     },
     {
      "name": "Ogvan",
-     "file": "food/ogvan.png"
+     "file": "food/ogvan.webp"
     },
     {
      "name": "Reeva",
-     "file": "food/reeva.png"
+     "file": "food/reeva.webp"
     },
     {
      "name": "Safra Company",
-     "file": "food/safra-company.png"
+     "file": "food/safra-company.webp"
     },
     {
      "name": "Sahand",
-     "file": "food/sahand.png"
+     "file": "food/sahand.webp"
     },
     {
      "name": "Sahar",
-     "file": "food/sahar.png"
+     "file": "food/sahar.webp"
     },
     {
      "name": "Samaa Drko",
-     "file": "food/samaa-drko.png"
+     "file": "food/samaa-drko.webp"
     },
     {
      "name": "Shnay Bahar",
-     "file": "food/shnay-bahar.png"
+     "file": "food/shnay-bahar.webp"
     },
     {
      "name": "Shoniz",
-     "file": "food/shoniz.png"
+     "file": "food/shoniz.webp"
     },
     {
      "name": "Tam Fresh",
-     "file": "food/tam-fresh.png"
+     "file": "food/tam-fresh.webp"
     },
     {
      "name": "Zen Top",
-     "file": "food/zen-top.png"
+     "file": "food/zen-top.webp"
     }
    ]
   },
@@ -151,63 +151,63 @@
    "logos": [
     {
      "name": "Darnell",
-     "file": "cleaning/darnell.png"
+     "file": "cleaning/darnell.webp"
     },
     {
      "name": "Derma Clean",
-     "file": "cleaning/derma-clean.png"
+     "file": "cleaning/derma-clean.webp"
     },
     {
      "name": "Dosi",
-     "file": "cleaning/dosi.png"
+     "file": "cleaning/dosi.webp"
     },
     {
      "name": "Glint Joker Gold",
-     "file": "cleaning/glint-joker-gold.png"
+     "file": "cleaning/glint-joker-gold.webp"
     },
     {
      "name": "Jofy",
-     "file": "cleaning/jofy.png"
+     "file": "cleaning/jofy.webp"
     },
     {
      "name": "Joni Baby",
-     "file": "cleaning/joni-baby.png"
+     "file": "cleaning/joni-baby.webp"
     },
     {
      "name": "Kiasa",
-     "file": "cleaning/kiasa.png"
+     "file": "cleaning/kiasa.webp"
     },
     {
      "name": "Komli",
-     "file": "cleaning/komli.png"
+     "file": "cleaning/komli.webp"
     },
     {
      "name": "Lamis",
-     "file": "cleaning/lamis.png"
+     "file": "cleaning/lamis.webp"
     },
     {
      "name": "Nature of Zozg",
-     "file": "cleaning/nature-of-zozg.png"
+     "file": "cleaning/nature-of-zozg.webp"
     },
     {
      "name": "Purox",
-     "file": "cleaning/purox.png"
+     "file": "cleaning/purox.webp"
     },
     {
      "name": "Sarko Company",
-     "file": "cleaning/sarko-company.png"
+     "file": "cleaning/sarko-company.webp"
     },
     {
      "name": "Tinos",
-     "file": "cleaning/tinos.png"
+     "file": "cleaning/tinos.webp"
     },
     {
      "name": "Touri",
-     "file": "cleaning/touri.png"
+     "file": "cleaning/touri.webp"
     },
     {
      "name": "Yamur Gold",
-     "file": "cleaning/yamur-gold.png"
+     "file": "cleaning/yamur-gold.webp"
     }
    ]
   },
@@ -228,59 +228,59 @@
    "logos": [
     {
      "name": "Alpha Dent",
-     "file": "cosmetics/alpha-dent.png"
+     "file": "cosmetics/alpha-dent.webp"
     },
     {
      "name": "Avera",
-     "file": "cosmetics/avera.png"
+     "file": "cosmetics/avera.webp"
     },
     {
      "name": "By Wishtrend",
-     "file": "cosmetics/by-wishtrend.png"
+     "file": "cosmetics/by-wishtrend.webp"
     },
     {
      "name": "CC",
-     "file": "cosmetics/cc-monogram.png"
+     "file": "cosmetics/cc-monogram.webp"
     },
     {
      "name": "Cellumaru",
-     "file": "cosmetics/cellumaru.png"
+     "file": "cosmetics/cellumaru.webp"
     },
     {
      "name": "Cinere",
-     "file": "cosmetics/cinere.png"
+     "file": "cosmetics/cinere.webp"
     },
     {
      "name": "Covertime",
-     "file": "cosmetics/covertime.png"
+     "file": "cosmetics/covertime.webp"
     },
     {
      "name": "Dear Klairs",
-     "file": "cosmetics/dear-klairs.png"
+     "file": "cosmetics/dear-klairs.webp"
     },
     {
      "name": "Dental Doctor",
-     "file": "cosmetics/dental-doctor.png"
+     "file": "cosmetics/dental-doctor.webp"
     },
     {
      "name": "Domos",
-     "file": "cosmetics/domos.png"
+     "file": "cosmetics/domos.webp"
     },
     {
      "name": "Farmona",
-     "file": "cosmetics/farmona.png"
+     "file": "cosmetics/farmona.webp"
     },
     {
      "name": "Nabaz Beauty",
-     "file": "cosmetics/nabaz-beauty.png"
+     "file": "cosmetics/nabaz-beauty.webp"
     },
     {
      "name": "Titanium Hair Beauty",
-     "file": "cosmetics/titanium-hair-beauty.png"
+     "file": "cosmetics/titanium-hair-beauty.webp"
     },
     {
      "name": "Vicora",
-     "file": "cosmetics/vicora.png"
+     "file": "cosmetics/vicora.webp"
     }
    ]
   },
@@ -301,67 +301,67 @@
    "logos": [
     {
      "name": "Balla Academy",
-     "file": "education/balla-academy.png"
+     "file": "education/balla-academy.webp"
     },
     {
      "name": "BED Institute",
-     "file": "education/bed-institute.png"
+     "file": "education/bed-institute.webp"
     },
     {
      "name": "Bind Private High School",
-     "file": "education/bind-private-high-school.png"
+     "file": "education/bind-private-high-school.webp"
     },
     {
      "name": "Cihan International School",
-     "file": "education/cihan-international-school.png"
+     "file": "education/cihan-international-school.webp"
     },
     {
      "name": "",
-     "file": "education/edu-blue-wave.png"
+     "file": "education/edu-blue-wave.webp"
     },
     {
      "name": "",
-     "file": "education/edu-teal-peaks.png"
+     "file": "education/edu-teal-peaks.webp"
     },
     {
      "name": "Junior Private School",
-     "file": "education/junior-private-school.png"
+     "file": "education/junior-private-school.webp"
     },
     {
      "name": "Knowledge Ngo Institute",
-     "file": "education/knowledge-ngo-institute.png"
+     "file": "education/knowledge-ngo-institute.webp"
     },
     {
      "name": "Puzzle People",
-     "file": "education/puzzle-people.png"
+     "file": "education/puzzle-people.webp"
     },
     {
      "name": "Runaki Educational Community",
-     "file": "education/runaki-educational-community.png"
+     "file": "education/runaki-educational-community.webp"
     },
     {
      "name": "Runaki Ngo Institute",
-     "file": "education/runaki-ngo-institute.png"
+     "file": "education/runaki-ngo-institute.webp"
     },
     {
      "name": "Talent Kindergarten",
-     "file": "education/talent-kindergarten.png"
+     "file": "education/talent-kindergarten.webp"
     },
     {
      "name": "University College Of Goizha",
-     "file": "education/university-college-of-goizha.png"
+     "file": "education/university-college-of-goizha.webp"
     },
     {
      "name": "University Of Human Development",
-     "file": "education/university-of-human-development.png"
+     "file": "education/university-of-human-development.webp"
     },
     {
      "name": "Wasan",
-     "file": "education/wasan.png"
+     "file": "education/wasan.webp"
     },
     {
      "name": "Zanist Ngo Institute",
-     "file": "education/zanist-ngo-institute.png"
+     "file": "education/zanist-ngo-institute.webp"
     }
    ]
   },
@@ -382,119 +382,119 @@
    "logos": [
     {
      "name": "Strap",
-     "file": "other/strap.png"
+     "file": "other/strap.webp"
     },
     {
      "name": "WHOOP",
-     "file": "other/whoop.png"
+     "file": "other/whoop.webp"
     },
     {
      "name": "Eskan",
-     "file": "other/eskan.png"
+     "file": "other/eskan.webp"
     },
     {
      "name": "Andac Bedding",
-     "file": "other/andac-bedding.png"
+     "file": "other/andac-bedding.webp"
     },
     {
      "name": "Anya Home Company",
-     "file": "other/anya-home-company.png"
+     "file": "other/anya-home-company.webp"
     },
     {
      "name": "ASHurbrick",
-     "file": "other/ashurbrick.png"
+     "file": "other/ashurbrick.webp"
     },
     {
      "name": "Asia Oil Group",
-     "file": "other/asia-oil-group.png"
+     "file": "other/asia-oil-group.webp"
     },
     {
      "name": "Avan Taj",
-     "file": "other/avan-taj.png"
+     "file": "other/avan-taj.webp"
     },
     {
      "name": "Bakhy Dabashan",
-     "file": "other/bakhy-dabashan.png"
+     "file": "other/bakhy-dabashan.webp"
     },
     {
      "name": "Bashwr City",
-     "file": "other/bashwr-city.png"
+     "file": "other/bashwr-city.webp"
     },
     {
      "name": "Blue Pool",
-     "file": "other/blue-pool.png"
+     "file": "other/blue-pool.webp"
     },
     {
      "name": "Dlawar Group",
-     "file": "other/dlawar-group.png"
+     "file": "other/dlawar-group.webp"
     },
     {
      "name": "Eco Pay",
-     "file": "other/eco-pay.png"
+     "file": "other/eco-pay.webp"
     },
     {
      "name": "Energy Output",
-     "file": "other/energy-output.png"
+     "file": "other/energy-output.webp"
     },
     {
      "name": "Fujiaire",
-     "file": "other/fujiaire.png"
+     "file": "other/fujiaire.webp"
     },
     {
      "name": "Hilltop Cosmetic Dental Center",
-     "file": "other/hilltop-cosmetic-dental-center.png"
+     "file": "other/hilltop-cosmetic-dental-center.webp"
     },
     {
      "name": "Hiwa Rauf",
-     "file": "other/hiwa-rauf.png"
+     "file": "other/hiwa-rauf.webp"
     },
     {
      "name": "Koshke Rasan",
-     "file": "other/koshke-rasan.png"
+     "file": "other/koshke-rasan.webp"
     },
     {
      "name": "Max House Company",
-     "file": "other/max-house-company.png"
+     "file": "other/max-house-company.webp"
     },
     {
      "name": "Mirxan",
-     "file": "other/mirxan.png"
+     "file": "other/mirxan.webp"
     },
     {
      "name": "NP",
-     "file": "other/np.png"
+     "file": "other/np.webp"
     },
     {
      "name": "",
-     "file": "other/other-clover.png"
+     "file": "other/other-clover.webp"
     },
     {
      "name": "",
-     "file": "other/other-lion.png"
+     "file": "other/other-lion.webp"
     },
     {
      "name": "Qaiwan",
-     "file": "other/qaiwan.png"
+     "file": "other/qaiwan.webp"
     },
     {
      "name": "Rinnai",
-     "file": "other/rinnai.png"
+     "file": "other/rinnai.webp"
     },
     {
      "name": "Star Alliance Iraq",
-     "file": "other/star-alliance-iraq.png"
+     "file": "other/star-alliance-iraq.webp"
     },
     {
      "name": "Strong Building",
-     "file": "other/strong-building.png"
+     "file": "other/strong-building.webp"
     },
     {
      "name": "Titanic Hotel Spa",
-     "file": "other/titanic-hotel-spa.png"
+     "file": "other/titanic-hotel-spa.webp"
     },
     {
      "name": "Waffle Design",
-     "file": "other/waffle-design.png"
+     "file": "other/waffle-design.webp"
     }
    ]
   }
