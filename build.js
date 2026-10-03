@@ -4,7 +4,9 @@
 const fs = require("fs"), crypto = require("crypto"), path = require("path");
 
 const ASSETS = ["css/tailwind.css", "js/scripts.js"];
-const PAGES = ["index.html", "404.html", "fa/index.html", "ku/index.html", "ar/index.html"];
+const PAGES = ["404.html"];
+for (const loc of ["", "ku/", "ar/", "fa/"])
+  for (const page of ["", "about/", "work/"]) PAGES.push(`${loc}${page}index.html`);
 
 const hash = f =>
   crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex").slice(0, 8);

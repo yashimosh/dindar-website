@@ -5,7 +5,7 @@
    After editing run:   npm run build:css
    Live-rebuild while working:   npm run watch:css
 
-   Design tokens (colours, type scale, spacing) live in
+   Design tokens (colours, fonts, widths) live in
    ../tailwind.config.js
    ========================================================= */
 
@@ -13,122 +13,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dindar Ahmed — shared styles on top of the Tailwind design system */
+/* ---------- base ---------- */
 
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: #fff; color: #111; }
+::selection { background: #111; color: #fff; }
+
+/* one family for every RTL page: IBM Plex Sans Arabic covers Arabic,
+   Persian and Kurdish Sorani letters, both digit sets and full Latin */
+html[dir="rtl"] body {
+  font-family: "IBM Plex Sans Arabic", Tahoma, sans-serif;
 }
+/* negative tracking breaks Arabic-script joining */
+html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
 
-.ambient-shadow {
-  box-shadow: 0 16px 32px rgba(25, 28, 30, 0.04);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+/* page gutter + max width, used by every section */
+.wrap { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: 1rem; }
+@media (min-width: 768px) { .wrap { padding-inline: 1.5rem; } }
+
+/* ---------- links ---------- */
+
+.ul { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.ul:hover { text-decoration-color: #99a1af; }
+
+/* ---------- hero headline reveal ----------
+   scripts.js splits the H1 into letters (Latin) or words (Arabic
+   script, where letters must stay joined) and staggers them in.
+   Without JS, or with reduced motion, the headline is just shown. */
+.split .c {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
+.split .w { display: inline-block; white-space: nowrap; }
+@keyframes rise { to { opacity: 1; transform: none; } }
 
-.ambient-shadow:hover {
-  box-shadow: 0 24px 48px rgba(25, 28, 30, 0.08);
-  transform: translateY(-2px);
+/* ---------- scroll reveal ---------- */
+
+.js .rv { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.js .rv.in { opacity: 1; transform: none; }
+
+/* ---------- image skeleton ----------
+   grey shimmer behind every image until it has loaded */
+.sk {
+  background: linear-gradient(90deg, #f3f4f6 0%, #e9eaee 50%, #f3f4f6 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
 }
+.sk.ld { animation: none; background: #f3f4f6; }
+.js .sk img { opacity: 0; transition: opacity 0.5s ease; }
+.js .sk.ld img { opacity: 1; }
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 
-/* vertical rule behind the career timeline */
-.timeline-line::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 24px;
-  bottom: 0;
-  width: 2px;
-  background-color: #d9d3c6;
-  z-index: 0;
-}
+/* ---------- client logo marquee ---------- */
 
-@media (min-width: 768px) {
-  .timeline-line::before {
-    left: 50%;
-    margin-left: -1px;
-  }
-}
+.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; width: max-content; animation: marquee 90s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+html[dir="rtl"] .marquee-track { animation-name: marquee-rtl; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes marquee-rtl { to { transform: translateX(50%); } }
 
-/* ---------- RTL (Persian / Kurdish Sorani / Arabic) ---------- */
+/* ---------- mobile menu ---------- */
 
-/* IBM Plex Sans Arabic covers Arabic script (incl. the Persian and
-   Kurdish Sorani extra letters پ چ ژ گ ک ی ڕ ڵ ۆ ێ ھ ە, both digit
-   sets ٠-٩ / ۰-۹, and full Latin) — one family for every RTL page,
-   matching the Latin pages' single-family (IBM Plex Sans) approach.
-   Noto is kept only as a silent fallback, never expected to fire. */
-html[dir="rtl"] body,
-html[dir="rtl"] .font-body-md,
-html[dir="rtl"] .font-body-lg,
-html[dir="rtl"] .font-label-bold {
-  font-family: "IBM Plex Sans Arabic", "Noto Naskh Arabic", Tahoma, sans-serif !important;
-}
-
-html[dir="rtl"] .font-display-lg,
-html[dir="rtl"] .font-headline-lg,
-html[dir="rtl"] .font-headline-md,
-html[dir="rtl"] .font-headline-lg-mobile {
-  font-family: "IBM Plex Sans Arabic", "Noto Kufi Arabic", Tahoma, sans-serif !important;
-  letter-spacing: 0 !important;
-}
-
-/* Latin fragments (email, agency name) use the same Arabic-variant
-   family — its Latin cut is drawn to match, so nothing looks mixed. */
-html[dir="rtl"] .latin {
-  font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif !important;
-}
-
-html[dir="rtl"] .timeline-line::before {
-  left: auto;
-  right: 20px;
-}
-
-@media (min-width: 768px) {
-  html[dir="rtl"] .timeline-line::before {
-    right: 50%;
-    left: auto;
-    margin-left: 0;
-    margin-right: -1px;
-  }
-}
-
-html[dir="rtl"] .tl-dot {
-  left: auto;
-  right: 11px;
-}
-
-@media (min-width: 768px) {
-  html[dir="rtl"] .tl-dot {
-    right: 50%;
-    left: auto;
-    margin-right: -9px;
-    margin-left: 0;
-  }
-}
+body.menu-open { overflow: hidden; }
 
 /* ---------- keyboard focus ---------- */
 
-:focus-visible {
-  outline: 3px solid #13294b;
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-/* on navy panels, an amber ring reads clearly against the dark fill */
-.bg-primary :focus-visible {
-  outline-color: #f4ae37;
-}
+:focus-visible { outline: 2px solid #111; outline-offset: 3px; border-radius: 2px; }
+.bg-ink :focus-visible { outline-color: #fff; }
 
 /* ---------- respect reduced-motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .group:hover img,
-  .ambient-shadow:hover { transform: none !important; }
+  .split .c, .js .rv { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
+  .sk { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
 }

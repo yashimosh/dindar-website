@@ -3,13 +3,110 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://dindarahmed.com/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/"/>
     <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/"/>
   </url>
-  <url><loc>https://dindarahmed.com/fa/</loc><lastmod>2026-08-25</lastmod></url>
-  <url><loc>https://dindarahmed.com/ku/</loc><lastmod>2026-08-25</lastmod></url>
-  <url><loc>https://dindarahmed.com/ar/</loc><lastmod>2026-08-25</lastmod></url>
+  <url>
+    <loc>https://dindarahmed.com/ku/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/ar/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/fa/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/about/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/about/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/ku/about/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/about/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/ar/about/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/about/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/fa/about/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/about/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/work/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/work/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/work/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/work/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/work/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/ku/work/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/work/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/work/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/work/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/work/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/ar/work/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/work/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/work/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/work/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/work/"/>
+  </url>
+  <url>
+    <loc>https://dindarahmed.com/fa/work/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dindarahmed.com/work/"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://dindarahmed.com/ku/work/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dindarahmed.com/ar/work/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://dindarahmed.com/fa/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dindarahmed.com/work/"/>
+  </url>
 </urlset>

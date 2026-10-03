@@ -1,0 +1,502 @@
+{
+ "_readme": "Client logos for every page and language. To add a logo: drop a 256x256 PNG in assets/img/clients/<category>/ and add {\"name\", \"file\"} to that category below. Order here is display order. Alt text is built from the 'alt' template per language; a logo with an empty name uses 'alt_unnamed'.",
+ "alt": {
+  "en": "{name} logo",
+  "ku": "لۆگۆی {name}",
+  "ar": "شعار {name}",
+  "fa": "لوگوی {name}"
+ },
+ "alt_unnamed": {
+  "en": "Client logo",
+  "ku": "لۆگۆی کڵاینت",
+  "ar": "شعار عميل",
+  "fa": "لوگوی مشتری"
+ },
+ "categories": [
+  {
+   "id": "food",
+   "label": {
+    "en": "Food",
+    "ku": "خۆراک",
+    "ar": "أغذية",
+    "fa": "مواد غذایی"
+   },
+   "sub": {
+    "en": "FMCG and food producers",
+    "ku": "بەرهەمهێنەرانی خۆراک و کاڵای بەکاربەر",
+    "ar": "منتجات غذائية وسلع استهلاكية",
+    "fa": "مواد غذایی و کالای مصرفی"
+   },
+   "logos": [
+    {
+     "name": "AK-Sufi",
+     "file": "food/ak-sufi.png"
+    },
+    {
+     "name": "ASH",
+     "file": "food/ash.png"
+    },
+    {
+     "name": "Balactan Babies",
+     "file": "food/balactan-babies.png"
+    },
+    {
+     "name": "Bani Khaylan",
+     "file": "food/bani-khaylan.png"
+    },
+    {
+     "name": "Banu",
+     "file": "food/banu.png"
+    },
+    {
+     "name": "Baxisewan",
+     "file": "food/baxisewan.png"
+    },
+    {
+     "name": "BGT",
+     "file": "food/bgt.png"
+    },
+    {
+     "name": "Bkhor",
+     "file": "food/bkhor.png"
+    },
+    {
+     "name": "Daiamil",
+     "file": "food/daiamil.png"
+    },
+    {
+     "name": "Dolphin Sea",
+     "file": "food/dolphin-sea.png"
+    },
+    {
+     "name": "Empire Basmati Rice",
+     "file": "food/empire-basmati-rice.png"
+    },
+    {
+     "name": "",
+     "file": "food/food-gold-hexagon.png"
+    },
+    {
+     "name": "Goran Factory",
+     "file": "food/goran-factory.png"
+    },
+    {
+     "name": "Khanm",
+     "file": "food/khanm.png"
+    },
+    {
+     "name": "Kirmanj",
+     "file": "food/kirmanj.png"
+    },
+    {
+     "name": "Nini",
+     "file": "food/nini.png"
+    },
+    {
+     "name": "Ogvan",
+     "file": "food/ogvan.png"
+    },
+    {
+     "name": "Reeva",
+     "file": "food/reeva.png"
+    },
+    {
+     "name": "Safra Company",
+     "file": "food/safra-company.png"
+    },
+    {
+     "name": "Sahand",
+     "file": "food/sahand.png"
+    },
+    {
+     "name": "Sahar",
+     "file": "food/sahar.png"
+    },
+    {
+     "name": "Samaa Drko",
+     "file": "food/samaa-drko.png"
+    },
+    {
+     "name": "Shnay Bahar",
+     "file": "food/shnay-bahar.png"
+    },
+    {
+     "name": "Shoniz",
+     "file": "food/shoniz.png"
+    },
+    {
+     "name": "Tam Fresh",
+     "file": "food/tam-fresh.png"
+    },
+    {
+     "name": "Zen Top",
+     "file": "food/zen-top.png"
+    }
+   ]
+  },
+  {
+   "id": "cleaning",
+   "label": {
+    "en": "Cleaning",
+    "ku": "پاککەرەوە",
+    "ar": "منظفات",
+    "fa": "شوینده"
+   },
+   "sub": {
+    "en": "Household and personal care",
+    "ku": "چاودێری ماڵەوە و کەسی",
+    "ar": "العناية المنزلية والشخصية",
+    "fa": "مراقبت خانگی و شخصی"
+   },
+   "logos": [
+    {
+     "name": "Darnell",
+     "file": "cleaning/darnell.png"
+    },
+    {
+     "name": "Derma Clean",
+     "file": "cleaning/derma-clean.png"
+    },
+    {
+     "name": "Dosi",
+     "file": "cleaning/dosi.png"
+    },
+    {
+     "name": "Glint Joker Gold",
+     "file": "cleaning/glint-joker-gold.png"
+    },
+    {
+     "name": "Jofy",
+     "file": "cleaning/jofy.png"
+    },
+    {
+     "name": "Joni Baby",
+     "file": "cleaning/joni-baby.png"
+    },
+    {
+     "name": "Kiasa",
+     "file": "cleaning/kiasa.png"
+    },
+    {
+     "name": "Komli",
+     "file": "cleaning/komli.png"
+    },
+    {
+     "name": "Lamis",
+     "file": "cleaning/lamis.png"
+    },
+    {
+     "name": "Nature of Zozg",
+     "file": "cleaning/nature-of-zozg.png"
+    },
+    {
+     "name": "Purox",
+     "file": "cleaning/purox.png"
+    },
+    {
+     "name": "Sarko Company",
+     "file": "cleaning/sarko-company.png"
+    },
+    {
+     "name": "Tinos",
+     "file": "cleaning/tinos.png"
+    },
+    {
+     "name": "Touri",
+     "file": "cleaning/touri.png"
+    },
+    {
+     "name": "Yamur Gold",
+     "file": "cleaning/yamur-gold.png"
+    }
+   ]
+  },
+  {
+   "id": "cosmetics",
+   "label": {
+    "en": "Cosmetics",
+    "ku": "جوانکاری",
+    "ar": "تجميل",
+    "fa": "آرایشی"
+   },
+   "sub": {
+    "en": "Beauty, dental and pharmacy",
+    "ku": "جوانی، ددان و دەرمانخانە",
+    "ar": "التجميل والأسنان والصيدلة",
+    "fa": "زیبایی، دندان و داروخانه"
+   },
+   "logos": [
+    {
+     "name": "Alpha Dent",
+     "file": "cosmetics/alpha-dent.png"
+    },
+    {
+     "name": "Avera",
+     "file": "cosmetics/avera.png"
+    },
+    {
+     "name": "By Wishtrend",
+     "file": "cosmetics/by-wishtrend.png"
+    },
+    {
+     "name": "CC",
+     "file": "cosmetics/cc-monogram.png"
+    },
+    {
+     "name": "Cellumaru",
+     "file": "cosmetics/cellumaru.png"
+    },
+    {
+     "name": "Cinere",
+     "file": "cosmetics/cinere.png"
+    },
+    {
+     "name": "Covertime",
+     "file": "cosmetics/covertime.png"
+    },
+    {
+     "name": "Dear Klairs",
+     "file": "cosmetics/dear-klairs.png"
+    },
+    {
+     "name": "Dental Doctor",
+     "file": "cosmetics/dental-doctor.png"
+    },
+    {
+     "name": "Domos",
+     "file": "cosmetics/domos.png"
+    },
+    {
+     "name": "Farmona",
+     "file": "cosmetics/farmona.png"
+    },
+    {
+     "name": "Nabaz Beauty",
+     "file": "cosmetics/nabaz-beauty.png"
+    },
+    {
+     "name": "Titanium Hair Beauty",
+     "file": "cosmetics/titanium-hair-beauty.png"
+    },
+    {
+     "name": "Vicora",
+     "file": "cosmetics/vicora.png"
+    }
+   ]
+  },
+  {
+   "id": "education",
+   "label": {
+    "en": "Education",
+    "ku": "پەروەردە",
+    "ar": "تعليم",
+    "fa": "آموزش"
+   },
+   "sub": {
+    "en": "Schools, colleges and institutes",
+    "ku": "قوتابخانە، کۆلێژ و پەیمانگا",
+    "ar": "مدارس وكليات ومعاهد",
+    "fa": "مدارس، دانشکده‌ها و مؤسسات"
+   },
+   "logos": [
+    {
+     "name": "Balla Academy",
+     "file": "education/balla-academy.png"
+    },
+    {
+     "name": "BED Institute",
+     "file": "education/bed-institute.png"
+    },
+    {
+     "name": "Bind Private High School",
+     "file": "education/bind-private-high-school.png"
+    },
+    {
+     "name": "Cihan International School",
+     "file": "education/cihan-international-school.png"
+    },
+    {
+     "name": "",
+     "file": "education/edu-blue-wave.png"
+    },
+    {
+     "name": "",
+     "file": "education/edu-teal-peaks.png"
+    },
+    {
+     "name": "Junior Private School",
+     "file": "education/junior-private-school.png"
+    },
+    {
+     "name": "Knowledge Ngo Institute",
+     "file": "education/knowledge-ngo-institute.png"
+    },
+    {
+     "name": "Puzzle People",
+     "file": "education/puzzle-people.png"
+    },
+    {
+     "name": "Runaki Educational Community",
+     "file": "education/runaki-educational-community.png"
+    },
+    {
+     "name": "Runaki Ngo Institute",
+     "file": "education/runaki-ngo-institute.png"
+    },
+    {
+     "name": "Talent Kindergarten",
+     "file": "education/talent-kindergarten.png"
+    },
+    {
+     "name": "University College Of Goizha",
+     "file": "education/university-college-of-goizha.png"
+    },
+    {
+     "name": "University Of Human Development",
+     "file": "education/university-of-human-development.png"
+    },
+    {
+     "name": "Wasan",
+     "file": "education/wasan.png"
+    },
+    {
+     "name": "Zanist Ngo Institute",
+     "file": "education/zanist-ngo-institute.png"
+    }
+   ]
+  },
+  {
+   "id": "other",
+   "label": {
+    "en": "Other Clients",
+    "ku": "کڕیارەکانی تر",
+    "ar": "عملاء آخرون",
+    "fa": "مشتریان دیگر"
+   },
+   "sub": {
+    "en": "Industry, property and services",
+    "ku": "پیشەسازی، موڵک و خزمەتگوزارییەکان",
+    "ar": "صناعة وعقارات وخدمات",
+    "fa": "صنعت، املاک و خدمات"
+   },
+   "logos": [
+    {
+     "name": "Strap",
+     "file": "other/strap.png"
+    },
+    {
+     "name": "WHOOP",
+     "file": "other/whoop.png"
+    },
+    {
+     "name": "Eskan",
+     "file": "other/eskan.png"
+    },
+    {
+     "name": "Andac Bedding",
+     "file": "other/andac-bedding.png"
+    },
+    {
+     "name": "Anya Home Company",
+     "file": "other/anya-home-company.png"
+    },
+    {
+     "name": "ASHurbrick",
+     "file": "other/ashurbrick.png"
+    },
+    {
+     "name": "Asia Oil Group",
+     "file": "other/asia-oil-group.png"
+    },
+    {
+     "name": "Avan Taj",
+     "file": "other/avan-taj.png"
+    },
+    {
+     "name": "Bakhy Dabashan",
+     "file": "other/bakhy-dabashan.png"
+    },
+    {
+     "name": "Bashwr City",
+     "file": "other/bashwr-city.png"
+    },
+    {
+     "name": "Blue Pool",
+     "file": "other/blue-pool.png"
+    },
+    {
+     "name": "Dlawar Group",
+     "file": "other/dlawar-group.png"
+    },
+    {
+     "name": "Eco Pay",
+     "file": "other/eco-pay.png"
+    },
+    {
+     "name": "Energy Output",
+     "file": "other/energy-output.png"
+    },
+    {
+     "name": "Fujiaire",
+     "file": "other/fujiaire.png"
+    },
+    {
+     "name": "Hilltop Cosmetic Dental Center",
+     "file": "other/hilltop-cosmetic-dental-center.png"
+    },
+    {
+     "name": "Hiwa Rauf",
+     "file": "other/hiwa-rauf.png"
+    },
+    {
+     "name": "Koshke Rasan",
+     "file": "other/koshke-rasan.png"
+    },
+    {
+     "name": "Max House Company",
+     "file": "other/max-house-company.png"
+    },
+    {
+     "name": "Mirxan",
+     "file": "other/mirxan.png"
+    },
+    {
+     "name": "NP",
+     "file": "other/np.png"
+    },
+    {
+     "name": "",
+     "file": "other/other-clover.png"
+    },
+    {
+     "name": "",
+     "file": "other/other-lion.png"
+    },
+    {
+     "name": "Qaiwan",
+     "file": "other/qaiwan.png"
+    },
+    {
+     "name": "Rinnai",
+     "file": "other/rinnai.png"
+    },
+    {
+     "name": "Star Alliance Iraq",
+     "file": "other/star-alliance-iraq.png"
+    },
+    {
+     "name": "Strong Building",
+     "file": "other/strong-building.png"
+    },
+    {
+     "name": "Titanic Hotel Spa",
+     "file": "other/titanic-hotel-spa.png"
+    },
+    {
+     "name": "Waffle Design",
+     "file": "other/waffle-design.png"
+    }
+   ]
+  }
+ ]
+}
