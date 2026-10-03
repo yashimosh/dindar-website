@@ -42,11 +42,15 @@ file. No HTML edit is needed.
 
 ## Design system
 
-- Tokens: `tailwind.config.js`. The fire palette (ink black, night bordeaux,
-  black cherry, oxblood, brick ember, red ochre, cayenne, deep saffron, orange,
-  amber flame) is listed there by name.
+- Palette: black ground and black text on yellow; bright violet `#7161ef`
+  (gradients into black, glows); lavender `#957fef` (secondary text, hairlines);
+  yellows `#ffc300` `#ffd000` `#ffdd00` `#ffea00` (buttons, highlights, numbers
+  band). Values live in `tailwind.config.js` and `css/tailwind.src.css`. Token
+  names (`ink`, `amber`, `night`...) are left over from an earlier fire palette;
+  the comments in the config say what each one holds now.
 - Shared CSS: `css/tailwind.src.css`. Gradients (`.fire`, `.fire-text`,
-  `.btn-fire`, `.band-fire`, `.hi`), soft glows (`.orb`), headline reveal,
+  `.btn-fire`, `.band-fire`, `.hi`), violet-to-black section gradients
+  (`.grad-down`, `.grad-up`, `.grad-diag`), soft glows (`.orb`), headline reveal,
   marquees, service rows, RTL font rules. Layout follows lircle.co: square
   corners, flat ruled rows, solid fills, no frosted glass.
 - `css/tailwind.css` is generated. Do not edit it.
