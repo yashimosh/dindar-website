@@ -1,0 +1,908 @@
+{
+ "meta": {
+  "title": "Dindar Ahmed | Marketing Manager and Consultant",
+  "description": "Dindar Ahmed, Marketing Manager and Consultant at Mithra Production. Brand campaigns, content strategy, and sales-driven marketing.",
+  "og_description": "Tell me what isn't selling. Ten years in the Kurdistan market, seven at Mithra Production. Marketing diagnosed before it is bought.",
+  "tw_description": "Marketing tied directly to sales. Brand campaigns, content strategy and sales-driven growth at Mithra Production.",
+  "og_locale": "en_US"
+ },
+ "nav": {
+  "#case-studies": "Cases",
+  "#showreel": "Campaigns",
+  "#reels": "Reels",
+  "#clients": "Clients",
+  "#certificates": "Certificates",
+  "#expertise": "Expertise",
+  "#about": "About",
+  "#contact": "Contact"
+ },
+ "nav_mobile": {
+  "#work": "Work",
+  "#case-studies": "Case Studies",
+  "#showreel": "Campaigns",
+  "#reels": "Reels",
+  "#clients": "Clients",
+  "#certificates": "Certificates",
+  "#expertise": "Expertise",
+  "#about": "About",
+  "#contact": "Contact"
+ },
+ "nav_cta": "Get in Touch",
+ "hero": {
+  "eyebrow": "Dindar Ahmed · Marketing Manager and Consultant",
+  "h1": "Tell Me What Isn't Selling.",
+  "p": "Most people arrive with a symptom. Sales are flat, or the campaign got likes and nothing else. My job is to find the cause before anyone spends a dinar on media. Ten years in this market: three selling face to face, seven building brands at Mithra Production. For Kiasa that ended in 60% more sales in eight months.",
+  "btn_work": "View My Work",
+  "btn_about": "How I Work",
+  "portrait_alt": "Dindar Ahmed, Marketing Manager at Mithra Production"
+ },
+ "stats": [
+  {
+   "n": "10+",
+   "label": "Years in this market",
+   "body": "From the sales floor to marketing strategy, all of it inside the Kurdistan market."
+  },
+  {
+   "n": "3",
+   "label": "Years selling face to face",
+   "body": "Bkhor Co. (Gypsy Lucy) and Qimat Almasiya, where I learned what actually makes someone buy."
+  },
+  {
+   "n": "7",
+   "label": "Years at Mithra Production",
+   "body": "Leading marketing across brand, campaign and production work."
+  }
+ ],
+ "featured": {
+  "h2": "Featured Work",
+  "items": [
+   {
+    "tags": [
+     "Campaigns",
+     "Strategy"
+    ],
+    "h3": "Brand & Campaign Strategy",
+    "p": "Campaigns built to do more than get attention: they tell a brand's story and move the numbers that matter.",
+    "img": "hero.jpg",
+    "alt": "Dindar Ahmed with a client team on the production floor"
+   },
+   {
+    "tags": [
+     "Social",
+     "OOH"
+    ],
+    "h3": "Content & Storytelling",
+    "p": "At Mithra Production, a campaign isn't just an ad. It's the success story of the brand behind it, told across every channel it lives on.",
+    "img": "work-03.webp",
+    "alt": "The Mithra Production team on a studio set"
+   }
+  ]
+ },
+ "cases": {
+  "h2": "Case Studies",
+  "sub": "How the work translated into results for the brands behind it.",
+  "items": [
+   {
+    "tag": "Home Care",
+    "name": "Kiasa",
+    "period": "Aug 2025 to Mar 2026",
+    "body": "From the start of our work with Kiasa we were good listeners, and fully understood their fears and their requirements. Backed by our past experience and an experienced, professional team, we were able to present them with a strategic plan. Once the work was approved we began on 1 August 2025, and by 31 March 2026 we had increased their sales by 60%, with the support of a campaign.",
+    "metric": "+60% sales growth"
+   },
+   {
+    "tag": "Food & FMCG",
+    "name": "Banu",
+    "period": "Brand build & launch",
+    "body": "We were with Banu from the moment the idea was born, helping build the brand and set its working strategy. We spent three months on the brand's pre-launch, raising awareness among consumers across Kurdistan. Thank God, in less than a year of Banu's life we were able to make it a leader in the food-product market.",
+    "metric": "Category leader in under a year"
+   },
+   {
+    "tag": "Education",
+    "name": "Runaki Institute",
+    "period": "2019 to present",
+    "body": "Runaki Institute is one of Mithra Production's permanent clients, and we have worked for them continuously since 2019.",
+    "metric": "Working together since 2019"
+   }
+  ]
+ },
+ "campaigns": {
+  "h2": "Recent Campaigns",
+  "sub": "This year’s commercial work produced with Mithra Production: TVCs across FMCG, apps and education.",
+  "items": [
+   {
+    "yt": "ohWLkd8xecs",
+    "yt_title": "Banu Natural Oil: Coming Soon Campaign",
+    "aria": "Play: Banu Natural Oil: Coming Soon Campaign",
+    "thumb": "tvc-01.jpg",
+    "dur": "1:21",
+    "tag": "TVC",
+    "h3": "Banu Natural Oil: “Coming Soon” Campaign",
+    "p": "Teaser campaign for Banu natural oil."
+   },
+   {
+    "yt": "Uol2N2hYXDs",
+    "yt_title": "Kiasa Laundry Product",
+    "aria": "Play: Kiasa Laundry Product",
+    "thumb": "tvc-02.jpg",
+    "dur": "0:44",
+    "tag": "TVC",
+    "h3": "Kiasa Laundry Product",
+    "p": "Product commercial for the Kiasa laundry range."
+   },
+   {
+    "yt": "jjXe4ino1YU",
+    "yt_title": "Paya Application",
+    "aria": "Play: Paya Application",
+    "thumb": "tvc-03.jpg",
+    "dur": "0:33",
+    "tag": "TVC",
+    "h3": "Paya Application",
+    "p": "App launch commercial for Paya."
+   },
+   {
+    "yt": "BzXQoSo0Z08",
+    "yt_title": "Kiasa",
+    "aria": "Play: Kiasa",
+    "thumb": "tvc-06.jpg",
+    "dur": "0:33",
+    "tag": "TVC",
+    "h3": "Kiasa",
+    "p": "Brand commercial for Kiasa."
+   },
+   {
+    "yt": "jsTUhLnALkQ",
+    "yt_title": "Runaki Institute",
+    "aria": "Play: Runaki Institute",
+    "thumb": "tvc-07.jpg",
+    "dur": "1:11",
+    "tag": "TVC",
+    "h3": "Runaki Institute",
+    "p": "Commercial for Runaki Institute."
+   }
+  ],
+  "note_pre": "Nothing loads from YouTube until you press play. More work on the",
+  "note_post": ".",
+  "channel": {
+   "text": "Mithra Production channel",
+   "href": "https://www.youtube.com/@mithra.production/videos"
+  }
+ },
+ "reels": {
+  "h2": "Reels",
+  "sub": "Marketing thinking from Dindar, and the campaign work he leads at Mithra Production.",
+  "items": [
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DVB1ZNuiNWt/",
+    "img": "reel-01.jpg",
+    "alt": "Speak the Customer’s Language",
+    "h3": "Speak the Customer’s Language",
+    "p": "Marketing isn’t reciting theory. It’s translating your message into the language of the customer’s heart."
+   },
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DVOxG69iMxr/",
+    "img": "reel-02.jpg",
+    "alt": "Stop Competing on Price",
+    "h3": "Stop Competing on Price",
+    "p": "When customers only compare price, discounting is suicide. Story and differentiation are what protect the margin."
+   },
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DYPx5Q7oRHC/",
+    "img": "reel-03.jpg",
+    "alt": "Scientific Marketing vs. Gut Feeling",
+    "h3": "Scientific Marketing vs. Gut Feeling",
+    "p": "Most ad budgets get wasted on personal decisions, not data. Here’s how to protect yours."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZH2Jicqq/",
+    "img": "reel-14.jpg",
+    "alt": "Farmona: The Bottle, Built in 3D",
+    "h3": "Farmona: The Bottle, Built in 3D",
+    "p": "A 3D product film for Farmona's sunscreen, produced at Mithra."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZXLWgC_E/",
+    "img": "reel-13.jpg",
+    "alt": "Farmona: Made for the Sunscreen Aisle",
+    "h3": "Farmona: Made for the Sunscreen Aisle",
+    "p": "Production of an advertising video for Farmona's sunscreen line."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZnXpAPBu/",
+    "img": "reel-15.jpg",
+    "alt": "Farmona: Introducing the Sunscreen",
+    "h3": "Farmona: Introducing the Sunscreen",
+    "p": "Another piece from the Farmona sunscreen launch, produced at Mithra."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwPjZJDe4g/",
+    "img": "reel-12.jpg",
+    "alt": "Strap Iraq: Redefining Performance Storytelling",
+    "h3": "Strap Iraq: Redefining Performance Storytelling",
+    "p": "Training data turned into a story an athlete can feel."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwQlCCCkLx/",
+    "img": "reel-11.jpg",
+    "alt": "WHOOP 5.0: Precision Engineered in 3D",
+    "h3": "WHOOP 5.0: Precision Engineered in 3D",
+    "p": "A 3D product film built to show the band in detail."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwQ78BEbA9/",
+    "img": "reel-10.jpg",
+    "alt": "Strap Iraq: Pushing Creative Boundaries",
+    "h3": "Strap Iraq: Pushing Creative Boundaries",
+    "p": "A launch film for Strap Iraq, the official WHOOP reseller."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi7sbSDaTP/",
+    "img": "reel-04.jpg",
+    "alt": "Kurmanj Rice: The Chef’s Secret",
+    "h3": "Kurmanj Rice: The Chef’s Secret",
+    "p": "The chef’s secret to perfection. Ad spot for Kurmanj Rice."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi8VQXkegn/",
+    "img": "reel-05.jpg",
+    "alt": "Kurmanj Rice: Cooked with Love",
+    "h3": "Kurmanj Rice: Cooked with Love",
+    "p": "Cooked with love, served with care. Ad spot for Kurmanj Rice."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi8tVYFdVD/",
+    "img": "reel-06.jpg",
+    "alt": "Kurmanj Rice: Timeless Taste",
+    "h3": "Kurmanj Rice: Timeless Taste",
+    "p": "A timeless taste across generations. Ad spot for Kurmanj Rice."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbybqHBjhPX/",
+    "img": "reel-07.jpg",
+    "alt": "Runaki Community: Rooted in Science",
+    "h3": "Runaki Community: Rooted in Science",
+    "p": "Rooted in science, education and culture. Ad spot for Runaki Educational Community."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbycZValFYQ/",
+    "img": "reel-08.jpg",
+    "alt": "Runaki Community: Boardroom Success",
+    "h3": "Runaki Community: Boardroom Success",
+    "p": "From classroom ideas to boardroom success. Produced for Runaki Educational Community."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbycpDDDR9q/",
+    "img": "reel-09.jpg",
+    "alt": "Runaki Community: Saving Lives",
+    "h3": "Runaki Community: Saving Lives",
+    "p": "From a childhood dream to saving lives. Produced for Runaki Educational Community."
+   }
+  ]
+ },
+ "gallery": {
+  "h2": "In the Field",
+  "sub": "Client meetings, production days, workshops and industry events: the work behind the campaigns.",
+  "items": [
+   {
+    "img": "work-01.webp",
+    "alt": "Strategy session with the Mithra team"
+   },
+   {
+    "img": "work-04.webp",
+    "alt": "Award presentation"
+   },
+   {
+    "img": "work-02.webp",
+    "alt": "Client partnership meeting"
+   },
+   {
+    "img": "work-07.webp",
+    "alt": "Industry trade show"
+   },
+   {
+    "img": "work-05.webp",
+    "alt": "Client meeting"
+   },
+   {
+    "img": "work-09.webp",
+    "alt": "Internal team workshop"
+   },
+   {
+    "img": "work-06.webp",
+    "alt": "Evening client visit"
+   },
+   {
+    "img": "work-08.webp",
+    "alt": "Client conversation"
+   },
+   {
+    "img": "work-10.jpg",
+    "alt": "Industry trade show floor"
+   },
+   {
+    "img": "work-11.jpg",
+    "alt": "Team visit to Pak Simin"
+   },
+   {
+    "img": "work-12.jpg",
+    "alt": "Client meeting at the Hana and FoodWay stand"
+   },
+   {
+    "img": "work-13.jpg",
+    "alt": "Meeting with the FoodWay Factory team"
+   },
+   {
+    "img": "work-14.jpg",
+    "alt": "Production line visit with the client team"
+   },
+   {
+    "img": "work-15.jpg",
+    "alt": "Certificate handover at Mithra Production"
+   },
+   {
+    "img": "work-16.jpg",
+    "alt": "Made in Iraq Expo"
+   },
+   {
+    "img": "work-17.jpg",
+    "alt": "Client session with the Alpha Dent team"
+   },
+   {
+    "img": "work-18.jpg",
+    "alt": "Strategy discussion with the Alpha Dent team"
+   }
+  ]
+ },
+ "certs": {
+  "h2": "Certificates",
+  "sub": "Training and professional development in sales, marketing and project management.",
+  "items": [
+   {
+    "img": "cert-01.jpg",
+    "alt": "Hiwa Foundation certificate",
+    "issuer": "Hiwa Foundation",
+    "title": "Sales and Being an Efficient Salesperson",
+    "meta": "Three-day workshop · February 2023"
+   },
+   {
+    "img": "cert-02.jpg",
+    "alt": "Canadian Training Center of Human Development certificate",
+    "issuer": "Canadian Training Center of Human Development",
+    "title": "Diploma in Sales & Marketing",
+    "meta": "Certificate of Achievement, 40 hours · July 2019"
+   },
+   {
+    "img": "cert-03.jpg",
+    "alt": "REACH Organization and Diakonie Katastrophenhilfe certificate",
+    "issuer": "REACH Organization & Diakonie Katastrophenhilfe",
+    "title": "Project Management and Marketing",
+    "meta": "Lisa Community Center, Sulaymaniyah · August 2019"
+   },
+   {
+    "img": "cert-04.jpg",
+    "alt": "U.S. Department of State, American Corner Sulaymaniyah certificate",
+    "issuer": "U.S. Department of State, American Corner Sulaymaniyah",
+    "title": "Project Management and Marketing",
+    "meta": "Life-skill training course · August 2019"
+   },
+   {
+    "img": "cert-05.jpg",
+    "alt": "Leaders’ Dream certificate",
+    "issuer": "Leaders’ Dream",
+    "title": "Diploma in Sales & Marketing",
+    "meta": "With Canadian Training Center, John Maxwell & Talal Abu Ghazaleh · December 2019"
+   },
+   {
+    "img": "cert-06.jpg",
+    "alt": "Hiwa Foundation certificate",
+    "issuer": "Hiwa Foundation",
+    "title": "Fundamentals of Strategic Marketing",
+    "meta": "Certificate of Completion, 25 hours over five sessions · May 2025"
+   }
+  ]
+ },
+ "clients": {
+  "h2": "Our Clients",
+  "sub": "Brands across food, home care, cosmetics, education and beyond. Campaigns built with Mithra Production.",
+  "cats": [
+   {
+    "h3": "Food",
+    "sub": "FMCG and food producers",
+    "logos": [
+     {
+      "file": "food/ak-sufi.png",
+      "alt": "AK-Sufi logo"
+     },
+     {
+      "file": "food/ash.png",
+      "alt": "ASH logo"
+     },
+     {
+      "file": "food/balactan-babies.png",
+      "alt": "Balactan Babies logo"
+     },
+     {
+      "file": "food/bani-khaylan.png",
+      "alt": "Bani Khaylan logo"
+     },
+     {
+      "file": "food/banu.png",
+      "alt": "Banu logo"
+     },
+     {
+      "file": "food/baxisewan.png",
+      "alt": "Baxisewan logo"
+     },
+     {
+      "file": "food/bgt.png",
+      "alt": "BGT logo"
+     },
+     {
+      "file": "food/bkhor.png",
+      "alt": "Bkhor logo"
+     },
+     {
+      "file": "food/daiamil.png",
+      "alt": "Daiamil logo"
+     },
+     {
+      "file": "food/dolphin-sea.png",
+      "alt": "Dolphin Sea logo"
+     },
+     {
+      "file": "food/empire-basmati-rice.png",
+      "alt": "Empire Basmati Rice logo"
+     },
+     {
+      "file": "food/food-gold-hexagon.png",
+      "alt": "Client logo"
+     },
+     {
+      "file": "food/goran-factory.png",
+      "alt": "Goran Factory logo"
+     },
+     {
+      "file": "food/khanm.png",
+      "alt": "Khanm logo"
+     },
+     {
+      "file": "food/kirmanj.png",
+      "alt": "Kirmanj logo"
+     },
+     {
+      "file": "food/nini.png",
+      "alt": "Nini logo"
+     },
+     {
+      "file": "food/ogvan.png",
+      "alt": "Ogvan logo"
+     },
+     {
+      "file": "food/reeva.png",
+      "alt": "Reeva logo"
+     },
+     {
+      "file": "food/safra-company.png",
+      "alt": "Safra Company logo"
+     },
+     {
+      "file": "food/sahand.png",
+      "alt": "Sahand logo"
+     },
+     {
+      "file": "food/sahar.png",
+      "alt": "Sahar logo"
+     },
+     {
+      "file": "food/samaa-drko.png",
+      "alt": "Samaa Drko logo"
+     },
+     {
+      "file": "food/shnay-bahar.png",
+      "alt": "Shnay Bahar logo"
+     },
+     {
+      "file": "food/shoniz.png",
+      "alt": "Shoniz logo"
+     },
+     {
+      "file": "food/tam-fresh.png",
+      "alt": "Tam Fresh logo"
+     },
+     {
+      "file": "food/zen-top.png",
+      "alt": "Zen Top logo"
+     }
+    ]
+   },
+   {
+    "h3": "Cleaning",
+    "sub": "Household and personal care",
+    "logos": [
+     {
+      "file": "cleaning/darnell.png",
+      "alt": "Darnell logo"
+     },
+     {
+      "file": "cleaning/derma-clean.png",
+      "alt": "Derma Clean logo"
+     },
+     {
+      "file": "cleaning/dosi.png",
+      "alt": "Dosi logo"
+     },
+     {
+      "file": "cleaning/glint-joker-gold.png",
+      "alt": "Glint Joker Gold logo"
+     },
+     {
+      "file": "cleaning/jofy.png",
+      "alt": "Jofy logo"
+     },
+     {
+      "file": "cleaning/joni-baby.png",
+      "alt": "Joni Baby logo"
+     },
+     {
+      "file": "cleaning/kiasa.png",
+      "alt": "Kiasa logo"
+     },
+     {
+      "file": "cleaning/komli.png",
+      "alt": "Komli logo"
+     },
+     {
+      "file": "cleaning/lamis.png",
+      "alt": "Lamis logo"
+     },
+     {
+      "file": "cleaning/nature-of-zozg.png",
+      "alt": "Nature of Zozg logo"
+     },
+     {
+      "file": "cleaning/purox.png",
+      "alt": "Purox logo"
+     },
+     {
+      "file": "cleaning/sarko-company.png",
+      "alt": "Sarko Company logo"
+     },
+     {
+      "file": "cleaning/tinos.png",
+      "alt": "Tinos logo"
+     },
+     {
+      "file": "cleaning/touri.png",
+      "alt": "Touri logo"
+     },
+     {
+      "file": "cleaning/yamur-gold.png",
+      "alt": "Yamur Gold logo"
+     }
+    ]
+   },
+   {
+    "h3": "Cosmetics",
+    "sub": "Beauty, dental and pharmacy",
+    "logos": [
+     {
+      "file": "cosmetics/alpha-dent.png",
+      "alt": "Alpha Dent logo"
+     },
+     {
+      "file": "cosmetics/avera.png",
+      "alt": "Avera logo"
+     },
+     {
+      "file": "cosmetics/by-wishtrend.png",
+      "alt": "By Wishtrend logo"
+     },
+     {
+      "file": "cosmetics/cc-monogram.png",
+      "alt": "CC logo"
+     },
+     {
+      "file": "cosmetics/cellumaru.png",
+      "alt": "Cellumaru logo"
+     },
+     {
+      "file": "cosmetics/cinere.png",
+      "alt": "Cinere logo"
+     },
+     {
+      "file": "cosmetics/covertime.png",
+      "alt": "Covertime logo"
+     },
+     {
+      "file": "cosmetics/dear-klairs.png",
+      "alt": "Dear Klairs logo"
+     },
+     {
+      "file": "cosmetics/dental-doctor.png",
+      "alt": "Dental Doctor logo"
+     },
+     {
+      "file": "cosmetics/domos.png",
+      "alt": "Domos logo"
+     },
+     {
+      "file": "cosmetics/farmona.png",
+      "alt": "Farmona logo"
+     },
+     {
+      "file": "cosmetics/nabaz-beauty.png",
+      "alt": "Nabaz Beauty logo"
+     },
+     {
+      "file": "cosmetics/titanium-hair-beauty.png",
+      "alt": "Titanium Hair Beauty logo"
+     },
+     {
+      "file": "cosmetics/vicora.png",
+      "alt": "Vicora logo"
+     }
+    ]
+   },
+   {
+    "h3": "Education",
+    "sub": "Schools, colleges and institutes",
+    "logos": [
+     {
+      "file": "education/balla-academy.png",
+      "alt": "Balla Academy logo"
+     },
+     {
+      "file": "education/bed-institute.png",
+      "alt": "BED Institute logo"
+     },
+     {
+      "file": "education/bind-private-high-school.png",
+      "alt": "Bind Private High School logo"
+     },
+     {
+      "file": "education/cihan-international-school.png",
+      "alt": "Cihan International School logo"
+     },
+     {
+      "file": "education/edu-blue-wave.png",
+      "alt": "Client logo"
+     },
+     {
+      "file": "education/edu-teal-peaks.png",
+      "alt": "Client logo"
+     },
+     {
+      "file": "education/junior-private-school.png",
+      "alt": "Junior Private School logo"
+     },
+     {
+      "file": "education/knowledge-ngo-institute.png",
+      "alt": "Knowledge Ngo Institute logo"
+     },
+     {
+      "file": "education/puzzle-people.png",
+      "alt": "Puzzle People logo"
+     },
+     {
+      "file": "education/runaki-educational-community.png",
+      "alt": "Runaki Educational Community logo"
+     },
+     {
+      "file": "education/runaki-ngo-institute.png",
+      "alt": "Runaki Ngo Institute logo"
+     },
+     {
+      "file": "education/talent-kindergarten.png",
+      "alt": "Talent Kindergarten logo"
+     },
+     {
+      "file": "education/university-college-of-goizha.png",
+      "alt": "University College Of Goizha logo"
+     },
+     {
+      "file": "education/university-of-human-development.png",
+      "alt": "University Of Human Development logo"
+     },
+     {
+      "file": "education/wasan.png",
+      "alt": "Wasan logo"
+     },
+     {
+      "file": "education/zanist-ngo-institute.png",
+      "alt": "Zanist Ngo Institute logo"
+     }
+    ]
+   },
+   {
+    "h3": "Other Clients",
+    "sub": "Industry, property and services",
+    "logos": [
+     {
+      "file": "other/strap.png",
+      "alt": "Strap logo"
+     },
+     {
+      "file": "other/whoop.png",
+      "alt": "WHOOP logo"
+     },
+     {
+      "file": "other/eskan.png",
+      "alt": "Eskan logo"
+     },
+     {
+      "file": "other/andac-bedding.png",
+      "alt": "Andac Bedding logo"
+     },
+     {
+      "file": "other/anya-home-company.png",
+      "alt": "Anya Home Company logo"
+     },
+     {
+      "file": "other/ashurbrick.png",
+      "alt": "ASHurbrick logo"
+     },
+     {
+      "file": "other/asia-oil-group.png",
+      "alt": "Asia Oil Group logo"
+     },
+     {
+      "file": "other/avan-taj.png",
+      "alt": "Avan Taj logo"
+     },
+     {
+      "file": "other/bakhy-dabashan.png",
+      "alt": "Bakhy Dabashan logo"
+     },
+     {
+      "file": "other/bashwr-city.png",
+      "alt": "Bashwr City logo"
+     },
+     {
+      "file": "other/blue-pool.png",
+      "alt": "Blue Pool logo"
+     },
+     {
+      "file": "other/dlawar-group.png",
+      "alt": "Dlawar Group logo"
+     },
+     {
+      "file": "other/eco-pay.png",
+      "alt": "Eco Pay logo"
+     },
+     {
+      "file": "other/energy-output.png",
+      "alt": "Energy Output logo"
+     },
+     {
+      "file": "other/fujiaire.png",
+      "alt": "Fujiaire logo"
+     },
+     {
+      "file": "other/hilltop-cosmetic-dental-center.png",
+      "alt": "Hilltop Cosmetic Dental Center logo"
+     },
+     {
+      "file": "other/hiwa-rauf.png",
+      "alt": "Hiwa Rauf logo"
+     },
+     {
+      "file": "other/koshke-rasan.png",
+      "alt": "Koshke Rasan logo"
+     },
+     {
+      "file": "other/max-house-company.png",
+      "alt": "Max House Company logo"
+     },
+     {
+      "file": "other/mirxan.png",
+      "alt": "Mirxan logo"
+     },
+     {
+      "file": "other/np.png",
+      "alt": "NP logo"
+     },
+     {
+      "file": "other/other-clover.png",
+      "alt": "Client logo"
+     },
+     {
+      "file": "other/other-lion.png",
+      "alt": "Client logo"
+     },
+     {
+      "file": "other/qaiwan.png",
+      "alt": "Qaiwan logo"
+     },
+     {
+      "file": "other/rinnai.png",
+      "alt": "Rinnai logo"
+     },
+     {
+      "file": "other/star-alliance-iraq.png",
+      "alt": "Star Alliance Iraq logo"
+     },
+     {
+      "file": "other/strong-building.png",
+      "alt": "Strong Building logo"
+     },
+     {
+      "file": "other/titanic-hotel-spa.png",
+      "alt": "Titanic Hotel Spa logo"
+     },
+     {
+      "file": "other/waffle-design.png",
+      "alt": "Waffle Design logo"
+     }
+    ]
+   }
+  ]
+ },
+ "expertise": {
+  "h2": "Core Expertise",
+  "sub": "Marketing that's built to grow the business, not just get noticed.",
+  "items": [
+   {
+    "icon": "troubleshoot",
+    "h3": "Where the Problem Actually Is",
+    "p": "An honest read on why sales are stuck, before anyone writes a brief."
+   },
+   {
+    "icon": "campaign",
+    "h3": "Social Media Campaigns",
+    "p": "End-to-end campaign planning and execution across all major platforms."
+   },
+   {
+    "icon": "hub",
+    "h3": "Brand Identity",
+    "p": "Positioning and identity work that builds a coherent story across every touchpoint."
+   },
+   {
+    "icon": "movie",
+    "h3": "Video and Production",
+    "p": "Scripting, shooting and edit, with Mithra's production team behind it."
+   },
+   {
+    "icon": "trending_up",
+    "h3": "Sales-Driven Growth",
+    "p": "Paid and organic strategy that starts where the customer's real need begins."
+   }
+  ]
+ },
+ "career": {
+  "h2": "Career Trajectory",
+  "mithra_title": "Marketing Manager",
+  "mithra_org": "Mithra Production",
+  "mithra_years": "7 Years, ongoing",
+  "mithra_body": "Part of Mithra's creative team, turning a sales foundation into campaigns that connect directly to growth. Every strategy is measured against what it does for the business, not just how it looks.",
+  "sales_title": "Sales",
+  "sales_org": "Business Development · Bkhor Co. (Gypsy Lucy) · Qimat Almasiya",
+  "sales_years": "3 Years",
+  "sales_body": "Where the path into business began. Hands-on experience understanding exactly what customers need, and what actually makes them buy.",
+  "belief_label": "Core Belief",
+  "belief_title": "Attention Isn't the Goal",
+  "belief_body": "The best marketing strategy is the one tied directly to sales and business growth. Getting noticed is only the start."
+ },
+ "quote": {
+  "text": "\"People come to me for a campaign. The first question I ask is what they are actually trying to fix. Often the answer changes what we build.\"",
+  "name": "Dindar Ahmed",
+  "role": "Marketing Manager and Consultant, Mithra Production"
+ },
+ "contact": {
+  "h2": "Start a Conversation",
+  "sub": "Whether you're looking to redefine your brand strategy, scale your presence, or build a campaign that actually sells, let's talk.",
+  "email_title": "Email Directly",
+  "email_body": "The fastest way to reach Dindar. Send a note about what you're building and he'll get back to you.",
+  "direct_title": "Direct Contact"
+ },
+ "cta": {
+  "h2": "Let's build something that sells.",
+  "btn": "Start a Conversation"
+ },
+ "footer": {
+  "tagline": "Marketing tied directly to sales.",
+  "copyright": "© 2026 Dindar Ahmed. All rights reserved.",
+  "h_languages": "Languages",
+  "h_sections": "Sections",
+  "h_inquiries": "Inquiries",
+  "start_project": "Start a Project"
+ }
+}

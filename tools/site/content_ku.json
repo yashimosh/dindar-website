@@ -1,0 +1,908 @@
+{
+ "meta": {
+  "title": "دیندار ئەحمەد | بەڕێوەبەر و ڕاوێژکاری مارکێتینگ",
+  "description": "دیندار ئەحمەد، بەڕێوەبەری مارکێتینگ و ڕاوێژکار لە میترا پرۆدەکشن. کەمپەینی براند، ستراتیژی ناوەڕۆک و مارکێتینگی بەستراو بە فرۆشتنەوە.",
+  "og_description": "پێم بڵێ چی نافرۆشرێت. دە ساڵ لە بازاڕی کوردستان، حەوت ساڵ لە میترا پرۆدەکشن. مارکێتینگ دەستنیشان دەکرێت پێش ئەوەی پارەی بۆ خەرج بکرێت.",
+  "tw_description": "مارکێتینگی بەستراو بە فرۆشتنەوە. کەمپەینی براند، ستراتیژی ناوەڕۆک و گەشەی فرۆشتن لە میترا پرۆدەکشن.",
+  "og_locale": "ckb_IQ"
+ },
+ "nav": {
+  "#case-studies": "کەیس ستادی",
+  "#showreel": "کەمپەینەکان",
+  "#reels": "ڕیلز",
+  "#clients": "کڕیارەکان",
+  "#certificates": "بڕوانامەکان",
+  "#expertise": "شارەزایی",
+  "#about": "دەربارە",
+  "#contact": "پەیوەندی"
+ },
+ "nav_mobile": {
+  "#work": "کارەکان",
+  "#case-studies": "کەیس ستادی",
+  "#showreel": "کەمپەینەکان",
+  "#reels": "ڕیلز",
+  "#clients": "کڕیارەکان",
+  "#certificates": "بڕوانامەکان",
+  "#expertise": "شارەزایی",
+  "#about": "دەربارە",
+  "#contact": "پەیوەندی"
+ },
+ "nav_cta": "پەیوەندی بکە",
+ "hero": {
+  "eyebrow": "دیندار ئەحمەد · بەڕێوەبەری مارکێتینگ و ڕاوێژکار",
+  "h1": "پێم بڵێ چی نافرۆشرێت.",
+  "p": "زۆربەی کڕیارەکانم بە کێشەیەکەوە دێن. فرۆشیان وەستاوە یان کەمپەینەکەیان تەنیا لایکی بۆ دێت. ئەرکی من دۆزینەوەی هۆکارەکەیە پێش ئەوەی دینارێک بۆ میدیا خەرج بکەن. دە ساڵ ئەزموونم لەم بازاڕەدا هەیە، سێ ساڵ فرۆشتنی ڕاستەوخۆ و حەوت ساڵ بنیاتنانی براند لە میترا پرۆدەکشن. لەگەڵ کیاسا، ئەمە بووە هۆی زیادبوونی فرۆش بە ڕێژەی ٦٠٪ لە ماوەی هەشت مانگدا.",
+  "btn_work": "کارەکانم",
+  "btn_about": "شێوازی کارکردنم",
+  "portrait_alt": "دیندار ئەحمەد، بەڕێوەبەری مارکێتینگ و ڕاوێژکار"
+ },
+ "stats": [
+  {
+   "n": "١٠+",
+   "label": "ساڵ ئەزموون لەم بازاڕەدا",
+   "body": "لە فرۆشیارییەوە بگرە تا ستراتیژی مارکێتینگ، هەمووی لە بازاڕی کوردستاندا."
+  },
+  {
+   "n": "٣",
+   "label": "ساڵ فرۆشتنی ڕاستەوخۆ",
+   "body": "کۆمپانیای بخور (جبسی لوسی) و کۆمپانیای قیمەت الماسیە، لەوێ فێر بووم چی بەڕاستی وا لە خەڵک دەکات شت بکڕن."
+  },
+  {
+   "n": "٧",
+   "label": "ساڵ کارکردن لە میترا پرۆدەکشن",
+   "body": "سەرپەرشتیی کاری مارکێتینگ لە بوارەکانی براندسازی، کەمپەین و بەرهەمهێناندا."
+  }
+ ],
+ "featured": {
+  "h2": "نموونەی کارەکان",
+  "items": [
+   {
+    "tags": [
+     "کەمپەینەکان",
+     "ستراتیج"
+    ],
+    "h3": "ستراتیجی براند و کەمپەین",
+    "p": "کەمپەینەکان تەنها بۆ سەرنجڕاکێشان نین، بەڵکو چیرۆکی براندێک دەگێڕنەوە و ئەنجامە گرنگەکان بەدەست دەهێنن.",
+    "img": "hero.jpg",
+    "alt": "دیندار ئەحمەد لەگەڵ تیمی کڕیار لە شوێنی بەرهەمهێنان"
+   },
+   {
+    "tags": [
+     "سۆشیاڵ میدیا",
+     "ڕیکلامی سەرشەقام"
+    ],
+    "h3": "ناوەڕۆک و گێڕانەوەی چیرۆک",
+    "p": "لە میترا پرۆدەکشن، کەمپەین تەنها ڕیکلامێک نییە، بەڵکو چیرۆکی سەرکەوتنی براندەکەیە کە لە ڕێی هەموو کەناڵەکانەوە دەیگێڕینەوە.",
+    "img": "work-03.webp",
+    "alt": "تیمی میترا پرۆدەکشن لە ستۆدیۆی وێنەگرتن"
+   }
+  ]
+ },
+ "cases": {
+  "h2": "نموونەی کارەکان",
+  "sub": "چۆن کارەکانمان ئەنجامی کردارییان بۆ براندەکان لێ کەوتەوە.",
+  "items": [
+   {
+    "tag": "پێداویستییەکانی ناوماڵ",
+    "name": "کیاسا",
+    "period": "ئابی ٢٠٢٥ تا ئازاری ٢٠٢٦",
+    "body": "لە سەرەتای دەستکردنمان بە کارکردن لەگەڵ کیاسا گوێگرێکی باش بووین و لە ترس و داواکارییەکانیان بەتەواوی تێگەیشتین. پاڵپشت بە ئەزموونی ڕابردوومان و بوونی تیمێکی خاوەن ئەزموون و پڕۆفیشناڵ، توانیمان پلانێکی ستراتیجییان بۆ پێشکەش بکەین. دوای پەسەندکردنی کارەکان، لە بەرواری ١-٨-٢٠٢٥ دەستمان بە کارکردن کرد و تا بەرواری ٣١-٣-٢٠٢٦ توانیمان ڕێژەی فرۆشیان ٪٦٠ زیاد بکەین بە پاڵپشتی کەمپەینێک.",
+    "metric": "+٦٠٪ گەشەی فرۆش"
+   },
+   {
+    "tag": "خۆراک و پێداویستیی ڕۆژانە",
+    "name": "بانو",
+    "period": "دروستکردنی براند و خستنەبازاڕ",
+    "body": "لە سەرەتای دروستبوونی بیرۆکەی بانووە هاوکار و پاڵپشتی دروستکردنی براندەکە بووین لە دیاریکردنی ستراتیجی کارکردندا. ٣ مانگ لە پری لەنچی براندەکەدا بووین و کارمان لەسەر هۆشیارکردنەوەی تاکی بەکارهێنەری کوردستان کرد. سوپاس بۆ خوا، لە کەمتر لە ماوەی ساڵێکی تەمەنی بانودا توانیمان بیکەینە پێشەنگ لە بازاڕی بەرهەمی خۆراکیدا.",
+    "metric": "پێشەنگی پۆلێنەکەی لە کەمتر لە ساڵێکدا"
+   },
+   {
+    "tag": "پەروەردە",
+    "name": "پەیمانگەی ڕوناکی",
+    "period": "لە ٢٠١٩ـەوە تا ئێستا",
+    "body": "پەیمانگەی ڕوناکی یەکێکە لە کڵاینتە هەمیشەییەکانی میترا پرۆدەکشن، کە لە ساڵی ٢٠١٩ـەوە بەردەوام کارمان بۆ کردوون.",
+    "metric": "کارکردنی هاوبەش لە ٢٠١٩ـەوە"
+   }
+  ]
+ },
+ "campaigns": {
+  "h2": "دواین کەمپەینەکان",
+  "sub": "کارە بازرگانییەکانی ئەمساڵ بە هاوکاریی میترا پرۆدەکشن: ڕیکلامی تەلەفزیۆنی لە بوارەکانی کاڵای بەکاربەر، ئەپ و پەروەردە.",
+  "items": [
+   {
+    "yt": "ohWLkd8xecs",
+    "yt_title": "ڕۆنی سروشتی بانو: کەمپەینی بەم زووانە",
+    "aria": "لێدان: ڕۆنی سروشتی بانو: کەمپەینی بەم زووانە",
+    "thumb": "tvc-01.jpg",
+    "dur": "١:٢١",
+    "tag": "TVC",
+    "h3": "ڕۆنی سروشتیی بانو: کەمپەینی «چاوەڕوان بن»",
+    "p": "کەمپەینی تیزەر بۆ ڕۆنی سروشتیی بانو."
+   },
+   {
+    "yt": "Uol2N2hYXDs",
+    "yt_title": "بەرهەمی جلشۆری کیاسا",
+    "aria": "لێدان: بەرهەمی جلشۆری کیاسا",
+    "thumb": "tvc-02.jpg",
+    "dur": "٠:٤٤",
+    "tag": "TVC",
+    "h3": "بەرهەمی جلشۆریی کیاسا",
+    "p": "ڕیکلامی بازرگانی بۆ بەرهەمەکانی جلشۆریی کیاسا."
+   },
+   {
+    "yt": "jjXe4ino1YU",
+    "yt_title": "ئەپی پایا",
+    "aria": "لێدان: ئەپی پایا",
+    "thumb": "tvc-03.jpg",
+    "dur": "٠:٣٣",
+    "tag": "TVC",
+    "h3": "ئەپلیکەیشنی پایا",
+    "p": "ڕیکلامی خستنەبازاڕی ئەپلیکەیشنی پایا."
+   },
+   {
+    "yt": "BzXQoSo0Z08",
+    "yt_title": "کیاسا",
+    "aria": "لێدان: کیاسا",
+    "thumb": "tvc-06.jpg",
+    "dur": "٠:٣٣",
+    "tag": "TVC",
+    "h3": "کیاسا",
+    "p": "ڕیکلامی بازرگانی بۆ براندی کیاسا."
+   },
+   {
+    "yt": "jsTUhLnALkQ",
+    "yt_title": "پەیمانگەی ڕوناکی",
+    "aria": "لێدان: پەیمانگەی ڕوناکی",
+    "thumb": "tvc-07.jpg",
+    "dur": "١:١١",
+    "tag": "TVC",
+    "h3": "پەیمانگای ڕوناکی",
+    "p": "ڕیکلامی بازرگانی بۆ پەیمانگای ڕوناکی."
+   }
+  ],
+  "note_pre": "هیچ ڤیدیۆیەک لە یوتیوبەوە کار ناکات تا پلەی نەکەیت. کاری زیاتر لەسەر",
+  "note_post": ".",
+  "channel": {
+   "text": "کەناڵی میترا پرۆدەکشن",
+   "href": "https://www.youtube.com/@mithra.production/videos"
+  }
+ },
+ "reels": {
+  "h2": "ڕیلز",
+  "sub": "بیرۆکەی مارکێتینگ لە دیندارەوە، و کارەکانی کەمپەینی میترا پرۆدەکشن کە سەرپەرشتییان دەکات.",
+  "items": [
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DVB1ZNuiNWt/",
+    "img": "reel-01.jpg",
+    "alt": "بە زمانی کڕیار بدوێ",
+    "h3": "بە زمانی کڕیار بدوێ",
+    "p": "مارکێتینگ لەبەرکردنی تیۆری نییە، بەڵکو گۆڕینی پەیامەکەتە بۆ زمانی دڵی کڕیار."
+   },
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DVOxG69iMxr/",
+    "img": "reel-02.jpg",
+    "alt": "واز لە کێبڕکێی نرخ بهێنە",
+    "h3": "واز لە کێبڕکێی نرخ بهێنە",
+    "p": "کاتێک کڕیار تەنها نرخ بەراورد دەکات، داشکاندن خۆکوشتنە. چیرۆک و جیاوازی قازانج دەپارێزن."
+   },
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DYPx5Q7oRHC/",
+    "img": "reel-03.jpg",
+    "alt": "مارکێتینگی زانستی یان هەست و سۆز",
+    "h3": "مارکێتینگی زانستی یان هەست و سۆز",
+    "p": "زۆربەی بودجەی ڕیکلام بەهۆی بڕیاری کەسییەوە بەفیڕۆ دەچێت، نەک داتا. لێرەدا چۆن بودجەکەت دەپارێزیت."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZH2Jicqq/",
+    "img": "reel-14.jpg",
+    "alt": "فارمۆنا: بەرهەمەکە بە سێ ڕەهەند",
+    "h3": "فارمۆنا: بەرهەمەکە بە سێ ڕەهەند",
+    "p": "ڕیکلامێکی سێ ڕەهەندی بۆ دژەخۆری فارمۆنا، بەرهەمهێنانی میترا."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZXLWgC_E/",
+    "img": "reel-13.jpg",
+    "alt": "فارمۆنا: بۆ ڕەفی دژەخۆر",
+    "h3": "فارمۆنا: بۆ ڕەفی دژەخۆر",
+    "p": "بەرهەمهێنانی ڤیدیۆی ڕیکلامی بۆ دژەخۆری بڕاندی فارمۆنا."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZnXpAPBu/",
+    "img": "reel-15.jpg",
+    "alt": "فارمۆنا: ناساندنی دژەخۆر",
+    "h3": "فارمۆنا: ناساندنی دژەخۆر",
+    "p": "کارێکی تری بەرهەمهێنانمان بۆ ناساندنی دژەخۆری براندی فارمۆنا."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwPjZJDe4g/",
+    "img": "reel-12.jpg",
+    "alt": "Strap Iraq: پێناسەکردنەوەی چیرۆکگێڕانی کارایی",
+    "h3": "Strap Iraq: پێناسەکردنەوەی چیرۆکگێڕانی کارایی",
+    "p": "داتای ڕاهێنان کراوە بە چیرۆکێک کە وەرزشوان هەستی پێدەکات."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwQlCCCkLx/",
+    "img": "reel-11.jpg",
+    "alt": "WHOOP 5.0: دیزاینێکی وردی سێ ڕەهەندی",
+    "h3": "WHOOP 5.0: دیزاینێکی وردی سێ ڕەهەندی",
+    "p": "فیلمێکی بەرهەمی سێ ڕەهەندی بۆ نیشاندانی وردەکارییەکانی بەندەکە."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwQ78BEbA9/",
+    "img": "reel-10.jpg",
+    "alt": "Strap Iraq: فراوانکردنی سنوورەکانی داهێنان",
+    "h3": "Strap Iraq: فراوانکردنی سنوورەکانی داهێنان",
+    "p": "فیلمێکی دەستپێک بۆ Strap Iraq، فرۆشیاری فەرمیی WHOOP."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi7sbSDaTP/",
+    "img": "reel-04.jpg",
+    "alt": "برنجی کورمانج: نهێنیی چێشتلێنەر",
+    "h3": "برنجی کورمانج: نهێنیی چێشتلێنەر",
+    "p": "نهێنیی چێشتلێنەر بۆ نایابی. ڕیکلامی برنجی کورمانج."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi8VQXkegn/",
+    "img": "reel-05.jpg",
+    "alt": "برنجی کورمانج: بە خۆشەویستی کوڵاوە",
+    "h3": "برنجی کورمانج: بە خۆشەویستی کوڵاوە",
+    "p": "بە خۆشەویستی کوڵاوە، بە بایەخ پێشکەش کراوە. ڕیکلامی برنجی کورمانج."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi8tVYFdVD/",
+    "img": "reel-06.jpg",
+    "alt": "برنجی کورمانج: تامێکی هەمیشەیی",
+    "h3": "برنجی کورمانج: تامێکی هەمیشەیی",
+    "p": "تامێکی هەمیشەیی بە درێژایی نەوەکان. ڕیکلامی برنجی کورمانج."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbybqHBjhPX/",
+    "img": "reel-07.jpg",
+    "alt": "کۆمەڵگەی ڕوناکی: لە زانستەوە سەرچاوە دەگرێت",
+    "h3": "کۆمەڵگەی ڕوناکی: لە زانستەوە سەرچاوە دەگرێت",
+    "p": "لە زانست، پەروەردە و کەلتوورەوە سەرچاوە دەگرێت. ڕیکلام بۆ کۆمەڵگەی پەروەردەیی ڕوناکی."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbycZValFYQ/",
+    "img": "reel-08.jpg",
+    "alt": "کۆمەڵگەی ڕوناکی: سەرکەوتن لە بواری کارگێڕیدا",
+    "h3": "کۆمەڵگەی ڕوناکی: سەرکەوتن لە بواری کارگێڕیدا",
+    "p": "لە بیرۆکەی پۆلەوە بۆ سەرکەوتن لە بواری کارگێڕیدا. بەرهەم هێنراوە بۆ کۆمەڵگەی پەروەردەیی ڕوناکی."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbycpDDDR9q/",
+    "img": "reel-09.jpg",
+    "alt": "کۆمەڵگەی ڕوناکی: ڕزگارکردنی ژیان",
+    "h3": "کۆمەڵگەی ڕوناکی: ڕزگارکردنی ژیان",
+    "p": "لە خەونی منداڵییەوە بۆ ڕزگارکردنی ژیان. بەرهەم هێنراوە بۆ کۆمەڵگەی پەروەردەیی ڕوناکی."
+   }
+  ]
+ },
+ "gallery": {
+  "h2": "لە پڕۆژەدا",
+  "sub": "کۆبوونەوەی کڕیاران، ڕۆژانی بەرهەمهێنان، وۆرکشۆپ و بۆنە پیشەسازییەکان: کارەکانی پشت کەمپەینەکان.",
+  "items": [
+   {
+    "img": "work-01.webp",
+    "alt": "دانیشتنی ستراتیژی لەگەڵ تیمی میترا"
+   },
+   {
+    "img": "work-04.webp",
+    "alt": "پێشکەشکردنی خەڵات"
+   },
+   {
+    "img": "work-02.webp",
+    "alt": "کۆبوونەوەی هاوبەشی لەگەڵ کڵاینت"
+   },
+   {
+    "img": "work-07.webp",
+    "alt": "پێشانگای بازرگانیی پیشەسازی"
+   },
+   {
+    "img": "work-05.webp",
+    "alt": "کۆبوونەوەی کڵاینت"
+   },
+   {
+    "img": "work-09.webp",
+    "alt": "وۆرکشۆپی ناوخۆیی تیم"
+   },
+   {
+    "img": "work-06.webp",
+    "alt": "سەردانی ئێوارەی کڵاینت"
+   },
+   {
+    "img": "work-08.webp",
+    "alt": "گفتوگۆ لەگەڵ کڵاینت"
+   },
+   {
+    "img": "work-10.jpg",
+    "alt": "هۆڵی پێشانگای بازرگانیی پیشەسازی"
+   },
+   {
+    "img": "work-11.jpg",
+    "alt": "سەردانی تیم بۆ پاک سیمین"
+   },
+   {
+    "img": "work-12.jpg",
+    "alt": "کۆبوونەوەی کڵاینت لە ستانی هانا و فوودوەی"
+   },
+   {
+    "img": "work-13.jpg",
+    "alt": "کۆبوونەوە لەگەڵ تیمی کارگەی فوودوەی"
+   },
+   {
+    "img": "work-14.jpg",
+    "alt": "سەردانی هێڵی بەرهەمهێنان لەگەڵ تیمی کڵاینت"
+   },
+   {
+    "img": "work-15.jpg",
+    "alt": "پێشکەشکردنی بڕوانامە لە میترا پرۆدەکشن"
+   },
+   {
+    "img": "work-16.jpg",
+    "alt": "پێشانگای مەید ئین عێراق"
+   },
+   {
+    "img": "work-17.jpg",
+    "alt": "دانیشتنی کڵاینت لەگەڵ تیمی ئەلفا دێنت"
+   },
+   {
+    "img": "work-18.jpg",
+    "alt": "گفتوگۆی ستراتیژی لەگەڵ تیمی ئەلفا دێنت"
+   }
+  ]
+ },
+ "certs": {
+  "h2": "بڕوانامەکان",
+  "sub": "ڕاهێنان و پەرەپێدانی پیشەیی لە بواری فرۆشتن، مارکێتینگ و بەڕێوەبردنی پڕۆژەدا.",
+  "items": [
+   {
+    "img": "cert-01.jpg",
+    "alt": "بڕوانامەی دامەزراوەی هیوا",
+    "issuer": "دامەزراوەی هیوا",
+    "title": "فرۆشتن و بوون بە فرۆشیارێکی کارامە",
+    "meta": "وۆرکشۆپی سێ ڕۆژە، شوباتی ٢٠٢٣"
+   },
+   {
+    "img": "cert-02.jpg",
+    "alt": "بڕوانامەی سەنتەری کەنەدی بۆ ڕاهێنان و گەشەپێدانی مرۆیی",
+    "issuer": "Canadian Training Center of Human Development",
+    "title": "دیپلۆمی فرۆشتن و مارکێتینگ",
+    "meta": "بڕوانامەی دەستکەوت، ٤٠ کاتژمێر، تەممووزی ٢٠١٩"
+   },
+   {
+    "img": "cert-03.jpg",
+    "alt": "بڕوانامەی ڕێکخراوی REACH و Diakonie Katastrophenhilfe",
+    "issuer": "REACH Organization & Diakonie Katastrophenhilfe",
+    "title": "بەڕێوەبردنی پڕۆژە و مارکێتینگ",
+    "meta": "سەنتەری کۆمەڵایەتی لیزا، سلێمانی، ئابی ٢٠١٩"
+   },
+   {
+    "img": "cert-04.jpg",
+    "alt": "بڕوانامەی وەزارەتی دەرەوەی ئەمریکا، American Corner ی سلێمانی",
+    "issuer": "U.S. Department of State, American Corner Sulaymaniyah",
+    "title": "بەڕێوەبردنی پڕۆژە و مارکێتینگ",
+    "meta": "خولی ڕاهێنانی لێهاتوویی ژیان، ئابی ٢٠١٩"
+   },
+   {
+    "img": "cert-05.jpg",
+    "alt": "بڕوانامەی Leaders’ Dream",
+    "issuer": "Leaders’ Dream",
+    "title": "دیپلۆمی فرۆشتن و مارکێتینگ",
+    "meta": "لەگەڵ Canadian Training Center، John Maxwell و Talal Abu Ghazaleh · کانوونی یەکەمی ٢٠١٩"
+   },
+   {
+    "img": "cert-06.jpg",
+    "alt": "بڕوانامەی دامەزراوەی هیوا",
+    "issuer": "دامەزراوەی هیوا",
+    "title": "بنەماکانی مارکێتینگی ستراتیژی",
+    "meta": "بڕوانامەی تەواوکردن، ٢٥ کاتژمێر لە پێنج دانیشتندا، ئایاری ٢٠٢٥"
+   }
+  ]
+ },
+ "clients": {
+  "h2": "کڕیارەکانمان",
+  "sub": "براندەکان لە بواری خۆراک، چاودێری ماڵەوە، جوانکاری، پەروەردە و بوارەکانی تر. کەمپەینەکان بە هاوکاری میترا پرۆدەکشن دروستکراون.",
+  "cats": [
+   {
+    "h3": "خۆراک",
+    "sub": "بەرهەمهێنەرانی خۆراک و کاڵای بەکاربەر",
+    "logos": [
+     {
+      "file": "food/ak-sufi.png",
+      "alt": "لۆگۆی AK-Sufi"
+     },
+     {
+      "file": "food/ash.png",
+      "alt": "لۆگۆی ASH"
+     },
+     {
+      "file": "food/balactan-babies.png",
+      "alt": "لۆگۆی Balactan Babies"
+     },
+     {
+      "file": "food/bani-khaylan.png",
+      "alt": "لۆگۆی Bani Khaylan"
+     },
+     {
+      "file": "food/banu.png",
+      "alt": "لۆگۆی Banu"
+     },
+     {
+      "file": "food/baxisewan.png",
+      "alt": "لۆگۆی Baxisewan"
+     },
+     {
+      "file": "food/bgt.png",
+      "alt": "لۆگۆی BGT"
+     },
+     {
+      "file": "food/bkhor.png",
+      "alt": "لۆگۆی Bkhor"
+     },
+     {
+      "file": "food/daiamil.png",
+      "alt": "لۆگۆی Daiamil"
+     },
+     {
+      "file": "food/dolphin-sea.png",
+      "alt": "لۆگۆی Dolphin Sea"
+     },
+     {
+      "file": "food/empire-basmati-rice.png",
+      "alt": "لۆگۆی Empire Basmati Rice"
+     },
+     {
+      "file": "food/food-gold-hexagon.png",
+      "alt": "لۆگۆی کڵاینت"
+     },
+     {
+      "file": "food/goran-factory.png",
+      "alt": "لۆگۆی Goran Factory"
+     },
+     {
+      "file": "food/khanm.png",
+      "alt": "لۆگۆی Khanm"
+     },
+     {
+      "file": "food/kirmanj.png",
+      "alt": "لۆگۆی Kirmanj"
+     },
+     {
+      "file": "food/nini.png",
+      "alt": "لۆگۆی Nini"
+     },
+     {
+      "file": "food/ogvan.png",
+      "alt": "لۆگۆی Ogvan"
+     },
+     {
+      "file": "food/reeva.png",
+      "alt": "لۆگۆی Reeva"
+     },
+     {
+      "file": "food/safra-company.png",
+      "alt": "لۆگۆی Safra Company"
+     },
+     {
+      "file": "food/sahand.png",
+      "alt": "لۆگۆی Sahand"
+     },
+     {
+      "file": "food/sahar.png",
+      "alt": "لۆگۆی Sahar"
+     },
+     {
+      "file": "food/samaa-drko.png",
+      "alt": "لۆگۆی Samaa Drko"
+     },
+     {
+      "file": "food/shnay-bahar.png",
+      "alt": "لۆگۆی Shnay Bahar"
+     },
+     {
+      "file": "food/shoniz.png",
+      "alt": "لۆگۆی Shoniz"
+     },
+     {
+      "file": "food/tam-fresh.png",
+      "alt": "لۆگۆی Tam Fresh"
+     },
+     {
+      "file": "food/zen-top.png",
+      "alt": "لۆگۆی Zen Top"
+     }
+    ]
+   },
+   {
+    "h3": "پاککەرەوە",
+    "sub": "چاودێری ماڵەوە و کەسی",
+    "logos": [
+     {
+      "file": "cleaning/darnell.png",
+      "alt": "لۆگۆی Darnell"
+     },
+     {
+      "file": "cleaning/derma-clean.png",
+      "alt": "لۆگۆی Derma Clean"
+     },
+     {
+      "file": "cleaning/dosi.png",
+      "alt": "لۆگۆی Dosi"
+     },
+     {
+      "file": "cleaning/glint-joker-gold.png",
+      "alt": "لۆگۆی Glint Joker Gold"
+     },
+     {
+      "file": "cleaning/jofy.png",
+      "alt": "لۆگۆی Jofy"
+     },
+     {
+      "file": "cleaning/joni-baby.png",
+      "alt": "لۆگۆی Joni Baby"
+     },
+     {
+      "file": "cleaning/kiasa.png",
+      "alt": "لۆگۆی Kiasa"
+     },
+     {
+      "file": "cleaning/komli.png",
+      "alt": "لۆگۆی Komli"
+     },
+     {
+      "file": "cleaning/lamis.png",
+      "alt": "لۆگۆی Lamis"
+     },
+     {
+      "file": "cleaning/nature-of-zozg.png",
+      "alt": "لۆگۆی Nature of Zozg"
+     },
+     {
+      "file": "cleaning/purox.png",
+      "alt": "لۆگۆی Purox"
+     },
+     {
+      "file": "cleaning/sarko-company.png",
+      "alt": "لۆگۆی Sarko Company"
+     },
+     {
+      "file": "cleaning/tinos.png",
+      "alt": "لۆگۆی Tinos"
+     },
+     {
+      "file": "cleaning/touri.png",
+      "alt": "لۆگۆی Touri"
+     },
+     {
+      "file": "cleaning/yamur-gold.png",
+      "alt": "لۆگۆی Yamur Gold"
+     }
+    ]
+   },
+   {
+    "h3": "جوانکاری",
+    "sub": "جوانی، ددان و دەرمانخانە",
+    "logos": [
+     {
+      "file": "cosmetics/alpha-dent.png",
+      "alt": "لۆگۆی Alpha Dent"
+     },
+     {
+      "file": "cosmetics/avera.png",
+      "alt": "لۆگۆی Avera"
+     },
+     {
+      "file": "cosmetics/by-wishtrend.png",
+      "alt": "لۆگۆی By Wishtrend"
+     },
+     {
+      "file": "cosmetics/cc-monogram.png",
+      "alt": "لۆگۆی CC"
+     },
+     {
+      "file": "cosmetics/cellumaru.png",
+      "alt": "لۆگۆی Cellumaru"
+     },
+     {
+      "file": "cosmetics/cinere.png",
+      "alt": "لۆگۆی Cinere"
+     },
+     {
+      "file": "cosmetics/covertime.png",
+      "alt": "لۆگۆی Covertime"
+     },
+     {
+      "file": "cosmetics/dear-klairs.png",
+      "alt": "لۆگۆی Dear Klairs"
+     },
+     {
+      "file": "cosmetics/dental-doctor.png",
+      "alt": "لۆگۆی Dental Doctor"
+     },
+     {
+      "file": "cosmetics/domos.png",
+      "alt": "لۆگۆی Domos"
+     },
+     {
+      "file": "cosmetics/farmona.png",
+      "alt": "لۆگۆی Farmona"
+     },
+     {
+      "file": "cosmetics/nabaz-beauty.png",
+      "alt": "لۆگۆی Nabaz Beauty"
+     },
+     {
+      "file": "cosmetics/titanium-hair-beauty.png",
+      "alt": "لۆگۆی Titanium Hair Beauty"
+     },
+     {
+      "file": "cosmetics/vicora.png",
+      "alt": "لۆگۆی Vicora"
+     }
+    ]
+   },
+   {
+    "h3": "پەروەردە",
+    "sub": "قوتابخانە، کۆلێژ و پەیمانگا",
+    "logos": [
+     {
+      "file": "education/balla-academy.png",
+      "alt": "لۆگۆی Balla Academy"
+     },
+     {
+      "file": "education/bed-institute.png",
+      "alt": "لۆگۆی BED Institute"
+     },
+     {
+      "file": "education/bind-private-high-school.png",
+      "alt": "لۆگۆی Bind Private High School"
+     },
+     {
+      "file": "education/cihan-international-school.png",
+      "alt": "لۆگۆی Cihan International School"
+     },
+     {
+      "file": "education/edu-blue-wave.png",
+      "alt": "لۆگۆی کڵاینت"
+     },
+     {
+      "file": "education/edu-teal-peaks.png",
+      "alt": "لۆگۆی کڵاینت"
+     },
+     {
+      "file": "education/junior-private-school.png",
+      "alt": "لۆگۆی Junior Private School"
+     },
+     {
+      "file": "education/knowledge-ngo-institute.png",
+      "alt": "لۆگۆی Knowledge Ngo Institute"
+     },
+     {
+      "file": "education/puzzle-people.png",
+      "alt": "لۆگۆی Puzzle People"
+     },
+     {
+      "file": "education/runaki-educational-community.png",
+      "alt": "لۆگۆی Runaki Educational Community"
+     },
+     {
+      "file": "education/runaki-ngo-institute.png",
+      "alt": "لۆگۆی Runaki Ngo Institute"
+     },
+     {
+      "file": "education/talent-kindergarten.png",
+      "alt": "لۆگۆی Talent Kindergarten"
+     },
+     {
+      "file": "education/university-college-of-goizha.png",
+      "alt": "لۆگۆی University College Of Goizha"
+     },
+     {
+      "file": "education/university-of-human-development.png",
+      "alt": "لۆگۆی University Of Human Development"
+     },
+     {
+      "file": "education/wasan.png",
+      "alt": "لۆگۆی Wasan"
+     },
+     {
+      "file": "education/zanist-ngo-institute.png",
+      "alt": "لۆگۆی Zanist Ngo Institute"
+     }
+    ]
+   },
+   {
+    "h3": "کڕیارەکانی تر",
+    "sub": "پیشەسازی، موڵک و خزمەتگوزارییەکان",
+    "logos": [
+     {
+      "file": "other/strap.png",
+      "alt": "لۆگۆی Strap"
+     },
+     {
+      "file": "other/whoop.png",
+      "alt": "لۆگۆی WHOOP"
+     },
+     {
+      "file": "other/eskan.png",
+      "alt": "لۆگۆی Eskan"
+     },
+     {
+      "file": "other/andac-bedding.png",
+      "alt": "لۆگۆی Andac Bedding"
+     },
+     {
+      "file": "other/anya-home-company.png",
+      "alt": "لۆگۆی Anya Home Company"
+     },
+     {
+      "file": "other/ashurbrick.png",
+      "alt": "لۆگۆی ASHurbrick"
+     },
+     {
+      "file": "other/asia-oil-group.png",
+      "alt": "لۆگۆی Asia Oil Group"
+     },
+     {
+      "file": "other/avan-taj.png",
+      "alt": "لۆگۆی Avan Taj"
+     },
+     {
+      "file": "other/bakhy-dabashan.png",
+      "alt": "لۆگۆی Bakhy Dabashan"
+     },
+     {
+      "file": "other/bashwr-city.png",
+      "alt": "لۆگۆی Bashwr City"
+     },
+     {
+      "file": "other/blue-pool.png",
+      "alt": "لۆگۆی Blue Pool"
+     },
+     {
+      "file": "other/dlawar-group.png",
+      "alt": "لۆگۆی Dlawar Group"
+     },
+     {
+      "file": "other/eco-pay.png",
+      "alt": "لۆگۆی Eco Pay"
+     },
+     {
+      "file": "other/energy-output.png",
+      "alt": "لۆگۆی Energy Output"
+     },
+     {
+      "file": "other/fujiaire.png",
+      "alt": "لۆگۆی Fujiaire"
+     },
+     {
+      "file": "other/hilltop-cosmetic-dental-center.png",
+      "alt": "لۆگۆی Hilltop Cosmetic Dental Center"
+     },
+     {
+      "file": "other/hiwa-rauf.png",
+      "alt": "لۆگۆی Hiwa Rauf"
+     },
+     {
+      "file": "other/koshke-rasan.png",
+      "alt": "لۆگۆی Koshke Rasan"
+     },
+     {
+      "file": "other/max-house-company.png",
+      "alt": "لۆگۆی Max House Company"
+     },
+     {
+      "file": "other/mirxan.png",
+      "alt": "لۆگۆی Mirxan"
+     },
+     {
+      "file": "other/np.png",
+      "alt": "لۆگۆی NP"
+     },
+     {
+      "file": "other/other-clover.png",
+      "alt": "لۆگۆی کڵاینت"
+     },
+     {
+      "file": "other/other-lion.png",
+      "alt": "لۆگۆی کڵاینت"
+     },
+     {
+      "file": "other/qaiwan.png",
+      "alt": "لۆگۆی Qaiwan"
+     },
+     {
+      "file": "other/rinnai.png",
+      "alt": "لۆگۆی Rinnai"
+     },
+     {
+      "file": "other/star-alliance-iraq.png",
+      "alt": "لۆگۆی Star Alliance Iraq"
+     },
+     {
+      "file": "other/strong-building.png",
+      "alt": "لۆگۆی Strong Building"
+     },
+     {
+      "file": "other/titanic-hotel-spa.png",
+      "alt": "لۆگۆی Titanic Hotel Spa"
+     },
+     {
+      "file": "other/waffle-design.png",
+      "alt": "لۆگۆی Waffle Design"
+     }
+    ]
+   }
+  ]
+ },
+ "expertise": {
+  "h2": "شارەزایی سەرەکی",
+  "sub": "مارکێتینگێک کە بۆ گەشەپێدانی کار دروستکراوە، نەک تەنها بۆ سەرنجڕاکێشان.",
+  "items": [
+   {
+    "icon": "troubleshoot",
+    "h3": "کێشەکە لە کوێدایە",
+    "p": "خوێندنەوەیەکی ڕاستگۆیانە بۆ ئەوەی بزانین بۆچی فرۆش وەستاوە، پێش ئەوەی کەسێک کورتەیەک بنووسێت."
+   },
+   {
+    "icon": "campaign",
+    "h3": "کەمپەینەکانی سۆشیال میدیا",
+    "p": "پلاندانان و جێبەجێکردنی تەواوی کەمپەین لەسەر هەموو پلاتفۆرمە سەرەکییەکان."
+   },
+   {
+    "icon": "hub",
+    "h3": "ناسنامەی براند",
+    "p": "دیاریکردنی شوێن و ناسنامەسازی کە چیرۆکێکی یەکگرتوو لە هەموو خاڵێکی پەیوەندیدا دروست دەکات."
+   },
+   {
+    "icon": "movie",
+    "h3": "ڤیدیۆ و بەرهەمهێنان",
+    "p": "سیناریۆنووسین، وێنەگرتن و مۆنتاژ، بە پاڵپشتی تیمی بەرهەمهێنانی میترا."
+   },
+   {
+    "icon": "trending_up",
+    "h3": "گەشەی بەپێی فرۆش",
+    "p": "ستراتیژی پارەدار و ئۆرگانیک کە لەو شوێنەوە دەستپێدەکات کە پێویستی ڕاستەقینەی کڕیار لێیەوە دەستپێدەکات."
+   }
+  ]
+ },
+ "career": {
+  "h2": "ڕێچکەی پیشەیی",
+  "mithra_title": "بەڕێوەبەری مارکێتینگ",
+  "mithra_org": "میترا پرۆدەکشن",
+  "mithra_years": "٧ ساڵ، بەردەوامە",
+  "mithra_body": "وەک ئەندامێکی تیمی داهێنەری میترا، بنەمای فرۆشتن دەگۆڕم بۆ کەمپەینگەلێک کە ڕاستەوخۆ پەیوەستن بە گەشەکردنەوە. هەموو ستراتیژێک بەپێی کاریگەرییەکەی لەسەر بزنس دەپێورێت، نەک تەنها چۆنیەتیی دەرکەوتنی.",
+  "sales_title": "فرۆشتن",
+  "sales_org": "گەشەپێدانی بزنس · کۆمپانیای بخور (جبسی لوسی) · کۆمپانیای قیمەت الماسیە",
+  "sales_years": "٣ ساڵ",
+  "sales_body": "ئەو شوێنەی ڕێگای بزنس لێیەوە دەستیپێکرد. ئەزموونی کرداری لە تێگەیشتنی وردی خواستی کڕیاران و ئەوەی بەڕاستی وایان لێدەکات بکڕن.",
+  "belief_label": "باوەڕی سەرەکی",
+  "belief_title": "سەرنجڕاکێشان ئامانج نییە",
+  "belief_body": "باشترین ستراتیژیی مارکێتینگ ئەوەیە کە ڕاستەوخۆ بە فرۆشتن و گەشەی بزنسەوە بەسترابێتەوە. سەرنجڕاکێشان تەنها سەرەتایە."
+ },
+ "quote": {
+  "text": "\"خەڵک بۆ کەمپەین دێنە لام. یەکەم پرسیارم ئەوەیە کە بەڕاستی دەیانەوێت چی چاک بکەن. زۆرجار وەڵامەکە ئەوە دەگۆڕێت کە چی دروست دەکەین.\"",
+  "name": "دیندار ئەحمەد",
+  "role": "بەڕێوەبەر و ڕاوێژکاری مارکێتینگ، میترا پرۆدەکشن"
+ },
+ "contact": {
+  "h2": "دەست بە گفتوگۆ بکە",
+  "sub": "جا دەتەوێت ستراتیژی براندەکەت نوێ بکەیتەوە، پەرە بە کارەکانت بدەیت، یان کەمپەینێک دروست بکەیت کە بەڕاستی بفرۆشێت، با قسە بکەین.",
+  "email_title": "نامەی ڕاستەوخۆ بنێرە",
+  "email_body": "خێراترین ڕێگا بۆ گەیشتن بە دیندار. پەیامێک بنێرە دەربارەی ئەوەی دەتەوێت بیکەیت و ئەویش وەڵامت دەداتەوە.",
+  "direct_title": "پەیوەندی ڕاستەوخۆ"
+ },
+ "cta": {
+  "h2": "با شتێک دروست بکەین کە بفرۆشرێت.",
+  "btn": "دەست بە گفتوگۆ بکە"
+ },
+ "footer": {
+  "tagline": "مارکێتینگی بەستراو بە فرۆشتنەوە.",
+  "copyright": "© ٢٠٢٦ دیندار ئەحمەد. هەموو مافەکان پارێزراون.",
+  "h_languages": "زمانەکان",
+  "h_sections": "بەشەکان",
+  "h_inquiries": "داواکاری",
+  "start_project": "دەستپێکردنی پڕۆژە"
+ }
+}

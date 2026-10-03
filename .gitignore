@@ -1,2 +1,10 @@
 node_modules/
 .wrangler/
+
+# 29Letters fonts: licensed to modify and use, NOT to redistribute.
+# This repo is public, so the font files never enter git.
+tools/fonts/src/
+tools/fonts/dist/
+*.ttf
+*.otf
+!print/business-card/fonts/NotoKufiArabic*.ttf

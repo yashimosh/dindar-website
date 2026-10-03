@@ -1,0 +1,908 @@
+{
+ "meta": {
+  "title": "ديندار أحمد | مدير تسويق ومستشار",
+  "description": "ديندار أحمد، مدير تسويق ومستشار في ميثرا للإنتاج. حملات العلامة التجارية، واستراتيجية المحتوى، والتسويق القائم على المبيعات.",
+  "og_description": "قل لي ما الذي لا يُباع. عشر سنوات في سوق كردستان، سبع منها في ميثرا للإنتاج. تشخيص التسويق قبل الإنفاق عليه.",
+  "tw_description": "تسويق مرتبط مباشرة بالمبيعات. حملات العلامة التجارية واستراتيجية المحتوى ونمو قائم على المبيعات في ميثرا للإنتاج.",
+  "og_locale": "ar_IQ"
+ },
+ "nav": {
+  "#case-studies": "دراسات",
+  "#showreel": "حملات",
+  "#reels": "ريلز",
+  "#clients": "العملاء",
+  "#certificates": "الشهادات",
+  "#expertise": "الخبرات",
+  "#about": "نبذة",
+  "#contact": "تواصل"
+ },
+ "nav_mobile": {
+  "#work": "الأعمال",
+  "#case-studies": "دراسات حالة",
+  "#showreel": "حملات",
+  "#reels": "ريلز",
+  "#clients": "العملاء",
+  "#certificates": "الشهادات",
+  "#expertise": "الخبرات",
+  "#about": "نبذة",
+  "#contact": "تواصل"
+ },
+ "nav_cta": "تواصل معي",
+ "hero": {
+  "eyebrow": "ديندار أحمد · مدير تسويق ومستشار",
+  "h1": "قل لي ما الذي لا يُباع.",
+  "p": "يصل معظم الناس بعَرَض. المبيعات متوقفة، أو الحملة حصدت إعجابات ولا شيء غير ذلك. مهمتي أن أجد السبب قبل أن ينفق أحد ديناراً واحداً على الإعلان. عشر سنوات في هذا السوق: ثلاث في البيع وجهاً لوجه، وسبع في بناء العلامات مع ميثرا للإنتاج. مع كياسا انتهى ذلك بزيادة ٦٠٪ في المبيعات خلال ثمانية أشهر.",
+  "btn_work": "شاهد أعمالي",
+  "btn_about": "كيف أعمل",
+  "portrait_alt": "ديندار أحمد، مدير تسويق ومستشار"
+ },
+ "stats": [
+  {
+   "n": "١٠+",
+   "label": "سنوات في هذا السوق",
+   "body": "من صالة المبيعات إلى استراتيجية التسويق، كلها داخل سوق كردستان."
+  },
+  {
+   "n": "٣",
+   "label": "سنوات في البيع وجهاً لوجه",
+   "body": "شركة بخور (جبسي لوسي) وشركة قيمة الماسية، حيث تعلّمت ما يدفع الناس فعلاً للشراء."
+  },
+  {
+   "n": "٧",
+   "label": "سنوات في ميثرا للإنتاج",
+   "body": "قيادة التسويق في مجالات العلامة والحملات والإنتاج."
+  }
+ ],
+ "featured": {
+  "h2": "أعمال مختارة",
+  "items": [
+   {
+    "tags": [
+     "حملات",
+     "استراتيجية"
+    ],
+    "h3": "استراتيجية العلامة التجارية والحملات",
+    "p": "حملات مصممة لتتجاوز جذب الانتباه، لتروي قصة العلامة التجارية وتؤثر في الأرقام التي تهم فعلاً.",
+    "img": "hero.jpg",
+    "alt": "ديندار أحمد مع فريق العميل في موقع الإنتاج"
+   },
+   {
+    "tags": [
+     "تواصل اجتماعي",
+     "إعلانات خارجية"
+    ],
+    "h3": "المحتوى وسرد القصص",
+    "p": "في ميثرا للإنتاج، الحملة ليست مجرد إعلان، إنها قصة نجاح العلامة التجارية وراءها، تُروى عبر كل قناة تعيش فيها.",
+    "img": "work-03.webp",
+    "alt": "فريق ميثرا للإنتاج في استوديو التصوير"
+   }
+  ]
+ },
+ "cases": {
+  "h2": "دراسات حالة",
+  "sub": "كيف تحوّل العمل إلى نتائج ملموسة للعلامات التجارية التي تقف خلفه.",
+  "items": [
+   {
+    "tag": "منظفات",
+    "name": "كياسا",
+    "period": "١-٨-٢٠٢٥ إلى ٣١-٣-٢٠٢٦",
+    "body": "منذ بداية عملنا مع كياسا، كنا مستمعين جيدين وتفهمنا تمامًا مخاوفهم ومتطلباتهم. مدعومين بخبرتنا السابقة ووجود فريق ذي خبرة واحترافية، تمكنا من تقديم خطة استراتيجية لهم. بعد الموافقة على العمل، بدأنا في تاريخ ١-٨-٢٠٢٥ وحتى تاريخ ٣١-٣-٢٠٢٦، تمكنا من زيادة مبيعاتهم بنسبة ٦٠٪ بدعم من حملة.",
+    "metric": "+٦٠٪ نمو في المبيعات"
+   },
+   {
+    "tag": "أغذية وسلع استهلاكية",
+    "name": "بانو",
+    "period": "بناء العلامة وإطلاقها",
+    "body": "منذ اللحظة الأولى لولادة فكرة بانو، كنا شركاء وداعمين في بناء العلامة التجارية وتحديد استراتيجية عملها. قضينا ثلاثة أشهر في مرحلة ما قبل إطلاق العلامة التجارية، وعملنا على زيادة الوعي لدى المستهلكين في جميع أنحاء كردستان. والحمد لله، في أقل من عام من عمر بانو، تمكنا من جعلها رائدة في سوق المنتجات الغذائية.",
+    "metric": "ريادة السوق في أقل من عام"
+   },
+   {
+    "tag": "تعليم",
+    "name": "معهد روناكي",
+    "period": "منذ ٢٠١٩ حتى الآن",
+    "body": "معهد روناكي هو أحد العملاء الدائمين لميثرا للإنتاج، وقد عملنا معهم باستمرار منذ عام ٢٠١٩.",
+    "metric": "عمل مشترك منذ ٢٠١٩"
+   }
+  ]
+ },
+ "campaigns": {
+  "h2": "أحدث الحملات",
+  "sub": "الأعمال الإعلانية لهذا العام المنتَجة مع ميثرا للإنتاج: إعلانات تلفزيونية في السلع الاستهلاكية والتطبيقات والتعليم.",
+  "items": [
+   {
+    "yt": "ohWLkd8xecs",
+    "yt_title": "زيت بانو الطبيعي: حملة قريباً",
+    "aria": "تشغيل: زيت بانو الطبيعي: حملة قريباً",
+    "thumb": "tvc-01.jpg",
+    "dur": "١:٢١",
+    "tag": "TVC",
+    "h3": "زيت بانو الطبيعي: حملة «قريباً»",
+    "p": "حملة تشويقية لزيت بانو الطبيعي."
+   },
+   {
+    "yt": "Uol2N2hYXDs",
+    "yt_title": "منتج الغسيل من كياسا",
+    "aria": "تشغيل: منتج الغسيل من كياسا",
+    "thumb": "tvc-02.jpg",
+    "dur": "٠:٤٤",
+    "tag": "TVC",
+    "h3": "منتج الغسيل من كياسا",
+    "p": "إعلان منتج لتشكيلة الغسيل من كياسا."
+   },
+   {
+    "yt": "jjXe4ino1YU",
+    "yt_title": "تطبيق بايا",
+    "aria": "تشغيل: تطبيق بايا",
+    "thumb": "tvc-03.jpg",
+    "dur": "٠:٣٣",
+    "tag": "TVC",
+    "h3": "تطبيق بايا",
+    "p": "إعلان إطلاق تطبيق بايا."
+   },
+   {
+    "yt": "BzXQoSo0Z08",
+    "yt_title": "كياسا",
+    "aria": "تشغيل: كياسا",
+    "thumb": "tvc-06.jpg",
+    "dur": "٠:٣٣",
+    "tag": "TVC",
+    "h3": "كياسا",
+    "p": "إعلان العلامة التجارية لكياسا."
+   },
+   {
+    "yt": "jsTUhLnALkQ",
+    "yt_title": "معهد روناكي",
+    "aria": "تشغيل: معهد روناكي",
+    "thumb": "tvc-07.jpg",
+    "dur": "١:١١",
+    "tag": "TVC",
+    "h3": "معهد روناكي",
+    "p": "إعلان لمعهد روناكي."
+   }
+  ],
+  "note_pre": "لا يُحمَّل أي شيء من يوتيوب حتى تضغط على التشغيل. أعمال أخرى على",
+  "note_post": ".",
+  "channel": {
+   "text": "قناة ميثرا للإنتاج",
+   "href": "https://www.youtube.com/@mithra.production/videos"
+  }
+ },
+ "reels": {
+  "h2": "ريلز",
+  "sub": "أفكار تسويقية من ديندار، وأعمال الحملات التي يقودها في ميثرا للإنتاج.",
+  "items": [
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DVB1ZNuiNWt/",
+    "img": "reel-01.jpg",
+    "alt": "تحدث بلغة العميل",
+    "h3": "تحدث بلغة العميل",
+    "p": "التسويق ليس تلاوة نظريات؛ إنه ترجمة رسالتك إلى لغة قلب العميل."
+   },
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DVOxG69iMxr/",
+    "img": "reel-02.jpg",
+    "alt": "توقف عن منافسة السعر",
+    "h3": "توقف عن منافسة السعر",
+    "p": "عندما يقارن العميل السعر فقط، يكون التخفيض انتحاراً. القصة والتمايز هما ما يحمي الهامش."
+   },
+   {
+    "href": "https://www.instagram.com/dindar_ahmad/reel/DYPx5Q7oRHC/",
+    "img": "reel-03.jpg",
+    "alt": "تسويق علمي أم قرار شخصي؟",
+    "h3": "تسويق علمي أم قرار شخصي؟",
+    "p": "معظم ميزانيات الإعلانات تُهدر بسبب قرارات شخصية لا بيانات. إليك كيف تحمي ميزانيتك."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZH2Jicqq/",
+    "img": "reel-14.jpg",
+    "alt": "فارمونا: العبوة بتقنية ثلاثية الأبعاد",
+    "h3": "فارمونا: العبوة بتقنية ثلاثية الأبعاد",
+    "p": "فيلم منتج ثلاثي الأبعاد لواقي الشمس من فارمونا، من إنتاج ميثرا."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZXLWgC_E/",
+    "img": "reel-13.jpg",
+    "alt": "فارمونا: من أجل رفّ واقي الشمس",
+    "h3": "فارمونا: من أجل رفّ واقي الشمس",
+    "p": "إنتاج فيديو إعلاني لخط واقي الشمس من فارمونا."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dc1ZnXpAPBu/",
+    "img": "reel-15.jpg",
+    "alt": "فارمونا: التعريف بواقي الشمس",
+    "h3": "فارمونا: التعريف بواقي الشمس",
+    "p": "عمل آخر من إطلاق واقي الشمس من فارمونا، من إنتاج ميثرا."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwPjZJDe4g/",
+    "img": "reel-12.jpg",
+    "alt": "Strap Iraq: إعادة تعريف سرد قصص الأداء",
+    "h3": "Strap Iraq: إعادة تعريف سرد قصص الأداء",
+    "p": "بيانات التدريب تتحوّل إلى قصة يشعر بها الرياضي."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwQlCCCkLx/",
+    "img": "reel-11.jpg",
+    "alt": "WHOOP 5.0: هندسة دقيقة ثلاثية الأبعاد",
+    "h3": "WHOOP 5.0: هندسة دقيقة ثلاثية الأبعاد",
+    "p": "فيلم منتج ثلاثي الأبعاد يُظهر السوار بالتفصيل."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DcwQ78BEbA9/",
+    "img": "reel-10.jpg",
+    "alt": "Strap Iraq: توسيع حدود الإبداع",
+    "h3": "Strap Iraq: توسيع حدود الإبداع",
+    "p": "فيلم إطلاق لـ Strap Iraq، الموزّع الرسمي لـ WHOOP."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi7sbSDaTP/",
+    "img": "reel-04.jpg",
+    "alt": "أرز كورمانج: سر الشيف",
+    "h3": "أرز كورمانج: سر الشيف",
+    "p": "سر الشيف للكمال. إعلان لأرز كورمانج."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi8VQXkegn/",
+    "img": "reel-05.jpg",
+    "alt": "أرز كورمانج: مطهو بحب",
+    "h3": "أرز كورمانج: مطهو بحب",
+    "p": "مطهو بحب، يُقدَّم بعناية. إعلان لأرز كورمانج."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/Dbi8tVYFdVD/",
+    "img": "reel-06.jpg",
+    "alt": "أرز كورمانج: طعم خالد",
+    "h3": "أرز كورمانج: طعم خالد",
+    "p": "طعم خالد عبر الأجيال. إعلان لأرز كورمانج."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbybqHBjhPX/",
+    "img": "reel-07.jpg",
+    "alt": "مجتمع روناكي: متجذر في العلم",
+    "h3": "مجتمع روناكي: متجذر في العلم",
+    "p": "متجذر في العلم والتعليم والثقافة. إعلان لمجتمع روناكي التعليمي."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbycZValFYQ/",
+    "img": "reel-08.jpg",
+    "alt": "مجتمع روناكي: نجاح في قاعة الإدارة",
+    "h3": "مجتمع روناكي: نجاح في قاعة الإدارة",
+    "p": "من أفكار الصف إلى النجاح في قاعة الإدارة. أُنتج لمجتمع روناكي التعليمي."
+   },
+   {
+    "href": "https://www.instagram.com/mithra_production/reel/DbycpDDDR9q/",
+    "img": "reel-09.jpg",
+    "alt": "مجتمع روناكي: إنقاذ الأرواح",
+    "h3": "مجتمع روناكي: إنقاذ الأرواح",
+    "p": "من حلم الطفولة إلى إنقاذ الأرواح. أُنتج لمجتمع روناكي التعليمي."
+   }
+  ]
+ },
+ "gallery": {
+  "h2": "في الميدان",
+  "sub": "اجتماعات العملاء وأيام الإنتاج وورش العمل وفعاليات القطاع: العمل الذي يقف خلف الحملات.",
+  "items": [
+   {
+    "img": "work-01.webp",
+    "alt": "جلسة استراتيجية مع فريق ميثرا"
+   },
+   {
+    "img": "work-04.webp",
+    "alt": "تقديم جائزة"
+   },
+   {
+    "img": "work-02.webp",
+    "alt": "اجتماع شراكة مع العميل"
+   },
+   {
+    "img": "work-07.webp",
+    "alt": "معرض تجاري للقطاع"
+   },
+   {
+    "img": "work-05.webp",
+    "alt": "اجتماع مع العميل"
+   },
+   {
+    "img": "work-09.webp",
+    "alt": "ورشة عمل داخلية للفريق"
+   },
+   {
+    "img": "work-06.webp",
+    "alt": "زيارة مسائية للعميل"
+   },
+   {
+    "img": "work-08.webp",
+    "alt": "محادثة مع العميل"
+   },
+   {
+    "img": "work-10.jpg",
+    "alt": "أرض المعرض التجاري للقطاع"
+   },
+   {
+    "img": "work-11.jpg",
+    "alt": "زيارة الفريق إلى باك سيمين"
+   },
+   {
+    "img": "work-12.jpg",
+    "alt": "اجتماع مع العميل في جناح هَنا وفودواي"
+   },
+   {
+    "img": "work-13.jpg",
+    "alt": "اجتماع مع فريق مصنع فودواي"
+   },
+   {
+    "img": "work-14.jpg",
+    "alt": "زيارة خط الإنتاج مع فريق العميل"
+   },
+   {
+    "img": "work-15.jpg",
+    "alt": "تسليم شهادة في ميثرا للإنتاج"
+   },
+   {
+    "img": "work-16.jpg",
+    "alt": "معرض صنع في العراق"
+   },
+   {
+    "img": "work-17.jpg",
+    "alt": "جلسة مع فريق ألفا دنت"
+   },
+   {
+    "img": "work-18.jpg",
+    "alt": "نقاش استراتيجي مع فريق ألفا دنت"
+   }
+  ]
+ },
+ "certs": {
+  "h2": "الشهادات",
+  "sub": "تدريب وتطوير مهني في المبيعات والتسويق وإدارة المشاريع.",
+  "items": [
+   {
+    "img": "cert-01.jpg",
+    "alt": "شهادة من مؤسسة هيوا",
+    "issuer": "مؤسسة هيوا",
+    "title": "المبيعات وأن تكون بائعاً فعّالاً",
+    "meta": "ورشة ثلاثة أيام · شباط ٢٠٢٣"
+   },
+   {
+    "img": "cert-02.jpg",
+    "alt": "شهادة من المركز الكندي للتدريب والتنمية البشرية",
+    "issuer": "Canadian Training Center of Human Development",
+    "title": "دبلوم في المبيعات والتسويق",
+    "meta": "شهادة إنجاز، ٤٠ ساعة · تموز ٢٠١٩"
+   },
+   {
+    "img": "cert-03.jpg",
+    "alt": "شهادة من منظمة REACH وDiakonie Katastrophenhilfe",
+    "issuer": "REACH Organization & Diakonie Katastrophenhilfe",
+    "title": "إدارة المشاريع والتسويق",
+    "meta": "مركز ليزا المجتمعي، السليمانية · آب ٢٠١٩"
+   },
+   {
+    "img": "cert-04.jpg",
+    "alt": "شهادة من وزارة الخارجية الأمريكية، الركن الأمريكي في السليمانية",
+    "issuer": "U.S. Department of State, American Corner Sulaymaniyah",
+    "title": "إدارة المشاريع والتسويق",
+    "meta": "دورة تدريبية في المهارات الحياتية · آب ٢٠١٩"
+   },
+   {
+    "img": "cert-05.jpg",
+    "alt": "شهادة Leaders’ Dream",
+    "issuer": "Leaders’ Dream",
+    "title": "دبلوم في المبيعات والتسويق",
+    "meta": "بالتعاون مع Canadian Training Center وJohn Maxwell وطلال أبو غزالة · كانون الأول ٢٠١٩"
+   },
+   {
+    "img": "cert-06.jpg",
+    "alt": "شهادة من مؤسسة هيوا",
+    "issuer": "مؤسسة هيوا",
+    "title": "أساسيات التسويق الاستراتيجي",
+    "meta": "شهادة إتمام، ٢٥ ساعة على مدى خمس جلسات · أيار ٢٠٢٥"
+   }
+  ]
+ },
+ "clients": {
+  "h2": "عملاؤنا",
+  "sub": "علامات تجارية في الأغذية والمنظفات والتجميل والتعليم وغيرها. حملات نُفِّذت مع ميثرا للإنتاج.",
+  "cats": [
+   {
+    "h3": "أغذية",
+    "sub": "منتجات غذائية وسلع استهلاكية",
+    "logos": [
+     {
+      "file": "food/ak-sufi.png",
+      "alt": "شعار AK-Sufi"
+     },
+     {
+      "file": "food/ash.png",
+      "alt": "شعار ASH"
+     },
+     {
+      "file": "food/balactan-babies.png",
+      "alt": "شعار Balactan Babies"
+     },
+     {
+      "file": "food/bani-khaylan.png",
+      "alt": "شعار Bani Khaylan"
+     },
+     {
+      "file": "food/banu.png",
+      "alt": "شعار Banu"
+     },
+     {
+      "file": "food/baxisewan.png",
+      "alt": "شعار Baxisewan"
+     },
+     {
+      "file": "food/bgt.png",
+      "alt": "شعار BGT"
+     },
+     {
+      "file": "food/bkhor.png",
+      "alt": "شعار Bkhor"
+     },
+     {
+      "file": "food/daiamil.png",
+      "alt": "شعار Daiamil"
+     },
+     {
+      "file": "food/dolphin-sea.png",
+      "alt": "شعار Dolphin Sea"
+     },
+     {
+      "file": "food/empire-basmati-rice.png",
+      "alt": "شعار Empire Basmati Rice"
+     },
+     {
+      "file": "food/food-gold-hexagon.png",
+      "alt": "شعار عميل"
+     },
+     {
+      "file": "food/goran-factory.png",
+      "alt": "شعار Goran Factory"
+     },
+     {
+      "file": "food/khanm.png",
+      "alt": "شعار Khanm"
+     },
+     {
+      "file": "food/kirmanj.png",
+      "alt": "شعار Kirmanj"
+     },
+     {
+      "file": "food/nini.png",
+      "alt": "شعار Nini"
+     },
+     {
+      "file": "food/ogvan.png",
+      "alt": "شعار Ogvan"
+     },
+     {
+      "file": "food/reeva.png",
+      "alt": "شعار Reeva"
+     },
+     {
+      "file": "food/safra-company.png",
+      "alt": "شعار Safra Company"
+     },
+     {
+      "file": "food/sahand.png",
+      "alt": "شعار Sahand"
+     },
+     {
+      "file": "food/sahar.png",
+      "alt": "شعار Sahar"
+     },
+     {
+      "file": "food/samaa-drko.png",
+      "alt": "شعار Samaa Drko"
+     },
+     {
+      "file": "food/shnay-bahar.png",
+      "alt": "شعار Shnay Bahar"
+     },
+     {
+      "file": "food/shoniz.png",
+      "alt": "شعار Shoniz"
+     },
+     {
+      "file": "food/tam-fresh.png",
+      "alt": "شعار Tam Fresh"
+     },
+     {
+      "file": "food/zen-top.png",
+      "alt": "شعار Zen Top"
+     }
+    ]
+   },
+   {
+    "h3": "منظفات",
+    "sub": "العناية المنزلية والشخصية",
+    "logos": [
+     {
+      "file": "cleaning/darnell.png",
+      "alt": "شعار Darnell"
+     },
+     {
+      "file": "cleaning/derma-clean.png",
+      "alt": "شعار Derma Clean"
+     },
+     {
+      "file": "cleaning/dosi.png",
+      "alt": "شعار Dosi"
+     },
+     {
+      "file": "cleaning/glint-joker-gold.png",
+      "alt": "شعار Glint Joker Gold"
+     },
+     {
+      "file": "cleaning/jofy.png",
+      "alt": "شعار Jofy"
+     },
+     {
+      "file": "cleaning/joni-baby.png",
+      "alt": "شعار Joni Baby"
+     },
+     {
+      "file": "cleaning/kiasa.png",
+      "alt": "شعار Kiasa"
+     },
+     {
+      "file": "cleaning/komli.png",
+      "alt": "شعار Komli"
+     },
+     {
+      "file": "cleaning/lamis.png",
+      "alt": "شعار Lamis"
+     },
+     {
+      "file": "cleaning/nature-of-zozg.png",
+      "alt": "شعار Nature of Zozg"
+     },
+     {
+      "file": "cleaning/purox.png",
+      "alt": "شعار Purox"
+     },
+     {
+      "file": "cleaning/sarko-company.png",
+      "alt": "شعار Sarko Company"
+     },
+     {
+      "file": "cleaning/tinos.png",
+      "alt": "شعار Tinos"
+     },
+     {
+      "file": "cleaning/touri.png",
+      "alt": "شعار Touri"
+     },
+     {
+      "file": "cleaning/yamur-gold.png",
+      "alt": "شعار Yamur Gold"
+     }
+    ]
+   },
+   {
+    "h3": "تجميل",
+    "sub": "التجميل والأسنان والصيدلة",
+    "logos": [
+     {
+      "file": "cosmetics/alpha-dent.png",
+      "alt": "شعار Alpha Dent"
+     },
+     {
+      "file": "cosmetics/avera.png",
+      "alt": "شعار Avera"
+     },
+     {
+      "file": "cosmetics/by-wishtrend.png",
+      "alt": "شعار By Wishtrend"
+     },
+     {
+      "file": "cosmetics/cc-monogram.png",
+      "alt": "شعار CC"
+     },
+     {
+      "file": "cosmetics/cellumaru.png",
+      "alt": "شعار Cellumaru"
+     },
+     {
+      "file": "cosmetics/cinere.png",
+      "alt": "شعار Cinere"
+     },
+     {
+      "file": "cosmetics/covertime.png",
+      "alt": "شعار Covertime"
+     },
+     {
+      "file": "cosmetics/dear-klairs.png",
+      "alt": "شعار Dear Klairs"
+     },
+     {
+      "file": "cosmetics/dental-doctor.png",
+      "alt": "شعار Dental Doctor"
+     },
+     {
+      "file": "cosmetics/domos.png",
+      "alt": "شعار Domos"
+     },
+     {
+      "file": "cosmetics/farmona.png",
+      "alt": "شعار Farmona"
+     },
+     {
+      "file": "cosmetics/nabaz-beauty.png",
+      "alt": "شعار Nabaz Beauty"
+     },
+     {
+      "file": "cosmetics/titanium-hair-beauty.png",
+      "alt": "شعار Titanium Hair Beauty"
+     },
+     {
+      "file": "cosmetics/vicora.png",
+      "alt": "شعار Vicora"
+     }
+    ]
+   },
+   {
+    "h3": "تعليم",
+    "sub": "مدارس وكليات ومعاهد",
+    "logos": [
+     {
+      "file": "education/balla-academy.png",
+      "alt": "شعار Balla Academy"
+     },
+     {
+      "file": "education/bed-institute.png",
+      "alt": "شعار BED Institute"
+     },
+     {
+      "file": "education/bind-private-high-school.png",
+      "alt": "شعار Bind Private High School"
+     },
+     {
+      "file": "education/cihan-international-school.png",
+      "alt": "شعار Cihan International School"
+     },
+     {
+      "file": "education/edu-blue-wave.png",
+      "alt": "شعار عميل"
+     },
+     {
+      "file": "education/edu-teal-peaks.png",
+      "alt": "شعار عميل"
+     },
+     {
+      "file": "education/junior-private-school.png",
+      "alt": "شعار Junior Private School"
+     },
+     {
+      "file": "education/knowledge-ngo-institute.png",
+      "alt": "شعار Knowledge Ngo Institute"
+     },
+     {
+      "file": "education/puzzle-people.png",
+      "alt": "شعار Puzzle People"
+     },
+     {
+      "file": "education/runaki-educational-community.png",
+      "alt": "شعار Runaki Educational Community"
+     },
+     {
+      "file": "education/runaki-ngo-institute.png",
+      "alt": "شعار Runaki Ngo Institute"
+     },
+     {
+      "file": "education/talent-kindergarten.png",
+      "alt": "شعار Talent Kindergarten"
+     },
+     {
+      "file": "education/university-college-of-goizha.png",
+      "alt": "شعار University College Of Goizha"
+     },
+     {
+      "file": "education/university-of-human-development.png",
+      "alt": "شعار University Of Human Development"
+     },
+     {
+      "file": "education/wasan.png",
+      "alt": "شعار Wasan"
+     },
+     {
+      "file": "education/zanist-ngo-institute.png",
+      "alt": "شعار Zanist Ngo Institute"
+     }
+    ]
+   },
+   {
+    "h3": "عملاء آخرون",
+    "sub": "صناعة وعقارات وخدمات",
+    "logos": [
+     {
+      "file": "other/strap.png",
+      "alt": "شعار Strap"
+     },
+     {
+      "file": "other/whoop.png",
+      "alt": "شعار WHOOP"
+     },
+     {
+      "file": "other/eskan.png",
+      "alt": "شعار Eskan"
+     },
+     {
+      "file": "other/andac-bedding.png",
+      "alt": "شعار Andac Bedding"
+     },
+     {
+      "file": "other/anya-home-company.png",
+      "alt": "شعار Anya Home Company"
+     },
+     {
+      "file": "other/ashurbrick.png",
+      "alt": "شعار ASHurbrick"
+     },
+     {
+      "file": "other/asia-oil-group.png",
+      "alt": "شعار Asia Oil Group"
+     },
+     {
+      "file": "other/avan-taj.png",
+      "alt": "شعار Avan Taj"
+     },
+     {
+      "file": "other/bakhy-dabashan.png",
+      "alt": "شعار Bakhy Dabashan"
+     },
+     {
+      "file": "other/bashwr-city.png",
+      "alt": "شعار Bashwr City"
+     },
+     {
+      "file": "other/blue-pool.png",
+      "alt": "شعار Blue Pool"
+     },
+     {
+      "file": "other/dlawar-group.png",
+      "alt": "شعار Dlawar Group"
+     },
+     {
+      "file": "other/eco-pay.png",
+      "alt": "شعار Eco Pay"
+     },
+     {
+      "file": "other/energy-output.png",
+      "alt": "شعار Energy Output"
+     },
+     {
+      "file": "other/fujiaire.png",
+      "alt": "شعار Fujiaire"
+     },
+     {
+      "file": "other/hilltop-cosmetic-dental-center.png",
+      "alt": "شعار Hilltop Cosmetic Dental Center"
+     },
+     {
+      "file": "other/hiwa-rauf.png",
+      "alt": "شعار Hiwa Rauf"
+     },
+     {
+      "file": "other/koshke-rasan.png",
+      "alt": "شعار Koshke Rasan"
+     },
+     {
+      "file": "other/max-house-company.png",
+      "alt": "شعار Max House Company"
+     },
+     {
+      "file": "other/mirxan.png",
+      "alt": "شعار Mirxan"
+     },
+     {
+      "file": "other/np.png",
+      "alt": "شعار NP"
+     },
+     {
+      "file": "other/other-clover.png",
+      "alt": "شعار عميل"
+     },
+     {
+      "file": "other/other-lion.png",
+      "alt": "شعار عميل"
+     },
+     {
+      "file": "other/qaiwan.png",
+      "alt": "شعار Qaiwan"
+     },
+     {
+      "file": "other/rinnai.png",
+      "alt": "شعار Rinnai"
+     },
+     {
+      "file": "other/star-alliance-iraq.png",
+      "alt": "شعار Star Alliance Iraq"
+     },
+     {
+      "file": "other/strong-building.png",
+      "alt": "شعار Strong Building"
+     },
+     {
+      "file": "other/titanic-hotel-spa.png",
+      "alt": "شعار Titanic Hotel Spa"
+     },
+     {
+      "file": "other/waffle-design.png",
+      "alt": "شعار Waffle Design"
+     }
+    ]
+   }
+  ]
+ },
+ "expertise": {
+  "h2": "الخبرات الأساسية",
+  "sub": "تسويق مصمم لتنمية العمل، لا لمجرد الظهور.",
+  "items": [
+   {
+    "icon": "troubleshoot",
+    "h3": "أين تكمن المشكلة فعلاً",
+    "p": "قراءة صادقة لسبب توقّف المبيعات، قبل أن يكتب أحد أي بريف."
+   },
+   {
+    "icon": "campaign",
+    "h3": "حملات التواصل الاجتماعي",
+    "p": "تخطيط وتنفيذ شامل للحملات عبر جميع المنصات الرئيسية."
+   },
+   {
+    "icon": "hub",
+    "h3": "هوية العلامة التجارية",
+    "p": "عمل التموضع والهوية الذي يبني قصة متماسكة عبر كل نقطة تماس."
+   },
+   {
+    "icon": "movie",
+    "h3": "الفيديو والإنتاج",
+    "p": "كتابة وتصوير ومونتاج، بدعم من فريق الإنتاج في ميثرا."
+   },
+   {
+    "icon": "trending_up",
+    "h3": "النمو القائم على المبيعات",
+    "p": "استراتيجية مدفوعة وعضوية تبدأ من حيث تبدأ الحاجة الحقيقية للعميل."
+   }
+  ]
+ },
+ "career": {
+  "h2": "المسار المهني",
+  "mithra_title": "مدير تسويق",
+  "mithra_org": "ميثرا للإنتاج",
+  "mithra_years": "٧ سنوات، ومستمر",
+  "mithra_body": "عضو في الفريق الإبداعي لميثرا، أحوّل أساس المبيعات إلى حملات ترتبط مباشرة بالنمو. كل استراتيجية تُقاس بأثرها على العمل، لا بمظهرها فحسب.",
+  "sales_title": "المبيعات",
+  "sales_org": "تطوير الأعمال · شركة بخور (جبسي لوسي) · شركة قيمة الماسية",
+  "sales_years": "٣ سنوات",
+  "sales_body": "حيث بدأ المسار في عالم الأعمال. خبرة مباشرة في فهم ما يحتاجه العميل بالضبط، وما يدفعه فعلاً للشراء.",
+  "belief_label": "القناعة الأساسية",
+  "belief_title": "جذب الانتباه ليس الهدف",
+  "belief_body": "أفضل استراتيجية تسويقية هي التي ترتبط مباشرة بالمبيعات ونمو الأعمال. الظهور هو البداية فقط."
+ },
+ "quote": {
+  "text": "«يأتيني الناس من أجل حملة. أول سؤال أطرحه هو ما الذي يحاولون إصلاحه فعلاً. غالباً ما يغيّر الجواب ما سنبنيه.»",
+  "name": "ديندار أحمد",
+  "role": "مدير تسويق ومستشار، ميثرا للإنتاج"
+ },
+ "contact": {
+  "h2": "ابدأ محادثة",
+  "sub": "سواء كنت تسعى لإعادة تعريف استراتيجية علامتك، أو توسيع حضورك، أو بناء حملة تبيع فعلاً، لنتحدث.",
+  "email_title": "راسل مباشرة",
+  "email_body": "أسرع طريقة للوصول إلى ديندار. اكتب عما تبنيه وسيرد عليك.",
+  "direct_title": "تواصل مباشر"
+ },
+ "cta": {
+  "h2": "لنبنِ شيئاً يبيع.",
+  "btn": "ابدأ محادثة"
+ },
+ "footer": {
+  "tagline": "تسويق مرتبط مباشرة بالمبيعات.",
+  "copyright": "© ٢٠٢٦ ديندار أحمد. جميع الحقوق محفوظة.",
+  "h_languages": "اللغات",
+  "h_sections": "الأقسام",
+  "h_inquiries": "الاستفسارات",
+  "start_project": "ابدأ مشروعاً"
+ }
+}
