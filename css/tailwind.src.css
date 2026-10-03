@@ -58,7 +58,10 @@ body { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
 /* full-width numbers band: orange to amber flame, ink text */
 .band-fire { background-image: linear-gradient(100deg, #ffd000 0%, #ffdd00 50%, #ffea00 100%); }
 /* highlighter for key phrases */
-.hi { background-image: linear-gradient(90deg, #ffc300, #ffea00); color: #000000; padding: 0 .3em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* a marker band 1.1em tall, centred on the letters. Noto Kufi's letter box is far
+   taller than the line height (most in Arabic script), so a full-box background
+   would spill over the lines above and below. */
+.hi { background-image: linear-gradient(90deg, #ffc300, #ffea00); background-repeat: no-repeat; background-size: 100% 1.1em; background-position: 0 50%; color: #000000; padding: 0 .3em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 /* soft blurred ember glows; place inside a relative, overflow-hidden parent */
 .orb { position: absolute; border-radius: 9999px; filter: blur(120px); opacity: .4; pointer-events: none; z-index: 0; }
 .orb-a { background: #7161ef; }
