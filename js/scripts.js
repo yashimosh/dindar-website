@@ -6,27 +6,6 @@
   var rtl = html.dir === "rtl";
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // ---- Live clock in the header (Erbil time) ----
-  // Sorani has patchy browser support, so Kurdish uses Arabic-Indic digits on a 24h clock
-  var CLOCK_LOCALE = { en: "en-US", ku: "ar-IQ", ar: "ar-IQ", fa: "fa-IR" };
-  var clocks = document.querySelectorAll("[data-clock]");
-  if (clocks.length) {
-    var fmt;
-    try {
-      var opts = { timeZone: "Asia/Baghdad", hour: "numeric", minute: "2-digit" };
-      if (loc === "ku") opts.hourCycle = "h23";
-      fmt = new Intl.DateTimeFormat(CLOCK_LOCALE[loc] || "en-US", opts);
-    } catch (e) {
-      fmt = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Baghdad", hour: "numeric", minute: "2-digit" });
-    }
-    var tick = function () {
-      var t = fmt.format(new Date());
-      clocks.forEach(function (c) { c.textContent = t; });
-    };
-    tick();
-    setInterval(tick, 15000);
-  }
-
   // ---- Hero headline: letter (Latin) or word (Arabic script) reveal ----
   document.querySelectorAll("[data-split]").forEach(function (h) {
     if (calm) return;

@@ -45,7 +45,7 @@ file. No HTML edit is needed.
 - Shared CSS (headline reveal, image shimmer, marquee, RTL font): `css/tailwind.src.css`
 - `css/tailwind.css` is generated. Do not edit it.
 - Fonts: Geist (English), IBM Plex Sans Arabic (Kurdish, Arabic, Persian).
-- Behaviour: `js/scripts.js` (live Erbil clock, headline reveal, scroll
+- Behaviour: `js/scripts.js` (headline reveal, scroll
   reveal, mobile menu, click-to-load YouTube, client logos).
 
 ## Build and deploy
