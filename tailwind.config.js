@@ -12,15 +12,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // TEST PALETTE (branch palette-violet-yellow), refined roles:
-        //   deep violet  #1c1550  ground + text on yellow (white on it 15:1)
-        //   violet       #7161ef  accent blocks, glows
+        // TEST PALETTE (branch palette-violet-yellow), roles:
+        //   black        #000000  ground + text on yellow
+        //   violet       #7161ef  gradients into black (.grad-*), glows
         //   lavender     #957fef  secondary text (5:1 on deep), hairlines
         //   school bus   #ffc300  main accent (buttons)
         //   sunbeam      #ffea00  highlights; bright amber / gold are gradient steps
         // Token names kept from the fire palette so no markup changes.
-        ink: "#1c1550",
-        deep: "#1c1550",
+        ink: "#000000",        // black: page ground
+        deep: "#000000",       // black: text on yellow
         violet: "#7161ef",
         lavender: "#957fef",
         night: "#7161ef",
@@ -33,7 +33,7 @@ module.exports = {
         orange: "#ffdd00",
         amber: "#ffea00",
         accent: "#ffea00",
-        dark: "#1c1550",
+        dark: "#000000",
         muted: "#957fef",
         faint: "rgb(149 127 239 / 0.75)",
         line: "rgb(149 127 239 / 0.22)",
