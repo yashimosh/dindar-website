@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Builds Dindar Ahmed's business card: front.svg, back.svg and print.html.
+"""Builds Dindar Ahmed's business card: front.svg (English), front-ku.svg
+(Kurdish), back.svg (bilingual) and the print pages.
 
 The SVGs are the source of truth; open and edit them in Illustrator or
 Figma (install fonts/NotoKufiArabic[wght].ttf first). This script only
@@ -24,6 +25,8 @@ TITLE_EN = "MARKETING MANAGER AND CONSULTANT"
 PHONE = "+964 771 992 2486"
 EMAIL = "Dindar.Ahmed@mithra.agency"
 WEB = "dindarahmed.com"
+# the website's Kurdish headline, split the same way as the English one
+STATEMENT_KU = ("پێم بڵێ", "چی", "فرۆشی نییە")
 QR_DATA = "https://dindarahmed.com"     # the site carries WhatsApp, Instagram, LinkedIn
 
 # ---- palette (same as the website) ----
@@ -67,6 +70,37 @@ def front():
 <text x="{L}" y="{B - 2 * step:.2f}" fill="{WHITE}">TELL ME</text>
 <text x="{L}" y="{B - step:.2f}" fill="url(#yellow)">WHAT ISN'T</text>
 <text x="{L}" y="{B:.2f}" fill="{WHITE}">SELLING<tspan fill="{Y1}">.</tspan></text>
+</g>
+</svg>
+"""
+    return s
+
+
+def front_ku():
+    """Kurdish front: the English layout mirrored for right-to-left reading.
+    Name small top-right, the website's Kurdish line bottom-right, glow top-left.
+    Arabic-script letters run taller and deeper than Latin capitals, so the
+    lines are spaced wider and the last baseline sits a little higher to keep
+    descenders inside the safe zone."""
+    size, step, base = 5.6, 7.4, B - 1.4
+    rtl = 'direction="rtl" unicode-bidi="embed" text-anchor="start"'
+    s = svg_open("Dindar Ahmed business card, Kurdish front")
+    s += f"""<defs>
+<radialGradient id="glow" cx="0" cy="0" r="0.9">
+<stop offset="0" stop-color="{VIOLET}" stop-opacity="0.38"/>
+<stop offset="1" stop-color="{VIOLET}" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="yellow" x1="1" y1="0" x2="0" y2="0">
+<stop offset="0" stop-color="{Y1}"/><stop offset="1" stop-color="{Y4}"/>
+</linearGradient>
+</defs>
+<rect width="{W}" height="{H}" fill="{BLACK}"/>
+<rect width="{W}" height="{H}" fill="url(#glow)"/>
+<text x="{R}" y="{T + 2.4}" font-size="2.3" font-weight="700" fill="{WHITE}" fill-opacity="0.9" {rtl}>{NAME_KU}</text>
+<g font-weight="900" font-size="{size}">
+<text x="{R}" y="{base - 2 * step:.2f}" fill="{WHITE}" {rtl}>{STATEMENT_KU[0]}</text>
+<text x="{R}" y="{base - step:.2f}" fill="url(#yellow)" {rtl}>{STATEMENT_KU[1]}</text>
+<text x="{R}" y="{base:.2f}" fill="{WHITE}" {rtl}>{STATEMENT_KU[2]}<tspan fill="{Y1}">.</tspan></text>
 </g>
 </svg>
 """
@@ -135,7 +169,10 @@ html, body {{ margin: 0; padding: 0; }}
 if __name__ == "__main__":
     f = front()
     open(os.path.join(HERE, "front.svg"), "w", encoding="utf-8").write(f)
+    fk = front_ku()
+    open(os.path.join(HERE, "front-ku.svg"), "w", encoding="utf-8").write(fk)
     b, version, n, cell = back()
     open(os.path.join(HERE, "back.svg"), "w", encoding="utf-8").write(b)
     open(os.path.join(HERE, "print.html"), "w", encoding="utf-8").write(print_page(f, b))
-    print(f"front.svg, back.svg, print.html written. QR version {version}, {n}x{n} modules, module {cell:.3f} mm")
+    open(os.path.join(HERE, "print-ku.html"), "w", encoding="utf-8").write(print_page(fk, b))
+    print(f"front.svg, front-ku.svg, back.svg, print.html, print-ku.html written. QR version {version}, {n}x{n} modules, module {cell:.3f} mm")

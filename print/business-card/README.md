@@ -2,12 +2,13 @@
 
 | File | What it is |
 |---|---|
-| `front.svg`, `back.svg` | The editable design. Open in Illustrator or Figma. |
-| `card-print.pdf` | Send this to the printer. 2 pages: front, back. |
-| `front.png`, `back.png` | 600 dpi images of each side, cut to size (for sharing, mockups). |
+| `front.svg`, `front-ku.svg`, `back.svg` | The editable design: English front, Kurdish front, bilingual back. Open in Illustrator or Figma. |
+| `card-print.pdf` | English card for the printer. 2 pages: front, back. |
+| `card-print-ku.pdf` | Kurdish card for the printer. 2 pages: Kurdish front, the same back. |
+| `front.png`, `front-ku.png`, `back.png` | 600 dpi images of each side, cut to size (for sharing, mockups). |
 | `preview.png`, `preview.html` | Both sides side by side, for a quick look. |
 | `fonts/` | Noto Kufi Arabic (free, SIL Open Font License, see `OFL.txt`). |
-| `build.py`, `print.html` | Regenerate the SVGs and the PDF (only needed if details change). |
+| `build.py`, `print.html`, `print-ku.html` | Regenerate the SVGs and the PDFs (only needed if details change). |
 
 ## Layout
 
@@ -17,6 +18,9 @@ clear on purpose:
 
 - Front: name small top-left; "Tell me what isn't selling." in the bottom-left
   corner; a faint violet glow in the empty top-right.
+- Kurdish front: the same layout mirrored for right-to-left reading: Kurdish name
+  small top-right, "پێم بڵێ / چی / فرۆشی نییە." bottom-right, glow top-left.
+  Arabic-script lines are spaced a little wider than the English ones.
 - Back: identity block top-left (name, Kurdish name, title); phone, email and
   website bottom-left; QR bottom-right, its bottom edge level with the last line.
 
@@ -47,4 +51,7 @@ the first version feel crowded.
   modules, 0.5 mm each at 14.5 mm), so it scans easily. It was checked to decode.
 - PDF from `print.html`:
   `"/Applications/Brave Browser.app/Contents/MacOS/Brave Browser" --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=card-print.pdf print.html`
-  (Chrome works the same way.)
+  (Chrome works the same way.) For the Kurdish card use `print-ku.html` and
+  `card-print-ku.pdf`.
+- Printing both: most printers can split one order across two front designs with the
+  same back; otherwise order them as two jobs.
