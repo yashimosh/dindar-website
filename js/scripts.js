@@ -1,48 +1,31 @@
 /* dindarahmed.com: small, dependency-free page behaviour.
    Everything here is progressive: the pages read fine without it. */
 (function () {
-  var html = document.documentElement;
   var loc = document.body.getAttribute("data-loc") || "en";
-  var rtl = html.dir === "rtl";
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // ---- Hero headline: letter (Latin) or word (Arabic script) reveal ----
-  document.querySelectorAll("[data-split]").forEach(function (h) {
-    if (calm) return;
-    h.setAttribute("aria-label", h.textContent.replace(/\s+/g, " ").trim());
-    var i = 0;
-    var walk = function (node) {
-      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
-        if (n.nodeType === 1) { walk(n); return; }
-        if (n.nodeType !== 3) return;
-        var frag = document.createDocumentFragment();
-        n.textContent.split(/(\s+)/).forEach(function (part) {
-          if (!part) return;
-          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(" ")); return; }
-          var w = document.createElement("span");
-          w.className = "w";
-          w.setAttribute("aria-hidden", "true");
-          if (rtl) {
-            w.className = "w c";
-            w.style.animationDelay = (i++ * 0.08) + "s";
-            w.textContent = part;
-          } else {
-            part.split("").forEach(function (ch) {
-              var c = document.createElement("span");
-              c.className = "c";
-              c.style.animationDelay = (i++ * 0.025) + "s";
-              c.textContent = ch;
-              w.appendChild(c);
-            });
-          }
-          frag.appendChild(w);
-        });
-        node.replaceChild(frag, n);
-      });
+  // ---- Count-up numbers (keeps the page's own digit set: 0-9, Arabic-Indic or Persian) ----
+  var SETS = ["0123456789", "\u0660\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669", "\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9"];
+  var countUp = function (el) {
+    var text = el.textContent, set = SETS[0];
+    SETS.forEach(function (s) { if (s.split("").some(function (d) { return text.indexOf(d) > -1; })) set = s; });
+    var digits = text.split("").filter(function (ch) { return set.indexOf(ch) > -1; });
+    if (!digits.length || calm) return;
+    var target = parseInt(digits.map(function (d) { return set.indexOf(d); }).join(""), 10);
+    var render = function (n) {
+      var str = String(n).split("").map(function (d) { return set[+d]; }).join("");
+      el.textContent = text.replace(digits.join(""), str);
     };
-    walk(h);
-    h.classList.add("split");
-  });
+    var t0 = null;
+    var step = function (t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / 1400);
+      render(Math.round(target * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) requestAnimationFrame(step);
+    };
+    render(0);
+    requestAnimationFrame(step);
+  };
 
   // ---- Image skeletons: fade images in once loaded ----
   var settle = function (img) {
@@ -62,14 +45,17 @@
 
   // ---- Scroll reveal ----
   var observe = function (root) {
-    var items = root.querySelectorAll(".rv:not(.in)");
+    var items = root.querySelectorAll(".rv:not(.in), .reveal:not(.in), [data-count]");
     if (!("IntersectionObserver" in window) || calm) {
       items.forEach(function (el) { el.classList.add("in"); });
       return;
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        if (e.target.hasAttribute("data-count")) countUp(e.target);
+        io.unobserve(e.target);
       });
     }, { rootMargin: "0px 0px -8% 0px" });
     items.forEach(function (el) { io.observe(el); });
@@ -84,7 +70,7 @@
       menu.hidden = !open;
       document.body.classList.toggle("menu-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.textContent = open ? toggle.getAttribute("data-close") : toggle.getAttribute("data-open");
+      toggle.querySelector("span").textContent = open ? toggle.getAttribute("data-close") : toggle.getAttribute("data-open");
     };
     toggle.addEventListener("click", function () { setOpen(menu.hidden); });
     menu.querySelectorAll("a").forEach(function (a) {
@@ -142,7 +128,7 @@
             data.categories.forEach(function (cat) {
               cat.logos.forEach(function (l) {
                 var cell = document.createElement("div");
-                cell.className = "shrink-0 w-28 h-28 md:w-36 md:h-36 mx-2 md:mx-4 flex items-center justify-center";
+                cell.className = "shrink-0 w-24 h-24 md:w-32 md:h-32 mx-3 md:mx-6 flex items-center justify-center";
                 var img = logoImg(l, "max-w-full max-h-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition");
                 if (run) { img.alt = ""; cell.setAttribute("aria-hidden", "true"); }
                 cell.appendChild(img);
@@ -169,7 +155,7 @@
             grid.className = "grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3";
             cat.logos.forEach(function (l) {
               var cell = document.createElement("div");
-              cell.className = "aspect-square border border-card rounded-lg flex items-center justify-center p-3 bg-white";
+              cell.className = "aspect-square border border-card flex items-center justify-center p-3 bg-white";
               cell.appendChild(logoImg(l, "max-w-full max-h-full object-contain"));
               grid.appendChild(cell);
             });

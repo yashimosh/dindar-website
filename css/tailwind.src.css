@@ -5,8 +5,7 @@
    After editing run:   npm run build:css
    Live-rebuild while working:   npm run watch:css
 
-   Design tokens (colours, fonts, widths) live in
-   ../tailwind.config.js
+   Design tokens (colours, fonts) live in ../tailwind.config.js
    ========================================================= */
 
 @tailwind base;
@@ -17,63 +16,117 @@
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { background: #fff; color: #111; }
-::selection { background: #111; color: #fff; }
-
-/* one family for every RTL page: IBM Plex Sans Arabic covers Arabic,
-   Persian and Kurdish Sorani letters, both digit sets and full Latin */
-html[dir="rtl"] body {
-  font-family: "IBM Plex Sans Arabic", Tahoma, sans-serif;
-}
-/* negative tracking breaks Arabic-script joining */
-html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
+::selection { background: #c5f04a; color: #111; }
 
 /* page gutter + max width, used by every section */
-.wrap { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: 1rem; }
-@media (min-width: 768px) { .wrap { padding-inline: 1.5rem; } }
+.wrap { width: 100%; max-width: 1600px; margin-inline: auto; padding-inline: 1rem; }
+@media (min-width: 768px) { .wrap { padding-inline: 2rem; } }
+@media (min-width: 1280px) { .wrap { padding-inline: 3.5rem; } }
+
+/* ---------- display type ----------
+   Archivo at 125% width, heavy, uppercase: the big headlines */
+.display {
+  font-family: "Archivo", "Geist", sans-serif;
+  font-stretch: 125%;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+}
+/* small tracked uppercase labels */
+.lbl {
+  font-family: "Archivo", "Geist", sans-serif;
+  font-stretch: 125%;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+/* outlined display words */
+.ol { color: transparent; -webkit-text-stroke: 1.5px currentColor; }
+.ol-ink { color: transparent; -webkit-text-stroke: 1.5px #111; }
+
+/* ---------- RTL (Kurdish, Arabic, Persian) ----------
+   IBM Plex Sans Arabic covers all three scripts and Latin.
+   No uppercase, no negative tracking: Arabic letters must stay joined. */
+html[dir="rtl"] body,
+html[dir="rtl"] .display,
+html[dir="rtl"] .lbl {
+  font-family: "IBM Plex Sans Arabic", Tahoma, sans-serif;
+  font-stretch: normal;
+  text-transform: none;
+  letter-spacing: 0 !important;
+}
+html[dir="rtl"] .display { font-weight: 700; line-height: 1.15; }
+html[dir="rtl"] .lbl { font-size: 13px; font-weight: 600; }
+html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
 
 /* ---------- links ---------- */
 
 .ul { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-.ul:hover { text-decoration-color: #99a1af; }
+.ul:hover { text-decoration-color: currentColor; opacity: 0.7; }
 
-/* ---------- hero headline reveal ----------
-   scripts.js splits the H1 into letters (Latin) or words (Arabic
-   script, where letters must stay joined) and staggers them in.
-   Without JS, or with reduced motion, the headline is just shown. */
-.split .c {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
-}
-.split .w { display: inline-block; white-space: nowrap; }
-@keyframes rise { to { opacity: 1; transform: none; } }
+/* ---------- headline line reveal ----------
+   each .hl line slides up out of its own mask. Without JS, or with
+   reduced motion, the headline is simply shown. */
+.hl { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.hl > span { display: block; }
+.js .reveal .hl > span { transform: translateY(105%); }
+.js .reveal.in .hl > span { transform: none; transition: transform 1.1s cubic-bezier(0.19, 1, 0.22, 1); }
+.js .reveal.in .hl:nth-child(2) > span { transition-delay: 0.08s; }
+.js .reveal.in .hl:nth-child(3) > span { transition-delay: 0.16s; }
 
 /* ---------- scroll reveal ---------- */
 
-.js .rv { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.js .rv { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
 .js .rv.in { opacity: 1; transform: none; }
 
-/* ---------- image skeleton ----------
-   grey shimmer behind every image until it has loaded */
+/* ---------- image skeleton ---------- */
+
 .sk {
   background: linear-gradient(90deg, #f3f4f6 0%, #e9eaee 50%, #f3f4f6 100%);
   background-size: 200% 100%;
   animation: shimmer 1.4s linear infinite;
 }
 .sk.ld { animation: none; background: #f3f4f6; }
-.js .sk img { opacity: 0; transition: opacity 0.5s ease; }
+.js .sk img { opacity: 0; transition: opacity 0.6s ease; }
 .js .sk.ld img { opacity: 1; }
 @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 
-/* ---------- client logo marquee ---------- */
+/* ---------- hero ---------- */
 
-.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee-track { display: flex; width: max-content; animation: marquee 90s linear infinite; }
+.hero-shade { background: linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 50%, rgba(10,10,10,.55) 100%); }
+/* on wide screens the photo sits on the right and fades into the dark */
+.hero-side { background: linear-gradient(to right, #141414 0%, rgba(20,20,20,.6) 22%, rgba(20,20,20,0) 50%); }
+html[dir="rtl"] .hero-side { background: linear-gradient(to left, #141414 0%, rgba(20,20,20,.6) 22%, rgba(20,20,20,0) 50%); }
+.scroll-line { width: 1px; height: 48px; background: rgba(255,255,255,.25); position: relative; overflow: hidden; }
+.scroll-line::after { content: ""; position: absolute; inset: 0; background: #c5f04a; animation: drip 2s cubic-bezier(.6,0,.4,1) infinite; }
+@keyframes drip { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
+
+/* ---------- marquees ---------- */
+
+.marquee { overflow: hidden; }
+.marquee-fade { -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; align-items: center; width: max-content; animation: marquee 90s linear infinite; }
+.marquee-track.fast { animation-duration: 40s; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 html[dir="rtl"] .marquee-track { animation-name: marquee-rtl; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes marquee-rtl { to { transform: translateX(50%); } }
+
+/* ---------- service rows ---------- */
+
+.svc { transition: padding 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
+.svc:hover { padding-inline-start: 1.25rem; }
+.svc .svc-n { transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.svc:hover .svc-n { background: #c5f04a; border-color: #c5f04a; color: #111; transform: scale(1.1) rotate(360deg); }
+.svc .svc-name { transition: color 0.4s; }
+.svc:hover .svc-name { color: #c5f04a; }
+
+/* ---------- WhatsApp button ---------- */
+
+.wa span { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width .4s ease, opacity .3s ease; }
+.wa:hover span, .wa:focus-visible span { max-width: 140px; opacity: 1; }
 
 /* ---------- mobile menu ---------- */
 
@@ -82,15 +135,15 @@ body.menu-open { overflow: hidden; }
 /* ---------- keyboard focus ---------- */
 
 :focus-visible { outline: 2px solid #111; outline-offset: 3px; border-radius: 2px; }
-.bg-ink :focus-visible { outline-color: #fff; }
+.bg-dark :focus-visible, .on-dark :focus-visible { outline-color: #c5f04a; }
 
 /* ---------- respect reduced-motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .split .c, .js .rv { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+  .js .reveal .hl > span, .js .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
   .marquee { overflow-x: auto; }
-  .marquee-track { animation: none; }
-  .sk { animation: none; }
+  .marquee-track, .sk, .scroll-line::after { animation: none; }
+  .svc:hover { padding-inline-start: 0; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }

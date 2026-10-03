@@ -18,11 +18,11 @@ Three pages in four languages, each a full, independent HTML file:
 
 `404.html` is the not-found page.
 
-- **Home:** headline, featured TVC, info + numbers, core expertise, case study
-  preview, client logo marquee, contact footer.
+- **Home:** full-screen hero, services ticker, statement, featured TVC, numbers
+  band, core expertise rows, case studies, client logo marquee, tagline ticker.
 - **Work:** approach, case studies, campaigns (YouTube), reels (Instagram).
-- **About:** belief, info, quote, experience, certificates, in the field
-  (photos), clients by category.
+- **About:** belief, portrait + info, quote, experience, certificates, in the
+  field (photos), clients by category.
 
 The same sentence lives in up to 4 files (one per language). Change all four
 when you change one.
@@ -41,12 +41,16 @@ file. No HTML edit is needed.
 
 ## Design system
 
-- Tokens (colours, font, widths): `tailwind.config.js`
-- Shared CSS (headline reveal, image shimmer, marquee, RTL font): `css/tailwind.src.css`
+- Tokens (colours, fonts): `tailwind.config.js`. The lime accent (`accent`) is one
+  value there; change it and every button, band and highlight follows. Use it as a
+  fill or as text on dark grounds only (it is too light to read on white).
+- Shared CSS (headline line reveal, image shimmer, marquees, service rows, RTL
+  font rules): `css/tailwind.src.css`
 - `css/tailwind.css` is generated. Do not edit it.
-- Fonts: Geist (English), IBM Plex Sans Arabic (Kurdish, Arabic, Persian).
-- Behaviour: `js/scripts.js` (headline reveal, scroll
-  reveal, mobile menu, click-to-load YouTube, client logos).
+- Fonts: Archivo Expanded (big uppercase headlines), Geist (text), IBM Plex Sans
+  Arabic (all Kurdish, Arabic and Persian text).
+- Behaviour: `js/scripts.js` (headline and scroll reveals, count-up numbers,
+  mobile menu, click-to-load YouTube, client logos).
 
 ## Build and deploy
 
