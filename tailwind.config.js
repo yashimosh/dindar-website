@@ -26,12 +26,17 @@ module.exports = {
         // roles
         accent: "#ffba08",                 // small highlights on dark
         dark: "#03071e",
-        muted: "#a7a9be",                  // secondary text on ink (7:1)
-        faint: "#6e7191",
-        line: "rgb(255 255 255 / 0.08)",   // hairlines, faint grounds
-        card: "rgb(255 255 255 / 0.14)",   // card and glass borders
-        edge: "rgb(255 255 255 / 0.14)",
+        // neutrals: only white text over the palette, plus amber-flame
+        // hairlines. No greys or blues of their own.
+        muted: "rgb(255 255 255 / 0.68)",  // secondary text (8:1 on ink)
+        faint: "rgb(255 255 255 / 0.45)",
+        line: "rgb(255 186 8 / 0.10)",     // hairlines (amber flame)
+        card: "rgb(255 186 8 / 0.18)",     // card borders (amber flame)
+        edge: "rgb(255 186 8 / 0.18)",
       },
+      // Tailwind's own fallbacks (blue ring, grey border) pointed at the palette
+      borderColor: { DEFAULT: "rgb(255 186 8 / 0.18)" },
+      ringColor: { DEFAULT: "#ffba08" },
       fontFamily: {
         sans: ["Noto Kufi Arabic", "Tahoma", "sans-serif"],
         display: ["Noto Kufi Arabic", "Tahoma", "sans-serif"],
