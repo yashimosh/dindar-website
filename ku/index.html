@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
-<link href="/css/tailwind.css?v=5826ca6b" rel="stylesheet"/>
+<link href="/css/tailwind.css?v=17c51baa" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-loc="ku" class="bg-ink text-white antialiased overflow-x-hidden">
@@ -40,16 +40,16 @@
 <div class="h-20 md:h-24 flex items-center justify-between gap-6 border-b border-white/10">
 <a href="/ku/" class="display text-[15px] md:text-[17px]">دیندار ئەحمەد</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
-<a href="/ku/" class="ul transition-opacity" aria-current="page">سەرەتا</a>
-<a href="/ku/work/" class="opacity-70 hover:opacity-100 transition-opacity">کارەکان</a>
-<a href="/ku/about/" class="opacity-70 hover:opacity-100 transition-opacity">دەربارە</a>
-<a href="#contact" class="opacity-70 hover:opacity-100 transition-opacity">پەیوەندی</a>
+<a href="/ku/" class="fire-text transition-opacity" aria-current="page">سەرەتا</a>
+<a href="/ku/work/" class="opacity-60 hover:opacity-100 transition-opacity">کارەکان</a>
+<a href="/ku/about/" class="opacity-60 hover:opacity-100 transition-opacity">دەربارە</a>
+<a href="#contact" class="opacity-60 hover:opacity-100 transition-opacity">پەیوەندی</a>
 </nav>
 <div class="hidden md:flex items-center gap-4 text-[13px]" aria-label="زمان">
-<a href="/" lang="en" hreflang="en" class="opacity-70 hover:opacity-100 transition-opacity">EN</a>
-<a href="/ku/" lang="ckb" hreflang="ckb" class="ul" aria-current="true">کوردی</a>
-<a href="/ar/" lang="ar" hreflang="ar" class="opacity-70 hover:opacity-100 transition-opacity">العربية</a>
-<a href="/fa/" lang="fa" hreflang="fa" class="opacity-70 hover:opacity-100 transition-opacity">فارسی</a>
+<a href="/" lang="en" hreflang="en" class="opacity-60 hover:opacity-100 transition-opacity">EN</a>
+<a href="/ku/" lang="ckb" hreflang="ckb" class="text-accent" aria-current="true">کوردی</a>
+<a href="/ar/" lang="ar" hreflang="ar" class="opacity-60 hover:opacity-100 transition-opacity">العربية</a>
+<a href="/fa/" lang="fa" hreflang="fa" class="opacity-60 hover:opacity-100 transition-opacity">فارسی</a>
 </div>
 <button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="کردنەوەی لیست" data-close="داخستنی لیست"><span>کردنەوەی لیست</span></button>
 </div>
@@ -74,37 +74,33 @@
 </div>
 </div>
 <main id="main">
-<section class="bg-ochre text-white overflow-hidden">
-<div class="wrap pt-28 md:pt-32 pb-12 md:pb-16 lg:min-h-[100svh] grid gap-10 lg:grid-cols-12 lg:gap-8 lg:items-end">
-<div class="lg:col-span-7 order-2 lg:order-1">
-<p class="rv lbl text-white/80 mb-6">دیندار ئەحمەد · بەڕێوەبەری مارکێتینگ و ڕاوێژکار</p>
-<h1 class="reveal display text-[48px] sm:text-[80px] lg:text-[96px] xl:text-[118px] leading-[.88]"><span class="hl"><span class="">پێم بڵێ</span></span><span class="hl"><span class="text-ink">چی</span></span><span class="hl"><span class="">فرۆشی نییە<span class="text-ink">.</span></span></span></h1>
-<div class="rv mt-10 md:mt-14 flex flex-wrap items-center gap-x-8 gap-y-4">
-<a href="/ku/work/" class="lbl inline-flex items-center gap-3 bg-ink text-white px-7 py-4 hover:bg-night transition-colors">کارەکانم <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<a href="/ku/about/" class="lbl ul text-white">شێوازی کارکردنم</a>
+<section class="relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
+<div class="absolute inset-y-0 end-0 w-full lg:w-[68%]">
+<img src="/assets/img/hero-portrait.jpg" alt="Dindar Ahmed, Marketing Manager at Mithra Production" width="2000" height="1250" fetchpriority="high" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[50%_30%]"/>
+<div class="hero-side absolute inset-0 hidden lg:block" aria-hidden="true"></div>
 </div>
+<div class="hero-shade absolute inset-0" aria-hidden="true"></div>
+<div class="orb orb-a" style="width:640px;height:640px;bottom:-300px;inset-inline-start:-220px;opacity:.4" aria-hidden="true"></div>
+<div class="wrap above pt-36 pb-24 md:pb-14">
+<p class="rv lbl text-white/70 mb-6">دیندار ئەحمەد · بەڕێوەبەری مارکێتینگ و ڕاوێژکار</p>
+<h1 class="reveal display text-[40px] sm:text-[68px] lg:text-[88px] xl:text-[104px]"><span class="hl"><span class="">پێم بڵێ</span></span><span class="hl"><span class="fire-text">چی</span></span><span class="hl"><span class="">فرۆشی نییە<span class="fire-text">.</span></span></span></h1>
+<div class="rv mt-10 md:mt-14 flex flex-wrap items-end justify-between gap-6">
+<div class="flex flex-wrap gap-3">
+<a href="/ku/work/" class="lbl inline-flex items-center gap-3 btn-fire px-7 py-4">کارەکانم <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a href="#contact" class="lbl inline-flex items-center gap-3 border border-white/30 text-white px-7 py-4 hover:border-amber hover:text-amber transition-colors">دەست بە گفتوگۆ بکە</a>
 </div>
-<div class="lg:col-span-5 order-1 lg:order-2 relative pb-10 lg:pb-0">
-<div class="rv wavy overflow-hidden aspect-square">
-<img src="/assets/img/portrait-square.jpg" alt="Dindar Ahmed, Marketing Manager at Mithra Production" width="1200" height="1200" fetchpriority="high" decoding="async" class="w-full h-full object-cover"/>
-</div>
-<div class="absolute -bottom-2 start-0 lg:-start-12 lg:bottom-6"><a href="#contact" class="group relative inline-flex items-center justify-center shrink-0 w-36 h-36 md:w-44 md:h-44 text-amber"><svg class="absolute inset-0 w-full h-full transition-transform duration-1000 ease-out group-hover:rotate-45 group-hover:scale-105" viewBox="0 0 200 200" aria-hidden="true"><path d="M192.88,100.00 L192.70,102.43 L192.16,104.83 L191.28,107.18 L190.11,109.47 L188.67,111.67 L187.04,113.79 L185.27,115.80 L183.42,117.73 L181.56,119.58 L179.75,121.37 L178.04,123.12 L176.50,124.86 L175.14,126.61 L174.01,128.41 L173.10,130.28 L172.42,132.24 L171.95,134.32 L171.67,136.52 L171.53,138.84 L171.50,141.28 L171.51,143.82 L171.52,146.45 L171.47,149.12 L171.30,151.80 L170.96,154.45 L170.41,157.02 L169.63,159.47 L168.58,161.75 L167.26,163.83 L165.68,165.68 L163.83,167.26 L161.75,168.58 L159.47,169.63 L157.02,170.41 L154.45,170.96 L151.80,171.30 L149.12,171.47 L146.45,171.52 L143.82,171.51 L141.28,171.50 L138.84,171.53 L136.52,171.67 L134.32,171.95 L132.24,172.42 L130.28,173.10 L128.41,174.01 L126.61,175.14 L124.86,176.50 L123.12,178.04 L121.37,179.75 L119.58,181.56 L117.73,183.42 L115.80,185.27 L113.79,187.04 L111.67,188.67 L109.47,190.11 L107.18,191.28 L104.83,192.16 L102.43,192.70 L100.00,192.88 L97.57,192.70 L95.17,192.16 L92.82,191.28 L90.53,190.11 L88.33,188.67 L86.21,187.04 L84.20,185.27 L82.27,183.42 L80.42,181.56 L78.63,179.75 L76.88,178.04 L75.14,176.50 L73.39,175.14 L71.59,174.01 L69.72,173.10 L67.76,172.42 L65.68,171.95 L63.48,171.67 L61.16,171.53 L58.72,171.50 L56.18,171.51 L53.55,171.52 L50.88,171.47 L48.20,171.30 L45.55,170.96 L42.98,170.41 L40.53,169.63 L38.25,168.58 L36.17,167.26 L34.32,165.68 L32.74,163.83 L31.42,161.75 L30.37,159.47 L29.59,157.02 L29.04,154.45 L28.70,151.80 L28.53,149.12 L28.48,146.45 L28.49,143.82 L28.50,141.28 L28.47,138.84 L28.33,136.52 L28.05,134.32 L27.58,132.24 L26.90,130.28 L25.99,128.41 L24.86,126.61 L23.50,124.86 L21.96,123.12 L20.25,121.37 L18.44,119.58 L16.58,117.73 L14.73,115.80 L12.96,113.79 L11.33,111.67 L9.89,109.47 L8.72,107.18 L7.84,104.83 L7.30,102.43 L7.12,100.00 L7.30,97.57 L7.84,95.17 L8.72,92.82 L9.89,90.53 L11.33,88.33 L12.96,86.21 L14.73,84.20 L16.58,82.27 L18.44,80.42 L20.25,78.63 L21.96,76.88 L23.50,75.14 L24.86,73.39 L25.99,71.59 L26.90,69.72 L27.58,67.76 L28.05,65.68 L28.33,63.48 L28.47,61.16 L28.50,58.72 L28.49,56.18 L28.48,53.55 L28.53,50.88 L28.70,48.20 L29.04,45.55 L29.59,42.98 L30.37,40.53 L31.42,38.25 L32.74,36.17 L34.32,34.32 L36.17,32.74 L38.25,31.42 L40.53,30.37 L42.98,29.59 L45.55,29.04 L48.20,28.70 L50.88,28.53 L53.55,28.48 L56.18,28.49 L58.72,28.50 L61.16,28.47 L63.48,28.33 L65.68,28.05 L67.76,27.58 L69.72,26.90 L71.59,25.99 L73.39,24.86 L75.14,23.50 L76.88,21.96 L78.63,20.25 L80.42,18.44 L82.27,16.58 L84.20,14.73 L86.21,12.96 L88.33,11.33 L90.53,9.89 L92.82,8.72 L95.17,7.84 L97.57,7.30 L100.00,7.12 L102.43,7.30 L104.83,7.84 L107.18,8.72 L109.47,9.89 L111.67,11.33 L113.79,12.96 L115.80,14.73 L117.73,16.58 L119.58,18.44 L121.37,20.25 L123.12,21.96 L124.86,23.50 L126.61,24.86 L128.41,25.99 L130.28,26.90 L132.24,27.58 L134.32,28.05 L136.52,28.33 L138.84,28.47 L141.28,28.50 L143.82,28.49 L146.45,28.48 L149.12,28.53 L151.80,28.70 L154.45,29.04 L157.02,29.59 L159.47,30.37 L161.75,31.42 L163.83,32.74 L165.68,34.32 L167.26,36.17 L168.58,38.25 L169.63,40.53 L170.41,42.98 L170.96,45.55 L171.30,48.20 L171.47,50.88 L171.52,53.55 L171.51,56.18 L171.50,58.72 L171.53,61.16 L171.67,63.48 L171.95,65.68 L172.42,67.76 L173.10,69.72 L174.01,71.59 L175.14,73.39 L176.50,75.14 L178.04,76.88 L179.75,78.63 L181.56,80.42 L183.42,82.27 L185.27,84.20 L187.04,86.21 L188.67,88.33 L190.11,90.53 L191.28,92.82 L192.16,95.17 L192.70,97.57Z" fill="currentColor"/></svg><span class="relative text-ink text-center px-6"><span class="display text-[16px] md:text-[19px] leading-tight">دەست بە گفتوگۆ بکە</span></span></a></div>
-</div>
-</div>
-</section>
-<div class="marquee bg-ink border-b border-line py-5" aria-hidden="true"><div class="marquee-track fast"><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span></div></div>
-<section id="info" class="manifesto" data-manifesto>
-<div class="manifesto-pin wrap">
-<div class="w-full">
-<p class="lbl text-muted mb-8 text-center"><span class="text-accent" aria-hidden="true">◆</span> زانیاری</p>
-<p class="mf text-center text-[28px] sm:text-[42px] lg:text-[60px] font-bold leading-[1.18] tracking-[-0.02em] max-w-[1200px] mx-auto">زۆربەی کڕیارەکانم بە کێشەیەکەوە دێن. فرۆشیان وەستاوە یان کەمپەینەکەیان تەنیا لایکی بۆ دێت. ئەرکی من دۆزینەوەی هۆکارەکەیە پێش ئەوەی دینارێک بۆ میدیا خەرج بکەن. <em class="not-italic text-amber">سەرنجڕاکێشان ئامانج نییە</em></p>
 </div>
 </div>
 </section>
-<section class="wrap pb-16 md:pb-24">
-<div class="max-w-2xl mx-auto text-center">
-<p class="rv text-[18px] leading-[1.65] md:text-[20px] text-muted">دە ساڵ ئەزموونم لەم بازاڕەدا هەیە، سێ ساڵ فرۆشتنی ڕاستەوخۆ و حەوت ساڵ بنیاتنانی براند لە میترا پرۆدەکشن. لەگەڵ کیاسا، ئەمە بووە هۆی زیادبوونی فرۆش بە ڕێژەی ٦٠٪ لە ماوەی هەشت مانگدا.</p>
-<a href="/ku/about/" class="rv mt-8 lbl inline-flex items-center gap-3 ul">شێوازی کارکردنم <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<div class="marquee border-y border-line bg-night/40 py-5" aria-hidden="true"><div class="marquee-track fast"><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کێشەکە لە کوێدایە</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">کەمپینەکانی سۆشیال میدیا</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ناسنامەی براند</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">ڤیدیۆ و بەرهەمهێنان</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span><span class="lbl px-6 md:px-8 text-white/70">گەشەی بەپێی فرۆش</span><span class="text-accent text-[8px]" aria-hidden="true">◆</span></div></div>
+<section id="info" class="wrap">
+<div class="py-16 md:py-24">
+<p class="rv lbl text-muted mb-8"><span class="text-accent" aria-hidden="true">◆</span> زانیاری</p>
+<p class="rv text-[26px] sm:text-[36px] lg:text-[52px] font-semibold leading-[1.4] lg:leading-[1.3] tracking-[-0.02em] max-w-[1250px]">زۆربەی کڕیارەکانم بە کێشەیەکەوە دێن. فرۆشیان وەستاوە یان کەمپەینەکەیان تەنیا لایکی بۆ دێت. ئەرکی من دۆزینەوەی هۆکارەکەیە پێش ئەوەی دینارێک بۆ میدیا خەرج بکەن. <em class="hi not-italic">سەرنجڕاکێشان ئامانج نییە</em></p>
+<div class="mt-14 grid gap-8 md:grid-cols-12">
+<p class="rv md:col-start-6 md:col-span-7 text-[18px] leading-[1.65] md:text-[20px] text-muted">دە ساڵ ئەزموونم لەم بازاڕەدا هەیە، سێ ساڵ فرۆشتنی ڕاستەوخۆ و حەوت ساڵ بنیاتنانی براند لە میترا پرۆدەکشن. لەگەڵ کیاسا، ئەمە بووە هۆی زیادبوونی فرۆش بە ڕێژەی ٦٠٪ لە ماوەی هەشت مانگدا.</p>
+<a href="/ku/about/" class="rv md:col-start-6 md:col-span-7 lbl inline-flex items-center gap-3 ul">شێوازی کارکردنم <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
 </div>
 </section>
 <section class="wrap pb-16 md:pb-24">
@@ -112,13 +108,13 @@
 <div class="sk relative overflow-hidden aspect-video" data-yt="Uol2N2hYXDs" data-yt-title="بەرهەمی جلشۆری کیاسا">
 <img src="/assets/img/tvc-02.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="لێدان: بەرهەمی جلشۆری کیاسا">
-<span class="inline-flex items-stretch bg-ink text-white group-hover:bg-ink/80 transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">بینین</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="flex items-center gap-3 px-4"><span class="lbl">بینین</span><span class="text-[13px] text-white/60" dir="ltr">0:44</span></span></span>
 </button>
 </div>
 <div class="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1"><p class="lbl">بەرهەمی جلشۆریی کیاسا</p><p class="text-[15px] text-muted">ڕیکلامی بازرگانی بۆ بەرهەمەکانی جلشۆریی کیاسا.</p></div>
 </div>
 </section>
-<section class="bg-amber text-ink">
+<section class="band-fire text-ink">
 <div class="wrap grid sm:grid-cols-3">
 <div class="rv py-12 md:py-16 sm:px-8 border-t border-ink/20 first:border-t-0 sm:border-t-0 sm:border-s sm:first:border-s-0 sm:first:ps-0">
 <p class="display text-[56px] md:text-[80px]" data-count>١٠+</p>
@@ -137,8 +133,8 @@
 </div>
 </div>
 </section>
-<section id="expertise" class="bg-night">
-<div class="wrap py-16 md:py-28">
+<section id="expertise" class="relative overflow-hidden">
+<div class="wrap above py-16 md:py-24">
 <div class="grid gap-6 md:grid-cols-12 md:items-end mb-10 md:mb-14">
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7"><span class="hl"><span class="">شارەزایی سەرەکی</span></span></h2>
 <p class="rv md:col-span-5 md:justify-self-end text-[17px] leading-[1.6] text-white/60 md:max-w-md">مارکێتینگێک کە بۆ گەشەپێدانی کار دروستکراوە، نەک تەنها بۆ سەرنجڕاکێشان.</p>
@@ -197,8 +193,8 @@
 <div class="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-4 md:scroll-px-0 [scrollbar-width:none] -mx-4 px-4 md:mx-0 md:px-0">
 <a href="/ku/work/#case-kiasa" class="rv group block w-[82vw] sm:w-[60vw] shrink-0 snap-start md:w-auto">
 <div class="relative">
-<div class="sk overflow-hidden wavy"><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-[16/10] object-cover group-hover:scale-[1.04] transition-transform duration-700"/></div>
-<span class="absolute top-4 end-4 w-11 h-11 rounded-full btn-fire flex items-center justify-center"><svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+<div class="sk overflow-hidden "><img src="/assets/img/tvc-06.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-[16/10] object-cover group-hover:scale-[1.04] transition-transform duration-700"/></div>
+<span class="absolute top-0 end-0 w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
 </div>
 <div class="mt-5 flex items-start justify-between gap-4">
 <div><p class="lbl text-muted">پێداویستییەکانی ناوماڵ</p><h3 class="display text-[26px] md:text-[30px] mt-2">کیاسا</h3></div>
@@ -208,8 +204,8 @@
 </a>
 <a href="/ku/work/#case-banu" class="rv group block w-[82vw] sm:w-[60vw] shrink-0 snap-start md:w-auto">
 <div class="relative">
-<div class="sk overflow-hidden wavy"><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-[16/10] object-cover group-hover:scale-[1.04] transition-transform duration-700"/></div>
-<span class="absolute top-4 end-4 w-11 h-11 rounded-full btn-fire flex items-center justify-center"><svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+<div class="sk overflow-hidden "><img src="/assets/img/tvc-01.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-[16/10] object-cover group-hover:scale-[1.04] transition-transform duration-700"/></div>
+<span class="absolute top-0 end-0 w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
 </div>
 <div class="mt-5 flex items-start justify-between gap-4">
 <div><p class="lbl text-muted">خۆراک و پێداویستیی ڕۆژانە</p><h3 class="display text-[26px] md:text-[30px] mt-2">بانو</h3></div>
@@ -219,8 +215,8 @@
 </a>
 <a href="/ku/work/#case-runaki" class="rv group block w-[82vw] sm:w-[60vw] shrink-0 snap-start md:w-auto">
 <div class="relative">
-<div class="sk overflow-hidden wavy"><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-[16/10] object-cover group-hover:scale-[1.04] transition-transform duration-700"/></div>
-<span class="absolute top-4 end-4 w-11 h-11 rounded-full btn-fire flex items-center justify-center"><svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+<div class="sk overflow-hidden "><img src="/assets/img/tvc-07.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" class="block w-full aspect-[16/10] object-cover group-hover:scale-[1.04] transition-transform duration-700"/></div>
+<span class="absolute top-0 end-0 w-11 h-11 btn-fire flex items-center justify-center"><svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
 </div>
 <div class="mt-5 flex items-start justify-between gap-4">
 <div><p class="lbl text-muted">فێرکاری</p><h3 class="display text-[26px] md:text-[30px] mt-2">پەیمانگەی ڕوناکی</h3></div>
@@ -233,14 +229,8 @@
 </div>
 </section>
 
-<section class="bg-oxblood text-white">
-<div class="wrap py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-10">
-<h2 class="reveal display text-[40px] sm:text-[60px] lg:text-[84px] leading-[.9] max-w-4xl text-center md:text-start"><span class="hl"><span class="">با شتێک دروست بکەین کە سەرکەوتوو بێت.</span></span></h2>
-<div class="rv"><a href="#contact" class="group relative inline-flex items-center justify-center shrink-0 w-36 h-36 md:w-44 md:h-44 text-amber"><svg class="absolute inset-0 w-full h-full transition-transform duration-1000 ease-out group-hover:rotate-45 group-hover:scale-105" viewBox="0 0 200 200" aria-hidden="true"><path d="M192.88,100.00 L192.70,102.43 L192.16,104.83 L191.28,107.18 L190.11,109.47 L188.67,111.67 L187.04,113.79 L185.27,115.80 L183.42,117.73 L181.56,119.58 L179.75,121.37 L178.04,123.12 L176.50,124.86 L175.14,126.61 L174.01,128.41 L173.10,130.28 L172.42,132.24 L171.95,134.32 L171.67,136.52 L171.53,138.84 L171.50,141.28 L171.51,143.82 L171.52,146.45 L171.47,149.12 L171.30,151.80 L170.96,154.45 L170.41,157.02 L169.63,159.47 L168.58,161.75 L167.26,163.83 L165.68,165.68 L163.83,167.26 L161.75,168.58 L159.47,169.63 L157.02,170.41 L154.45,170.96 L151.80,171.30 L149.12,171.47 L146.45,171.52 L143.82,171.51 L141.28,171.50 L138.84,171.53 L136.52,171.67 L134.32,171.95 L132.24,172.42 L130.28,173.10 L128.41,174.01 L126.61,175.14 L124.86,176.50 L123.12,178.04 L121.37,179.75 L119.58,181.56 L117.73,183.42 L115.80,185.27 L113.79,187.04 L111.67,188.67 L109.47,190.11 L107.18,191.28 L104.83,192.16 L102.43,192.70 L100.00,192.88 L97.57,192.70 L95.17,192.16 L92.82,191.28 L90.53,190.11 L88.33,188.67 L86.21,187.04 L84.20,185.27 L82.27,183.42 L80.42,181.56 L78.63,179.75 L76.88,178.04 L75.14,176.50 L73.39,175.14 L71.59,174.01 L69.72,173.10 L67.76,172.42 L65.68,171.95 L63.48,171.67 L61.16,171.53 L58.72,171.50 L56.18,171.51 L53.55,171.52 L50.88,171.47 L48.20,171.30 L45.55,170.96 L42.98,170.41 L40.53,169.63 L38.25,168.58 L36.17,167.26 L34.32,165.68 L32.74,163.83 L31.42,161.75 L30.37,159.47 L29.59,157.02 L29.04,154.45 L28.70,151.80 L28.53,149.12 L28.48,146.45 L28.49,143.82 L28.50,141.28 L28.47,138.84 L28.33,136.52 L28.05,134.32 L27.58,132.24 L26.90,130.28 L25.99,128.41 L24.86,126.61 L23.50,124.86 L21.96,123.12 L20.25,121.37 L18.44,119.58 L16.58,117.73 L14.73,115.80 L12.96,113.79 L11.33,111.67 L9.89,109.47 L8.72,107.18 L7.84,104.83 L7.30,102.43 L7.12,100.00 L7.30,97.57 L7.84,95.17 L8.72,92.82 L9.89,90.53 L11.33,88.33 L12.96,86.21 L14.73,84.20 L16.58,82.27 L18.44,80.42 L20.25,78.63 L21.96,76.88 L23.50,75.14 L24.86,73.39 L25.99,71.59 L26.90,69.72 L27.58,67.76 L28.05,65.68 L28.33,63.48 L28.47,61.16 L28.50,58.72 L28.49,56.18 L28.48,53.55 L28.53,50.88 L28.70,48.20 L29.04,45.55 L29.59,42.98 L30.37,40.53 L31.42,38.25 L32.74,36.17 L34.32,34.32 L36.17,32.74 L38.25,31.42 L40.53,30.37 L42.98,29.59 L45.55,29.04 L48.20,28.70 L50.88,28.53 L53.55,28.48 L56.18,28.49 L58.72,28.50 L61.16,28.47 L63.48,28.33 L65.68,28.05 L67.76,27.58 L69.72,26.90 L71.59,25.99 L73.39,24.86 L75.14,23.50 L76.88,21.96 L78.63,20.25 L80.42,18.44 L82.27,16.58 L84.20,14.73 L86.21,12.96 L88.33,11.33 L90.53,9.89 L92.82,8.72 L95.17,7.84 L97.57,7.30 L100.00,7.12 L102.43,7.30 L104.83,7.84 L107.18,8.72 L109.47,9.89 L111.67,11.33 L113.79,12.96 L115.80,14.73 L117.73,16.58 L119.58,18.44 L121.37,20.25 L123.12,21.96 L124.86,23.50 L126.61,24.86 L128.41,25.99 L130.28,26.90 L132.24,27.58 L134.32,28.05 L136.52,28.33 L138.84,28.47 L141.28,28.50 L143.82,28.49 L146.45,28.48 L149.12,28.53 L151.80,28.70 L154.45,29.04 L157.02,29.59 L159.47,30.37 L161.75,31.42 L163.83,32.74 L165.68,34.32 L167.26,36.17 L168.58,38.25 L169.63,40.53 L170.41,42.98 L170.96,45.55 L171.30,48.20 L171.47,50.88 L171.52,53.55 L171.51,56.18 L171.50,58.72 L171.53,61.16 L171.67,63.48 L171.95,65.68 L172.42,67.76 L173.10,69.72 L174.01,71.59 L175.14,73.39 L176.50,75.14 L178.04,76.88 L179.75,78.63 L181.56,80.42 L183.42,82.27 L185.27,84.20 L187.04,86.21 L188.67,88.33 L190.11,90.53 L191.28,92.82 L192.16,95.17 L192.70,97.57Z" fill="currentColor"/></svg><span class="relative text-ink text-center px-6"><span class="display text-[16px] md:text-[19px] leading-tight">دەست بە گفتوگۆ بکە</span></span></a></div>
-</div>
-</section>
 <section id="clients">
-<div class="wrap"><div class="pt-16 md:pt-24"><div class="grid gap-6 md:grid-cols-12 md:items-end mb-10 md:mb-14">
+<div class="wrap"><div class="border-t border-line pt-16 md:pt-24"><div class="grid gap-6 md:grid-cols-12 md:items-end mb-10 md:mb-14">
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7"><span class="hl"><span class="">کڕیارەکانمان</span></span></h2>
 <p class="rv md:col-span-5 md:justify-self-end text-[17px] leading-[1.6] text-muted md:max-w-md">براندەکان لە بواری خۆراک، چاودێری ماڵەوە، جوانکاری، پەروەردە و بوارەکانی تر. کەمپەینەکان بە هاوکاری میترا پرۆدەکشن دروستکراون.</p>
 </div></div></div>
@@ -250,31 +240,26 @@
 <div class="marquee border-t border-line py-10 md:py-16" aria-hidden="true"><div class="marquee-track fast"><span class="display text-[44px] md:text-[96px] px-6 md:px-10 fire-text">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span><span class="display text-[44px] md:text-[96px] px-6 md:px-10 ol text-white/70">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span><span class="display text-[44px] md:text-[96px] px-6 md:px-10 fire-text">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span><span class="display text-[44px] md:text-[96px] px-6 md:px-10 ol text-white/70">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span><span class="display text-[44px] md:text-[96px] px-6 md:px-10 fire-text">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span><span class="display text-[44px] md:text-[96px] px-6 md:px-10 ol text-white/70">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span><span class="display text-[44px] md:text-[96px] px-6 md:px-10 fire-text">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span><span class="display text-[44px] md:text-[96px] px-6 md:px-10 ol text-white/70">مارکێتینگی بەندکراو بە فرۆشتنەوە.</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span></div></div>
 </main>
 <footer id="contact" class="relative overflow-hidden border-t border-line">
-<div class="wrap pt-24 md:pt-36 pb-10">
-<p class="rv lbl text-accent mb-8">◆ مارکێتینگی بەندکراو بە فرۆشتنەوە.</p>
-<h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">دەست بە گفتوگۆ بکە</span></span></h2>
+<div class="orb orb-a" style="width:620px;height:620px;bottom:-260px;inset-inline-start:-200px;opacity:.3" aria-hidden="true"></div>
+<div class="wrap above pt-24 md:pt-36 pb-10">
+<p class="rv lbl text-accent mb-8">◆ دەست بە گفتوگۆ بکە</p>
+<h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl"><span class="hl"><span class="fire-text">با شتێک دروست بکەین کە سەرکەوتوو بێت.</span></span></h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">جا دەتەوێت ستراتیژی براندەکەت نوێ بکەیتەوە، پەرە بە کارەکانت بدەیت، یان کەمپینێک دروست بکەیت کە بەڕاستی سەرکەوتوو بێت، با قسە بکەین.</p>
-<div class="mt-16 md:mt-24 grid gap-14 lg:grid-cols-12 lg:gap-10">
-<ul class="rv lg:col-span-4 space-y-1">
-<li><a href="/ku/" class="display text-[40px] lg:text-[56px] hover:text-amber transition-colors">سەرەتا</a></li>
-<li><a href="/ku/work/" class="display text-[40px] lg:text-[56px] hover:text-amber transition-colors">کارەکان</a></li>
-<li><a href="/ku/about/" class="display text-[40px] lg:text-[56px] hover:text-amber transition-colors">دەربارە</a></li>
-<li><a href="#contact" class="display text-[40px] lg:text-[56px] hover:text-amber transition-colors">پەیوەندی</a></li>
-</ul>
-<div class="rv lg:col-span-5">
+<div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
+<div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/50 mb-4">نامەی ڕاستەوخۆ بنێرە</p>
-<a href="mailto:Dindar.Ahmed@mithra.agency" class="ul block w-fit text-[22px] sm:text-[30px] lg:text-[34px] leading-tight tracking-[-0.02em] text-white hover:text-amber transition-colors break-words" dir="ltr">Dindar.Ahmed@mithra.agency</a>
+<a href="mailto:Dindar.Ahmed@mithra.agency" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">Dindar.Ahmed@mithra.agency</a>
 <p class="mt-5 text-[16px] leading-[1.6] text-white/60 max-w-md">خێراترین ڕێگا بۆ گەیشتن بە دیندار. پەیامێک بنێرە دەربارەی ئەوەی دەتەوێت بیکەیت و ئەویش وەڵامت دەداتەوە.</p>
-<p class="lbl text-white/50 mt-12 mb-2">پەیوەندی ڕاستەوخۆ</p>
-<ul class="text-[16px] border-b border-edge">
-<li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.instagram.com/dindar_ahmad/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">Instagram</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">@dindar_ahmad</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.linkedin.com/in/dindar-ahmad-36ba57205/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">LinkedIn</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">دیندار ئەحمەد <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-<li><a href="https://www.youtube.com/@mithra.production/videos" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge"><span class="lbl">YouTube</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">کەناڵی میترا پرۆدەکشن <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
-</ul>
+<a href="mailto:Dindar.Ahmed@mithra.agency" class="mt-8 lbl inline-flex items-center gap-3 btn-fire px-7 py-4">دەستپێکردنی پڕۆژە <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
-<div class="rv lg:col-span-3 flex lg:justify-end lg:items-start">
-<a href="mailto:Dindar.Ahmed@mithra.agency" class="group relative inline-flex items-center justify-center shrink-0 w-36 h-36 md:w-44 md:h-44 text-amber"><svg class="absolute inset-0 w-full h-full transition-transform duration-1000 ease-out group-hover:rotate-45 group-hover:scale-105" viewBox="0 0 200 200" aria-hidden="true"><path d="M192.88,100.00 L192.70,102.43 L192.16,104.83 L191.28,107.18 L190.11,109.47 L188.67,111.67 L187.04,113.79 L185.27,115.80 L183.42,117.73 L181.56,119.58 L179.75,121.37 L178.04,123.12 L176.50,124.86 L175.14,126.61 L174.01,128.41 L173.10,130.28 L172.42,132.24 L171.95,134.32 L171.67,136.52 L171.53,138.84 L171.50,141.28 L171.51,143.82 L171.52,146.45 L171.47,149.12 L171.30,151.80 L170.96,154.45 L170.41,157.02 L169.63,159.47 L168.58,161.75 L167.26,163.83 L165.68,165.68 L163.83,167.26 L161.75,168.58 L159.47,169.63 L157.02,170.41 L154.45,170.96 L151.80,171.30 L149.12,171.47 L146.45,171.52 L143.82,171.51 L141.28,171.50 L138.84,171.53 L136.52,171.67 L134.32,171.95 L132.24,172.42 L130.28,173.10 L128.41,174.01 L126.61,175.14 L124.86,176.50 L123.12,178.04 L121.37,179.75 L119.58,181.56 L117.73,183.42 L115.80,185.27 L113.79,187.04 L111.67,188.67 L109.47,190.11 L107.18,191.28 L104.83,192.16 L102.43,192.70 L100.00,192.88 L97.57,192.70 L95.17,192.16 L92.82,191.28 L90.53,190.11 L88.33,188.67 L86.21,187.04 L84.20,185.27 L82.27,183.42 L80.42,181.56 L78.63,179.75 L76.88,178.04 L75.14,176.50 L73.39,175.14 L71.59,174.01 L69.72,173.10 L67.76,172.42 L65.68,171.95 L63.48,171.67 L61.16,171.53 L58.72,171.50 L56.18,171.51 L53.55,171.52 L50.88,171.47 L48.20,171.30 L45.55,170.96 L42.98,170.41 L40.53,169.63 L38.25,168.58 L36.17,167.26 L34.32,165.68 L32.74,163.83 L31.42,161.75 L30.37,159.47 L29.59,157.02 L29.04,154.45 L28.70,151.80 L28.53,149.12 L28.48,146.45 L28.49,143.82 L28.50,141.28 L28.47,138.84 L28.33,136.52 L28.05,134.32 L27.58,132.24 L26.90,130.28 L25.99,128.41 L24.86,126.61 L23.50,124.86 L21.96,123.12 L20.25,121.37 L18.44,119.58 L16.58,117.73 L14.73,115.80 L12.96,113.79 L11.33,111.67 L9.89,109.47 L8.72,107.18 L7.84,104.83 L7.30,102.43 L7.12,100.00 L7.30,97.57 L7.84,95.17 L8.72,92.82 L9.89,90.53 L11.33,88.33 L12.96,86.21 L14.73,84.20 L16.58,82.27 L18.44,80.42 L20.25,78.63 L21.96,76.88 L23.50,75.14 L24.86,73.39 L25.99,71.59 L26.90,69.72 L27.58,67.76 L28.05,65.68 L28.33,63.48 L28.47,61.16 L28.50,58.72 L28.49,56.18 L28.48,53.55 L28.53,50.88 L28.70,48.20 L29.04,45.55 L29.59,42.98 L30.37,40.53 L31.42,38.25 L32.74,36.17 L34.32,34.32 L36.17,32.74 L38.25,31.42 L40.53,30.37 L42.98,29.59 L45.55,29.04 L48.20,28.70 L50.88,28.53 L53.55,28.48 L56.18,28.49 L58.72,28.50 L61.16,28.47 L63.48,28.33 L65.68,28.05 L67.76,27.58 L69.72,26.90 L71.59,25.99 L73.39,24.86 L75.14,23.50 L76.88,21.96 L78.63,20.25 L80.42,18.44 L82.27,16.58 L84.20,14.73 L86.21,12.96 L88.33,11.33 L90.53,9.89 L92.82,8.72 L95.17,7.84 L97.57,7.30 L100.00,7.12 L102.43,7.30 L104.83,7.84 L107.18,8.72 L109.47,9.89 L111.67,11.33 L113.79,12.96 L115.80,14.73 L117.73,16.58 L119.58,18.44 L121.37,20.25 L123.12,21.96 L124.86,23.50 L126.61,24.86 L128.41,25.99 L130.28,26.90 L132.24,27.58 L134.32,28.05 L136.52,28.33 L138.84,28.47 L141.28,28.50 L143.82,28.49 L146.45,28.48 L149.12,28.53 L151.80,28.70 L154.45,29.04 L157.02,29.59 L159.47,30.37 L161.75,31.42 L163.83,32.74 L165.68,34.32 L167.26,36.17 L168.58,38.25 L169.63,40.53 L170.41,42.98 L170.96,45.55 L171.30,48.20 L171.47,50.88 L171.52,53.55 L171.51,56.18 L171.50,58.72 L171.53,61.16 L171.67,63.48 L171.95,65.68 L172.42,67.76 L173.10,69.72 L174.01,71.59 L175.14,73.39 L176.50,75.14 L178.04,76.88 L179.75,78.63 L181.56,80.42 L183.42,82.27 L185.27,84.20 L187.04,86.21 L188.67,88.33 L190.11,90.53 L191.28,92.82 L192.16,95.17 L192.70,97.57Z" fill="currentColor"/></svg><span class="relative text-ink text-center px-6"><span class="display text-[17px] md:text-[20px] leading-tight">دەستپێکردنی پڕۆژە</span></span></a>
+<div class="rv border border-edge p-6 md:p-10">
+<p class="lbl text-white/50 mb-4">پەیوەندی ڕاستەوخۆ</p>
+<ul class="text-[16px]">
+<li><a href="https://wa.me/9647719922486" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">WhatsApp</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">+964 771 992 2486</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.instagram.com/dindar_ahmad/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">Instagram</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2"><span dir="ltr">@dindar_ahmad</span> <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.linkedin.com/in/dindar-ahmad-36ba57205/" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">LinkedIn</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">دیندار ئەحمەد <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+<li><a href="https://www.youtube.com/@mithra.production/videos" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0"><span class="lbl">YouTube</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">کەناڵی میترا پرۆدەکشن <svg class="w-4 h-4 rtl:-scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+</ul>
 </div>
 </div>
 <p class="display fire-text text-[11vw] 2xl:text-[172px] leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" aria-hidden="true">دیندار ئەحمەد.</p>
@@ -293,6 +278,6 @@
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
-<script src="/js/scripts.js?v=bc3dcf6d" defer></script>
+<script src="/js/scripts.js?v=5496fe9c" defer></script>
 </body>
 </html>
