@@ -12,30 +12,36 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // TEST PALETTE (branch palette-violet-yellow): two violets, four yellows.
+        // TEST PALETTE (branch palette-violet-yellow), refined roles:
+        //   deep violet  #1c1550  ground + text on yellow (white on it 15:1)
+        //   violet       #7161ef  accent blocks, glows
+        //   lavender     #957fef  secondary text (5:1 on deep), hairlines
+        //   school bus   #ffc300  main accent (buttons)
+        //   sunbeam      #ffea00  highlights; bright amber / gold are gradient steps
         // Token names kept from the fire palette so no markup changes.
-        ink: "#7161ef",        // violet: page ground, text on yellow fills
-        night: "#957fef",      // lavender
-        cherry: "#957fef",
-        oxblood: "#957fef",
-        brick: "#957fef",
-        ochre: "#ffc300",      // school bus yellow
+        ink: "#1c1550",
+        deep: "#1c1550",
+        violet: "#7161ef",
+        lavender: "#957fef",
+        night: "#7161ef",
+        cherry: "#7161ef",
+        oxblood: "#7161ef",
+        brick: "#7161ef",
+        ochre: "#ffc300",
         cayenne: "#ffc300",
-        saffron: "#ffd000",    // bright amber
-        orange: "#ffdd00",     // bright gold
-        amber: "#ffea00",      // sunbeam yellow
+        saffron: "#ffd000",
+        orange: "#ffdd00",
+        amber: "#ffea00",
         accent: "#ffea00",
-        dark: "#7161ef",
-        // white is the only text colour that clears 4.5:1 on the violet,
-        // so secondary text stays near-solid white
-        muted: "rgb(255 255 255 / 0.9)",
-        faint: "rgb(255 255 255 / 0.7)",
-        line: "rgb(255 234 0 / 0.22)",
-        card: "rgb(255 234 0 / 0.35)",
-        edge: "rgb(255 234 0 / 0.35)",
+        dark: "#1c1550",
+        muted: "#957fef",
+        faint: "rgb(149 127 239 / 0.75)",
+        line: "rgb(149 127 239 / 0.22)",
+        card: "rgb(149 127 239 / 0.40)",
+        edge: "rgb(149 127 239 / 0.40)",
       },
       // Tailwind's own fallbacks (blue ring, grey border) pointed at the palette
-      borderColor: { DEFAULT: "rgb(255 234 0 / 0.35)" },
+      borderColor: { DEFAULT: "rgb(149 127 239 / 0.40)" },
       ringColor: { DEFAULT: "#ffea00" },
       fontFamily: {
         sans: ["Noto Kufi Arabic", "Tahoma", "sans-serif"],
