@@ -26,7 +26,7 @@ PHONE = "+964 771 992 2486"
 EMAIL = "Dindar.Ahmed@mithra.agency"
 WEB = "dindarahmed.com"
 # the website's Kurdish headline, split the same way as the English one
-STATEMENT_KU = ("پێم بڵێ", "چی", "فرۆشی نییە")
+STATEMENT_KU = ("پێم بڵێ", "چی", "نافرۆشرێت")
 QR_DATA = "https://dindarahmed.com"     # the site carries WhatsApp, Instagram, LinkedIn
 
 # ---- palette (same as the website) ----
