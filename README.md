@@ -46,9 +46,13 @@ file. No HTML edit is needed.
   black cherry, oxblood, brick ember, red ochre, cayenne, deep saffron, orange,
   amber flame) is listed there by name.
 - Shared CSS: `css/tailwind.src.css`. Gradients (`.fire`, `.fire-text`,
-  `.btn-fire`, `.band-fire`, `.hi`), soft glows (`.orb`), headline reveal,
-  marquees, service rows, RTL font rules. Layout follows lircle.co: square
-  corners, flat ruled rows, solid fills, no frosted glass.
+  `.btn-fire`, `.hi`), the scalloped frame (`.wavy`), wavy underlines (`.ul`),
+  the pinned manifesto, headline reveal, marquees, service rows, RTL font rules.
+- Look follows copula.agency: solid palette colour blocks per section (red
+  ochre hero and intros, amber stats and quote, night bordeaux services and
+  campaigns, oxblood call-to-action), a scalloped flower badge button
+  (`badge()` in the generator; the shape is an inline SVG), scalloped photo
+  frames, and a statement that lights up word by word as you scroll.
 - `css/tailwind.css` is generated. Do not edit it.
 - Font: Noto Kufi Arabic for every language (English, Kurdish, Arabic, Persian;
   covers every Sorani letter). Loaded from Google Fonts.

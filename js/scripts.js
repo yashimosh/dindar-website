@@ -27,6 +27,43 @@
     requestAnimationFrame(step);
   };
 
+  // ---- Manifesto: words light up as the pinned statement scrolls past ----
+  document.querySelectorAll("[data-manifesto]").forEach(function (sec) {
+    var text = sec.querySelector(".mf");
+    if (!text || calm) return;
+    var walk = function (node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 1) { walk(n); return; }
+        if (n.nodeType !== 3) return;
+        var frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          var w = document.createElement("span");
+          w.className = "mw";
+          w.textContent = part;
+          frag.appendChild(w);
+        });
+        node.replaceChild(frag, n);
+      });
+    };
+    walk(text);
+    var words = text.querySelectorAll(".mw");
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var r = sec.getBoundingClientRect();
+      var span = sec.offsetHeight - window.innerHeight;
+      var p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 1;
+      var lit = Math.ceil(p * 1.15 * words.length);
+      words.forEach(function (w, i) { w.classList.toggle("on", i < lit); });
+    };
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  });
+
   // ---- Image skeletons: fade images in once loaded ----
   var settle = function (img) {
     var box = img.closest(".sk");

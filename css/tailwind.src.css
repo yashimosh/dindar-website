@@ -48,23 +48,15 @@ body { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
 /* fill-color, not color, so a text-* utility can still set the stroke colour */
 .ol { -webkit-text-fill-color: transparent; -webkit-text-stroke: 1.5px currentColor; }
 
-/* ---------- fire palette: gradients and soft glows ----------
+/* ---------- fire palette: gradients ----------
    colours come from the palette in tailwind.config.js */
 .fire { background-image: linear-gradient(100deg, #9d0208 0%, #d00000 22%, #e85d04 50%, #f48c06 72%, #ffba08 100%); }
 .fire-text { background-image: linear-gradient(95deg, #dc2f02 0%, #e85d04 35%, #faa307 75%, #ffba08 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 /* solid gradient fill for buttons; ink text stays above 5:1 across it */
 .btn-fire { background-image: linear-gradient(100deg, #e85d04 0%, #f48c06 45%, #ffba08 100%); color: #03071e; transition: filter .3s ease; }
 .btn-fire:hover { filter: brightness(1.1); }
-/* full-width numbers band: orange to amber flame, ink text */
-.band-fire { background-image: linear-gradient(100deg, #f48c06 0%, #faa307 50%, #ffba08 100%); }
 /* highlighter for key phrases */
 .hi { background-image: linear-gradient(90deg, #e85d04, #ffba08); color: #03071e; padding: 0 .3em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-/* soft blurred ember glows; place inside a relative, overflow-hidden parent */
-.orb { position: absolute; border-radius: 9999px; filter: blur(120px); opacity: .4; pointer-events: none; z-index: 0; }
-.orb-a { background: #9d0208; }
-.orb-b { background: #e85d04; }
-.orb-c { background: #ffba08; opacity: .35; }
-.orb-d { background: #6a040f; }
 .above { position: relative; z-index: 1; }
 
 /* ---------- RTL (Kurdish, Arabic, Persian) ----------
@@ -81,8 +73,15 @@ html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
 
 /* ---------- links ---------- */
 
-.ul { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-.ul:hover { text-decoration-color: currentColor; opacity: 0.7; }
+/* wavy underline that ripples on hover */
+.ul { position: relative; text-decoration: none; padding-bottom: 8px; }
+.ul::after {
+  content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 6px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' fill='none' stroke='%23000' stroke-width='1.4'/%3E%3C/svg%3E") 0 0 / 20px 6px repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3' fill='none' stroke='%23000' stroke-width='1.4'/%3E%3C/svg%3E") 0 0 / 20px 6px repeat-x;
+  transition: -webkit-mask-position .6s ease, mask-position .6s ease;
+}
+.ul:hover::after { -webkit-mask-position: 20px 0; mask-position: 20px 0; }
 
 /* ---------- headline line reveal ----------
    each .hl line slides up out of its own mask. Without JS, or with
@@ -113,12 +112,35 @@ html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
 .js .sk.ld img { opacity: 1; }
 @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 
+/* ---------- copula-style shapes ---------- */
+
+/* scalloped frame: circles along every edge plus an inset rectangle */
+.wavy {
+  --r: 9px;
+  --dot: radial-gradient(circle, #000 calc(var(--r) - .5px), #0000 var(--r));
+  -webkit-mask:
+    var(--dot) 0 0 / calc(2 * var(--r)) calc(2 * var(--r)) round no-repeat,
+    var(--dot) 0 100% / calc(2 * var(--r)) calc(2 * var(--r)) round no-repeat,
+    var(--dot) 0 0 / calc(2 * var(--r)) calc(2 * var(--r)) no-repeat round,
+    var(--dot) 100% 0 / calc(2 * var(--r)) calc(2 * var(--r)) no-repeat round,
+    linear-gradient(#000 0 0) 50% 50% / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat;
+  mask:
+    var(--dot) 0 0 / calc(2 * var(--r)) calc(2 * var(--r)) round no-repeat,
+    var(--dot) 0 100% / calc(2 * var(--r)) calc(2 * var(--r)) round no-repeat,
+    var(--dot) 0 0 / calc(2 * var(--r)) calc(2 * var(--r)) no-repeat round,
+    var(--dot) 100% 0 / calc(2 * var(--r)) calc(2 * var(--r)) no-repeat round,
+    linear-gradient(#000 0 0) 50% 50% / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat;
+}
+
+/* manifesto: the statement pins to the screen and lights up word by word */
+.js .manifesto { height: 240vh; }
+.js .manifesto-pin { position: sticky; top: 0; height: 100svh; display: flex; align-items: center; }
+.manifesto-pin { padding-block: 6rem; }
+.js .mf .mw { opacity: .16; transition: opacity .35s ease; }
+.js .mf .mw.on { opacity: 1; }
+
 /* ---------- hero ---------- */
 
-.hero-shade { background: linear-gradient(to top, #03071e 0%, rgba(3,7,30,.55) 45%, rgba(55,6,23,.35) 75%, rgba(3,7,30,.6) 100%); }
-/* on wide screens the photo sits on the right and fades into the dark */
-.hero-side { background: linear-gradient(to right, #03071e 0%, rgba(3,7,30,.6) 22%, rgba(3,7,30,0) 50%); }
-html[dir="rtl"] .hero-side { background: linear-gradient(to left, #03071e 0%, rgba(3,7,30,.6) 22%, rgba(3,7,30,0) 50%); }
 .scroll-line { width: 1px; height: 48px; background: rgba(255,186,8,.25); position: relative; overflow: hidden; }
 .scroll-line::after { content: ""; position: absolute; inset: 0; background: linear-gradient(#e85d04, #ffba08); animation: drip 2s cubic-bezier(.6,0,.4,1) infinite; }
 @keyframes drip { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
@@ -164,6 +186,9 @@ body.menu-open { overflow: hidden; }
   .js .reveal .hl > span, .js .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
   .marquee { overflow-x: auto; }
   .marquee-track, .sk, .scroll-line::after { animation: none; }
+  .js .manifesto { height: auto; }
+  .js .manifesto-pin { position: static; height: auto; }
+  .js .mf .mw { opacity: 1; }
   .svc:hover { padding-inline-start: 0; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
