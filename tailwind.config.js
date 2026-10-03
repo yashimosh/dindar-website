@@ -3,8 +3,8 @@
  *
  *  Fire palette on ink black: dark grounds, ember-to-amber gradients,
  *  frosted glass panels and blurred glows (see css/tailwind.src.css).
- *  Fonts: Archivo Expanded for big Latin headlines, Geist for Latin
- *  text, Noto Kufi Arabic for all Kurdish, Arabic and Persian text.
+ *  Font: Noto Kufi Arabic for every language (Latin, Arabic, Persian,
+ *  Kurdish Sorani).
  */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -33,8 +33,8 @@ module.exports = {
         edge: "rgb(255 255 255 / 0.14)",
       },
       fontFamily: {
-        sans: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["Archivo", "Geist", "sans-serif"],
+        sans: ["Noto Kufi Arabic", "Tahoma", "sans-serif"],
+        display: ["Noto Kufi Arabic", "Tahoma", "sans-serif"],
       },
     },
   },

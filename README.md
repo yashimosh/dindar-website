@@ -48,11 +48,11 @@ file. No HTML edit is needed.
   `.btn-fire`, `.hi`), frosted glass (`.glass`, `.glass-dark`), blurred glows
   (`.orb`), headline reveal, marquees, service rows, RTL font rules.
 - `css/tailwind.css` is generated. Do not edit it.
-- Fonts: Archivo Expanded (big Latin headlines), Geist (Latin text), Noto Kufi
-  Arabic (all Kurdish, Arabic and Persian text; covers every Sorani letter).
+- Font: Noto Kufi Arabic for every language (English, Kurdish, Arabic, Persian;
+  covers every Sorani letter). Loaded from Google Fonts.
 - 29LT Bukra was requested but its licence forbids modifying the font and needs
   a separate 29LT web licence (WOFF files from 29LT) for any website use. If that
-  licence is bought, swap the RTL `font-family` in `css/tailwind.src.css`.
+  licence is bought, swap the `font-family` in `css/tailwind.src.css` and `tailwind.config.js`.
 - Behaviour: `js/scripts.js` (headline and scroll reveals, count-up numbers,
   mobile menu, click-to-load YouTube, client logos).
 
