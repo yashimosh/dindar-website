@@ -87,20 +87,38 @@ html[dir="rtl"] .display { font-weight: 800; line-height: 1.3; }
 html[dir="rtl"] .lbl { font-size: 12px; font-weight: 600; }
 html[dir="rtl"] body { line-height: 1.85; }
 html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
+/* Headings, labels, buttons, menus and numbers arrive as Zawi word shapes (inline
+   SVG built by tools/site/display_svg.py). The negative margins stop the tall
+   glyph box from stretching the line, and overflow lets the marks show. */
+svg.kw { display: inline-block; overflow: visible; margin-block: -.3em; }
+.kw-count { display: inline-flex; white-space: nowrap; }
+/* the hidden text beside each shape is absolutely positioned; anchoring it to its own wrapper keeps it
+   inside sideways scrollers and marquees (otherwise it stretches the page on phones) */
+.kw-line { position: relative; }
+.kw-txt { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
+/* a heading sized to fill its row: --fit is (share of row) / (text width in em), set at build time.
+   The row is 100vw minus the page gutters (see .wrap), capped at the 1600px max width. */
+.fit { font-size: calc((100vw - 2rem) * var(--fit)); }
+@media (min-width: 768px) { .fit { font-size: calc((100vw - 4rem) * var(--fit)); } }
+@media (min-width: 1280px) { .fit { font-size: calc((100vw - 7rem) * var(--fit)); } }
+@media (min-width: 1712px) { .fit { font-size: calc(1488px * var(--fit)); } }
 
 /* ---------- links ---------- */
 
-.ul { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+/* a border, not text-decoration: the words are SVG shapes, so an underline would only show under the spaces */
+.ul { text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 4px; }
 .ul:hover { text-decoration-color: currentColor; opacity: 0.7; }
 
 /* ---------- headline line reveal ----------
    each .hl line slides up out of its own mask. Without JS, or with
    reduced motion, the headline is simply shown. */
-.hl { display: block; overflow: hidden; padding-bottom: 0.06em; }
+/* the mask is a clip-path, not overflow:hidden, so it can reach past the line box:
+   Arabic-script marks, tails and Latin caps all need more room than the line height */
+.hl { display: block; padding-bottom: 0.06em; clip-path: inset(-0.4em -0.1em -0.55em -0.1em); }
 .hl > span { display: block; }
 /* gradient text spans only its own words, not the full line box */
 .hl > span.fire-text { display: inline-block; }
-.js .reveal .hl > span { transform: translateY(105%); }
+.js .reveal .hl > span { transform: translateY(180%); }
 .js .reveal.in .hl > span { transform: none; transition: transform 1.1s cubic-bezier(0.19, 1, 0.22, 1); }
 .js .reveal.in .hl:nth-child(2) > span { transition-delay: 0.08s; }
 .js .reveal.in .hl:nth-child(3) > span { transition-delay: 0.16s; }

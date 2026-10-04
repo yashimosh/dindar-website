@@ -6,15 +6,33 @@
 
   // ---- Count-up numbers (keeps the page's own digit set: 0-9, Arabic-Indic or Persian) ----
   var SETS = ["0123456789", "\u0660\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669", "\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9"];
+  // Numbers are drawn from the page's glyph sprite (Zawi, shaped at build time):
+  // each character is an inline SVG that points at a <path id="kc{codepoint}">.
+  var drawCount = function (el, str) {
+    var host = el.querySelector(".kw-count"), sp = document.getElementById("kwsprite");
+    if (!host || !sp) { el.textContent = str; return; }
+    var asc = +sp.getAttribute("data-asc"), desc = +sp.getAttribute("data-desc"), upem = +sp.getAttribute("data-upem");
+    var chars = str.split("");
+    if (document.documentElement.dir === "rtl" && chars[chars.length - 1] === "+") chars.unshift(chars.pop());
+    host.innerHTML = chars.map(function (ch) {
+      var id = "kc" + ch.charCodeAt(0), p = document.getElementById(id);
+      if (!p) return "";
+      var w = +p.getAttribute("data-w");
+      return '<svg class="kw" viewBox="0 ' + (-asc) + " " + w + " " + (asc + desc) + '" style="width:' + (w / upem).toFixed(3) +
+        "em;height:" + ((asc + desc) / upem).toFixed(3) + "em;vertical-align:" + (-desc / upem).toFixed(3) +
+        'em"><use href="#' + id + '" fill="currentColor"/></svg>';
+    }).join("");
+  };
   var countUp = function (el) {
-    var text = el.textContent, set = SETS[0];
+    var text = el.getAttribute("data-count-text") || el.textContent, set = SETS[0];
     SETS.forEach(function (s) { if (s.split("").some(function (d) { return text.indexOf(d) > -1; })) set = s; });
     var digits = text.split("").filter(function (ch) { return set.indexOf(ch) > -1; });
-    if (!digits.length || calm) return;
+    // a hidden tab pauses animation frames, which would leave the number stuck at 0
+    if (!digits.length || calm || document.visibilityState === "hidden") return;
     var target = parseInt(digits.map(function (d) { return set.indexOf(d); }).join(""), 10);
     var render = function (n) {
       var str = String(n).split("").map(function (d) { return set[+d]; }).join("");
-      el.textContent = text.replace(digits.join(""), str);
+      drawCount(el, text.replace(digits.join(""), str));
     };
     var t0 = null;
     var step = function (t) {
@@ -70,7 +88,9 @@
       menu.hidden = !open;
       document.body.classList.toggle("menu-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.querySelector("span").textContent = open ? toggle.getAttribute("data-close") : toggle.getAttribute("data-open");
+      toggle.querySelectorAll("[data-state]").forEach(function (s) {
+        s.hidden = (s.getAttribute("data-state") === "close") !== open;
+      });
     };
     toggle.addEventListener("click", function () { setOpen(menu.hidden); });
     menu.querySelectorAll("a, [data-menu-close]").forEach(function (a) {
@@ -139,30 +159,17 @@
           }
           t.appendChild(track);
         } else {
+          // category headings are in the HTML (set in Zawi at build time); fill each grid
           data.categories.forEach(function (cat) {
-            var block = document.createElement("div");
-            block.className = "rv border-t border-line pt-8 pb-12 first:border-0 first:pt-0";
-            var head = document.createElement("div");
-            head.className = "flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 mb-6";
-            var h3 = document.createElement("h3");
-            h3.className = "display text-[22px] md:text-[26px]";
-            h3.textContent = cat.label[loc] || cat.label.en;
-            var sub = document.createElement("p");
-            sub.className = "lbl text-muted";
-            sub.textContent = cat.sub[loc] || cat.sub.en;
-            head.appendChild(h3);
-            head.appendChild(sub);
-            var grid = document.createElement("div");
-            grid.className = "grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2 sm:gap-3";
+            var block = t.querySelector('[data-cat="' + cat.id + '"]');
+            var grid = block && block.querySelector("[data-cat-grid]");
+            if (!grid) return;
             cat.logos.forEach(function (l) {
               var cell = document.createElement("div");
               cell.className = "aspect-square overflow-hidden bg-white";
               cell.appendChild(logoImg(l, "w-full h-full object-contain"));
               grid.appendChild(cell);
             });
-            block.appendChild(head);
-            block.appendChild(grid);
-            t.appendChild(block);
           });
           observe(t);
         }

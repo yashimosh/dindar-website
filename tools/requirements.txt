@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+fonttools==4.56.0
+pillow==10.4.0
+soupsieve==2.8.4
+uharfbuzz==0.39.5

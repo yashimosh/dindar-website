@@ -54,11 +54,29 @@ file. No HTML edit is needed.
   marquees, service rows, RTL font rules. Layout follows lircle.co: square
   corners, flat ruled rows, solid fills, no frosted glass.
 - `css/tailwind.css` is generated. Do not edit it.
-- Font: Noto Kufi Arabic for every language (English, Kurdish, Arabic, Persian;
-  covers every Sorani letter). Loaded from Google Fonts.
-- 29LT Bukra was requested but its licence forbids modifying the font and needs
-  a separate 29LT web licence (WOFF files from 29LT) for any website use. If that
-  licence is bought, swap the `font-family` in `css/tailwind.src.css` and `tailwind.config.js`.
+- Fonts: headlines, labels, buttons, menu and numbers are **29LT Zawi**, drawn
+  as inline SVG outlines at build time (no font file is ever served). Paragraph
+  text stays Noto Kufi Arabic (Google Fonts). The real text is kept next to each
+  shape as `.sr-only`, so screen readers, search and copy/paste still work.
+- 29Letters licence (confirmed in writing by 29Letters): the fonts may be
+  modified and used in any medium, but **never redistributed**. This repo is
+  public, so no font file is ever committed (`.gitignore`: `tools/fonts/src*`,
+  `tools/fonts/dist`, `*.ttf`, `*.otf`) and none is deployed. Only SVG paths
+  made from them are published.
+- Zawi (and UA Neo) lack five Sorani letters (ڕ ڵ ە ۆ ێ).
+  `tools/fonts/extend_zawi.py` / `extend_uaneo.py` add them (base letter plus a
+  drawn "small V" mark, with joining and the ڵ+ا ligature) into `tools/fonts/dist/`.
+  Source fonts go in `tools/fonts/src_zawi_var/` (Zawi variable) and
+  `tools/fonts/src/` (UA Neo); get them from 29LT.
+- Build chain: `tools/site/generate.py` writes the pages, then
+  `tools/site/display_svg.py` swaps every `h1-h4`, `.display`, `.lbl`, `[data-kw]`
+  text for SVG shapes (HarfBuzz shaping, bidi handled for mixed Latin/number
+  runs in RTL). Without `tools/fonts/dist` it falls back to plain Noto text and
+  prints a WARNING.
+- Audit: `tools/site/audit_clipping.js` finds cropped or cut text; run every page
+  and width with `tools/site/audit_all.js` (copy `audit_clipping.js` to
+  `assets/audit.js` temporarily, run `audit_all.js` in the browser console on the
+  dev server, delete the copy before committing). It should return `{}`.
 - Behaviour: `js/scripts.js` (headline and scroll reveals, count-up numbers,
   mobile menu, click-to-load YouTube, client logos).
 
@@ -66,6 +84,16 @@ file. No HTML edit is needed.
 
 ```bash
 npm ci
+```
+
+Regenerate the pages (needs the extended fonts in `tools/fonts/dist`):
+
+```bash
+python3 -m venv tools/venv && tools/venv/bin/pip install -r tools/requirements.txt
+```
+
+```bash
+tools/venv/bin/python tools/site/generate.py
 ```
 
 ```bash

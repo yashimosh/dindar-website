@@ -126,7 +126,7 @@ def head(loc, page, title, desc):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?{font}&display=swap" rel="stylesheet"/>
 <link href="/css/tailwind.css" rel="stylesheet"/>
-<script>document.documentElement.classList.add("js")</script>
+<script>/* reveal animations only when the page opens in a visible tab: a hidden tab freezes CSS transitions half way, which leaves headlines cut off */if(document.visibilityState!=="hidden")document.documentElement.classList.add("js")</script>
 </head>
 <body data-loc="{loc}" class="bg-ink text-white antialiased overflow-x-hidden">
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-[60] focus:btn-fire focus:px-4 focus:py-2">{e(UI[loc]['skip'])}</a>
@@ -146,7 +146,7 @@ def lang_links(loc, page, cls_on, cls_off):
     for l in LOCS:
         cls = cls_on if l == loc else cls_off
         cur = ' aria-current="true"' if l == loc else ""
-        out.append(f'<a href="{url(l, page)}" lang="{LANG_ATTR[l]}" hreflang="{HREFLANG[l]}" class="{cls}"{cur}>{LANG_NAME[l]}</a>')
+        out.append(f'<a href="{url(l, page)}" lang="{LANG_ATTR[l]}" hreflang="{HREFLANG[l]}" class="{cls}" data-kw{cur}>{LANG_NAME[l]}</a>')
     return "\n".join(out)
 
 def header(loc, page):
@@ -168,7 +168,7 @@ def header(loc, page):
 <div class="hidden md:flex items-center gap-4 text-[13px]" aria-label="{a(u['label_language'])}">
 {lang_links(loc, page, 'text-accent', 'opacity-60 hover:opacity-100 transition-opacity')}
 </div>
-<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="{a(u['menu_open'])}" data-close="{a(u['menu_close'])}"><span>{e(u['menu_open'])}</span></button>
+<button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="{a(u['menu_open'])}" data-close="{a(u['menu_close'])}"><span data-state="open">{e(u['menu_open'])}</span><span data-state="close" hidden>{e(u['menu_close'])}</span></button>
 </div>
 </div>
 </header>
@@ -220,9 +220,9 @@ def footer(loc, page):
 </ul>
 </div>
 </div>
-<p class="display fire-text text-[11vw] 2xl:text-[172px] leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" aria-hidden="true">{e(name_of(loc))}.</p>
+<p class="display fire-text fit leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" data-fit="0.96" aria-hidden="true">{e(name_of(loc))}.</p>
 <div class="mt-12 pt-6 pb-16 sm:pb-0 sm:pe-20 border-t border-edge flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[14px] text-white/50">
-<p>{e(c['footer']['copyright'])}</p>
+<p data-kw>{e(c['footer']['copyright'])}</p>
 <div class="flex flex-wrap gap-4" aria-label="{a(u['label_language'])}">
 {lang_links(loc, page, 'text-accent', 'hover:text-white transition-colors')}
 </div>
@@ -375,7 +375,7 @@ def home(loc):
 <section id="info" class="wrap">
 <div class="py-16 md:py-24">
 <p class="rv lbl text-muted mb-8">{DIAMOND} {e(u['label_info'])}</p>
-<p class="rv text-[26px] sm:text-[36px] lg:text-[52px] font-semibold leading-[1.4] lg:leading-[1.3] tracking-[-0.02em] max-w-[1250px]">{e(lead)} <em class="hi not-italic">{e(car['belief_title'])}</em></p>
+<p data-kw class="rv text-[26px] sm:text-[36px] lg:text-[52px] font-semibold leading-[1.4] lg:leading-[1.3] tracking-[-0.02em] max-w-[1250px]">{e(lead)} <em class="hi not-italic">{e(car['belief_title'])}</em></p>
 <div class="mt-14 grid gap-8 md:grid-cols-12">
 <p class="rv md:col-start-6 md:col-span-7 text-[18px] leading-[1.65] md:text-[20px] text-muted">{e(info)}</p>
 <a href="{url(loc, 'about')}" class="rv md:col-start-6 md:col-span-7 lbl inline-flex items-center gap-3 ul">{e(c['hero']['btn_about'])} {ARROW}</a>
@@ -398,7 +398,7 @@ def home(loc):
 </div>
 </section>
 {section('expertise', c['expertise']['h2'], f'<div class="border-b border-edge">{chr(10)}{chr(10).join(rows)}{chr(10)}</div>', sub=c['expertise']['sub'], dark=True)}
-{section('work', c['cases']['h2'], f'''<div class="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-4 md:scroll-px-0 [scrollbar-width:none] -mx-4 px-4 md:mx-0 md:px-0">
+{section('work', c['cases']['h2'], f'''<div class="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-4 md:scroll-px-0 [scrollbar-width:none] -mx-4 px-4 py-3 -my-3 md:mx-0 md:px-0 md:py-0 md:my-0">
 {chr(10).join(cards)}
 </div>
 <a href="{url(loc, 'work')}" class="rv mt-12 lbl inline-flex items-center gap-3 ul">{e(u['view_all'])} {ARROW}</a>''', sub=c['cases']['sub'])}
@@ -427,7 +427,7 @@ def about(loc):
 <a href="/assets/img/{it['img']}" target="_blank" rel="noopener" class="group block">
 {pic(it['img'], it['alt'], 'aspect-[4/3] object-contain p-5 group-hover:scale-[1.03] transition-transform duration-500', box='border border-edge bg-night/40 group-hover:border-amber transition-colors')}
 </a>
-<figcaption class="mt-5"><p class="lbl text-muted">{e(it['issuer'])}</p><p class="mt-2 text-[18px] leading-snug font-medium">{e(it['title'])}</p><p class="mt-1 text-[14px] text-muted">{e(it['meta'])}</p></figcaption>
+<figcaption class="mt-5"><p class="lbl text-muted">{e(it['issuer'])}</p><p data-kw class="mt-2 text-[18px] leading-snug font-medium">{e(it['title'])}</p><p class="mt-1 text-[14px] text-muted">{e(it['meta'])}</p></figcaption>
 </figure>""" for it in c["certs"]["items"])
 
     gallery = "\n".join(f'<div class="rv mb-4 break-inside-avoid">{pic(it["img"], it["alt"], "h-auto")}</div>' for it in c["gallery"]["items"])
@@ -453,15 +453,15 @@ def about(loc):
 <div class="wrap above py-24 md:py-36">
 <blockquote class="rv max-w-6xl">
 <p class="fire-text display text-[64px] md:text-[96px] leading-none" aria-hidden="true">“</p>
-<p class="text-[28px] leading-[1.25] md:text-[48px] md:leading-[1.15] font-semibold tracking-[-0.02em]">{e(q)}</p>
-<footer class="mt-10 flex flex-wrap gap-x-4 gap-y-1"><span class="lbl text-accent">{e(c['quote']['name'])}</span><span class="text-[15px] text-white/60">{e(c['quote']['role'])}</span></footer>
+<p data-kw class="text-[28px] leading-[1.25] md:text-[48px] md:leading-[1.15] font-semibold tracking-[-0.02em]">{e(q)}</p>
+<footer class="mt-10 flex flex-wrap gap-x-4 gap-y-1"><span class="lbl text-accent">{e(c['quote']['name'])}</span><span data-kw class="text-[15px] text-white/60">{e(c['quote']['role'])}</span></footer>
 </blockquote>
 </div>
 </section>
 {section('experience', u['label_experience'], f'<div class="border-b border-edge">{chr(10)}{chr(10).join(exp)}{chr(10)}</div>')}
 {section('certificates', c['certs']['h2'], f'<div class="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">{chr(10)}{certs}{chr(10)}</div>', sub=c['certs']['sub'])}
 {section('field', c['gallery']['h2'], f'<div class="columns-1 sm:columns-2 lg:columns-3 gap-4">{chr(10)}{gallery}{chr(10)}</div>', sub=c['gallery']['sub'])}
-{section('clients', c['clients']['h2'], '<div data-clients="grid"></div>', sub=c['clients']['sub'])}
+{section('clients', c['clients']['h2'], '<div data-clients="grid">' + ''.join(f'<div class="rv border-t border-line pt-8 pb-12 first:border-0 first:pt-0" data-cat="{cid}"><div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 mb-6"><h3 class="display text-[22px] md:text-[26px]">{e(cat["h3"])}</h3><p class="lbl text-muted">{e(cat["sub"])}</p></div><div class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2 sm:gap-3" data-cat-grid></div></div>' for cid, cat in zip(CLIENT_IDS, c['clients']['cats'])) + '</div>', sub=c['clients']['sub'])}
 </main>
 """
     return head(loc, "about", title, car["belief_body"]) + header(loc, "about") + body + footer(loc, "about")
@@ -548,9 +548,11 @@ def not_found():
 
 # ------------------------------------------------------------------ clients.json
 
+CLIENT_IDS = ["food", "cleaning", "cosmetics", "education", "other"]
+
 def clients_json():
     cats = []
-    ids = ["food", "cleaning", "cosmetics", "education", "other"]
+    ids = CLIENT_IDS
     alt_tpl = {}
     unnamed = {}
     en = C["en"]["clients"]["cats"]
@@ -590,7 +592,18 @@ def clients_json():
 
 OUT = os.environ.get("GEN_OUT", REPO)
 
+import display_svg
+
 def write(rel, text):
+    # Headings, labels, buttons, menus and numbers are set in 29LT Zawi as SVG
+    # shapes (the font file itself is never served; see display_svg.py)
+    if rel.endswith(".html"):
+        if display_svg.available():
+            lang = {"ku": "ckb", "ar": "ar", "fa": "fa"}.get(rel.split("/")[0], "en")
+            text, n = display_svg.apply(text, lang)
+            print(f"   Zawi: {n} unique words in {rel}")
+        else:
+            print(f"   WARNING: Zawi build fonts missing (tools/fonts/dist); {rel} falls back to Noto Kufi")
     p = os.path.join(OUT, rel)
     os.makedirs(os.path.dirname(p), exist_ok=True)
     with open(p, "w", encoding="utf-8") as f:

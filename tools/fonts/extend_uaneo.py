@@ -43,6 +43,7 @@ STYLES = {
     "Regular": "29LT UA Neo N.ttf",
     "Bold": "29LT UA Neo N Bold.ttf",
     "Light": "29LT UA Neo N Light.ttf",
+    "B": "29LT_UA_Neo_B.ttf",
 }
 
 
@@ -157,6 +158,7 @@ MARK_PARAMS = {
     "Light":    dict(w=260, h=140, s=60,  gap_above=70, gap_below=45),
     "Regular":  dict(w=280, h=160, s=90,  gap_above=70, gap_below=50),
     "Bold":     dict(w=300, h=180, s=130, gap_above=80, gap_below=55),
+    "B":        dict(w=280, h=160, s=100, gap_above=70, gap_below=50),
 }
 
 
@@ -318,7 +320,7 @@ def extend(style: str, src_path: str, out_path: str) -> None:
 if __name__ == "__main__":
     for style, fname in STYLES.items():
         src = os.path.join(SRC_DIR, fname)
-        out = os.path.join(OUT_DIR, f"29LT_UA_Neo_N_KU_{style}.ttf")
+        out = os.path.join(OUT_DIR, f"29LT_UA_Neo_{'B_KU' if style == 'B' else 'N_KU_' + style}.ttf")
         extend(style, src, out)
     print("\nDone. Extended fonts in build-fonts/dist/.")
     print("Reminder: these files are build-only and must NOT be published to the web.")
