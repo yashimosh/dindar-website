@@ -3,10 +3,14 @@
 (Kurdish), back.svg (bilingual) and the print pages.
 
 The SVGs are the source of truth; open and edit them in Illustrator or
-Figma (install fonts/NotoKufiArabic[wght].ttf first). This script only
-exists to regenerate them, mainly the QR code, if the details change.
+Figma. All text is set in 29LT Zawi (extended with the Sorani letters, see
+tools/fonts/extend_zawi.py) and drawn as outlines, so no font has to be
+installed and no font file is ever handed to the printer (the 29Letters
+licence forbids redistributing the fonts). To change wording, edit the
+details below and run this script; text in the SVGs is shapes, not live type.
 
-Needs: pip install segno==1.6.1
+Needs: tools/venv with tools/requirements.txt (segno, uharfbuzz, fonttools)
+and the built fonts in tools/fonts/dist.
 Card: 85 x 55 mm trim, 3 mm bleed (91 x 61 mm artboard), 4 mm safe zone.
 
 Layout rule: one grid, few elements, lots of empty black. Everything
@@ -14,7 +18,16 @@ hangs off the safe-zone corners (left 7, right 84, top 7, bottom 54 mm)
 and the middle of each side is left clear on purpose.
 """
 import os
+import sys
 import segno
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+sys.path.insert(0, os.path.join(ROOT, "tools", "fonts"))
+from shape_svg import shape_to_path  # noqa: E402
+
+DIST = os.path.join(ROOT, "tools", "fonts", "dist")
+ZAWI = {w: os.path.join(DIST, f"29LT_Zawi_KU_{n}.ttf") for w, n in
+        {400: "Regular", 700: "Bold", 900: "Black"}.items()}
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -33,20 +46,32 @@ QR_DATA = "https://dindarahmed.com"     # the site carries WhatsApp, Instagram, 
 BLACK, VIOLET, LAVENDER = "#000000", "#7161ef", "#957fef"
 Y1, Y4 = "#ffc300", "#ffea00"
 WHITE = "#ffffff"
+SOFT = "#e6e6e6"   # white at 90%, as a flat colour (safer in Illustrator and for print)
 
 W, H, BLEED, SAFE = 91, 61, 3, 4
 L, R = BLEED + SAFE, W - BLEED - SAFE          # 7 .. 84 mm
 T, B = BLEED + SAFE, H - BLEED - SAFE          # 7 .. 54 mm
 
-FONT = """<style>
-@font-face { font-family: "Noto Kufi Arabic"; src: url("fonts/NotoKufiArabic[wght].ttf") format("truetype"); font-weight: 100 900; }
-text { font-family: "Noto Kufi Arabic", sans-serif; }
-</style>"""
+def line(text, size, weight, x, y, fill, rtl=False, tracking=0.0, label=None, tail=None, anchor_left=False):
+    """One line of text as a filled outline path (mm units), named for the layer panel.
+    x is the left edge for left-to-right text and the right edge for right-to-left.
+    tail=(text, fill) adds a trailing character in a second colour (the full stop)."""
+    kw = dict(direction="rtl", script="Arab", language="ckb") if rtl else dict(direction="ltr", script="Latn", language="en")
+    d, w, _, _ = shape_to_path(ZAWI[weight], text, size, tracking=tracking, **kw)
+    w -= tracking  # no trailing space after the last letter
+    ox = x if (not rtl or anchor_left) else x - w
+    out = f'<path transform="translate({ox:.3f} {y:.3f})" fill="{fill}" d="{d}"/>'
+    if tail:
+        t, tfill = tail
+        td, tw, _, _ = shape_to_path(ZAWI[weight], t, size, direction="ltr", script="Latn", language="en", tracking=tracking)
+        tx = ox - tw + 0.5 if rtl else ox + w + tracking  # RTL: pull the dot in; the Arabic joining leaves it looser
+        out += f'\n<path transform="translate({tx:.3f} {y:.3f})" fill="{tfill}" d="{td}"/>'
+    return f'<g aria-label="{label or text}">{out}</g>\n'
 
 
 def svg_open(title):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}mm" height="{H}mm" viewBox="0 0 {W} {H}">\n'
-            f'<title>{title}</title>\n{FONT}\n')
+            f'<title>{title}</title>\n')
 
 
 def front():
@@ -65,13 +90,7 @@ def front():
 </defs>
 <rect width="{W}" height="{H}" fill="{BLACK}"/>
 <rect width="{W}" height="{H}" fill="url(#glow)"/>
-<text x="{L}" y="{T + 1.6}" font-size="1.7" font-weight="700" letter-spacing="0.55" fill="{WHITE}" fill-opacity="0.9">{NAME_EN}</text>
-<g font-weight="900" font-size="{size}" letter-spacing="-0.12">
-<text x="{L}" y="{B - 2 * step:.2f}" fill="{WHITE}">TELL ME</text>
-<text x="{L}" y="{B - step:.2f}" fill="url(#yellow)">WHAT ISN'T</text>
-<text x="{L}" y="{B:.2f}" fill="{WHITE}">SELLING<tspan fill="{Y1}">.</tspan></text>
-</g>
-</svg>
+{line(NAME_EN, 1.7, 700, L, T + 1.6, SOFT, tracking=0.55)}{line("TELL ME", size, 900, L, B - 2 * step, WHITE, tracking=-0.12)}{line("WHAT ISN'T", size, 900, L, B - step, "url(#yellow)", tracking=-0.12)}{line("SELLING", size, 900, L, B, WHITE, tracking=-0.12, tail=(".", Y1))}</svg>
 """
     return s
 
@@ -83,7 +102,6 @@ def front_ku():
     lines are spaced wider and the last baseline sits a little higher to keep
     descenders inside the safe zone."""
     size, step, base = 5.6, 7.4, B - 1.4
-    rtl = 'direction="rtl" unicode-bidi="embed" text-anchor="start"'
     s = svg_open("Dindar Ahmed business card, Kurdish front")
     s += f"""<defs>
 <radialGradient id="glow" cx="0" cy="0" r="0.9">
@@ -96,13 +114,7 @@ def front_ku():
 </defs>
 <rect width="{W}" height="{H}" fill="{BLACK}"/>
 <rect width="{W}" height="{H}" fill="url(#glow)"/>
-<text x="{R}" y="{T + 2.4}" font-size="2.3" font-weight="700" fill="{WHITE}" fill-opacity="0.9" {rtl}>{NAME_KU}</text>
-<g font-weight="900" font-size="{size}">
-<text x="{R}" y="{base - 2 * step:.2f}" fill="{WHITE}" {rtl}>{STATEMENT_KU[0]}</text>
-<text x="{R}" y="{base - step:.2f}" fill="url(#yellow)" {rtl}>{STATEMENT_KU[1]}</text>
-<text x="{R}" y="{base:.2f}" fill="{WHITE}" {rtl}>{STATEMENT_KU[2]}<tspan fill="{Y1}">.</tspan></text>
-</g>
-</svg>
+{line(NAME_KU, 2.3, 700, R, T + 2.4, SOFT, rtl=True)}{line(STATEMENT_KU[0], size, 900, R, base - 2 * step, WHITE, rtl=True)}{line(STATEMENT_KU[1], size, 900, R, base - step, "url(#yellow)", rtl=True)}{line(STATEMENT_KU[2], size, 900, R, base, WHITE, rtl=True, tail=(".", Y1))}</svg>
 """
     return s
 
@@ -134,15 +146,10 @@ def back():
     path, version, n, cell = qr_path(qs, qx, qy)
     lines = [PHONE, EMAIL, WEB]
     step = 3.9
-    contact = "".join(
-        f'<text x="{L}" y="{B - (len(lines) - 1 - k) * step:.2f}" font-size="2.15" font-weight="500" fill="{WHITE}" fill-opacity="0.9">{v}</text>\n'
-        for k, v in enumerate(lines))
+    contact = "".join(line(v, 2.15, 400, L, B - (len(lines) - 1 - k) * step, SOFT) for k, v in enumerate(lines))
     s = svg_open("Dindar Ahmed business card, back")
     s += f"""<rect width="{W}" height="{H}" fill="{BLACK}"/>
-<text x="{L}" y="{T + 3.9}" font-size="4.6" font-weight="900" letter-spacing="-0.05" fill="{WHITE}">{NAME_EN}</text>
-<text x="{L}" y="{T + 9.1}" font-size="2.7" font-weight="700" fill="{LAVENDER}" direction="rtl" unicode-bidi="embed" text-anchor="end">{NAME_KU}</text>
-<text x="{L}" y="{T + 13.4}" font-size="1.55" font-weight="700" letter-spacing="0.45" fill="{Y1}">{TITLE_EN}</text>
-{contact}<rect x="{qx}" y="{qy}" width="{qs}" height="{qs}" rx="0.8" fill="{Y4}"/>
+{line(NAME_EN, 4.6, 900, L, T + 3.9, WHITE, tracking=-0.05)}{line(NAME_KU, 2.7, 700, L, T + 9.1, LAVENDER, rtl=True, anchor_left=True)}{line(TITLE_EN, 1.55, 700, L, T + 13.4, Y1, tracking=0.45)}{contact}<rect x="{qx}" y="{qy}" width="{qs}" height="{qs}" rx="0.8" fill="{Y4}"/>
 <path d="{path}" fill="{BLACK}"/>
 </svg>
 """

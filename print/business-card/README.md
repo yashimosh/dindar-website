@@ -2,12 +2,12 @@
 
 | File | What it is |
 |---|---|
-| `front.svg`, `front-ku.svg`, `back.svg` | The editable design: English front, Kurdish front, bilingual back. Open in Illustrator or Figma. |
+| `front.svg`, `front-ku.svg`, `back.svg` | The editable design: English front, Kurdish front, bilingual back. Open in Illustrator or Figma. All text is 29LT Zawi drawn as outlines (no font to install). |
 | `card-print.pdf` | English card for the printer. 2 pages: front, back. |
 | `card-print-ku.pdf` | Kurdish card for the printer. 2 pages: Kurdish front, the same back. |
 | `front.png`, `front-ku.png`, `back.png` | 600 dpi images of each side, cut to size (for sharing, mockups). |
 | `preview.png`, `preview.html` | Both sides side by side, for a quick look. |
-| `fonts/` | Noto Kufi Arabic (free, SIL Open Font License, see `OFL.txt`). |
+| `fonts/` | Noto Kufi Arabic, no longer used by the card (kept for reference; free, SIL OFL, see `OFL.txt`). |
 | `build.py`, `print.html`, `print-ku.html` | Regenerate the SVGs and the PDFs (only needed if details change). |
 
 ## Layout
@@ -41,10 +41,16 @@ the first version feel crowded.
 
 ## Editing
 
-- Install `fonts/NotoKufiArabic[wght].ttf` first, otherwise Illustrator substitutes
-  another font. Weights used: 500, 600, 700, 900.
-- Change text directly in the SVGs, or edit the details at the top of `build.py` and
-  run it (`pip install segno==1.6.1`, then `python build.py`). The script is the
+- All text is outlined 29LT Zawi (extended with the Sorani letters), so nothing needs
+  installing and the PDFs embed no fonts. The 29Letters licence allows using and
+  modifying the fonts but not handing the files to anyone, which is why only outlines
+  go to the printer. Never send `tools/fonts/` to the printer. Layers are named
+  (`aria-label`) after the text they draw.
+- Because the text is shapes, change wording in the details at the top of `build.py`
+  and run it; editing the SVG text directly is not possible. Weights used: Regular
+  (contacts), Bold (name, labels), Black (headlines).
+- Run it with `tools/venv/bin/python build.py` (needs `tools/requirements.txt` installed
+  and the extended fonts in `tools/fonts/dist`, see the main README). It is also the
   easiest way to change the QR code.
 - The QR code opens https://dindarahmed.com, where WhatsApp, Instagram and LinkedIn
   are one tap away. A plain web address keeps the code small and coarse (25 x 25
