@@ -14,12 +14,13 @@ Zawi differs from UA Neo in four ways, all handled here:
   - ە is missing as well, so it is derived from ة by removing the two dots
   - it already has a full Latin alphabet, so no fallback font is needed
 
-Needs: fonttools 4.56.0
+Needs: fonttools 4.56.0, skia-pathops 0.8.0.post2
 """
 import os
 import sys
 
 from fontTools.ttLib import TTFont
+from fontTools.ttLib.removeOverlaps import removeOverlaps
 from fontTools.varLib import instancer
 from fontTools.ttLib.tables.otTables import SingleSubst, Lookup, Ligature
 from fontTools.ttLib.tables._g_l_y_f import Glyph, GlyphCoordinates
@@ -207,6 +208,10 @@ def extend(style, wght):
         if rec.nameID == 6:
             rec.string = (fam.replace(" ", "") + "-" + style).encode(rec.getEncoding())
     font["maxp"].numGlyphs = len(order)
+
+    # Zawi's glyphs are built from overlapping shapes. Filled text hides that, but outlined text
+    # (stroke only) shows every inner line, so merge them into single clean outlines.
+    removeOverlaps(font)
 
     os.makedirs(OUT, exist_ok=True)
     path = os.path.join(OUT, f"29LT_Zawi_KU_{style}.ttf")

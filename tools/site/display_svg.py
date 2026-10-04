@@ -95,7 +95,11 @@ def _shape(font, token, base_dir, lang, tracking):
     from fontTools.pens.transformPen import TransformPen
     hb_font, tt, glyphset, upem = _load(FONTS[font])
     order = tt.getGlyphOrder()
-    pen = SVGPathPen(glyphset, ntos=lambda v: f"{v:.0f}")
+    import pathops
+    # draw every glyph into one path, then union it: connected Arabic letters overlap at their
+    # joins, which an outlined (stroke-only) word would show as stray inner lines
+    merged = pathops.Path()
+    pen = merged.getPen(glyphSet=glyphset)
     x = 0.0
     runs = _runs(token)
     if base_dir == "rtl":
@@ -114,8 +118,11 @@ def _shape(font, token, base_dir, lang, tracking):
             glyphset[order[info.codepoint]].draw(
                 TransformPen(pen, (1, 0, 0, -1, x + pos.x_offset, -pos.y_offset)))
             x += pos.x_advance + (tracking * upem if kind == "latin" else 0)
+    merged.simplify(fix_winding=True, keep_starting_points=False)
+    out = SVGPathPen(glyphset, ntos=lambda v: f"{v:.0f}")
+    merged.draw(out)
     hhea = tt["hhea"]
-    return pen.getCommands(), x, hhea.ascent, -hhea.descent, upem
+    return out.getCommands(), x, hhea.ascent, -hhea.descent, upem
 
 
 def _px_size(el):

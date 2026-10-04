@@ -4,3 +4,4 @@ pillow==10.4.0
 soupsieve==2.8.4
 uharfbuzz==0.39.5
 segno==1.6.1
+skia-pathops==0.8.0.post2
