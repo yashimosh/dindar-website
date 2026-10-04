@@ -105,7 +105,12 @@ links in every page (`build.js`) so browsers never serve a stale copy. Add any
 new page to the `PAGES` list in `build.js`.
 
 ```bash
-npx wrangler pages deploy . --project-name dindar-ahmed --branch main
+tools/deploy.sh
 ```
+
+Always deploy with `tools/deploy.sh`, never `wrangler pages deploy .`: Pages
+ignores `.assetsignore`, so deploying the repo root would publish `tools/` and
+the licensed 29LT font files. The script stages only the public site and refuses
+to run if any font or tool file is in it.
 
 New pages also go in `sitemap.xml`.
