@@ -28,17 +28,20 @@ from array import array
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from extend_uaneo import chevron, topmost_x, bottommost_x  # noqa: E402
+from extend_uaneo import topmost_x, bottommost_x  # noqa: E402
 
 VAR = os.path.join(HERE, "src_zawi_var", "29LTZawi-Variable.ttf")
 OUT = os.path.join(HERE, "dist")
 WEIGHTS = {"Regular": 400, "Bold": 700, "Black": 900}
 
-# V mark per weight, in 1000-unit em (Zawi is 1000 upem already)
+# The small V is the font's own Arabic-Indic seven (٧, U+0667) shrunk to width w, so its
+# strokes and corners match the letters. A shrunk glyph gets thin, so the seven is taken
+# from a heavier instance (dw = extra weight) to keep the stroke in line with the stems.
+# Units: 1000-unit em (Zawi is 1000 upem already).
 MARK = {
-    "Regular": dict(w=230, h=125, s=55, gap_above=55, gap_below=40),
-    "Bold":    dict(w=250, h=140, s=85, gap_above=55, gap_below=40),
-    "Black":   dict(w=270, h=155, s=115, gap_above=60, gap_below=45),
+    "Regular": dict(w=190, dw=250, gap_above=50, gap_below=40),
+    "Bold":    dict(w=200, dw=200, gap_above=50, gap_below=40),
+    "Black":   dict(w=215, dw=0,   gap_above=55, gap_below=45),
 }
 
 # new codepoint -> (base codepoint, mark, {new suffix: base glyph name})
@@ -91,7 +94,17 @@ def _add(font, name, glyph, advance):
 def extend(style, wght):
     var = TTFont(VAR)
     font = instancer.instantiateVariableFont(var, {"wght": wght}, inplace=False)
-    P = MARK[style]
+    P = dict(MARK[style])
+    sev = instancer.instantiateVariableFont(TTFont(VAR), {"wght": min(900, wght + P["dw"])}, inplace=False)
+    sc, _, sf, _ = _outline(sev["glyf"], "uni0667")
+    xs_, ys_ = [x for x, _ in sc], [y for _, y in sc]
+    k = P["w"] / (max(xs_) - min(xs_))
+    P["h"] = (max(ys_) - min(ys_)) * k
+    mx, my = (max(xs_) + min(xs_)) / 2, (max(ys_) + min(ys_)) / 2
+
+    def mark(cx, cy):
+        return [((x - mx) * k + cx, (y - my) * k + cy) for x, y in sc], [f & 1 for f in sf]
+
     glyf, hmtx = font["glyf"], font["hmtx"]
     cmap_tables = [t for t in font["cmap"].tables if t.isUnicode()]
     print(f"\n== Zawi {style} (wght {wght})")
@@ -106,11 +119,11 @@ def extend(style, wght):
             if pos == "above":
                 cx = topmost_x(ref)
                 cy = ref.yMax + P["gap_above"] + P["h"] / 2
-                pts, fl = chevron(cx, cy, P["w"], P["h"], P["s"], "down")
+                pts, fl = mark(cx, cy)
             else:
                 cx = bottommost_x(ref)
                 cy = ref.yMin - P["gap_below"] - P["h"] / 2
-                pts, fl = chevron(cx, cy, P["w"], P["h"], P["s"], "down")
+                pts, fl = mark(cx, cy)
             name = iso + suffix
             _add(font, name, _compose(coords, ends, flags, pts, fl), hmtx[base_name][0])
             if suffix:
@@ -136,7 +149,7 @@ def extend(style, wght):
         cl = [x for x in tops if x >= right - 120]
         cx = sum(cl) / len(cl)
         cy = ref.yMax + P["gap_above"] + P["h"] / 2
-        pts, fl = chevron(cx, cy, P["w"], P["h"], P["s"], "down")
+        pts, fl = mark(cx, cy)
         _add(font, lig_new, _compose(coords, ends, flags, pts, fl), hmtx[lig_src][0])
         print(f"   + {lig_new:16} from {lig_src}")
 
