@@ -153,7 +153,7 @@ html[dir="rtl"] p:not(.lbl, .display) svg.kw { height: 2.0em; margin-block: -.60
 
 /* ---------- hero ---------- */
 
-.hero-shade { background: linear-gradient(to top, #000000 0%, rgba(0,0,0,.6) 30%, rgba(113,97,239,.15) 65%, rgba(113,97,239,.4) 100%); }
+.hero-shade { background: linear-gradient(to bottom, rgba(0,0,0,.62) 0, rgba(0,0,0,0) 170px), linear-gradient(to top, #000000 0%, rgba(0,0,0,.6) 30%, rgba(113,97,239,.15) 65%, rgba(113,97,239,.4) 100%); }
 /* on wide screens the photo sits on the right and fades into the dark */
 .hero-side { background: linear-gradient(to right, #000000 0%, rgba(0,0,0,.6) 20%, rgba(0,0,0,0) 45%); }
 html[dir="rtl"] .hero-side { background: linear-gradient(to left, #000000 0%, rgba(0,0,0,.6) 20%, rgba(0,0,0,0) 45%); }
@@ -214,5 +214,8 @@ header a::after, .lang a::after, footer a:not(.btn-fire):not(.group)::after, a.u
 }
 /* phones: a stronger shade low in the hero keeps the face clear of the headline and kicker */
 @media (max-width: 1023px) {
-  .hero-shade { background: linear-gradient(to top, #000000 0%, rgba(0,0,0,.95) 34%, rgba(0,0,0,.55) 52%, rgba(113,97,239,.15) 100%); }
+  .hero-shade { background: linear-gradient(to bottom, rgba(0,0,0,.62) 0, rgba(0,0,0,0) 170px), linear-gradient(to top, #000000 0%, rgba(0,0,0,.95) 34%, rgba(0,0,0,.55) 52%, rgba(113,97,239,.15) 100%); }
 }
+
+/* skip link: shown on keyboard focus, in the brand yellow */
+a[href="#main"]:focus { background-image: linear-gradient(100deg, #ffc300, #ffea00); color: #000000; }
