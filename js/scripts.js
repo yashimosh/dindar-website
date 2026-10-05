@@ -59,6 +59,14 @@
   };
   watchImages(document);
 
+  // ---- WhatsApp button: step aside while the contact section (which has WhatsApp in it) is on screen ----
+  var wa = document.querySelector(".wa"), contact = document.getElementById("contact");
+  if (wa && contact && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      wa.classList.toggle("wa-off", entries[0].isIntersecting);
+    }, { rootMargin: "0px 0px -25% 0px" }).observe(contact);
+  }
+
   // ---- Scroll reveal ----
   var observe = function (root) {
     var items = root.querySelectorAll(".rv:not(.in), .reveal:not(.in), [data-count]");

@@ -183,6 +183,8 @@ html[dir="rtl"] .marquee-track { animation-name: marquee-rtl; }
 
 /* ---------- WhatsApp button ---------- */
 
+.wa { transition: opacity .3s ease, transform .3s ease, visibility 0s; }
+.wa.wa-off { opacity: 0; transform: translateY(14px); visibility: hidden; pointer-events: none; transition: opacity .3s ease, transform .3s ease, visibility 0s .3s; }
 .wa span { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width .4s ease, opacity .3s ease; }
 .wa:hover span, .wa:focus-visible span { max-width: 140px; opacity: 1; }
 
