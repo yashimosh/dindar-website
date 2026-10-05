@@ -54,10 +54,11 @@ file. No HTML edit is needed.
   marquees, service rows, RTL font rules. Layout follows lircle.co: square
   corners, flat ruled rows, solid fills, no frosted glass.
 - `css/tailwind.css` is generated. Do not edit it.
-- Fonts: headlines, labels, buttons, menu and numbers are **29LT Zawi**, drawn
-  as inline SVG outlines at build time (no font file is ever served). Paragraph
-  text stays Noto Kufi Arabic (Google Fonts). The real text is kept next to each
-  shape as `.sr-only`, so screen readers, search and copy/paste still work.
+- Fonts: **all text on the site is 29LT Zawi** (headlines, labels, buttons, menus,
+  numbers and running paragraphs), drawn as inline SVG outlines at build time so no
+  font file is ever served. No Google Fonts or other font request is made. The real
+  text is kept next to each shape as `.sr-only`, so screen readers, search and
+  translation still work. Zawi has no ◆, so that is a drawn SVG diamond (`.dia`).
 - 29Letters licence (confirmed in writing by 29Letters): the fonts may be
   modified and used in any medium, but **never redistributed**. This repo is
   public, so no font file is ever committed (`.gitignore`: `tools/fonts/src*`,
@@ -69,10 +70,12 @@ file. No HTML edit is needed.
   Source fonts go in `tools/fonts/src_zawi_var/` (Zawi variable) and
   `tools/fonts/src/` (UA Neo); get them from 29LT.
 - Build chain: `tools/site/generate.py` writes the pages, then
-  `tools/site/display_svg.py` swaps every `h1-h4`, `.display`, `.lbl`, `[data-kw]`
-  text for SVG shapes (HarfBuzz shaping, bidi handled for mixed Latin/number
-  runs in RTL). Without `tools/fonts/dist` it falls back to plain Noto text and
-  prints a WARNING.
+  `tools/site/display_svg.py` swaps every visible text node for SVG word shapes
+  (HarfBuzz shaping, glyph overlaps merged, bidi handled for Latin/number runs and
+  e-mail/phone tokens in RTL; unique words drawn once in a sprite with compact
+  relative path data). Weights: Black for display headings, Bold for
+  `font-semibold/bold`, Regular for the rest. Without `tools/fonts/dist` it leaves
+  plain text and prints a WARNING (the page then uses the system font).
 - Audit: `tools/site/audit_clipping.js` finds cropped or cut text; run every page
   and width with `tools/site/audit_all.js` (copy `audit_clipping.js` to
   `assets/audit.js` temporarily, run `audit_all.js` in the browser console on the

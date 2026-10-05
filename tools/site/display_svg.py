@@ -1,15 +1,17 @@
-"""Set the site's headings, labels, buttons, menus and numbers in 29LT Zawi.
+"""Set all of the site's text in 29LT Zawi.
 
 29Letters lets us modify and use their fonts in any medium, but not
 redistribute them. A webfont would put a copy of the font in every visitor's
 browser, so the font is never served. Instead, at build time, every word of
-heading-like text is shaped with HarfBuzz (proper Arabic joining and Latin
+text is shaped with HarfBuzz (proper Arabic joining and Latin
 kerning) and replaced by an inline SVG of its outlines. Visitors receive
 shapes, not the font.
 
-What is converted: text inside h1-h4, anything with class .display or .lbl,
-and anything marked data-kw in the generator. Running paragraphs stay in
-Noto Kufi Arabic (they would become heavy, unselectable pictures).
+What is converted: every piece of visible text on the page (headings, labels,
+buttons, menus, numbers and running paragraphs). Headings, .display, .lbl and
+data-kw text use the heavy weights; everything else uses Regular, or Bold when
+its Tailwind classes ask for font-semibold/bold. Only text inside <script>,
+<style>, form fields and data-nokw elements is left alone.
 
 For every converted text node:
   - the original text stays in the page as .sr-only, so screen readers, search
@@ -28,6 +30,7 @@ import sys
 
 from bs4 import BeautifulSoup, NavigableString, Comment
 from bs4.formatter import HTMLFormatter
+from fontTools.pens.basePen import BasePen
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), "fonts"))
@@ -35,7 +38,14 @@ from shape_svg import _load  # noqa: E402
 
 DIST = os.path.join(os.path.dirname(HERE), "fonts", "dist")
 FONTS = {"black": os.path.join(DIST, "29LT_Zawi_KU_Black.ttf"),
-         "bold": os.path.join(DIST, "29LT_Zawi_KU_Bold.ttf")}
+         "bold": os.path.join(DIST, "29LT_Zawi_KU_Bold.ttf"),
+         "regular": os.path.join(DIST, "29LT_Zawi_KU_Regular.ttf")}
+# Each word is drawn in a box that covers the font's whole ink (tall V marks reach 1.18 em above
+# the baseline, tails go 0.6 em below), so no container with overflow hidden can shave them off.
+# All weights share these numbers, so the box height, baseline shift and the negative margins that
+# keep line spacing as it was live in CSS (svg.kw) instead of in every tag.
+ASC, DESC = 1200, 620
+HHEA = (840, 360)  # the font's own ascent/descent; the line layout was tuned to these
 FIRE = ("#ffc300", "#ffea00")  # the yellow gradient behind .fire-text
 HB_LANG = {"en": "en", "ckb": "ckb", "ar": "ar", "fa": "fa"}
 IGNORABLE = "‌‍‎‏"
@@ -46,8 +56,9 @@ DIGIT_SETS = ["0123456789", "٠١٢٣٤٥٦٧٨٩",
 _AD = "\u0660-\u0669\u06f0-\u06f9"  # Arabic-Indic and Persian digits
 # runs that read left to right inside right-to-left text (Unicode bidi: Latin letters, and numbers)
 RUN_RE = re.compile(
-    r"(?P<latin>[A-Za-z0-9](?:[A-Za-z0-9.,'\u2019:/&+%-]*[A-Za-z0-9%])?)"
+    r"(?P<latin>[A-Za-z0-9](?:[A-Za-z0-9.,'\u2019:/&+%@_-]*[A-Za-z0-9%])?)"
     rf"|(?P<num>[{_AD}]+(?:[.,:/\u066b\u066c][{_AD}]+)*)")
+LATIN_ONLY = re.compile(r"[+@]?[A-Za-z0-9](?:[\x21-\x7e]*[A-Za-z0-9])?")  # no trailing punctuation
 OUTLINE_STROKE = 24  # font units; scales with the text
 
 
@@ -88,10 +99,69 @@ def _runs(token):
     return runs
 
 
+class _CompactPen(BasePen):
+    """SVG path data in whole units with relative commands and no wasted separators. The pages carry
+    hundreds of word outlines, so this is about a third smaller than absolute coordinates."""
+
+    def __init__(self, glyphset=None):
+        super().__init__(glyphset)
+        self.buf, self.cur, self.start, self.last, self.after_letter = [], (0, 0), (0, 0), "", True
+
+    def _emit(self, cmd, nums):
+        if not (cmd == self.last and cmd not in "mz"):   # a repeated command needs no letter
+            self.buf.append(cmd)
+            self.after_letter = True
+        for n in nums:
+            self.buf.append(str(n) if (n < 0 or self.after_letter) else " " + str(n))
+            self.after_letter = False
+        self.last = cmd
+
+    def _moveTo(self, pt):
+        pt = (round(pt[0]), round(pt[1]))
+        self._emit("m", [pt[0] - self.cur[0], pt[1] - self.cur[1]])
+        self.cur = self.start = pt
+
+    def _lineTo(self, pt):
+        pt = (round(pt[0]), round(pt[1]))
+        dx, dy = pt[0] - self.cur[0], pt[1] - self.cur[1]
+        if dx == 0 and dy == 0:
+            return
+        if dy == 0:
+            self._emit("h", [dx])
+        elif dx == 0:
+            self._emit("v", [dy])
+        else:
+            self._emit("l", [dx, dy])
+        self.cur = pt
+
+    def _qCurveToOne(self, p1, p2):
+        p1, p2 = (round(p1[0]), round(p1[1])), (round(p2[0]), round(p2[1]))
+        if p1 == self.cur and p2 == self.cur:
+            return
+        cx, cy = self.cur
+        self._emit("q", [p1[0] - cx, p1[1] - cy, p2[0] - cx, p2[1] - cy])
+        self.cur = p2
+
+    def _curveToOne(self, p1, p2, p3):
+        pts = [(round(p[0]), round(p[1])) for p in (p1, p2, p3)]
+        cx, cy = self.cur
+        self._emit("c", [v for p in pts for v in (p[0] - cx, p[1] - cy)])
+        self.cur = pts[2]
+
+    def _closePath(self):
+        self._emit("z", [])
+        self.cur = self.start
+
+    def _endPath(self):
+        pass
+
+    def path(self):
+        return "".join(self.buf)
+
+
 def _shape(font, token, base_dir, lang, tracking):
     """Outline of one word in font units (y down, origin at left of baseline)."""
     import uharfbuzz as hb
-    from fontTools.pens.svgPathPen import SVGPathPen
     from fontTools.pens.transformPen import TransformPen
     hb_font, tt, glyphset, upem = _load(FONTS[font])
     order = tt.getGlyphOrder()
@@ -119,10 +189,10 @@ def _shape(font, token, base_dir, lang, tracking):
                 TransformPen(pen, (1, 0, 0, -1, x + pos.x_offset, -pos.y_offset)))
             x += pos.x_advance + (tracking * upem if kind == "latin" else 0)
     merged.simplify(fix_winding=True, keep_starting_points=False)
-    out = SVGPathPen(glyphset, ntos=lambda v: f"{v:.0f}")
+    out = _CompactPen(glyphset)
     merged.draw(out)
     hhea = tt["hhea"]
-    return out.getCommands(), x, hhea.ascent, -hhea.descent, upem
+    return out.path(), x, hhea.ascent, -hhea.descent, upem
 
 
 def _px_size(el):
@@ -137,8 +207,12 @@ def _px_size(el):
     return None
 
 
-def _style_for(trigger, node):
-    """(font, caps, tracking, outline, fire) for a text node under `trigger`."""
+TRACKING = {"tracking-tighter": -0.05, "tracking-tight": -0.025, "tracking-wide": 0.025,
+            "tracking-wider": 0.05, "tracking-widest": 0.1}
+
+
+def _style_for(trigger, node, body=False):
+    """(font, caps, kind, outline, fire, tracking_class) for a text node under `trigger`."""
     chain, p = [], node.parent
     while p is not None and hasattr(p, "get"):
         chain.append(p)
@@ -149,9 +223,24 @@ def _style_for(trigger, node):
     is_display = "display" in classes or trigger.name in ("h1", "h2")
     is_lbl = "lbl" in classes
     size = _px_size(trigger) or 0
-    font = "black" if (is_display and (size == 0 or size > 24)) else "bold"
-    return font, ("display" in classes or is_lbl), ("lbl" if is_lbl else "display" if "display" in classes else ""), \
-        "ol" in classes, "fire-text" in classes
+    if body and not (is_display or is_lbl or trigger.name in HEADINGS):
+        if "font-black" in classes:
+            font = "black"
+        elif classes & {"font-bold", "font-semibold", "font-extrabold"}:
+            font = "bold"
+        else:
+            font = "regular"
+    else:
+        font = "black" if (is_display and (size == 0 or size > 24)) else "bold"
+    track = None
+    for c in classes:
+        m = re.fullmatch(r"tracking-\[(-?[\d.]+)em\]", c)
+        if m:
+            track = float(m.group(1))
+        elif c in TRACKING:
+            track = TRACKING[c]
+    return font, ("display" in classes or is_lbl or "uppercase" in classes), \
+        ("lbl" if is_lbl else "display" if "display" in classes else ""), "ol" in classes, "fire-text" in classes, track
 
 
 def _find_trigger(node):
@@ -165,6 +254,17 @@ def _find_trigger(node):
     return None
 
 
+def _body_parent(node):
+    """The element to style ordinary text by, or None if this text must stay as it is."""
+    p = node.parent
+    while p is not None and hasattr(p, "get"):
+        if p.name in SKIP_TAGS or "sr-only" in _classes(p) or "kw-line" in _classes(p) or p.has_attr("data-nokw") \
+                or p.has_attr("hidden") or p.has_attr("data-count"):
+            return None
+        p = p.parent
+    return node.parent
+
+
 def apply(html, lang="en"):
     soup = BeautifulSoup(html, "html.parser")
     rtl = soup.html is not None and soup.html.get("dir") == "rtl"
@@ -173,23 +273,23 @@ def apply(html, lang="en"):
     meta = {}
     fit_em = {}  # element -> total width in em, for data-fit headings
 
-    def word_ref(font, token, tracking):
-        key = (font, token, tracking)
+    def word_ref(font, token, tracking, bdir=None):
+        bdir = bdir or base_dir
+        key = (font, token, tracking, bdir)
         if key not in ids:
-            d, w, asc, desc, upem = _shape(font, token, base_dir, lang, tracking)
+            d, w, asc, desc, upem = _shape(font, token, bdir, lang, tracking)
             meta.update(asc=asc, desc=desc, upem=upem)
             ids[key] = (f"kw{len(ids)}", w)
             sprite.append(f'<path id="kw{len(ids) - 1}" d="{d}"/>')
         return ids[key]
 
-    def svg_for(font, token, tracking, fill, outline):
-        kid, w = word_ref(font, token, tracking)
+    def svg_for(font, token, tracking, fill, outline, bdir=None):
+        kid, w = word_ref(font, token, tracking, bdir)
         asc, desc, upem = meta["asc"], meta["desc"], meta["upem"]
-        paint = (f'fill="none" stroke="currentColor" stroke-width="{OUTLINE_STROKE}" stroke-linejoin="round"'
-                 if outline else f'fill="{fill}"')
-        return (f'<svg class="kw" viewBox="0 {-asc} {w:.0f} {asc + desc}" '
-                f'style="width:{w / upem:.3f}em;height:{(asc + desc) / upem:.3f}em;'
-                f'vertical-align:{-desc / upem:.3f}em"><use href="#{kid}" {paint}/></svg>')
+        assert (asc, desc, upem) == (*HHEA, 1000), "Zawi metrics changed: update ASC/DESC/HHEA and svg.kw in the CSS"
+        paint = (f' fill="none" stroke="currentColor" stroke-width="{OUTLINE_STROKE}" stroke-linejoin="round"'
+                 if outline else (f' fill="{fill}"' if fill != "currentColor" else ""))
+        return f'<svg class="kw" viewBox="0 -{ASC} {w:.0f} {ASC + DESC}"><use href="#{kid}"{paint}/></svg>'
 
     # ---- numbers that count up: one sprite glyph per character --------------
     for el in soup.select("[data-count]"):
@@ -208,9 +308,9 @@ def apply(html, lang="en"):
             if ch in count_chars:
                 w = count_chars[ch][1]
                 parts.append(
-                    f'<svg class="kw" viewBox="0 {-meta["asc"]} {w:.0f} {meta["asc"] + meta["desc"]}" '
-                    f'style="width:{w / meta["upem"]:.3f}em;height:{(meta["asc"] + meta["desc"]) / meta["upem"]:.3f}em;'
-                    f'vertical-align:{-meta["desc"] / meta["upem"]:.3f}em"><use href="#kc{ord(ch)}" fill="currentColor"/></svg>')
+                    f'<svg class="kw" viewBox="0 {-ASC} {w:.0f} {ASC + DESC}" '
+                    f'style="width:{w / meta["upem"]:.3f}em;height:{(ASC + DESC) / meta["upem"]:.3f}em;'
+                    f'vertical-align:{-DESC / meta["upem"]:.3f}em"><use href="#kc{ord(ch)}" fill="currentColor"/></svg>')
         el["data-count-text"] = text
         el.clear()
         el.append(BeautifulSoup(
@@ -219,7 +319,8 @@ def apply(html, lang="en"):
 
     # ---- everything else ----------------------------------------------------
     for node in list(soup.find_all(string=True)):
-        if isinstance(node, Comment) or not isinstance(node, NavigableString):
+        # exact type: Doctype, comments, CDATA etc. are NavigableString subclasses and must stay untouched
+        if type(node) is not NavigableString:
             continue
         text = str(node)
         if not text.strip():
@@ -227,15 +328,17 @@ def apply(html, lang="en"):
         if any(p.has_attr("data-count") for p in node.parents if hasattr(p, "has_attr")):
             continue
         trigger = _find_trigger(node)
-        if trigger is None:
-            continue
-        stripped = text.strip()
-        if "@" in stripped or "http" in stripped:
-            continue
-        font, caps, kind, outline, fire = _style_for(trigger, node)
+        body = trigger is None
+        if body:
+            trigger = _body_parent(node)
+            if trigger is None:
+                continue
+        font, caps, kind, outline, fire, track = _style_for(trigger, node, body)
         tracking = 0.0
         if not rtl and lang == "en":
             tracking = 0.2 if kind == "lbl" else -0.01 if kind == "display" else 0.0
+            if track is not None:
+                tracking = track
         fill = "url(#kwfire)" if fire else "currentColor"
         shown = text.upper() if (caps and lang == "en") else text
         parts, ltr = [], []   # `ltr` = Latin words being collected into one left-to-right group
@@ -256,7 +359,7 @@ def apply(html, lang="en"):
                 continue
             # Unicode bidi keeps Latin words (and numbers after them) in left-to-right order
             # inside right-to-left text: "Strap Iraq" must not become "Iraq Strap"
-            is_latin = bool(re.search("[A-Za-z]", tok)) or (prev_latin and bool(re.fullmatch(r"[0-9.,:%+-]+", tok)))
+            is_latin = bool(re.search("[A-Za-z]", tok)) or bool(LATIN_ONLY.fullmatch(tok)) or (prev_latin and bool(re.fullmatch(r"[0-9.,:%+-]+", tok)))
             if rtl and not is_latin and ltr and ltr[-1] == " ":
                 ltr.pop()
                 flush()
@@ -265,8 +368,13 @@ def apply(html, lang="en"):
                 flush()
             prev_latin = is_latin
             if _covered(font, tok):
-                piece = svg_for(font, tok, tracking, fill, outline)
-                fit_em[id(trigger)] = fit_em.get(id(trigger), 0) + word_ref(font, tok, tracking)[1] / meta["upem"]
+                # an e-mail address is one long word: let it break before the @ on narrow columns
+                bits = [tok] if ("@" not in tok or len(tok) < 14) else [tok.split("@")[0], "@" + tok.split("@", 1)[1]]
+                # e-mails, phone numbers, handles and web addresses read left to right even on a
+                # right-to-left page (their @ and + must not be flipped to the wrong end)
+                bdir = "ltr" if (rtl and all(LATIN_ONLY.fullmatch(b) for b in bits)) else None
+                piece = "<wbr/>".join(svg_for(font, b, tracking, fill, outline, bdir) for b in bits)
+                fit_em[id(trigger)] = fit_em.get(id(trigger), 0) + sum(word_ref(font, b, tracking, bdir)[1] for b in bits) / meta["upem"]
             else:
                 piece = f'<span class="kw-txt">{H.escape(tok)}</span>'
             (ltr if (rtl and is_latin) else parts).append(piece)
@@ -291,7 +399,7 @@ def apply(html, lang="en"):
         counts = "".join(f'<path id="kc{ord(ch)}" data-w="{w:.0f}" d="{d}"/>' for ch, (d, w) in count_chars.items())
         defs = BeautifulSoup(
             f'<svg id="kwsprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" '
-            f'data-asc="{meta["asc"]}" data-desc="{meta["desc"]}" data-upem="{meta["upem"]}"><defs>'
+            f'data-asc="{ASC}" data-desc="{DESC}" data-upem="{meta["upem"]}"><defs>'
             f'<linearGradient id="kwfire" x1="0" x2="1"><stop offset="0" stop-color="{FIRE[0]}"/>'
             f'<stop offset="1" stop-color="{FIRE[1]}"/></linearGradient>'
             + "".join(sprite) + counts + "</defs></svg>", "html.parser")

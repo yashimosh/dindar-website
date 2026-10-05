@@ -36,7 +36,10 @@
     if (!b.width || !b.height) return;
     // the V marks and tall letters reach about 0.2em above the glyph box
     const label = (s.closest(".kw-line")?.querySelector(".sr-only")?.textContent || "").trim().slice(0, 32);
-    items.push([s, b, label, fs * 0.2]);
+    // the drawing box is 1.2 em above / .62 em below the baseline so nothing is ever shaved off, but
+    // ordinary ink only reaches about .9 em above and .45 em below: test that, V marks get 0.2em more
+    const ink = { top: b.top + 0.3 * fs, bottom: b.bottom - 0.17 * fs, left: b.left, right: b.right, width: b.width, height: b.height };
+    items.push([s, ink, label, fs * 0.2]);
   });
   for (const [el, b, label, lift] of items) {
     if (el.closest(".marquee, .wa")) continue; // marquee and the WhatsApp hover label clip on purpose

@@ -89,7 +89,9 @@ PAGES = {"home": "", "work": "work/", "about": "about/"}
 def url(loc, page):
     return PREFIX[loc] + PAGES[page]
 
-DIAMOND = '<span class="text-accent" aria-hidden="true">◆</span>'
+# a drawn diamond: Zawi has no ◆ glyph, and no text should fall back to another font
+DIA = '<svg class="dia" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0l5 5-5 5-5-5z"/></svg>'
+DIAMOND = f'<span class="text-accent" aria-hidden="true">{DIA}</span>'
 
 def head(loc, page, title, desc):
     c = C[loc]
@@ -122,9 +124,6 @@ def head(loc, page, title, desc):
 <meta name="twitter:title" content="{a(title)}"/>
 <meta name="twitter:description" content="{a(c['meta']['tw_description'] if page == 'home' else desc)}"/>
 <meta name="twitter:image" content="{SITE}/assets/img/portrait.jpg"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?{font}&display=swap" rel="stylesheet"/>
 <link href="/css/tailwind.css" rel="stylesheet"/>
 <script>/* reveal animations only when the page opens in a visible tab: a hidden tab freezes CSS transitions half way, which leaves headlines cut off */if(document.visibilityState!=="hidden")document.documentElement.classList.add("js")</script>
 </head>
@@ -203,7 +202,7 @@ def footer(loc, page):
         for n, h, v in soc)
     return f"""<footer id="contact" class="relative overflow-hidden border-t border-line grad-up">
 <div class="wrap above pt-24 md:pt-36 pb-10">
-<p class="rv lbl text-accent mb-8">◆ {e(c['contact']['h2'])}</p>
+<p class="rv lbl text-accent mb-8">{DIA} {e(c['contact']['h2'])}</p>
 <h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl">{hl(e(c['cta']['h2']), 'fire-text')}</h2>
 <p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">{e(c['contact']['sub'])}</p>
 <div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
@@ -343,7 +342,7 @@ def home(loc):
 
     tag = c["footer"]["tagline"]
     vals = "".join(
-        f'<span class="display text-[44px] md:text-[96px] px-6 md:px-10 {"ol text-white/70" if k % 2 else "fire-text"}">{e(tag)}</span><span class="text-accent text-[18px]" aria-hidden="true">◆</span>'
+        f'<span class="display text-[44px] md:text-[96px] px-6 md:px-10 {"ol text-white/70" if k % 2 else "fire-text"}">{e(tag)}</span><span class="text-accent text-[18px]" aria-hidden="true">{DIA}</span>'
         for k in range(4))
 
     body = f"""<main id="main">
@@ -473,7 +472,7 @@ def work(loc):
 
     approach = "\n".join(f"""<article class="rv">
 {pic(it['img'], it['alt'], 'aspect-[4/3] object-cover')}
-<p class="mt-6 lbl text-muted">{' <span class="text-accent" aria-hidden="true">◆</span> '.join(e(t) for t in it['tags'])}</p>
+<p class="mt-6 lbl text-muted">{f' {DIAMOND} '.join(e(t) for t in it['tags'])}</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">{e(it['h3'])}</h3>
 <p class="mt-4 text-[17px] leading-[1.65] text-muted">{e(it['p'])}</p>
 </article>""" for it in c["featured"]["items"])
@@ -486,7 +485,7 @@ def work(loc):
 <p class="display text-[56px] md:text-[80px] ol text-amber/80" aria-hidden="true">{digits(loc, f'{i+1:02d}')}</p>
 <p class="mt-4 display fire-text text-[32px] md:text-[44px] leading-[1.05]">{e(it['metric'])}</p>
 <h3 class="mt-5 display text-[22px] md:text-[26px]">{e(it['name'])}</h3>
-<p class="mt-2 lbl text-muted">{e(it['tag'])} <span class="text-accent" aria-hidden="true">◆</span> {e(it['period'])}</p>
+<p class="mt-2 lbl text-muted">{e(it['tag'])} {DIAMOND} {e(it['period'])}</p>
 <p class="mt-5 text-[17px] leading-[1.65] text-white/80">{e(it['body'])}</p>
 </div>
 </article>""")
@@ -527,14 +526,11 @@ def not_found():
 <meta name="robots" content="noindex"/>
 <title>Page not found | Dindar Ahmed</title>
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300..900&display=swap" rel="stylesheet"/>
 <link href="/css/tailwind.css" rel="stylesheet"/>
 </head>
 <body class="bg-ink text-white antialiased">
 <main class="wrap min-h-screen flex flex-col justify-center py-24">
-<p class="lbl text-accent mb-8">◆ 404</p>
+<p class="lbl text-accent mb-8">{DIA} 404</p>
 <h1 class="display fire-text text-[48px] sm:text-[96px]">Page not found.</h1>
 <p class="mt-10 text-[20px] leading-[1.6] text-white/60 max-w-xl">That page doesn&rsquo;t exist. Head back to the homepage, or write to <a class="ul text-white" href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">

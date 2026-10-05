@@ -23,8 +23,8 @@ body { background: #000000; color: #fff; }
 @media (min-width: 768px) { .wrap { padding-inline: 2rem; } }
 @media (min-width: 1280px) { .wrap { padding-inline: 3.5rem; } }
 
-/* one family for every language: Noto Kufi Arabic covers Latin,
-   Arabic, Persian and every Kurdish Sorani letter (ڕ ڵ ۆ ێ ە ھ) */
+/* All visible text is 29LT Zawi drawn as SVG outlines at build time (tools/site/display_svg.py),
+   so this family only applies if the build ran without the fonts; it is not downloaded */
 body { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
 
 /* ---------- display type ----------
@@ -90,11 +90,17 @@ html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
 /* Headings, labels, buttons, menus and numbers arrive as Zawi word shapes (inline
    SVG built by tools/site/display_svg.py). The negative margins stop the tall
    glyph box from stretching the line, and overflow lets the marks show. */
-svg.kw { display: inline-block; overflow: visible; margin-block: -.3em; }
+/* each word's box covers the whole font (1.2 em above the baseline, .62 below; see display_svg.py), so
+   tall V marks and tails are never shaved off; the negative margins give back the old line footprint */
+svg.kw { display: inline-block; overflow: visible; height: 1.82em; width: auto; vertical-align: -.62em;
+  margin-block: -.66em -.56em; fill: currentColor; pointer-events: none; }
+/* clamped paragraphs clip at their last line; tails and V marks hang a little below it */
+.line-clamp-3 { padding-bottom: .35em; margin-bottom: -.35em; }
 .kw-count { display: inline-flex; white-space: nowrap; }
 /* the hidden text beside each shape is absolutely positioned; anchoring it to its own wrapper keeps it
    inside sideways scrollers and marquees (otherwise it stretches the page on phones) */
 .kw-line { position: relative; }
+.dia { display: inline-block; width: .55em; height: .55em; fill: currentColor; vertical-align: .04em; }
 .kw-txt { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
 /* a heading sized to fill its row: --fit is (share of row) / (text width in em), set at build time.
    The row is 100vw minus the page gutters (see .wrap), capped at the 1600px max width. */

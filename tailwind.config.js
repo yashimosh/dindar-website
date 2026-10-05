@@ -3,8 +3,8 @@
  *
  *  Fire palette on ink black: dark grounds, ember-to-amber gradients,
  *  frosted glass panels and blurred glows (see css/tailwind.src.css).
- *  Font: Noto Kufi Arabic for every language (Latin, Arabic, Persian,
- *  Kurdish Sorani).
+ *  Font: all text is 29LT Zawi drawn as SVG outlines at build time
+ *  (tools/site/display_svg.py); the families below are only a fallback.
  */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
