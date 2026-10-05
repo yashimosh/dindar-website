@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draw the site icon: a black Zawi "D" on the brand yellow, as outlines.
+"""Draw the site icon: a black Zawi Kurdish "د" on the brand yellow, as outlines.
 
 Writes assets/favicon.svg (the editable source, open it in Illustrator or Figma),
 and, when Brave/Chrome is available, the raster files made from it:
@@ -24,11 +24,11 @@ from fontTools.ttLib import TTFont
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 FONT = os.path.join(ROOT, "tools", "fonts", "dist", "29LT_Zawi_KU_Black.ttf")
 OUT = os.path.join(ROOT, "assets")
-LETTER = "D"
+LETTER = "\u062f"   # د, the first letter of دیندار (try "D" for the Latin version)
 Y1, Y2, INK = "#ffc300", "#ffea00", "#000000"
 SIZE = 64            # viewBox
 RADIUS = 14          # tile corner radius
-LETTER_H = 42        # cap height of the letter inside the tile, same units
+LETTER_H = 46        # cap height of the letter inside the tile, same units
 NUDGE = 0.0          # optical vertical nudge (down is positive)
 
 
