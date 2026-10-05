@@ -33,7 +33,7 @@ from extend_uaneo import topmost_x, bottommost_x  # noqa: E402
 
 VAR = os.path.join(HERE, "src_zawi_var", "29LTZawi-Variable.ttf")
 OUT = os.path.join(HERE, "dist")
-WEIGHTS = {"Regular": 400, "Bold": 700, "Black": 900}
+WEIGHTS = {"Regular": 400, "Medium": 500, "Bold": 700, "Black": 900}
 
 # The small V is the font's own Arabic-Indic seven (٧, U+0667) shrunk to width w, so its
 # strokes and corners match the letters. A shrunk glyph gets thin, so the seven is taken
@@ -41,6 +41,7 @@ WEIGHTS = {"Regular": 400, "Bold": 700, "Black": 900}
 # Units: 1000-unit em (Zawi is 1000 upem already).
 MARK = {
     "Regular": dict(w=190, dw=250, gap_above=50, gap_below=40),
+    "Medium":  dict(w=193, dw=230, gap_above=50, gap_below=40),
     "Bold":    dict(w=200, dw=200, gap_above=50, gap_below=40),
     "Black":   dict(w=215, dw=0,   gap_above=55, gap_below=45),
 }

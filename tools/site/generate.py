@@ -162,11 +162,11 @@ def header(loc, page):
     return f"""<header class="absolute inset-x-0 top-0 z-50">
 <div class="wrap">
 <div class="h-20 md:h-24 flex items-center justify-between gap-6 border-b border-white/10">
-<a href="{url(loc, 'home')}" class="display text-[15px] md:text-[17px]">{e(name_of(loc))}</a>
+<a href="{url(loc, 'home')}" class="display text-[16px] md:text-[18px]">{e(name_of(loc))}</a>
 <nav class="hidden md:flex items-center gap-8 lbl" aria-label="Main">
 {chr(10).join(links)}
 </nav>
-<div class="hidden md:flex items-center gap-4 text-[13px]" aria-label="{a(u['label_language'])}">
+<div class="lang hidden md:flex items-center gap-4 text-[14px]" aria-label="{a(u['label_language'])}">
 {lang_links(loc, page, 'text-accent', 'opacity-60 hover:opacity-100 transition-opacity')}
 </div>
 <button id="menu-toggle" type="button" class="md:hidden lbl inline-flex items-center gap-2 min-h-[44px] px-4 btn-fire" aria-controls="menu" aria-expanded="false" data-open="{a(u['menu_open'])}" data-close="{a(u['menu_close'])}"><span data-state="open">{e(u['menu_open'])}</span><span data-state="close" hidden>{e(u['menu_close'])}</span></button>
@@ -175,14 +175,14 @@ def header(loc, page):
 </header>
 <div id="menu" hidden class="md:hidden fixed inset-0 z-[60] bg-ink text-white overflow-y-auto">
 <div class="wrap h-20 flex items-center justify-between border-b border-white/10">
-<span class="display text-[15px]">{e(name_of(loc))}</span>
+<span class="display text-[16px]">{e(name_of(loc))}</span>
 <button type="button" data-menu-close class="lbl inline-flex items-center min-h-[44px] px-4 btn-fire">{e(u['menu_close'])}</button>
 </div>
 <nav class="wrap pt-10 display text-[40px]" aria-label="Main">
 {chr(10).join(mlinks)}
 </nav>
-<div class="wrap mt-12 flex flex-wrap gap-5 text-[16px]">
-{lang_links(loc, page, 'text-accent', 'text-white/60')}
+<div class="lang wrap mt-12 flex flex-wrap gap-5 text-[17px]">
+{lang_links(loc, page, 'text-accent', 'text-white/75')}
 </div>
 </div>
 """
@@ -200,37 +200,37 @@ def footer(loc, page):
     ]
     rows = "\n".join(
         f'<li><a href="{h}" target="_blank" rel="noopener" class="group flex items-baseline justify-between gap-4 py-4 border-t border-edge first:border-t-0">'
-        f'<span class="lbl">{n}</span><span class="text-white/60 group-hover:text-accent transition-colors inline-flex items-center gap-2">{v} {ARROW_UR}</span></a></li>'
+        f'<span class="lbl">{n}</span><span class="text-white/75 group-hover:text-accent transition-colors inline-flex flex-1 min-w-0 justify-end text-end items-baseline gap-2">{v} {ARROW_UR}</span></a></li>'
         for n, h, v in soc)
     return f"""<footer id="contact" class="relative overflow-hidden border-t border-line grad-up">
 <div class="wrap above pt-24 md:pt-36 pb-10">
 <p class="rv lbl text-accent mb-8">{DIA} {e(c['contact']['h2'])}</p>
 <h2 class="reveal display text-[40px] sm:text-[64px] lg:text-[96px] max-w-6xl">{hl(e(c['cta']['h2']), 'fire-text')}</h2>
-<p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/60 max-w-2xl">{e(c['contact']['sub'])}</p>
+<p class="rv mt-10 text-[18px] leading-[1.6] md:text-[20px] text-white/75 max-w-2xl">{e(c['contact']['sub'])}</p>
 <div class="mt-16 md:mt-24 grid gap-6 md:grid-cols-2">
 <div class="rv border border-edge p-6 md:p-10">
-<p class="lbl text-white/50 mb-4">{e(c['contact']['email_title'])}</p>
+<p class="lbl text-white/70 mb-4">{e(c['contact']['email_title'])}</p>
 <a href="mailto:{EMAIL}" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">{EMAIL}</a>
-<p class="mt-5 text-[16px] leading-[1.6] text-white/60 max-w-md">{e(c['contact']['email_body'])}</p>
+<p class="mt-5 text-[17px] leading-[1.6] text-white/75 max-w-md">{e(c['contact']['email_body'])}</p>
 <a href="mailto:{EMAIL}" class="mt-8 lbl inline-flex items-center gap-3 btn-fire px-7 py-4">{e(c['footer']['start_project'])} {ARROW}</a>
 </div>
 <div class="rv border border-edge p-6 md:p-10">
-<p class="lbl text-white/50 mb-4">{e(c['contact']['direct_title'])}</p>
-<ul class="text-[16px]">
+<p class="lbl text-white/70 mb-4">{e(c['contact']['direct_title'])}</p>
+<ul class="text-[17px]">
 {rows}
 </ul>
 </div>
 </div>
 <p class="display fire-text fit leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" data-fit="0.96" aria-hidden="true">{e(name_of(loc))}.</p>
-<div class="mt-12 pt-6 pb-16 sm:pb-0 sm:pe-20 border-t border-edge flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[14px] text-white/50">
+<div class="mt-12 pt-6 pb-16 sm:pb-0 sm:pe-20 border-t border-edge flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[15px] text-white/90">
 <p data-kw>{e(c['footer']['copyright'])}</p>
-<div class="flex flex-wrap gap-4" aria-label="{a(u['label_language'])}">
+<div class="lang flex flex-wrap gap-4" aria-label="{a(u['label_language'])}">
 {lang_links(loc, page, 'text-accent', 'hover:text-white transition-colors')}
 </div>
 </div>
 </div>
 </footer>
-<a href="{WA}" target="_blank" rel="noopener" class="wa fixed bottom-5 end-5 z-40 inline-flex items-center gap-2 h-14 ps-4 pe-4 rounded-full btn-fire" aria-label="WhatsApp {PHONE}">
+<a href="{WA}" target="_blank" rel="noopener" class="wa fixed bottom-5 end-5 z-40 inline-flex items-center gap-2 h-12 md:h-14 ps-3.5 pe-3.5 md:ps-4 md:pe-4 rounded-full btn-fire" aria-label="WhatsApp {PHONE}">
 <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 1a3 3 0 0 1-1.5-1.5l1-1-1-2L9 9.5z"/></svg>
 <span class="lbl">WhatsApp</span>
 </a>
@@ -240,8 +240,8 @@ def footer(loc, page):
 """
 
 def sec_head(title, sub=None, dark=False, extra=""):
-    subc = "text-white/60" if dark else "text-muted"
-    s = f'<p class="rv md:col-span-5 md:justify-self-end text-[17px] leading-[1.6] {subc} md:max-w-md">{e(sub)}</p>' if sub else ""
+    subc = "text-white/75" if dark else "text-muted"
+    s = f'<p class="rv md:col-span-5 md:justify-self-end text-[18px] leading-[1.6] {subc} md:max-w-md">{e(sub)}</p>' if sub else ""
     return f"""<div class="grid gap-6 md:grid-cols-12 md:items-end mb-10 md:mb-14">
 <h2 class="reveal display text-[36px] sm:text-[48px] lg:text-[68px] md:col-span-7">{hl(e(title))}</h2>
 {s}{extra}
@@ -271,7 +271,7 @@ def yt_box(loc, item, cls="aspect-video", eager=False):
     return f"""<div class="sk relative overflow-hidden {cls}" data-yt="{item['yt']}" data-yt-title="{a(item['yt_title'])}">
 <img src="/assets/img/{item['thumb']}" alt="" width="{w}" height="{h}" {load} decoding="async" class="absolute inset-0 w-full h-full object-cover"/>
 <button type="button" class="yt-play group absolute inset-0 flex items-end p-4 md:p-6 text-start" aria-label="{a(item['aria'])}">
-<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center">{PLAY}</span><span class="flex items-center gap-3 px-4"><span class="lbl">{e(UI[loc]['watch'])}</span><span class="text-[13px] text-white/60" dir="ltr">{e(item['dur'])}</span></span></span>
+<span class="inline-flex items-stretch bg-ink/85 text-white group-hover:bg-ink transition-colors"><span class="w-11 h-11 btn-fire flex items-center justify-center">{PLAY}</span><span class="flex items-center gap-3 px-4"><span class="lbl">{e(UI[loc]['watch'])}</span><span class="text-[14px] text-white/75" dir="ltr">{e(item['dur'])}</span></span></span>
 </button>
 </div>"""
 
@@ -314,18 +314,18 @@ def home(loc):
     stats = "\n".join(f"""<div class="rv py-12 md:py-16 sm:px-8 border-t border-ink/20 first:border-t-0 sm:border-t-0 sm:border-s sm:first:border-s-0 sm:first:ps-0">
 <p class="display text-[56px] md:text-[80px]" data-count>{e(s['n'])}</p>
 <p class="lbl mt-5">{e(s['label'])}</p>
-<p class="mt-3 text-[15px] leading-[1.6] text-deep/75 max-w-xs">{e(s['body'])}</p>
+<p class="mt-3 text-[16px] leading-[1.6] text-deep/75 max-w-xs">{e(s['body'])}</p>
 </div>""" for s in c["stats"])
 
     rows = []
     for i, it in enumerate(c["expertise"]["items"]):
         rows.append(f"""<div class="svc rv border-t border-edge py-7 md:py-9 flex items-start md:items-center gap-5 md:gap-10">
-<span class="svc-n shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-full border border-edge flex items-center justify-center text-[13px] text-white/70">{digits(loc, f'{i+1:02d}')}</span>
+<span class="svc-n shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-full border border-edge flex items-center justify-center text-[14px] text-white/70">{digits(loc, f'{i+1:02d}')}</span>
 <div class="flex-1 min-w-0">
 <h3 class="svc-name display text-[24px] sm:text-[34px] lg:text-[46px]">{e(it['h3'])}</h3>
-<p class="mt-3 text-[16px] leading-[1.6] text-white/60 max-w-xl">{e(it['p'])}</p>
+<p class="mt-3 text-[17px] leading-[1.6] text-white/75 max-w-xl">{e(it['p'])}</p>
 </div>
-<span class="hidden md:block text-white/40">{icon(it['icon'], 'w-8 h-8')}</span>
+<span class="hidden md:block text-white/60">{icon(it['icon'], 'w-8 h-8')}</span>
 </div>""")
 
     cards = []
@@ -349,8 +349,8 @@ def home(loc):
 
     body = f"""<main id="main">
 <section class="relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
-<div class="absolute inset-y-0 end-0 w-full lg:w-[68%]">
-<img src="/assets/img/hero-portrait.jpg" alt="{a(c['hero']['portrait_alt'])}" width="2000" height="1250" fetchpriority="high" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[50%_30%]"/>
+<div class="absolute top-0 end-0 h-[66%] w-full lg:inset-y-0 lg:h-auto lg:w-[68%]">
+<img src="/assets/img/hero-portrait.jpg" alt="{a(c['hero']['portrait_alt'])}" width="2000" height="1250" fetchpriority="high" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[50%_10%] lg:object-[50%_30%]"/>
 <div class="hero-side absolute inset-0 hidden lg:block" aria-hidden="true"></div>
 </div>
 <div class="hero-shade absolute inset-0" aria-hidden="true"></div>
@@ -390,7 +390,7 @@ def home(loc):
 </div>
 <div class="rv">
 {yt_box(loc, feat, 'aspect-video')}
-<div class="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1"><p class="lbl">{e(feat['h3'])}</p><p class="text-[15px] text-muted">{e(feat['p'])}</p></div>
+<div class="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1"><p class="lbl">{e(feat['h3'])}</p><p class="text-[16px] text-muted">{e(feat['p'])}</p></div>
 </div>
 </section>
 <section class="band-fire text-deep">
@@ -420,15 +420,15 @@ def about(loc):
     for key in ("mithra", "sales"):
         exp.append(f"""<div class="rv border-t border-edge py-10 md:py-12 grid gap-4 md:grid-cols-12 md:gap-6">
 <p class="md:col-span-3 display fire-text text-[28px] md:text-[34px] leading-[1.05]">{e(car[f'{key}_years'])}</p>
-<div class="md:col-span-4"><h3 class="display text-[28px] md:text-[36px]">{e(car[f'{key}_title'])}</h3><p class="mt-3 text-[15px] text-muted">{e(car[f'{key}_org'])}</p></div>
-<p class="md:col-span-5 text-[17px] leading-[1.65] text-white/80">{e(car[f'{key}_body'])}</p>
+<div class="md:col-span-4"><h3 class="display text-[28px] md:text-[36px]">{e(car[f'{key}_title'])}</h3><p class="mt-3 text-[16px] text-muted">{e(car[f'{key}_org'])}</p></div>
+<p class="md:col-span-5 text-[18px] leading-[1.65] text-white/80">{e(car[f'{key}_body'])}</p>
 </div>""")
 
     certs = "\n".join(f"""<figure class="rv">
 <a href="/assets/img/{it['img']}" target="_blank" rel="noopener" class="group block">
 {pic(it['img'], it['alt'], 'aspect-[4/3] object-contain p-5 group-hover:scale-[1.03] transition-transform duration-500', box='border border-edge bg-night/40 group-hover:border-amber transition-colors')}
 </a>
-<figcaption class="mt-5"><p class="lbl text-muted">{e(it['issuer'])}</p><p data-kw class="mt-2 text-[18px] leading-snug font-medium">{e(it['title'])}</p><p class="mt-1 text-[14px] text-muted">{e(it['meta'])}</p></figcaption>
+<figcaption class="mt-5"><p class="lbl text-muted">{e(it['issuer'])}</p><p data-kw class="mt-2 text-[18px] leading-snug font-medium">{e(it['title'])}</p><p class="mt-1 text-[15px] text-muted">{e(it['meta'])}</p></figcaption>
 </figure>""" for it in c["certs"]["items"])
 
     gallery = "\n".join(f'<div class="rv mb-4 break-inside-avoid">{pic(it["img"], it["alt"], "h-auto")}</div>' for it in c["gallery"]["items"])
@@ -455,7 +455,7 @@ def about(loc):
 <blockquote class="rv max-w-6xl">
 <p class="fire-text display text-[64px] md:text-[96px] leading-none" aria-hidden="true">“</p>
 <p data-kw class="text-[28px] leading-[1.25] md:text-[48px] md:leading-[1.15] font-semibold tracking-[-0.02em]">{e(q)}</p>
-<footer class="mt-10 flex flex-wrap gap-x-4 gap-y-1"><span class="lbl text-accent">{e(c['quote']['name'])}</span><span data-kw class="text-[15px] text-white/60">{e(c['quote']['role'])}</span></footer>
+<footer class="mt-10 flex flex-wrap gap-x-4 gap-y-1"><span class="lbl text-accent">{e(c['quote']['name'])}</span><span data-kw class="text-[16px] text-white/75">{e(c['quote']['role'])}</span></footer>
 </blockquote>
 </div>
 </section>
@@ -476,7 +476,7 @@ def work(loc):
 {pic(it['img'], it['alt'], 'aspect-[4/3] object-cover')}
 <p class="mt-6 lbl text-muted">{f' {DIAMOND} '.join(e(t) for t in it['tags'])}</p>
 <h3 class="mt-3 display text-[26px] md:text-[34px]">{e(it['h3'])}</h3>
-<p class="mt-4 text-[17px] leading-[1.65] text-muted">{e(it['p'])}</p>
+<p class="mt-4 text-[18px] leading-[1.65] text-muted">{e(it['p'])}</p>
 </article>""" for it in c["featured"]["items"])
 
     cases = []
@@ -488,7 +488,7 @@ def work(loc):
 <p class="mt-4 display fire-text text-[32px] md:text-[44px] leading-[1.05]">{e(it['metric'])}</p>
 <h3 class="mt-5 display text-[22px] md:text-[26px]">{e(it['name'])}</h3>
 <p class="mt-2 lbl text-muted">{e(it['tag'])} {DIAMOND} {e(it['period'])}</p>
-<p class="mt-5 text-[17px] leading-[1.65] text-white/80">{e(it['body'])}</p>
+<p class="mt-5 text-[18px] leading-[1.65] text-white/80">{e(it['body'])}</p>
 </div>
 </article>""")
 
@@ -496,15 +496,15 @@ def work(loc):
 {yt_box(loc, it, 'aspect-video md:aspect-[2.2/1]' if k == 0 else 'aspect-video')}
 <p class="mt-5 lbl text-accent">{e(it['tag'])}</p>
 <h3 class="mt-2 text-[22px] leading-snug font-semibold">{e(it['h3'])}</h3>
-<p class="mt-2 text-[15px] leading-[1.6] text-white/60">{e(it['p'])}</p>
+<p class="mt-2 text-[16px] leading-[1.6] text-white/75">{e(it['p'])}</p>
 </article>""" for k, it in enumerate(c["campaigns"]["items"]))
     cp = c["campaigns"]
-    note = f'<p class="rv mt-14 text-[15px] text-white/60">{e(cp["note_pre"])} <a href="{cp["channel"]["href"]}" target="_blank" rel="noopener" class="ul text-white">{e(cp["channel"]["text"])}</a>{e(cp["note_post"])}</p>'
+    note = f'<p class="rv mt-14 text-[16px] text-white/75">{e(cp["note_pre"])} <a href="{cp["channel"]["href"]}" target="_blank" rel="noopener" class="ul text-white">{e(cp["channel"]["text"])}</a>{e(cp["note_post"])}</p>'
 
     reels = "\n".join(f"""<a href="{it['href']}" target="_blank" rel="noopener" class="rv group block">
 {pic(it['img'], it['alt'], 'aspect-[9/16] object-cover group-hover:scale-[1.03] transition-transform duration-700')}
-<h3 class="mt-3 text-[13px] sm:text-[15px] leading-snug font-medium">{e(it['h3'])}</h3>
-<p class="hidden sm:block mt-1 text-[14px] leading-[1.5] text-muted line-clamp-3">{e(it['p'])}</p>
+<h3 class="mt-3 text-[14px] sm:text-[16px] leading-snug font-medium">{e(it['h3'])}</h3>
+<p class="hidden sm:block mt-1 text-[15px] leading-[1.5] text-muted line-clamp-3">{e(it['p'])}</p>
 </a>""" for it in c["reels"]["items"])
 
     body = f"""<main id="main">
@@ -519,7 +519,7 @@ def work(loc):
 
 
 def not_found():
-    langs = " ".join(f'<a href="{PREFIX[l]}" lang="{LANG_ATTR[l]}" class="text-white/60 hover:text-accent">{LANG_NAME[l]}</a>' for l in LOCS)
+    langs = " ".join(f'<a href="{PREFIX[l]}" lang="{LANG_ATTR[l]}" class="text-white/75 hover:text-accent">{LANG_NAME[l]}</a>' for l in LOCS)
     return f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -536,10 +536,10 @@ def not_found():
 <main class="wrap min-h-screen flex flex-col justify-center py-24">
 <p class="lbl text-accent mb-8">{DIA} 404</p>
 <h1 class="display fire-text text-[48px] sm:text-[96px]">Page not found.</h1>
-<p class="mt-10 text-[20px] leading-[1.6] text-white/60 max-w-xl">That page doesn&rsquo;t exist. Head back to the homepage, or write to <a class="ul text-white" href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<p class="mt-10 text-[20px] leading-[1.6] text-white/75 max-w-xl">That page doesn&rsquo;t exist. Head back to the homepage, or write to <a class="ul text-white" href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
 <a href="/" class="lbl inline-flex items-center gap-3 btn-fire px-7 py-4">Homepage {ARROW}</a>
-<span class="flex gap-4 text-[15px]">{langs}</span>
+<span class="lang flex gap-4 text-[16px]">{langs}</span>
 </div>
 </main>
 </body>

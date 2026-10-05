@@ -39,9 +39,9 @@ body { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
 /* small tracked uppercase labels */
 .lbl {
   font-family: "Noto Kufi Arabic", Tahoma, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 /* outlined display words */
@@ -57,11 +57,11 @@ body { font-family: "Noto Kufi Arabic", Tahoma, sans-serif; }
 .btn-fire:hover { filter: brightness(1.1); }
 /* full-width numbers band: orange to amber flame, ink text */
 .band-fire { background-image: linear-gradient(100deg, #ffd000 0%, #ffdd00 50%, #ffea00 100%); }
-/* highlighter for key phrases */
-/* a marker band 1.1em tall, centred on the letters. Noto Kufi's letter box is far
-   taller than the line height (most in Arabic script), so a full-box background
-   would spill over the lines above and below. */
-.hi { background-image: linear-gradient(90deg, #ffc300, #ffea00); background-repeat: no-repeat; background-size: 100% 1.3em; background-position: 0 .67em; color: #000000; padding: 0 .3em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* highlighter for key phrases: every word is a yellow chip (.hw, made by display_svg.py) whose height is
+   measured from the Zawi drawing (about .95em above the letters' baseline to .4em below), so it never depends on a
+   fallback font's metrics. The chips' side padding is the word space, so the band reads as one marker. */
+.hi { color: #000000; margin-inline: .1em; }
+.hw { display: inline-block; line-height: 0; padding: .3em .16em .47em; background-color: #ffd60a; box-shadow: 0 0 0 .6px #ffd60a; }
 /* soft blurred ember glows; place inside a relative, overflow-hidden parent */
 .orb { position: absolute; border-radius: 9999px; filter: blur(120px); opacity: .4; pointer-events: none; z-index: 0; }
 .orb-a { background: #7161ef; }
@@ -84,16 +84,21 @@ html[dir="rtl"] .lbl {
   letter-spacing: 0 !important;
 }
 html[dir="rtl"] .display { font-weight: 800; line-height: 1.3; }
-html[dir="rtl"] .lbl { font-size: 12px; font-weight: 600; }
+html[dir="rtl"] .lbl { font-size: 13px; font-weight: 600; }
+@media (min-width: 768px) { .lbl { font-size: 13px; } html[dir="rtl"] .lbl { font-size: 14px; } }
 html[dir="rtl"] body { line-height: 1.85; }
 html[dir="rtl"] [class*="tracking-"] { letter-spacing: 0 !important; }
 /* Headings, labels, buttons, menus and numbers arrive as Zawi word shapes (inline
    SVG built by tools/site/display_svg.py). The negative margins stop the tall
    glyph box from stretching the line, and overflow lets the marks show. */
-/* each word's box covers the whole font (1.2 em above the baseline, .62 below; see display_svg.py), so
-   tall V marks and tails are never shaved off; the negative margins give back the old line footprint */
-svg.kw { display: inline-block; overflow: visible; height: 1.82em; width: auto; vertical-align: -.62em;
-  margin-block: -.66em -.56em; fill: currentColor; pointer-events: none; }
+/* Each word is drawn in a box that covers the whole font (1.2 em above the baseline, .62 below; see
+   display_svg.py) so tall V marks and tails are never shaved off. The box is centred on the middle of
+   the letters (vertical-align: middle) and its margins shrink the footprint to 0.6 em around that
+   centre, so line height and spacing come from line-height alone and not from any text font's metrics. */
+svg.kw { display: inline-block; overflow: visible; height: 1.82em; width: auto; vertical-align: middle;
+  margin-block: -.55em -.67em; fill: currentColor; pointer-events: none; }
+/* Arabic-script running text has a small x-height at paragraph sizes: draw it 10% larger */
+html[dir="rtl"] p:not(.lbl, .display) svg.kw { height: 2.0em; margin-block: -.605em -.737em; }
 /* clamped paragraphs clip at their last line; tails and V marks hang a little below it */
 .line-clamp-3 { padding-bottom: .35em; margin-bottom: -.35em; }
 .kw-count { display: inline-flex; white-space: nowrap; }
@@ -199,4 +204,15 @@ body.menu-open { overflow: hidden; }
   .marquee-track, .sk, .scroll-line::after { animation: none; }
   .svc:hover { padding-inline-start: 0; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+/* ---------- touch targets ----------
+   Small text links stay small to the eye; an invisible 44px-ish area around them takes the tap. */
+header a, .lang a, footer a, a.ul { position: relative; }
+header a::after, .lang a::after, footer a:not(.btn-fire):not(.group)::after, a.ul::after {
+  content: ""; position: absolute; inset: -12px;
+}
+/* phones: a stronger shade low in the hero keeps the face clear of the headline and kicker */
+@media (max-width: 1023px) {
+  .hero-shade { background: linear-gradient(to top, #000000 0%, rgba(0,0,0,.95) 34%, rgba(0,0,0,.55) 52%, rgba(113,97,239,.15) 100%); }
 }

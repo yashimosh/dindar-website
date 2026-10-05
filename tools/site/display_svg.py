@@ -9,7 +9,7 @@ shapes, not the font.
 
 What is converted: every piece of visible text on the page (headings, labels,
 buttons, menus, numbers and running paragraphs). Headings, .display, .lbl and
-data-kw text use the heavy weights; everything else uses Regular, or Bold when
+data-kw text use the heavy weights; everything else uses Medium, or Bold when
 its Tailwind classes ask for font-semibold/bold. Only text inside <script>,
 <style>, form fields and data-nokw elements is left alone.
 
@@ -39,7 +39,7 @@ from shape_svg import _load  # noqa: E402
 DIST = os.path.join(os.path.dirname(HERE), "fonts", "dist")
 FONTS = {"black": os.path.join(DIST, "29LT_Zawi_KU_Black.ttf"),
          "bold": os.path.join(DIST, "29LT_Zawi_KU_Bold.ttf"),
-         "regular": os.path.join(DIST, "29LT_Zawi_KU_Regular.ttf")}
+         "medium": os.path.join(DIST, "29LT_Zawi_KU_Medium.ttf")}
 # Each word is drawn in a box that covers the font's whole ink (tall V marks reach 1.18 em above
 # the baseline, tails go 0.6 em below), so no container with overflow hidden can shave them off.
 # All weights share these numbers, so the box height, baseline shift and the negative margins that
@@ -59,6 +59,7 @@ RUN_RE = re.compile(
     r"(?P<latin>[A-Za-z0-9](?:[A-Za-z0-9.,'\u2019:/&+%@_-]*[A-Za-z0-9%])?)"
     rf"|(?P<num>[{_AD}]+(?:[.,:/\u066b\u066c][{_AD}]+)*)")
 LATIN_ONLY = re.compile(r"[+@]?[A-Za-z0-9](?:[\x21-\x7e]*[A-Za-z0-9])?")  # no trailing punctuation
+ARABIC_RE = re.compile("[\u0600-\u06ff\u0750-\u077f\ufb50-\ufdff\ufe70-\ufeff]")
 OUTLINE_STROKE = 24  # font units; scales with the text
 
 
@@ -181,6 +182,9 @@ def _shape(font, token, base_dir, lang, tracking):
             buf.direction, buf.script, buf.language = "ltr", "Latn", "en"
         elif kind == "num":
             buf.direction, buf.script, buf.language = "ltr", "Arab", HB_LANG.get(lang, "ar")
+        elif base_dir == "ltr" and not ARABIC_RE.search(text):
+            # punctuation on an English page (the ( in "(Gypsy Lucy)"): left to right, or it gets mirrored
+            buf.direction, buf.script, buf.language = "ltr", "Latn", "en"
         else:
             buf.direction, buf.script, buf.language = "rtl", "Arab", HB_LANG.get(lang, "ar")
         hb.shape(hb_font, buf, {"kern": True, "liga": True})
@@ -229,7 +233,7 @@ def _style_for(trigger, node, body=False):
         elif classes & {"font-bold", "font-semibold", "font-extrabold"}:
             font = "bold"
         else:
-            font = "regular"
+            font = "medium"
     else:
         font = "black" if (is_display and (size == 0 or size > 24)) else "bold"
     track = None
@@ -308,9 +312,7 @@ def apply(html, lang="en"):
             if ch in count_chars:
                 w = count_chars[ch][1]
                 parts.append(
-                    f'<svg class="kw" viewBox="0 {-ASC} {w:.0f} {ASC + DESC}" '
-                    f'style="width:{w / meta["upem"]:.3f}em;height:{(ASC + DESC) / meta["upem"]:.3f}em;'
-                    f'vertical-align:{-DESC / meta["upem"]:.3f}em"><use href="#kc{ord(ch)}" fill="currentColor"/></svg>')
+                    f'<svg class="kw" viewBox="0 {-ASC} {w:.0f} {ASC + DESC}"><use href="#kc{ord(ch)}"/></svg>')
         el["data-count-text"] = text
         el.clear()
         el.append(BeautifulSoup(
@@ -340,6 +342,9 @@ def apply(html, lang="en"):
             if track is not None:
                 tracking = track
         fill = "url(#kwfire)" if fire else "currentColor"
+        # marker-highlighted phrases: each word is its own chip so the yellow band is measured from the
+        # drawing (deterministic) instead of from whatever fallback font the text would have used
+        in_hi = any("hi" in _classes(q) for q in node.parents if hasattr(q, "get"))
         shown = text.upper() if (caps and lang == "en") else text
         parts, ltr = [], []   # `ltr` = Latin words being collected into one left-to-right group
         prev_latin = False
@@ -355,7 +360,8 @@ def apply(html, lang="en"):
             if tok.isspace():
                 _, tt, _, upem_ = _load(FONTS[font])
                 fit_em[id(trigger)] = fit_em.get(id(trigger), 0) + tt["hmtx"]["space"][0] / upem_ * len(tok)
-                (ltr if ltr else parts).append(" ")
+                if not in_hi:   # chips carry their own side padding, which is the word space
+                    (ltr if ltr else parts).append(" ")
                 continue
             # Unicode bidi keeps Latin words (and numbers after them) in left-to-right order
             # inside right-to-left text: "Strap Iraq" must not become "Iraq Strap"
@@ -377,6 +383,8 @@ def apply(html, lang="en"):
                 fit_em[id(trigger)] = fit_em.get(id(trigger), 0) + sum(word_ref(font, b, tracking, bdir)[1] for b in bits) / meta["upem"]
             else:
                 piece = f'<span class="kw-txt">{H.escape(tok)}</span>'
+            if in_hi:
+                piece = f'<span class="hw">{piece}</span>'
             (ltr if (rtl and is_latin) else parts).append(piece)
         if ltr and ltr[-1] == " ":
             ltr.pop()

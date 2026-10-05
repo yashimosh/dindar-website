@@ -11,16 +11,14 @@
   var drawCount = function (el, str) {
     var host = el.querySelector(".kw-count"), sp = document.getElementById("kwsprite");
     if (!host || !sp) { el.textContent = str; return; }
-    var asc = +sp.getAttribute("data-asc"), desc = +sp.getAttribute("data-desc"), upem = +sp.getAttribute("data-upem");
+    var asc = +sp.getAttribute("data-asc"), desc = +sp.getAttribute("data-desc");
     var chars = str.split("");
     if (document.documentElement.dir === "rtl" && chars[chars.length - 1] === "+") chars.unshift(chars.pop());
     host.innerHTML = chars.map(function (ch) {
       var id = "kc" + ch.charCodeAt(0), p = document.getElementById(id);
       if (!p) return "";
       var w = +p.getAttribute("data-w");
-      return '<svg class="kw" viewBox="0 ' + (-asc) + " " + w + " " + (asc + desc) + '" style="width:' + (w / upem).toFixed(3) +
-        "em;height:" + ((asc + desc) / upem).toFixed(3) + "em;vertical-align:" + (-desc / upem).toFixed(3) +
-        'em"><use href="#' + id + '" fill="currentColor"/></svg>';
+      return '<svg class="kw" viewBox="0 ' + (-asc) + " " + w + " " + (asc + desc) + '"><use href="#' + id + '"/></svg>';
     }).join("");
   };
   var countUp = function (el) {

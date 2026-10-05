@@ -74,7 +74,7 @@ file. No HTML edit is needed.
   (HarfBuzz shaping, glyph overlaps merged, bidi handled for Latin/number runs and
   e-mail/phone tokens in RTL; unique words drawn once in a sprite with compact
   relative path data). Weights: Black for display headings, Bold for
-  `font-semibold/bold`, Regular for the rest. Without `tools/fonts/dist` it leaves
+  `font-semibold/bold`, Medium for the rest (Zawi Regular is too thin at paragraph sizes). Without `tools/fonts/dist` it leaves
   plain text and prints a WARNING (the page then uses the system font).
 - Audit: `tools/site/audit_clipping.js` finds cropped or cut text; run every page
   and width with `tools/site/audit_all.js` (copy `audit_clipping.js` to
