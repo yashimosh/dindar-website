@@ -80,6 +80,10 @@ file. No HTML edit is needed.
   and width with `tools/site/audit_all.js` (copy `audit_clipping.js` to
   `assets/audit.js` temporarily, run `audit_all.js` in the browser console on the
   dev server, delete the copy before committing). It should return `{}`.
+- Icon: a black Zawi "D" on the brand yellow. `assets/favicon.svg` is the editable
+  source (outlined, open it in Illustrator or Figma); `tools/site/make_favicon.py`
+  redraws it and makes `favicon.ico` (16/32/48, also copied to the site root),
+  `apple-touch-icon.png` and `icon-192/512.png`.
 - Behaviour: `js/scripts.js` (headline and scroll reveals, count-up numbers,
   mobile menu, click-to-load YouTube, client logos).
 

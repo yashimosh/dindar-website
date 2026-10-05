@@ -107,7 +107,9 @@ def head(loc, page, title, desc):
 <title>{e(title)}</title>
 <meta name="description" content="{a(desc)}"/>
 <meta name="author" content="{a(name_of(loc))}"/>
-<link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="icon" type="image/x-icon" sizes="48x48" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
 <link rel="canonical" href="{canon}"/>
 {alts}
 <meta name="theme-color" content="#000000"/>
@@ -525,7 +527,9 @@ def not_found():
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex"/>
 <title>Page not found | Dindar Ahmed</title>
-<link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="icon" type="image/x-icon" sizes="48x48" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
 <link href="/css/tailwind.css" rel="stylesheet"/>
 </head>
 <body class="bg-ink text-white antialiased">
