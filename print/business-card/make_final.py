@@ -86,3 +86,4 @@ if __name__ == "__main__":
     qr = decode_qr(os.path.join(OUT, JOBS[0][1]))
     print("QR on the back decodes to:", qr if qr is not None else "not checked (no opencv)")
     shutil.copyfile(os.path.join(HERE, "preview.png"), os.path.join(OUT, "Dindar-Ahmed_business-card_proof.png"))
+    shutil.copyfile(os.path.join(HERE, "PRINTER-INSTRUCTIONS.md"), os.path.join(OUT, "PRINTER-INSTRUCTIONS.md"))   # the text lives next to this script
