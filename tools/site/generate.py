@@ -93,6 +93,14 @@ def url(loc, page):
 DIA = '<svg class="dia" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0l5 5-5 5-5-5z"/></svg>'
 DIAMOND = f'<span class="text-accent" aria-hidden="true">{DIA}</span>'
 
+def pause_btn(loc, target, cls=""):
+    """pause/play button for a moving band (WCAG 2.2.2); the page script wires it to the band with id `target`"""
+    u = UI[loc]
+    return (f'<button type="button" class="marq-ctl {cls}" data-marquee="#{target}" aria-pressed="false" '
+            f'aria-label="{a(u["anim_pause"])}" data-pause="{a(u["anim_pause"])}" data-play="{a(u["anim_play"])}">'
+            '<svg class="mc-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg>'
+            '<svg class="mc-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5l7 4.5-7 4.5z"/></svg></button>')
+
 def head(loc, page, title, desc):
     c = C[loc]
     canon = SITE + url(loc, page)
@@ -369,9 +377,9 @@ def home(loc):
 <section id="clients" class="border-b border-line">
 <div class="wrap pt-10 md:pt-12 pb-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
 <p class="lbl text-muted">{DIAMOND} {e(c['clients']['h2'])}</p>
-<a href="{url(loc, 'about')}#clients" class="lbl inline-flex items-center gap-3 ul">{e(u['discover_more'])} {ARROW}</a>
+<div class="flex items-center gap-5">{pause_btn(loc, 'marquee-clients')}<a href="{url(loc, 'about')}#clients" class="lbl inline-flex items-center gap-3 ul">{e(u['discover_more'])} {ARROW}</a></div>
 </div>
-<div class="marquee marquee-fade pb-10 md:pb-12" data-clients="marquee"></div>
+<div id="marquee-clients" class="marquee marquee-fade pb-10 md:pb-12" data-clients="marquee"></div>
 </section>
 <section id="info" class="wrap">
 <div class="py-16 md:py-24">
@@ -403,7 +411,10 @@ def home(loc):
 {chr(10).join(cards)}
 </div>
 <a href="{url(loc, 'work')}" class="rv mt-12 lbl inline-flex items-center gap-3 ul">{e(u['view_all'])} {ARROW}</a>''', sub=c['cases']['sub'])}
-<div class="marquee border-t border-line py-10 md:py-16" aria-hidden="true"><div class="marquee-track fast">{vals}{vals}</div></div>
+<div class="relative">
+<div id="marquee-slogan" class="marquee border-t border-line py-10 md:py-16" aria-hidden="true"><div class="marquee-track fast">{vals}{vals}</div></div>
+{pause_btn(loc, 'marquee-slogan', 'absolute top-3 end-4 z-10')}
+</div>
 </main>
 """
     return head(loc, "home", c["meta"]["title"], c["meta"]["description"]) + header(loc, "home") + body + footer(loc, "home")

@@ -197,6 +197,18 @@ body.menu-open { overflow: hidden; }
 :focus-visible { outline: 2px solid #ffea00; outline-offset: 3px; }
 .btn-fire:focus-visible, .hi:focus-visible { outline-color: #fff; }
 
+/* pause/play for the moving bands */
+.marq-ctl:not(.absolute) { position: relative; }
+.marq-ctl { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,.35); color: #fff; background: rgba(0,0,0,.35); transition: border-color .2s, color .2s; }
+.marq-ctl::after { content: ""; position: absolute; inset: -4px; }
+.marq-ctl:hover { border-color: #ffea00; color: #ffea00; }
+.marq-ctl svg { width: 12px; height: 12px; fill: currentColor; }
+.marq-ctl .mc-play { display: none; }
+.marq-ctl[aria-pressed="true"] .mc-play { display: block; }
+.marq-ctl[aria-pressed="true"] .mc-pause { display: none; }
+.marquee.paused .marquee-track { animation-play-state: paused; }
+
 /* ---------- respect reduced-motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -204,6 +216,7 @@ body.menu-open { overflow: hidden; }
   .js .reveal .hl > span, .js .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
   .marquee { overflow-x: auto; }
   .marquee-track, .sk, .scroll-line::after { animation: none; }
+  .marq-ctl { display: none; }
   .svc:hover { padding-inline-start: 0; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }

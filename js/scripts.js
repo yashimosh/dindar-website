@@ -67,6 +67,17 @@
     }, { rootMargin: "0px 0px -25% 0px" }).observe(contact);
   }
 
+  // ---- Pause / play for the moving bands ----
+  document.querySelectorAll("[data-marquee]").forEach(function (btn) {
+    var band = document.querySelector(btn.getAttribute("data-marquee"));
+    if (!band) return;
+    btn.addEventListener("click", function () {
+      var paused = band.classList.toggle("paused");
+      btn.setAttribute("aria-pressed", paused ? "true" : "false");
+      btn.setAttribute("aria-label", btn.getAttribute(paused ? "data-play" : "data-pause"));
+    });
+  });
+
   // ---- Scroll reveal ----
   var observe = function (root) {
     var items = root.querySelectorAll(".rv:not(.in), .reveal:not(.in), [data-count]");
