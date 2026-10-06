@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Builds Dindar Ahmed's business card: front.svg (English), front-ku.svg
-(Kurdish), back.svg (bilingual) and the print pages.
+"""Builds Dindar Ahmed's business card: front.svg (bilingual), back.svg (bilingual),
+the print pages and a grid guide. One card for everyone: English and Kurdish side by side.
 
 The SVGs are the source of truth; open and edit them in Illustrator or
 Figma. All text is set in 29LT Zawi (extended with the Sorani letters, see
@@ -11,11 +11,16 @@ details below and run this script; text in the SVGs is shapes, not live type.
 
 Needs: tools/venv with tools/requirements.txt (segno, uharfbuzz, fonttools)
 and the built fonts in tools/fonts/dist.
-Card: 85 x 55 mm trim, 3 mm bleed (91 x 61 mm artboard), 4 mm safe zone.
+Card: 85 x 55 mm trim, 3 mm bleed (91 x 61 mm artboard).
 
-Layout rule: one grid, few elements, lots of empty black. Everything
-hangs off the safe-zone corners (left 7, right 84, top 7, bottom 54 mm)
-and the middle of each side is left clear on purpose.
+LAYOUT: a Swiss modular grid, 6 columns x 4 rows, on a live area inset 7 mm from the sides and
+6 mm from top and bottom of the trim (so everything is at least 6 mm inside the cut), 3 mm gutters.
+  - flush-left English hangs from the left margin, flush-right Kurdish from the right margin
+  - top and bottom margins are the two baselines everything is set on
+  - the back's text blocks hang from the margin and row lines; the QR is exactly two rows tall and sits on the
+    bottom-right corner of the grid
+  - one size scale, a few weights, no decoration except one hairline rule
+python3 build.py also writes grid.svg, the grid drawn over the card, for checking.
 """
 import os
 import sys
@@ -49,9 +54,32 @@ Y1, Y4 = "#ffc300", "#ffea00"
 WHITE = "#ffffff"
 SOFT = "#e6e6e6"   # white at 90%, as a flat colour (safer in Illustrator and for print)
 
-W, H, BLEED, SAFE = 91, 61, 3, 4
-L, R = BLEED + SAFE, W - BLEED - SAFE          # 7 .. 84 mm
-T, B = BLEED + SAFE, H - BLEED - SAFE          # 7 .. 54 mm
+W, H, BLEED = 91, 61, 3
+
+# ---- the grid (all values in mm on the 91 x 61 artboard; trim starts at BLEED) ----
+MX, MY, GUT = 7.0, 6.0, 3.0           # side margin, top/bottom margin, gutter
+COLS, ROWS = 6, 4
+GL, GR = BLEED + MX, W - BLEED - MX    # live area left / right edge  (10 .. 81)
+GT, GB = BLEED + MY, H - BLEED - MY    # live area top / bottom edge  (9 .. 52)
+CW = (GR - GL - (COLS - 1) * GUT) / COLS   # column width
+RH = (GB - GT - (ROWS - 1) * GUT) / ROWS   # row height
+
+
+def col(i):
+    """left edge of column i (0-based)"""
+    return GL + i * (CW + GUT)
+
+
+def row(j):
+    """top edge of row j (0-based)"""
+    return GT + j * (RH + GUT)
+
+
+CAP = 0.70   # cap height of Zawi in em, to hang caps from a line
+
+# type scale (mm): small caps, text, KU name on the back, slogan / name
+XS, S, M, XL = 1.6, 2.2, 2.8, 4.7
+KU_OPTICAL = 1.04   # Arabic script reads smaller than Latin at the same size
 
 def line(text, size, weight, x, y, fill, rtl=False, tracking=0.0, label=None, tail=None, anchor_left=False):
     """One line of text as a filled outline path (mm units), named for the layer panel.
@@ -76,46 +104,30 @@ def svg_open(title):
 
 
 def front():
-    """black field; name small in the top corner, the statement small in the
-    bottom corner, everything between left empty"""
-    size, step = 5.4, 6.0
+    """English slogan flush left, Kurdish slogan flush right, both on the same three baselines that end on the
+    bottom margin; each name on the top margin line; one hairline under the header row."""
+    step = 6.6                                   # baseline step, shared by both languages
+    b1, b2, b3 = GB - 2 * step, GB - step, GB
+    top = GT + CAP * XS                          # cap-top of the small name sits on the top margin
+    rule = row(0) + RH + GUT / 2                 # hairline between header row and the rest
+    sk = XL * KU_OPTICAL
     s = svg_open("Dindar Ahmed business card, front")
     s += f"""<defs>
-<radialGradient id="glow" cx="1" cy="0" r="0.9">
-<stop offset="0" stop-color="{VIOLET}" stop-opacity="0.38"/>
+<radialGradient id="glow" cx="0.5" cy="0" r="0.8">
+<stop offset="0" stop-color="{VIOLET}" stop-opacity="0.32"/>
 <stop offset="1" stop-color="{VIOLET}" stop-opacity="0"/>
 </radialGradient>
 <linearGradient id="yellow" x1="0" y1="0" x2="1" y2="0">
 <stop offset="0" stop-color="{Y1}"/><stop offset="1" stop-color="{Y4}"/>
 </linearGradient>
-</defs>
-<rect width="{W}" height="{H}" fill="{BLACK}"/>
-<rect width="{W}" height="{H}" fill="url(#glow)"/>
-{line(NAME_EN, 1.7, 700, L, T + 1.6, SOFT, tracking=0.55)}{line("TELL ME", size, 900, L, B - 2 * step, WHITE, tracking=-0.12)}{line("WHAT ISN'T", size, 900, L, B - step, "url(#yellow)", tracking=-0.12)}{line("SELLING", size, 900, L, B, WHITE, tracking=-0.12, tail=(".", Y1))}</svg>
-"""
-    return s
-
-
-def front_ku():
-    """Kurdish front: the English layout mirrored for right-to-left reading.
-    Name small top-right, the website's Kurdish line bottom-right, glow top-left.
-    Arabic-script letters run taller and deeper than Latin capitals, so the
-    lines are spaced wider and the last baseline sits a little higher to keep
-    descenders inside the safe zone."""
-    size, step, base = 5.6, 7.4, B - 1.4
-    s = svg_open("Dindar Ahmed business card, Kurdish front")
-    s += f"""<defs>
-<radialGradient id="glow" cx="0" cy="0" r="0.9">
-<stop offset="0" stop-color="{VIOLET}" stop-opacity="0.38"/>
-<stop offset="1" stop-color="{VIOLET}" stop-opacity="0"/>
-</radialGradient>
-<linearGradient id="yellow" x1="1" y1="0" x2="0" y2="0">
+<linearGradient id="yellowk" x1="1" y1="0" x2="0" y2="0">
 <stop offset="0" stop-color="{Y1}"/><stop offset="1" stop-color="{Y4}"/>
 </linearGradient>
 </defs>
 <rect width="{W}" height="{H}" fill="{BLACK}"/>
 <rect width="{W}" height="{H}" fill="url(#glow)"/>
-{line(NAME_KU, 2.3, 700, R, T + 2.4, SOFT, rtl=True)}{line(TITLE_KU, 1.9, 700, R, T + 6.6, LAVENDER, rtl=True)}{line(STATEMENT_KU[0], size, 900, R, base - 2 * step, WHITE, rtl=True)}{line(STATEMENT_KU[1], size, 900, R, base - step, "url(#yellow)", rtl=True)}{line(STATEMENT_KU[2], size, 900, R, base, WHITE, rtl=True, tail=(".", Y1))}</svg>
+{line(NAME_EN, XS, 700, GL, top, SOFT, tracking=0.5)}{line(NAME_KU, S, 700, GR, top, SOFT, rtl=True)}<path d="M{GL} {rule:.3f}H{GR}" stroke="{WHITE}" stroke-opacity="0.22" stroke-width="0.12" fill="none"/>
+{line("TELL ME", XL, 900, GL, b1, WHITE, tracking=-0.1)}{line("WHAT ISN'T", XL, 900, GL, b2, "url(#yellow)", tracking=-0.1)}{line("SELLING", XL, 900, GL, b3, WHITE, tracking=-0.1, tail=(".", Y1))}{line(STATEMENT_KU[0], sk, 900, GR, b1, WHITE, rtl=True)}{line(STATEMENT_KU[1], sk, 900, GR, b2, "url(#yellowk)", rtl=True)}{line(STATEMENT_KU[2], sk, 900, GR, b3, WHITE, rtl=True, tail=(".", Y1))}</svg>
 """
     return s
 
@@ -141,20 +153,35 @@ def qr_path(size_mm, x0, y0, quiet=2):
 
 
 def back():
-    """identity top-left, contacts bottom-left, QR bottom-right, clear middle"""
-    qs = 14.5
-    qx, qy = R - qs, B - qs
+    """names and titles hang from the top and from row 1; contacts end on the bottom margin with their first
+    cap-line on row 3; the QR is two rows tall and fills the bottom-right corner of the grid."""
+    qs = 2 * RH + GUT                            # two rows tall (20 mm)
+    qx, qy = GR - qs, GB - qs                    # right margin, bottom margin; its top lands on row 2
     path, version, n, cell = qr_path(qs, qx, qy)
     lines = [PHONE, EMAIL, WEB]
-    step = 3.9
-    contact = "".join(line(v, 2.15, 400, L, B - (len(lines) - 1 - k) * step, SOFT) for k, v in enumerate(lines))
+    first = row(3) + CAP * S                     # first contact line: cap-top on row 3
+    step = (GB - first) / (len(lines) - 1)       # last line on the bottom margin
+    contact = "".join(line(v, S, 400, GL, first + k * step, SOFT) for k, v in enumerate(lines))
+    ty = row(1) + GUT + CAP * XS                 # titles hang one gutter below row 1, clear of the names above
     s = svg_open("Dindar Ahmed business card, back")
     s += f"""<rect width="{W}" height="{H}" fill="{BLACK}"/>
-{line(NAME_EN, 4.6, 900, L, T + 3.9, WHITE, tracking=-0.05)}{line(NAME_KU, 2.7, 700, L, T + 9.1, LAVENDER, rtl=True, anchor_left=True)}{line(TITLE_EN, 1.55, 700, L, T + 13.4, Y1, tracking=0.45)}{line(TITLE_KU, 2.0, 700, L, T + 17.9, Y1, rtl=True, anchor_left=True)}{contact}<rect x="{qx}" y="{qy}" width="{qs}" height="{qs}" rx="0.8" fill="{Y4}"/>
+{line(NAME_EN, XL, 900, GL, GT + CAP * XL, WHITE, tracking=-0.05)}{line(NAME_KU, M, 700, GL, GT + CAP * XL + 6.0, LAVENDER, rtl=True, anchor_left=True)}{line(TITLE_EN, XS, 700, GL, ty, Y1, tracking=0.45)}{line(TITLE_KU, S, 700, GL, ty + 4.6, Y1, rtl=True, anchor_left=True)}{contact}<rect x="{qx:.3f}" y="{qy:.3f}" width="{qs:.3f}" height="{qs:.3f}" rx="0.8" fill="{Y4}"/>
 <path d="{path}" fill="{BLACK}"/>
 </svg>
 """
     return s, version, n, cell
+
+
+def grid_guide():
+    """the grid drawn over the artboard: columns cyan, rows magenta, trim and live area outlined"""
+    g = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}mm" height="{H}mm" viewBox="0 0 {W} {H}">']
+    for i in range(COLS):
+        g.append(f'<rect x="{col(i):.3f}" y="{GT}" width="{CW:.3f}" height="{GB - GT}" fill="#00c8ff" fill-opacity="0.16"/>')
+    for j in range(ROWS):
+        g.append(f'<rect x="{GL}" y="{row(j):.3f}" width="{GR - GL}" height="{RH:.3f}" fill="#ff3b8d" fill-opacity="0.13"/>')
+    g.append(f'<rect x="{BLEED}" y="{BLEED}" width="{W - 2 * BLEED}" height="{H - 2 * BLEED}" fill="none" stroke="#ffffff" stroke-width="0.15" stroke-dasharray="1 0.6"/>')
+    g.append('</svg>')
+    return "\n".join(g)
 
 
 def print_page(front_svg, back_svg):
@@ -214,12 +241,9 @@ html, body {{ margin: 0; padding: 0; }}
 if __name__ == "__main__":
     f = front()
     open(os.path.join(HERE, "front.svg"), "w", encoding="utf-8").write(f)
-    fk = front_ku()
-    open(os.path.join(HERE, "front-ku.svg"), "w", encoding="utf-8").write(fk)
     b, version, n, cell = back()
     open(os.path.join(HERE, "back.svg"), "w", encoding="utf-8").write(b)
+    open(os.path.join(HERE, "grid.svg"), "w", encoding="utf-8").write(grid_guide())
     open(os.path.join(HERE, "print.html"), "w", encoding="utf-8").write(print_page(f, b))
-    open(os.path.join(HERE, "print-ku.html"), "w", encoding="utf-8").write(print_page(fk, b))
     open(os.path.join(HERE, "print-marks.html"), "w", encoding="utf-8").write(print_page_marks(f, b))
-    open(os.path.join(HERE, "print-ku-marks.html"), "w", encoding="utf-8").write(print_page_marks(fk, b))
-    print(f"front.svg, front-ku.svg, back.svg, print.html, print-ku.html written. QR version {version}, {n}x{n} modules, module {cell:.3f} mm")
+    print(f"front.svg, back.svg, grid.svg, print.html, print-marks.html written. QR version {version}, {n}x{n} modules, module {cell:.3f} mm")

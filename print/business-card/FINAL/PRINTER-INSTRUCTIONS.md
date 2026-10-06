@@ -1,20 +1,19 @@
 # Dindar Ahmed business card: print instructions
 
-Two designs, one shared back. Order them as two designs on one job, or as two jobs.
+**One design, printed on both sides.** The front carries the English and Kurdish slogans side by side. The back is bilingual too (names, titles, phone, e-mail, website, QR). One job, one file.
 
 | File | What it is |
 |---|---|
-| `Dindar-Ahmed_business-card_EN_print-ready.pdf` | English card. Page 1 front, page 2 back. |
-| `Dindar-Ahmed_business-card_KU_print-ready.pdf` | Kurdish card. Page 1 front, page 2 back (same back). |
-| `..._with-crop-marks.pdf` | The same two files on a larger page with crop marks, if your press prefers marks. |
-| `Dindar-Ahmed_business-card_proof.png` | What it should look like: English front, Kurdish front, back. |
+| `Dindar-Ahmed_business-card_print-ready.pdf` | The card. Page 1 front, page 2 back. |
+| `Dindar-Ahmed_business-card_with-crop-marks.pdf` | The same, on a larger page with crop marks, if your press prefers marks. |
+| `Dindar-Ahmed_business-card_proof.png` | What it should look like: front and back. |
 
 ## Size
 
 - Trim (finished card): **85 x 55 mm**, landscape.
-- Files include **3 mm bleed** on every side: page size 91 x 61 mm (103 x 73 mm with marks).
+- The file includes **3 mm bleed** on every side: page size 91 x 61 mm (103 x 73 mm with marks).
 - TrimBox and BleedBox are set in the PDFs.
-- Everything that must stay readable is at least **4 mm inside the trim**.
+- Everything is laid out on a 6-column by 4-row grid: text and the QR are at least **6 mm inside the trim** (a few Kurdish letter tails come within 4.5 mm).
 
 ## Colour
 
@@ -30,4 +29,4 @@ Two designs, one shared back. Order them as two designs on one job, or as two jo
 ## Stock and finish (suggested)
 
 - 400 gsm or heavier, matte or soft-touch lamination.
-- Optional spot UV or foil on the yellow line on the English front ("WHAT ISN'T") if budget allows.
+- Optional spot UV or foil on the yellow line of the English slogan ("WHAT ISN'T") if budget allows.

@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Dindar Ahmed, business card preview</title>
 <style>
-  /* <object>, not <img>, so the SVGs can load their font file.
-     Shows both sides cut to the 85 x 55 mm trim (the 3 mm bleed is hidden) */
+  /* both sides cut to the 85 x 55 mm trim (the 3 mm bleed is hidden). Add ?grid to see the grid on top. */
   html, body { margin: 0; background: #1a1a1a; }
   body { min-height: 100vh; display: flex; flex-wrap: wrap; gap: 56px; align-items: center; justify-content: center; padding: 56px; box-sizing: border-box; }
-  .card { width: 85mm; height: 55mm; overflow: hidden; border-radius: 1.2mm; box-shadow: 0 30px 60px -20px rgba(0,0,0,.8); zoom: 2.6; }
-  .card object { display: block; width: 91mm; height: 61mm; margin: -3mm 0 0 -3mm; }
+  .card { position: relative; width: 85mm; height: 55mm; overflow: hidden; border-radius: 1.2mm; box-shadow: 0 30px 60px -20px rgba(0,0,0,.8); zoom: 2.6; }
+  .card object { position: absolute; display: block; width: 91mm; height: 61mm; left: -3mm; top: -3mm; }
+  .card .grid { display: none; pointer-events: none; }
+  body.show-grid .card .grid { display: block; }
 </style>
 </head>
 <body>
-<div class="card"><object type="image/svg+xml" data="front.svg" aria-label="Front"></object></div>
-<div class="card"><object type="image/svg+xml" data="front-ku.svg" aria-label="Kurdish front"></object></div>
-<div class="card"><object type="image/svg+xml" data="back.svg" aria-label="Back"></object></div>
+<div class="card"><object type="image/svg+xml" data="front.svg" aria-label="Front"></object><object class="grid" type="image/svg+xml" data="grid.svg" aria-hidden="true"></object></div>
+<div class="card"><object type="image/svg+xml" data="back.svg" aria-label="Back"></object><object class="grid" type="image/svg+xml" data="grid.svg" aria-hidden="true"></object></div>
+<script>if (location.search.indexOf("grid") > -1) document.body.classList.add("show-grid");</script>
 </body>
 </html>

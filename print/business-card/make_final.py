@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Make the print-ready package in FINAL/ from the pages build.py wrote.
 
-Per card (English front, Kurdish front; both share the same back):
+One card for everyone (bilingual front, bilingual back):
   - *_print-ready.pdf     2 pages, 91 x 61 mm = 85 x 55 trim + 3 mm bleed, TrimBox/BleedBox set
   - *_with-crop-marks.pdf same, on a 103 x 73 mm page with crop marks
 Checks: no embedded fonts (all text is outlines), page sizes, and that the QR on the back decodes.
@@ -21,10 +21,8 @@ BLEED, SLUG, W, H = 3, 6, 91, 61
 BROWSER = next((p for p in ("/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
                             "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome") if os.path.exists(p)), None)
 JOBS = [  # (source page, output name, has marks)
-    ("print.html", "Dindar-Ahmed_business-card_EN_print-ready.pdf", False),
-    ("print-ku.html", "Dindar-Ahmed_business-card_KU_print-ready.pdf", False),
-    ("print-marks.html", "Dindar-Ahmed_business-card_EN_with-crop-marks.pdf", True),
-    ("print-ku-marks.html", "Dindar-Ahmed_business-card_KU_with-crop-marks.pdf", True),
+    ("print.html", "Dindar-Ahmed_business-card_print-ready.pdf", False),
+    ("print-marks.html", "Dindar-Ahmed_business-card_with-crop-marks.pdf", True),
 ]
 
 
@@ -64,7 +62,7 @@ def decode_qr(pdf):
     img = cv2.imread(tmp + ".png")
     os.remove(tmp + ".png")
     px = lambda mm: int(mm / 25.4 * 600)
-    crop = img[px(36):px(58), px(66):px(88)]          # the QR tile on the back, with a margin
+    crop = img[px(29):px(56), px(58):px(84)]          # the QR tile on the back (x 61-81, y 32-52 mm), with a margin
     crop = cv2.copyMakeBorder(crop, 60, 60, 60, 60, cv2.BORDER_CONSTANT, value=(255, 255, 255))
     data, _, _ = cv2.QRCodeDetector().detectAndDecode(crop)
     return data
