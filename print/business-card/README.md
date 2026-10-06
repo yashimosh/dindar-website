@@ -4,13 +4,14 @@ One card for everyone, printed both sides: **one side per language**, each compl
 
 | File | What it is |
 |---|---|
-| `FINAL/` | **The print-ready package for the printer**: PDF with bleed (TrimBox/BleedBox set), the same with crop marks, a proof image and `PRINTER-INSTRUCTIONS.md`. Made by `make_final.py`. |
+| `FINAL/` | **The print-ready package for the printer**: PDF with bleed (TrimBox/BleedBox set), the same with crop marks, a proof image and the printer instructions in Kurdish (A4 PDF). Made by `make_final.py`. |
 | `front.svg`, `back.svg` | The editable design: English side, Kurdish side. Open in Illustrator or Figma. Latin text is Inter, Kurdish is Vazirmatn (free, SIL OFL; same fonts as the website), drawn as outlines (no font to install). |
 | `grid.svg` | The grid drawn over the artboard, for checking alignment (open `preview.html?grid` to see it on the card). |
 | `preview.png`, `preview.html` | Both sides, cut to the trim, for a quick look. |
 | `build.py` | Regenerates the SVGs, `grid.svg` and the print pages. Edit the details at its top (names, titles, phone, e-mail, slogans) and run it. |
 | `make_final.py` | Turns the print pages into the PDFs in `FINAL/` and checks them. |
-| `PRINTER-INSTRUCTIONS.md` | The text that goes to the printer (copied into `FINAL/`). |
+| `printer-instructions-ku.html` | The printer instructions in Kurdish (Sorani), printed to `FINAL/` as a PDF. Edit this file to change them. |
+| `PRINTER-INSTRUCTIONS.md` | The same instructions in English, for reference (not sent to the printer). |
 
 ## The grid (Swiss)
 

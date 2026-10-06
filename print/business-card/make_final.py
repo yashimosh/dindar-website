@@ -4,7 +4,8 @@
 One card for everyone (English side, Kurdish side):
   - *_print-ready.pdf     2 pages, 91 x 61 mm = 85 x 55 trim + 3 mm bleed, TrimBox/BleedBox set
   - *_with-crop-marks.pdf same, on a 103 x 73 mm page with crop marks
-Checks: no embedded fonts (all text is outlines) and the page sizes.
+Checks: no embedded fonts in the card (all text is outlines) and the page sizes. Also prints the Kurdish
+printer instructions (printer-instructions-ku.html) to an A4 PDF.
 
 Needs Brave or Chrome and poppler (pdfinfo, pdffonts). pypdf (sets TrimBox/BleedBox) is optional:
 without it the PDFs are still made and the boxes are not set.
@@ -66,4 +67,11 @@ if __name__ == "__main__":
         fonts = subprocess.run(["pdffonts", dst], capture_output=True, text=True).stdout.strip().splitlines()[2:]
         print(f"{name}: {size}, {'boxes set' if boxed else 'boxes NOT set (no pypdf)'}, embedded fonts: {len(fonts)}")
     shutil.copyfile(os.path.join(HERE, "preview.png"), os.path.join(OUT, "Dindar-Ahmed_business-card_proof.png"))
-    shutil.copyfile(os.path.join(HERE, "PRINTER-INSTRUCTIONS.md"), os.path.join(OUT, "PRINTER-INSTRUCTIONS.md"))   # the text lives next to this script
+    # printer instructions, in Kurdish, as an A4 PDF (source: printer-instructions-ku.html, next to this script)
+    ins = os.path.join(OUT, "Dindar-Ahmed_business-card_printer-instructions_KU.pdf")
+    subprocess.run([BROWSER, "--headless=new", "--no-pdf-header-footer", "--allow-file-access-from-files",
+                    "--virtual-time-budget=8000", f"--print-to-pdf={ins}",
+                    f"file://{os.path.join(HERE, 'printer-instructions-ku.html')}"], check=True, capture_output=True)
+    pages = next(l for l in subprocess.run(["pdfinfo", ins], capture_output=True, text=True).stdout.splitlines() if l.startswith("Pages"))
+    used = [l.split()[0] for l in subprocess.run(["pdffonts", ins], capture_output=True, text=True).stdout.splitlines()[2:]]
+    print(f"{os.path.basename(ins)}: {pages.split(':')[1].strip()} page(s), fonts: {', '.join(sorted({u.split('+')[-1].split('-')[0] for u in used}))}")
