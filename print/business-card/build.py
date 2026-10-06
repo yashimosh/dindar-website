@@ -173,6 +173,43 @@ html, body {{ margin: 0; padding: 0; }}
 """
 
 
+SLUG = 6   # mm of white around the bleed on the crop-mark pages
+
+
+def marks_svg():
+    """crop marks at the four trim corners, outside the bleed: black hairlines, 1 mm clear of the bleed"""
+    pw, ph = W + 2 * SLUG, H + 2 * SLUG
+    x0, x1 = SLUG + BLEED, SLUG + W - BLEED          # trim edges on the page
+    y0, y1 = SLUG + BLEED, SLUG + H - BLEED
+    gap, ln = 1.0, 3.5                                 # clear of the bleed, mark length (mm)
+    lines = []
+    for y in (y0, y1):                                 # horizontal marks, left and right of the card
+        lines.append(f'M{SLUG - gap - ln:.2f} {y}H{SLUG - gap:.2f}M{pw - SLUG + gap:.2f} {y}H{pw - SLUG + gap + ln:.2f}')
+    for x in (x0, x1):                                 # vertical marks, above and below
+        lines.append(f'M{x} {SLUG - gap - ln:.2f}V{SLUG - gap:.2f}M{x} {ph - SLUG + gap:.2f}V{ph - SLUG + gap + ln:.2f}')
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {pw} {ph}" width="{pw}mm" height="{ph}mm" '
+            f'style="position:absolute;left:0;top:0"><path d="{"".join(lines)}" fill="none" stroke="#000" stroke-width="0.09"/></svg>')
+
+
+def print_page_marks(front_svg, back_svg):
+    """two pages with crop marks: the card (with bleed) centred on a page 6 mm larger on every side"""
+    pw, ph = W + 2 * SLUG, H + 2 * SLUG
+    return f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><title>Dindar Ahmed business card, print with crop marks</title>
+<style>
+@page {{ size: {pw}mm {ph}mm; margin: 0; }}
+html, body {{ margin: 0; padding: 0; }}
+.page {{ position: relative; width: {pw}mm; height: {ph}mm; overflow: hidden; page-break-after: always; break-after: page; }}
+.page:last-child {{ page-break-after: auto; break-after: auto; }}
+.card {{ position: absolute; left: {SLUG}mm; top: {SLUG}mm; width: {W}mm; height: {H}mm; }}
+.card svg {{ display: block; width: {W}mm; height: {H}mm; }}
+</style></head><body>
+<div class="page"><div class="card">{front_svg}</div>{marks_svg()}</div>
+<div class="page"><div class="card">{back_svg}</div>{marks_svg()}</div>
+</body></html>
+"""
+
+
 if __name__ == "__main__":
     f = front()
     open(os.path.join(HERE, "front.svg"), "w", encoding="utf-8").write(f)
@@ -182,4 +219,6 @@ if __name__ == "__main__":
     open(os.path.join(HERE, "back.svg"), "w", encoding="utf-8").write(b)
     open(os.path.join(HERE, "print.html"), "w", encoding="utf-8").write(print_page(f, b))
     open(os.path.join(HERE, "print-ku.html"), "w", encoding="utf-8").write(print_page(fk, b))
+    open(os.path.join(HERE, "print-marks.html"), "w", encoding="utf-8").write(print_page_marks(f, b))
+    open(os.path.join(HERE, "print-ku-marks.html"), "w", encoding="utf-8").write(print_page_marks(fk, b))
     print(f"front.svg, front-ku.svg, back.svg, print.html, print-ku.html written. QR version {version}, {n}x{n} modules, module {cell:.3f} mm")

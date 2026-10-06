@@ -2,6 +2,7 @@
 
 | File | What it is |
 |---|---|
+| `FINAL/` | **The print-ready package for the printer**: EN and KU PDFs (bleed, boxes set), the same with crop marks, a proof image and `PRINTER-INSTRUCTIONS.md`. Made by `make_final.py`. |
 | `front.svg`, `front-ku.svg`, `back.svg` | The editable design: English front, Kurdish front, bilingual back. Open in Illustrator or Figma. All text is 29LT Zawi drawn as outlines (no font to install). |
 | `card-print.pdf` | English card for the printer. 2 pages: front, back. |
 | `card-print-ku.pdf` | Kurdish card for the printer. 2 pages: Kurdish front, the same back. |
@@ -61,3 +62,9 @@ the first version feel crowded.
   `card-print-ku.pdf`.
 - Printing both: most printers can split one order across two front designs with the
   same back; otherwise order them as two jobs.
+
+## Final print files
+
+`build.py` writes the pages, then `make_final.py` prints them to `FINAL/`, sets TrimBox/BleedBox, checks that
+no fonts are embedded and that the QR on the back still decodes to the site. Run it with Python that has
+`pypdf` and `opencv-python-headless` (both optional; without them those two steps are skipped).
