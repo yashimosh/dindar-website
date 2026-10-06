@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draw the site icon: a black Zawi Kurdish "د" on the brand yellow, as outlines.
+"""Draw the site icon: a black Kurdish "د" (Vazirmatn Black) on the brand yellow, as outlines.
 
 Writes assets/favicon.svg (the editable source, open it in Illustrator or Figma),
 and, when Brave/Chrome is available, the raster files made from it:
@@ -7,8 +7,8 @@ assets/favicon.ico (16, 32, 48), assets/apple-touch-icon.png (180),
 assets/icon-192.png, assets/icon-512.png. Also copies favicon.ico to the site root,
 where browsers look first.
 
-The letter is outlined, so no font is shipped (29Letters licence: modify and use, never
-redistribute). Needs tools/fonts/dist (see extend_zawi.py) and Pillow.
+Vazirmatn is free (SIL OFL, tools/fonts/free/); the letter is drawn as an outline so the icon needs no font.
+Needs fonttools and Pillow (tools/requirements.txt).
 """
 import os
 import shutil
@@ -22,7 +22,8 @@ from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-FONT = os.path.join(ROOT, "tools", "fonts", "dist", "29LT_Zawi_KU_Black.ttf")
+VARIABLE = os.path.join(ROOT, "tools", "fonts", "free", "Vazirmatn.ttf")
+WEIGHT = 900
 OUT = os.path.join(ROOT, "assets")
 LETTER = "\u062f"   # د, the first letter of دیندار (try "D" for the Latin version)
 Y1, Y2, INK = "#ffc300", "#ffea00", "#000000"
@@ -33,7 +34,8 @@ NUDGE = 0.0          # optical vertical nudge (down is positive)
 
 
 def letter_path():
-    tt = TTFont(FONT)
+    from fontTools.varLib import instancer
+    tt = instancer.instantiateVariableFont(TTFont(VARIABLE), {"wght": WEIGHT}, inplace=False)
     gs = tt.getGlyphSet()
     name = tt.getBestCmap()[ord(LETTER)]
     bp = BoundsPen(gs)

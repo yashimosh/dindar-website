@@ -101,6 +101,40 @@ def pause_btn(loc, target, cls=""):
             '<svg class="mc-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg>'
             '<svg class="mc-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5l7 4.5-7 4.5z"/></svg></button>')
 
+# ------------------------------------------------------------------ fonts
+# Inter (Latin) and Vazirmatn (Arabic script), both SIL OFL, self-hosted as woff2 (tools/fonts/make_webfonts.py)
+FONT_SRC = {"inter": f"{REPO}/tools/fonts/free/Inter.ttf", "vazirmatn": f"{REPO}/tools/fonts/free/Vazirmatn.ttf"}
+
+def font_preload(loc):
+    """the font that draws most of the page's text, fetched early (the other one loads only if needed)"""
+    f = "inter" if loc == "en" else "vazirmatn"
+    return f'<link rel="preload" href="/assets/fonts/{f}.woff2" as="font" type="font/woff2" crossorigin=""/>'
+
+_HB = {}
+
+def text_width_em(text, family, weight, letter_spacing_em=0.0):
+    """advance width of a line of text in em, shaped with HarfBuzz at the given weight (as the browser will)"""
+    import uharfbuzz as hb
+    if family not in _HB:
+        blob = hb.Blob.from_file_path(FONT_SRC[family])
+        face = hb.Face(blob)
+        _HB[family] = (hb.Font(face), face.upem)
+    font, upem = _HB[family]
+    font.set_variations({"wght": weight})
+    buf = hb.Buffer()
+    buf.add_str(text)
+    buf.guess_segment_properties()
+    hb.shape(font, buf, {"kern": True, "liga": True})
+    return sum(p.x_advance for p in buf.glyph_positions) / upem + letter_spacing_em * len(text)
+
+def fit_style(loc, text, share):
+    """--fit for a .fit heading: share of the row / width of the text in em (see .fit in the CSS)"""
+    if loc == "en":
+        w = text_width_em(text.upper(), "inter", 900, -0.035)
+    else:
+        w = text_width_em(text, "vazirmatn", 800)
+    return f"--fit:{share / w:.4f}"
+
 def head(loc, page, title, desc):
     c = C[loc]
     canon = SITE + url(loc, page)
@@ -134,6 +168,7 @@ def head(loc, page, title, desc):
 <meta name="twitter:title" content="{a(title)}"/>
 <meta name="twitter:description" content="{a(c['meta']['tw_description'] if page == 'home' else desc)}"/>
 <meta name="twitter:image" content="{SITE}/assets/img/portrait.jpg"/>
+{font_preload(loc)}
 <link href="/css/tailwind.css" rel="stylesheet"/>
 <script>/* reveal animations only when the page opens in a visible tab: a hidden tab freezes CSS transitions half way, which leaves headlines cut off */if(document.visibilityState!=="hidden")document.documentElement.classList.add("js")</script>
 </head>
@@ -155,7 +190,7 @@ def lang_links(loc, page, cls_on, cls_off):
     for l in LOCS:
         cls = cls_on if l == loc else cls_off
         cur = ' aria-current="true"' if l == loc else ""
-        out.append(f'<a href="{url(l, page)}" lang="{LANG_ATTR[l]}" hreflang="{HREFLANG[l]}" class="{cls}" data-kw{cur}>{LANG_NAME[l]}</a>')
+        out.append(f'<a href="{url(l, page)}" lang="{LANG_ATTR[l]}" hreflang="{HREFLANG[l]}" class="{cls}"{cur}>{LANG_NAME[l]}</a>')
     return "\n".join(out)
 
 def header(loc, page):
@@ -229,9 +264,9 @@ def footer(loc, page):
 </ul>
 </div>
 </div>
-<p class="display fire-text fit leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" data-fit="0.96" aria-hidden="true">{e(name_of(loc))}.</p>
+<p class="display fire-text fit leading-[0.95] mt-24 md:mt-36 text-center whitespace-nowrap select-none" style="{fit_style(loc, name_of(loc) + '.', 0.96)}" aria-hidden="true">{e(name_of(loc))}.</p>
 <div class="mt-12 pt-6 pb-16 sm:pb-0 sm:pe-20 border-t border-edge flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[15px] text-white/90">
-<p data-kw>{e(c['footer']['copyright'])}</p>
+<p>{e(c['footer']['copyright'])}</p>
 <div class="lang flex flex-wrap gap-4" aria-label="{a(u['label_language'])}">
 {lang_links(loc, page, 'text-accent', 'hover:text-white transition-colors')}
 </div>
@@ -384,7 +419,7 @@ def home(loc):
 <section id="info" class="wrap">
 <div class="py-16 md:py-24">
 <p class="rv lbl text-muted mb-8">{DIAMOND} {e(u['label_info'])}</p>
-<p data-kw class="rv text-[26px] sm:text-[36px] lg:text-[52px] font-semibold leading-[1.4] lg:leading-[1.3] tracking-[-0.02em] max-w-[1250px]">{e(lead)} <em class="hi not-italic">{e(car['belief_title'])}</em></p>
+<p class="rv text-[26px] sm:text-[36px] lg:text-[52px] font-semibold leading-[1.4] lg:leading-[1.3] tracking-[-0.02em] max-w-[1250px]">{e(lead)} <em class="hi not-italic">{e(car['belief_title'])}</em></p>
 <div class="mt-14 grid gap-8 md:grid-cols-12">
 <p class="rv md:col-start-6 md:col-span-7 text-[18px] leading-[1.65] md:text-[20px] text-muted">{e(info)}</p>
 <a href="{url(loc, 'about')}" class="rv md:col-start-6 md:col-span-7 lbl inline-flex items-center gap-3 ul">{e(c['hero']['btn_about'])} {ARROW}</a>
@@ -439,7 +474,7 @@ def about(loc):
 <a href="/assets/img/{it['img']}" target="_blank" rel="noopener" class="group block">
 {pic(it['img'], it['alt'], 'aspect-[4/3] object-contain p-5 group-hover:scale-[1.03] transition-transform duration-500', box='border border-edge bg-night/40 group-hover:border-amber transition-colors')}
 </a>
-<figcaption class="mt-5"><p class="lbl text-muted">{e(it['issuer'])}</p><p data-kw class="mt-2 text-[18px] leading-snug font-medium">{e(it['title'])}</p><p class="mt-1 text-[15px] text-muted">{e(it['meta'])}</p></figcaption>
+<figcaption class="mt-5"><p class="lbl text-muted">{e(it['issuer'])}</p><p class="mt-2 text-[18px] leading-snug font-medium">{e(it['title'])}</p><p class="mt-1 text-[15px] text-muted">{e(it['meta'])}</p></figcaption>
 </figure>""" for it in c["certs"]["items"])
 
     # CSS columns fill one column after another and balance badly with mixed photo shapes, so the order is
@@ -474,8 +509,8 @@ def about(loc):
 <div class="wrap above py-24 md:py-36">
 <blockquote class="rv max-w-6xl">
 <p class="fire-text display text-[64px] md:text-[96px] leading-none" aria-hidden="true">“</p>
-<p data-kw class="text-[28px] leading-[1.25] md:text-[48px] md:leading-[1.15] font-semibold tracking-[-0.02em]">{e(q)}</p>
-<footer class="mt-10 flex flex-wrap gap-x-4 gap-y-1"><span class="lbl text-accent">{e(c['quote']['name'])}</span><span data-kw class="text-[16px] text-white/75">{e(c['quote']['role'])}</span></footer>
+<p class="text-[28px] leading-[1.25] md:text-[48px] md:leading-[1.15] font-semibold tracking-[-0.02em]">{e(q)}</p>
+<footer class="mt-10 flex flex-wrap gap-x-4 gap-y-1"><span class="lbl text-accent">{e(c['quote']['name'])}</span><span class="text-[16px] text-white/75">{e(c['quote']['role'])}</span></footer>
 </blockquote>
 </div>
 </section>
@@ -550,6 +585,7 @@ def not_found():
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
 <link rel="icon" type="image/x-icon" sizes="48x48" href="/assets/favicon.ico"/>
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+{font_preload('en')}
 <link href="/css/tailwind.css" rel="stylesheet"/>
 </head>
 <body class="bg-ink text-white antialiased">
@@ -612,18 +648,7 @@ def clients_json():
 
 OUT = os.environ.get("GEN_OUT", REPO)
 
-import display_svg
-
 def write(rel, text):
-    # Headings, labels, buttons, menus and numbers are set in 29LT Zawi as SVG
-    # shapes (the font file itself is never served; see display_svg.py)
-    if rel.endswith(".html"):
-        if display_svg.available():
-            lang = {"ku": "ckb", "ar": "ar", "fa": "fa"}.get(rel.split("/")[0], "en")
-            text, n = display_svg.apply(text, lang)
-            print(f"   Zawi: {n} unique words in {rel}")
-        else:
-            print(f"   WARNING: Zawi build fonts missing (tools/fonts/dist); {rel} falls back to Noto Kufi")
     p = os.path.join(OUT, rel)
     os.makedirs(os.path.dirname(p), exist_ok=True)
     with open(p, "w", encoding="utf-8") as f:

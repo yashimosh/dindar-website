@@ -11,3 +11,6 @@ tools/fonts/dist/
 tools/venv/
 tools/fonts/src_zawi/
 tools/fonts/src_zawi_var/
+# free fonts (SIL OFL) may live in git; their per-weight instances are rebuilt locally
+!tools/fonts/free/*.ttf
+tools/fonts/free/build/

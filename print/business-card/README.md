@@ -5,13 +5,12 @@ One card for everyone, printed both sides: **one side per language**, each compl
 | File | What it is |
 |---|---|
 | `FINAL/` | **The print-ready package for the printer**: PDF with bleed (TrimBox/BleedBox set), the same with crop marks, a proof image and `PRINTER-INSTRUCTIONS.md`. Made by `make_final.py`. |
-| `front.svg`, `back.svg` | The editable design: English side, Kurdish side. Open in Illustrator or Figma. All text is 29LT Zawi drawn as outlines (no font to install). |
+| `front.svg`, `back.svg` | The editable design: English side, Kurdish side. Open in Illustrator or Figma. Latin text is Inter, Kurdish is Vazirmatn (free, SIL OFL; same fonts as the website), drawn as outlines (no font to install). |
 | `grid.svg` | The grid drawn over the artboard, for checking alignment (open `preview.html?grid` to see it on the card). |
 | `preview.png`, `preview.html` | Both sides, cut to the trim, for a quick look. |
 | `build.py` | Regenerates the SVGs, `grid.svg` and the print pages. Edit the details at its top (names, titles, phone, e-mail, slogans) and run it. |
 | `make_final.py` | Turns the print pages into the PDFs in `FINAL/` and checks them. |
 | `PRINTER-INSTRUCTIONS.md` | The text that goes to the printer (copied into `FINAL/`). |
-| `fonts/` | Noto Kufi Arabic, no longer used by the card (kept for reference; SIL OFL, see `OFL.txt`). |
 
 ## The grid (Swiss)
 
@@ -37,7 +36,7 @@ Change the margin, gutter, columns or baseline step in `build.py` and the whole 
 
 ## Editing
 
-- All text is outlined Zawi (extended with the Sorani letters), so nothing needs installing and the PDFs embed no fonts. The 29Letters licence allows using and modifying the fonts but not handing the files to anyone, which is why only outlines go to the printer. Never send `tools/fonts/` to the printer. Layers are named (`aria-label`) after the text they draw.
+- All text is outlined Inter and Vazirmatn (in `tools/fonts/free/`, SIL OFL), so the printer needs no fonts and the PDFs embed none. `build.py` makes fixed-weight instances of the two variable fonts into `tools/fonts/free/build/` the first time it runs.
 - Because the text is shapes, change wording in the details at the top of `build.py` and run it; editing the SVG text directly is not possible.
 - Run it with `tools/venv/bin/python build.py` (needs `tools/requirements.txt` installed and the extended fonts in `tools/fonts/dist`, see the main README).
 - PDF check: `make_final.py` needs Brave or Chrome and poppler; with `pypdf` it also sets TrimBox/BleedBox (optional).

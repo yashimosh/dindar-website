@@ -3,8 +3,8 @@
  *
  *  Fire palette on ink black: dark grounds, ember-to-amber gradients,
  *  frosted glass panels and blurred glows (see css/tailwind.src.css).
- *  Font: all text is 29LT Zawi drawn as SVG outlines at build time
- *  (tools/site/display_svg.py); the families below are only a fallback.
+ *  Fonts: Inter (Latin) + Vazirmatn (Kurdish, Arabic, Persian), both SIL OFL,
+ *  self-hosted woff2 (see @font-face in css/tailwind.src.css).
  */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -44,8 +44,8 @@ module.exports = {
       borderColor: { DEFAULT: "rgb(149 127 239 / 0.40)" },
       ringColor: { DEFAULT: "#ffea00" },
       fontFamily: {
-        sans: ["Noto Kufi Arabic", "Tahoma", "sans-serif"],
-        display: ["Noto Kufi Arabic", "Tahoma", "sans-serif"],
+        sans: ["Inter", "Vazirmatn", "system-ui", "sans-serif"],
+        display: ["Inter", "Vazirmatn", "system-ui", "sans-serif"],
       },
     },
   },

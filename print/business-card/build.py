@@ -3,14 +3,12 @@
 the print pages and a grid guide. One card for everyone: English and Kurdish side by side.
 
 The SVGs are the source of truth; open and edit them in Illustrator or
-Figma. All text is set in 29LT Zawi (extended with the Sorani letters, see
-tools/fonts/extend_zawi.py) and drawn as outlines, so no font has to be
-installed and no font file is ever handed to the printer (the 29Letters
-licence forbids redistributing the fonts). To change wording, edit the
-details below and run this script; text in the SVGs is shapes, not live type.
+Figma. Latin text is Inter, Kurdish is Vazirmatn (both free, SIL OFL, the same
+fonts as the website, in tools/fonts/free/). Text is drawn as outlines so the
+printer needs no fonts and nothing can be substituted. To change wording, edit
+the details below and run this script; text in the SVGs is shapes, not live type.
 
-Needs: tools/venv with tools/requirements.txt (uharfbuzz, fonttools)
-and the built fonts in tools/fonts/dist.
+Needs: tools/venv with tools/requirements.txt (uharfbuzz, fonttools).
 Card: 85 x 55 mm trim, 3 mm bleed (91 x 61 mm artboard).
 
 LAYOUT: a Swiss modular grid, 6 columns x 4 rows, on a live area inset 7 mm from the sides and
@@ -29,9 +27,24 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 sys.path.insert(0, os.path.join(ROOT, "tools", "fonts"))
 from shape_svg import shape_to_path, _load  # noqa: E402
 
-DIST = os.path.join(ROOT, "tools", "fonts", "dist")
-ZAWI = {w: os.path.join(DIST, f"29LT_Zawi_KU_{n}.ttf") for w, n in
-        {400: "Regular", 500: "Medium", 700: "Bold", 900: "Black"}.items()}
+FREE = os.path.join(ROOT, "tools", "fonts", "free")      # Inter + Vazirmatn, SIL OFL (same fonts as the website)
+
+
+def font(weight, rtl=False):
+    """a fixed-weight instance of the variable font: Vazirmatn for Kurdish, Inter for Latin.
+    Instances are made once into tools/fonts/free/build/ (git-ignored). Inter's optical size follows the job:
+    display (32) for the big slogan, text (14) for everything small."""
+    from fontTools.ttLib import TTFont
+    from fontTools.varLib import instancer
+    fam = "Vazirmatn" if rtl else "Inter"
+    loc = {"wght": weight}
+    if fam == "Inter":
+        loc["opsz"] = 32 if weight >= 800 else 14
+    out = os.path.join(FREE, "build", f"{fam}-" + "-".join(f"{k}{v}" for k, v in loc.items()) + ".ttf")
+    if not os.path.exists(out):
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        instancer.instantiateVariableFont(TTFont(os.path.join(FREE, f"{fam}.ttf")), loc, inplace=False).save(out)
+    return out
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -72,21 +85,21 @@ def span(n):
     return n * CW + (n - 1) * GUT
 
 
-CAP = 0.70     # cap height of Zawi, in em
-ARAB = 0.78    # height of the Arabic letters above the baseline (without the V marks), in em; used to match sizes
+# cap height (Inter) and Arabic letter height (Vazirmatn alef), in em: measured from the fonts in __main__-time
+CAP = ARAB = None
 
 def line(text, size, weight, x, y, fill, rtl=False, tracking=0.0, label=None, tail=None, anchor_left=False):
     """One line of text as a filled outline path (mm units), named for the layer panel.
     x is the left edge for left-to-right text and the right edge for right-to-left.
     tail=(text, fill) adds a trailing character in a second colour (the full stop)."""
     kw = dict(direction="rtl", script="Arab", language="ckb") if rtl else dict(direction="ltr", script="Latn", language="en")
-    d, w, _, _ = shape_to_path(ZAWI[weight], text, size, tracking=tracking, **kw)
+    d, w, _, _ = shape_to_path(font(weight, rtl), text, size, tracking=tracking, **kw)
     w -= tracking  # no trailing space after the last letter
     ox = x if (not rtl or anchor_left) else x - w
     out = f'<path transform="translate({ox:.3f} {y:.3f})" fill="{fill}" d="{d}"/>'
     if tail:
         t, tfill = tail
-        td, tw, _, _ = shape_to_path(ZAWI[weight], t, size, direction="ltr", script="Latn", language="en", tracking=tracking)
+        td, tw, _, _ = shape_to_path(font(weight, rtl), t, size, direction="ltr", script="Latn", language="en", tracking=tracking)
         tx = ox - tw + 0.5 if rtl else ox + w + tracking  # RTL: pull the dot in; the Arabic joining leaves it looser
         out += f'\n<path transform="translate({tx:.3f} {y:.3f})" fill="{tfill}" d="{td}"/>'
     return f'<g aria-label="{label or text}">{out}</g>\n'
@@ -99,7 +112,7 @@ def svg_open(title):
 
 def width(text, size, weight, rtl=False, tracking=0.0):
     kw = dict(direction="rtl", script="Arab", language="ckb") if rtl else dict(direction="ltr", script="Latn", language="en")
-    return shape_to_path(ZAWI[weight], text, size, tracking=tracking, **kw)[1] - tracking
+    return shape_to_path(font(weight, rtl), text, size, tracking=tracking, **kw)[1] - tracking
 
 
 def fit(lines, weight, target, rtl=False, tracking_em=0.0):
@@ -113,11 +126,11 @@ def ink(text, size, weight, rtl=False):
     import uharfbuzz as hb
     from fontTools.pens.boundsPen import BoundsPen
     from fontTools.pens.transformPen import TransformPen
-    font, tt, gs, upem = _load(ZAWI[weight])
+    hbf, tt, gs, upem = _load(font(weight, rtl))
     buf = hb.Buffer()
     buf.add_str(text)
     buf.direction, buf.script, buf.language = ("rtl", "Arab", "ckb") if rtl else ("ltr", "Latn", "en")
-    hb.shape(font, buf, {"kern": True, "liga": True})
+    hb.shape(hbf, buf, {"kern": True, "liga": True})
     bp, x, order = BoundsPen(gs), 0, tt.getGlyphOrder()
     for info, pos in zip(buf.glyph_infos, buf.glyph_positions):
         gs[order[info.codepoint]].draw(TransformPen(bp, (1, 0, 0, 1, x + pos.x_offset, pos.y_offset)))
@@ -252,6 +265,8 @@ html, body {{ margin: 0; padding: 0; }}
 
 
 if __name__ == "__main__":
+    CAP = -ink("H", 1.0, 900)[0]
+    ARAB = -ink("\u0627", 1.0, 900, rtl=True)[0]
     f, b = side_en(), side_ku()
     open(os.path.join(HERE, "front.svg"), "w", encoding="utf-8").write(f)
     open(os.path.join(HERE, "back.svg"), "w", encoding="utf-8").write(b)

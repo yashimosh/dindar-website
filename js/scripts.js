@@ -6,21 +6,7 @@
 
   // ---- Count-up numbers (keeps the page's own digit set: 0-9, Arabic-Indic or Persian) ----
   var SETS = ["0123456789", "\u0660\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669", "\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9"];
-  // Numbers are drawn from the page's glyph sprite (Zawi, shaped at build time):
-  // each character is an inline SVG that points at a <path id="kc{codepoint}">.
-  var drawCount = function (el, str) {
-    var host = el.querySelector(".kw-count"), sp = document.getElementById("kwsprite");
-    if (!host || !sp) { el.textContent = str; return; }
-    var asc = +sp.getAttribute("data-asc"), desc = +sp.getAttribute("data-desc");
-    var chars = str.split("");
-    if (document.documentElement.dir === "rtl" && chars[chars.length - 1] === "+") chars.unshift(chars.pop());
-    host.innerHTML = chars.map(function (ch) {
-      var id = "kc" + ch.charCodeAt(0), p = document.getElementById(id);
-      if (!p) return "";
-      var w = +p.getAttribute("data-w");
-      return '<svg class="kw" viewBox="0 ' + (-asc) + " " + w + " " + (asc + desc) + '"><use href="#' + id + '"/></svg>';
-    }).join("");
-  };
+  var drawCount = function (el, str) { el.textContent = str; };
   var countUp = function (el) {
     var text = el.getAttribute("data-count-text") || el.textContent, set = SETS[0];
     SETS.forEach(function (s) { if (s.split("").some(function (d) { return text.indexOf(d) > -1; })) set = s; });
@@ -176,7 +162,7 @@
           }
           t.appendChild(track);
         } else {
-          // category headings are in the HTML (set in Zawi at build time); fill each grid
+          // category headings are in the HTML; fill each grid
           data.categories.forEach(function (cat) {
             var block = t.querySelector('[data-cat="' + cat.id + '"]');
             var grid = block && block.querySelector("[data-cat-grid]");
