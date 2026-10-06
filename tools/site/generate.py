@@ -442,7 +442,16 @@ def about(loc):
 <figcaption class="mt-5"><p class="lbl text-muted">{e(it['issuer'])}</p><p data-kw class="mt-2 text-[18px] leading-snug font-medium">{e(it['title'])}</p><p class="mt-1 text-[15px] text-muted">{e(it['meta'])}</p></figcaption>
 </figure>""" for it in c["certs"]["items"])
 
-    gallery = "\n".join(f'<div class="rv mb-4 break-inside-avoid">{pic(it["img"], it["alt"], "h-auto")}</div>' for it in c["gallery"]["items"])
+    # CSS columns fill one column after another and balance badly with mixed photo shapes, so the order is
+    # worked out here: deal each photo to the currently shortest of 3 columns, then list column by column
+    cols, heights = [[], [], []], [0.0, 0.0, 0.0]
+    for it in c["gallery"]["items"]:
+        w_, h_ = size(it["img"])
+        k_ = heights.index(min(heights))
+        cols[k_].append(it)
+        heights[k_] += h_ / w_
+    ordered = [it for col in cols for it in col]
+    gallery = "\n".join(f'<div class="rv mb-4 break-inside-avoid">{pic(it["img"], it["alt"], "h-auto")}</div>' for it in ordered)
 
     q = c["quote"]["text"].strip().strip('"“”«»')
     body = f"""<main id="main">
