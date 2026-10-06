@@ -4,10 +4,10 @@
 One card for everyone (bilingual front, bilingual back):
   - *_print-ready.pdf     2 pages, 91 x 61 mm = 85 x 55 trim + 3 mm bleed, TrimBox/BleedBox set
   - *_with-crop-marks.pdf same, on a 103 x 73 mm page with crop marks
-Checks: no embedded fonts (all text is outlines), page sizes, and that the QR on the back decodes.
+Checks: no embedded fonts (all text is outlines) and the page sizes.
 
-Needs Brave or Chrome and poppler (pdftoppm, pdffonts). pypdf (sets TrimBox/BleedBox) and opencv (QR check)
-are optional: without them the PDFs are still made and those two steps are skipped.
+Needs Brave or Chrome and poppler (pdfinfo, pdffonts). pypdf (sets TrimBox/BleedBox) is optional:
+without it the PDFs are still made and the boxes are not set.
 """
 import os
 import shutil
@@ -52,22 +52,6 @@ def set_boxes(path, marks):
     return True
 
 
-def decode_qr(pdf):
-    try:
-        import cv2
-    except ImportError:
-        return None
-    tmp = os.path.join(OUT, "_qr")
-    subprocess.run(["pdftoppm", "-r", "600", "-f", "2", "-l", "2", "-png", "-singlefile", pdf, tmp], check=True)
-    img = cv2.imread(tmp + ".png")
-    os.remove(tmp + ".png")
-    px = lambda mm: int(mm / 25.4 * 600)
-    crop = img[px(29):px(56), px(58):px(84)]          # the QR tile on the back (x 61-81, y 32-52 mm), with a margin
-    crop = cv2.copyMakeBorder(crop, 60, 60, 60, 60, cv2.BORDER_CONSTANT, value=(255, 255, 255))
-    data, _, _ = cv2.QRCodeDetector().detectAndDecode(crop)
-    return data
-
-
 if __name__ == "__main__":
     if not BROWSER:
         sys.exit("needs Brave or Chrome")
@@ -81,7 +65,5 @@ if __name__ == "__main__":
         size = next(l for l in info.splitlines() if l.startswith("Page size")).split(":")[1].strip()
         fonts = subprocess.run(["pdffonts", dst], capture_output=True, text=True).stdout.strip().splitlines()[2:]
         print(f"{name}: {size}, {'boxes set' if boxed else 'boxes NOT set (no pypdf)'}, embedded fonts: {len(fonts)}")
-    qr = decode_qr(os.path.join(OUT, JOBS[0][1]))
-    print("QR on the back decodes to:", qr if qr is not None else "not checked (no opencv)")
     shutil.copyfile(os.path.join(HERE, "preview.png"), os.path.join(OUT, "Dindar-Ahmed_business-card_proof.png"))
     shutil.copyfile(os.path.join(HERE, "PRINTER-INSTRUCTIONS.md"), os.path.join(OUT, "PRINTER-INSTRUCTIONS.md"))   # the text lives next to this script

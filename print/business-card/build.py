@@ -9,7 +9,7 @@ installed and no font file is ever handed to the printer (the 29Letters
 licence forbids redistributing the fonts). To change wording, edit the
 details below and run this script; text in the SVGs is shapes, not live type.
 
-Needs: tools/venv with tools/requirements.txt (segno, uharfbuzz, fonttools)
+Needs: tools/venv with tools/requirements.txt (uharfbuzz, fonttools)
 and the built fonts in tools/fonts/dist.
 Card: 85 x 55 mm trim, 3 mm bleed (91 x 61 mm artboard).
 
@@ -17,14 +17,13 @@ LAYOUT: a Swiss modular grid, 6 columns x 4 rows, on a live area inset 7 mm from
 6 mm from top and bottom of the trim (so everything is at least 6 mm inside the cut), 3 mm gutters.
   - flush-left English hangs from the left margin, flush-right Kurdish from the right margin
   - top and bottom margins are the two baselines everything is set on
-  - the back's text blocks hang from the margin and row lines; the QR is exactly two rows tall and sits on the
-    bottom-right corner of the grid
+  - the back mirrors the front: names on the top margin, titles on row 1, the same hairline, contacts ending on
+    the bottom margin
   - one size scale, a few weights, no decoration except one hairline rule
 python3 build.py also writes grid.svg, the grid drawn over the card, for checking.
 """
 import os
 import sys
-import segno
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "tools", "fonts"))
@@ -46,7 +45,6 @@ EMAIL = "Dindar.Ahmed@mithra.agency"
 WEB = "dindarahmed.com"
 # the website's Kurdish headline, split the same way as the English one
 STATEMENT_KU = ("پێم بڵێ", "چی", "نافرۆشرێت")
-QR_DATA = "https://dindarahmed.com"     # the site carries WhatsApp, Instagram, LinkedIn
 
 # ---- palette (same as the website) ----
 BLACK, VIOLET, LAVENDER = "#000000", "#7161ef", "#957fef"
@@ -109,7 +107,7 @@ def front():
     step = 6.6                                   # baseline step, shared by both languages
     b1, b2, b3 = GB - 2 * step, GB - step, GB
     top = GT + CAP * XS                          # cap-top of the small name sits on the top margin
-    rule = row(0) + RH + GUT / 2                 # hairline between header row and the rest
+    rule = row(0) + RH                           # hairline on the bottom edge of row 0, between header and slogan
     sk = XL * KU_OPTICAL
     s = svg_open("Dindar Ahmed business card, front")
     s += f"""<defs>
@@ -132,44 +130,22 @@ def front():
     return s
 
 
-def qr_path(size_mm, x0, y0, quiet=2):
-    """QR as one black path inside a yellow tile, for crisp print"""
-    qr = segno.make(QR_DATA, error="m", boost_error=False, micro=False)
-    rows = [list(r) for r in qr.matrix]
-    n = len(rows)
-    cell = size_mm / (n + 2 * quiet)
-    d = []
-    for yy, row in enumerate(rows):
-        xx = 0
-        while xx < n:
-            if row[xx]:
-                start = xx
-                while xx < n and row[xx]:
-                    xx += 1
-                d.append(f"M{x0 + (start + quiet) * cell:.3f} {y0 + (yy + quiet) * cell:.3f}h{(xx - start) * cell:.3f}v{cell:.3f}h{-(xx - start) * cell:.3f}z")
-            else:
-                xx += 1
-    return "".join(d), qr.version, n, cell
-
-
 def back():
-    """names and titles hang from the top and from row 1; contacts end on the bottom margin with their first
-    cap-line on row 3; the QR is two rows tall and fills the bottom-right corner of the grid."""
-    qs = 2 * RH + GUT                            # two rows tall (20 mm)
-    qx, qy = GR - qs, GB - qs                    # right margin, bottom margin; its top lands on row 2
-    path, version, n, cell = qr_path(qs, qx, qy)
+    """mirrors the front: English flush left, Kurdish flush right, names on the top margin, titles on row 1,
+    the same hairline between them; the contacts end on the bottom margin with their first cap line on row 3."""
     lines = [PHONE, EMAIL, WEB]
     first = row(3) + CAP * S                     # first contact line: cap-top on row 3
     step = (GB - first) / (len(lines) - 1)       # last line on the bottom margin
     contact = "".join(line(v, S, 400, GL, first + k * step, SOFT) for k, v in enumerate(lines))
-    ty = row(1) + GUT + CAP * XS                 # titles hang one gutter below row 1, clear of the names above
+    name_y = GT + CAP * XL                       # cap-top of the names on the top margin
+    title_y = row(1) + CAP * XS                  # cap-top of the titles on row 1
+    rule = row(0) + RH                           # the same hairline as on the front (bottom of row 0)
     s = svg_open("Dindar Ahmed business card, back")
     s += f"""<rect width="{W}" height="{H}" fill="{BLACK}"/>
-{line(NAME_EN, XL, 900, GL, GT + CAP * XL, WHITE, tracking=-0.05)}{line(NAME_KU, M, 700, GL, GT + CAP * XL + 6.0, LAVENDER, rtl=True, anchor_left=True)}{line(TITLE_EN, XS, 700, GL, ty, Y1, tracking=0.45)}{line(TITLE_KU, S, 700, GL, ty + 4.6, Y1, rtl=True, anchor_left=True)}{contact}<rect x="{qx:.3f}" y="{qy:.3f}" width="{qs:.3f}" height="{qs:.3f}" rx="0.8" fill="{Y4}"/>
-<path d="{path}" fill="{BLACK}"/>
-</svg>
+{line(NAME_EN, XL, 900, GL, name_y, WHITE, tracking=-0.05)}{line(NAME_KU, XL * KU_OPTICAL, 900, GR, name_y, WHITE, rtl=True)}<path d="M{GL} {rule:.3f}H{GR}" stroke="{WHITE}" stroke-opacity="0.22" stroke-width="0.12" fill="none"/>
+{line(TITLE_EN, XS, 700, GL, title_y, Y1, tracking=0.45)}{line(TITLE_KU, S, 700, GR, title_y + 4.6, Y1, rtl=True)}{contact}</svg>
 """
-    return s, version, n, cell
+    return s
 
 
 def grid_guide():
@@ -241,9 +217,9 @@ html, body {{ margin: 0; padding: 0; }}
 if __name__ == "__main__":
     f = front()
     open(os.path.join(HERE, "front.svg"), "w", encoding="utf-8").write(f)
-    b, version, n, cell = back()
+    b = back()
     open(os.path.join(HERE, "back.svg"), "w", encoding="utf-8").write(b)
     open(os.path.join(HERE, "grid.svg"), "w", encoding="utf-8").write(grid_guide())
     open(os.path.join(HERE, "print.html"), "w", encoding="utf-8").write(print_page(f, b))
     open(os.path.join(HERE, "print-marks.html"), "w", encoding="utf-8").write(print_page_marks(f, b))
-    print(f"front.svg, back.svg, grid.svg, print.html, print-marks.html written. QR version {version}, {n}x{n} modules, module {cell:.3f} mm")
+    print("front.svg, back.svg, grid.svg, print.html, print-marks.html written")

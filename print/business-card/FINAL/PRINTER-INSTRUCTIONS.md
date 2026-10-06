@@ -1,6 +1,6 @@
 # Dindar Ahmed business card: print instructions
 
-**One design, printed on both sides.** The front carries the English and Kurdish slogans side by side. The back is bilingual too (names, titles, phone, e-mail, website, QR). One job, one file.
+**One design, printed on both sides.** The front carries the English and Kurdish slogans side by side. The back is bilingual too (names, titles, phone, e-mail, website). One job, one file.
 
 | File | What it is |
 |---|---|
@@ -13,7 +13,7 @@
 - Trim (finished card): **85 x 55 mm**, landscape.
 - The file includes **3 mm bleed** on every side: page size 91 x 61 mm (103 x 73 mm with marks).
 - TrimBox and BleedBox are set in the PDFs.
-- Everything is laid out on a 6-column by 4-row grid: text and the QR are at least **6 mm inside the trim** (a few Kurdish letter tails come within 4.5 mm).
+- Everything is laid out on a 6-column by 4-row grid: all text is at least **6 mm inside the trim** (a few Kurdish letter tails come within 4.5 mm).
 
 ## Colour
 
@@ -24,7 +24,6 @@
 ## Fonts and artwork
 
 - All text is converted to outlines. No fonts are embedded and none are needed. Please do not substitute or re-typeset anything.
-- The QR code on the back opens `https://dindarahmed.com`. Do not scale it down: its modules are 0.5 mm.
 
 ## Stock and finish (suggested)
 
