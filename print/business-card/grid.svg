@@ -1,13 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="61mm" viewBox="0 0 91 61">
-<rect x="10.000" y="9.0" width="9.333" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
-<rect x="22.333" y="9.0" width="9.333" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
-<rect x="34.667" y="9.0" width="9.333" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
-<rect x="47.000" y="9.0" width="9.333" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
-<rect x="59.333" y="9.0" width="9.333" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
-<rect x="71.667" y="9.0" width="9.333" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
-<rect x="10.0" y="9.000" width="71.0" height="8.500" fill="#ff3b8d" fill-opacity="0.13"/>
-<rect x="10.0" y="20.500" width="71.0" height="8.500" fill="#ff3b8d" fill-opacity="0.13"/>
-<rect x="10.0" y="32.000" width="71.0" height="8.500" fill="#ff3b8d" fill-opacity="0.13"/>
-<rect x="10.0" y="43.500" width="71.0" height="8.500" fill="#ff3b8d" fill-opacity="0.13"/>
+<rect x="9.000" y="9.0" width="9.667" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
+<rect x="21.667" y="9.0" width="9.667" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
+<rect x="34.333" y="9.0" width="9.667" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
+<rect x="47.000" y="9.0" width="9.667" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
+<rect x="59.667" y="9.0" width="9.667" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
+<rect x="72.333" y="9.0" width="9.667" height="43.0" fill="#00c8ff" fill-opacity="0.16"/>
+<path d="M9.0 52.000H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 48.800H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 45.600H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 42.400H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 39.200H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 36.000H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 32.800H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 29.600H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 26.400H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 23.200H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 20.000H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 16.800H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 13.600H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<path d="M9.0 10.400H82.0" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>
+<rect x="9.0" y="9.0" width="73.0" height="43.0" fill="none" stroke="#ff3b8d" stroke-width="0.12"/>
 <rect x="3" y="3" width="85" height="55" fill="none" stroke="#ffffff" stroke-width="0.15" stroke-dasharray="1 0.6"/>
 </svg>

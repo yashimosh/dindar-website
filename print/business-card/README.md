@@ -1,35 +1,36 @@
 # Dindar Ahmed business card
 
-One card for everyone: English and Kurdish side by side on the front, bilingual back. Printed once, both sides.
+One card for everyone, printed both sides: **one side per language**, each complete on its own. English side black, Kurdish side brand yellow.
 
 | File | What it is |
 |---|---|
 | `FINAL/` | **The print-ready package for the printer**: PDF with bleed (TrimBox/BleedBox set), the same with crop marks, a proof image and `PRINTER-INSTRUCTIONS.md`. Made by `make_final.py`. |
-| `front.svg`, `back.svg` | The editable design. Open in Illustrator or Figma. All text is 29LT Zawi drawn as outlines (no font to install). |
+| `front.svg`, `back.svg` | The editable design: English side, Kurdish side. Open in Illustrator or Figma. All text is 29LT Zawi drawn as outlines (no font to install). |
 | `grid.svg` | The grid drawn over the artboard, for checking alignment (open `preview.html?grid` to see it on the card). |
 | `preview.png`, `preview.html` | Both sides, cut to the trim, for a quick look. |
-| `build.py` | Regenerates the SVGs, `grid.svg` and the print pages. Edit the details at its top (names, titles, phone, e-mail, slogan) and run it. |
+| `build.py` | Regenerates the SVGs, `grid.svg` and the print pages. Edit the details at its top (names, titles, phone, e-mail, slogans) and run it. |
 | `make_final.py` | Turns the print pages into the PDFs in `FINAL/` and checks them. |
 | `PRINTER-INSTRUCTIONS.md` | The text that goes to the printer (copied into `FINAL/`). |
 | `fonts/` | Noto Kufi Arabic, no longer used by the card (kept for reference; SIL OFL, see `OFL.txt`). |
 
-## The grid (Swiss modular grid)
+## The grid (Swiss)
 
-Everything sits on one grid, defined at the top of `build.py`:
+Defined at the top of `build.py`; every size and position is derived from it:
 
-- Live area: inset **7 mm from the sides** and **6 mm from the top and bottom** of the trim.
-- **6 columns x 4 rows**, **3 mm gutters** (column 9.33 mm, row 8.5 mm).
-- Flush-left English hangs from the left margin, flush-right Kurdish from the right margin.
-- The bottom margin is the baseline of the slogans (English and Kurdish share three baselines) and of the last contact line. The top margin is the cap line of the names.
-- Back: mirrors the front. English name flush left and Kurdish name flush right on the top margin, the same hairline under them, the titles on row 1 (the Kurdish one a line lower, flush right), and the contacts ending on the bottom margin with their first cap line on row 3.
-- Type scale (mm): 1.6, 2.2, 2.8, 4.7. Weights: Black for the slogans and the back's names, Bold for the small name and the titles, Regular for contacts. One hairline rule under the header row on the front. The Kurdish slogan is set 4% larger than the English one because Arabic script reads smaller at the same size.
+- Live area **6 mm inside the trim on all four sides**, **6 columns**, **3 mm gutters**.
+- A **3.2 mm baseline grid** for the small text; the bottom margin is its last baseline.
+- Each side has one dominant element, the slogan, and one information band:
+  - **Slogan**: hangs from the top margin by its real ink (the Kurdish V marks touch the margin, not the cut). The English one is sized so its longest line spans exactly **4 columns**; the Kurdish one gets the **same letter height**, made smaller only if it would come within one gutter of the information band.
+  - **Information band**: three baselines ending on the bottom margin. English side: name and title in columns 1-3, contacts in columns 4-6. Kurdish side mirrored: name and title flush right in columns 4-6, contacts (left to right) in columns 1-3.
+- One size for all small text (the e-mail fills three columns, at most 2.2 mm); the name is 15-25% larger.
+- Colours: English side black with the website's violet glow, yellow accent line. Kurdish side brand yellow, black type, a deeper violet accent (`#4b3bd0`) for contrast on yellow.
 
-Change a margin, the gutter or the column count in `build.py` and everything re-flows to the new grid.
+Change the margin, gutter, columns or baseline step in `build.py` and the whole card re-flows.
 
 ## Print spec
 
 - Size: 85 x 55 mm trimmed. Artboard and PDF are 91 x 61 mm: 3 mm bleed on every side.
-- All text is at least 6 mm inside the trim (a few Kurdish tails come within 4.5 mm).
+- All ink is at least 6 mm inside the trim.
 - Colours are RGB from the website palette: black, violet `#7161ef`, lavender `#957fef`, yellows `#ffc300` to `#ffea00`. Ask the printer to convert to CMYK and send a proof: bright violet and sunbeam yellow shift a little in CMYK.
 - Suggested stock: 400 gsm or heavier, matte or soft-touch lamination. A spot UV or foil on the yellow "WHAT ISN'T" line is the place to spend extra if budget allows.
 - If the printer uses 90 x 50 mm cards instead, the layout needs a small redesign, not just a resize.

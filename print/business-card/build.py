@@ -27,24 +27,24 @@ import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "tools", "fonts"))
-from shape_svg import shape_to_path  # noqa: E402
+from shape_svg import shape_to_path, _load  # noqa: E402
 
 DIST = os.path.join(ROOT, "tools", "fonts", "dist")
 ZAWI = {w: os.path.join(DIST, f"29LT_Zawi_KU_{n}.ttf") for w, n in
-        {400: "Regular", 700: "Bold", 900: "Black"}.items()}
+        {400: "Regular", 500: "Medium", 700: "Bold", 900: "Black"}.items()}
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # ---- details (single place to edit) ----
-NAME_EN = "DINDAR AHMED"
+NAME_EN = "Dindar Ahmed"
 NAME_KU = "دیندار ئەحمەد"
-TITLE_EN = "MARKETING MANAGER AND CONSULTANT"
-TITLE_KU = "بەڕێوەبەر و ڕاوێژکاری مارکێتینگ"   # as in the website's page title
+TITLE_EN = ("Marketing Manager", "and Consultant")          # two lines, set under the name
+TITLE_KU = "بەڕێوەبەر و ڕاوێژکاری مارکێتینگ"                # as in the website's page title
 PHONE = "+964 771 992 2486"
 EMAIL = "Dindar.Ahmed@mithra.agency"
 WEB = "dindarahmed.com"
-# the website's Kurdish headline, split the same way as the English one
-STATEMENT_KU = ("پێم بڵێ", "چی", "نافرۆشرێت")
+SLOGAN_EN = ("TELL ME", "WHAT ISN'T", "SELLING")            # the website's headline; the middle line is the accent
+SLOGAN_KU = ("پێم بڵێ", "چی", "نافرۆشرێت")
 
 # ---- palette (same as the website) ----
 BLACK, VIOLET, LAVENDER = "#000000", "#7161ef", "#957fef"
@@ -54,13 +54,12 @@ SOFT = "#e6e6e6"   # white at 90%, as a flat colour (safer in Illustrator and fo
 
 W, H, BLEED = 91, 61, 3
 
-# ---- the grid (all values in mm on the 91 x 61 artboard; trim starts at BLEED) ----
-MX, MY, GUT = 7.0, 6.0, 3.0           # side margin, top/bottom margin, gutter
-COLS, ROWS = 6, 4
-GL, GR = BLEED + MX, W - BLEED - MX    # live area left / right edge  (10 .. 81)
-GT, GB = BLEED + MY, H - BLEED - MY    # live area top / bottom edge  (9 .. 52)
-CW = (GR - GL - (COLS - 1) * GUT) / COLS   # column width
-RH = (GB - GT - (ROWS - 1) * GUT) / ROWS   # row height
+# ---- the grid (all values in mm on the 91 x 61 artboard; the trim starts at BLEED) ----
+M, GUT, COLS = 6.0, 3.0, 6             # margin on all four sides of the trim, gutter, columns
+GL, GR = BLEED + M, W - BLEED - M      # live area left / right edge   (9 .. 82)
+GT, GB = BLEED + M, H - BLEED - M      # live area top / bottom edge   (9 .. 52)
+CW = (GR - GL - (COLS - 1) * GUT) / COLS   # column width (9.67)
+LEAD = 3.2                             # baseline step of the small text; the bottom margin is its last baseline
 
 
 def col(i):
@@ -68,16 +67,13 @@ def col(i):
     return GL + i * (CW + GUT)
 
 
-def row(j):
-    """top edge of row j (0-based)"""
-    return GT + j * (RH + GUT)
+def span(n):
+    """width of n columns with their gutters"""
+    return n * CW + (n - 1) * GUT
 
 
-CAP = 0.70   # cap height of Zawi in em, to hang caps from a line
-
-# type scale (mm): small caps, text, KU name on the back, slogan / name
-XS, S, M, XL = 1.6, 2.2, 2.8, 4.7
-KU_OPTICAL = 1.04   # Arabic script reads smaller than Latin at the same size
+CAP = 0.70     # cap height of Zawi, in em
+ARAB = 0.78    # height of the Arabic letters above the baseline (without the V marks), in em; used to match sizes
 
 def line(text, size, weight, x, y, fill, rtl=False, tracking=0.0, label=None, tail=None, anchor_left=False):
     """One line of text as a filled outline path (mm units), named for the layer panel.
@@ -101,60 +97,101 @@ def svg_open(title):
             f'<title>{title}</title>\n')
 
 
-def front():
-    """English slogan flush left, Kurdish slogan flush right, both on the same three baselines that end on the
-    bottom margin; each name on the top margin line; one hairline under the header row."""
-    step = 6.6                                   # baseline step, shared by both languages
-    b1, b2, b3 = GB - 2 * step, GB - step, GB
-    top = GT + CAP * XS                          # cap-top of the small name sits on the top margin
-    rule = row(0) + RH                           # hairline on the bottom edge of row 0, between header and slogan
-    sk = XL * KU_OPTICAL
-    s = svg_open("Dindar Ahmed business card, front")
-    s += f"""<defs>
-<radialGradient id="glow" cx="0.5" cy="0" r="0.8">
-<stop offset="0" stop-color="{VIOLET}" stop-opacity="0.32"/>
+def width(text, size, weight, rtl=False, tracking=0.0):
+    kw = dict(direction="rtl", script="Arab", language="ckb") if rtl else dict(direction="ltr", script="Latn", language="en")
+    return shape_to_path(ZAWI[weight], text, size, tracking=tracking, **kw)[1] - tracking
+
+
+def fit(lines, weight, target, rtl=False, tracking_em=0.0):
+    """the size (mm) at which the longest line is exactly `target` mm wide"""
+    w1 = max(width(t, 1.0, weight, rtl, tracking_em) for t in lines)
+    return target / w1
+
+
+def ink(text, size, weight, rtl=False):
+    """(top, bottom) of the drawn letters relative to the baseline, in mm (SVG y-down: top is negative)"""
+    import uharfbuzz as hb
+    from fontTools.pens.boundsPen import BoundsPen
+    from fontTools.pens.transformPen import TransformPen
+    font, tt, gs, upem = _load(ZAWI[weight])
+    buf = hb.Buffer()
+    buf.add_str(text)
+    buf.direction, buf.script, buf.language = ("rtl", "Arab", "ckb") if rtl else ("ltr", "Latn", "en")
+    hb.shape(font, buf, {"kern": True, "liga": True})
+    bp, x, order = BoundsPen(gs), 0, tt.getGlyphOrder()
+    for info, pos in zip(buf.glyph_infos, buf.glyph_positions):
+        gs[order[info.codepoint]].draw(TransformPen(bp, (1, 0, 0, 1, x + pos.x_offset, pos.y_offset)))
+        x += pos.x_advance
+    _, y0, _, y1 = bp.bounds
+    k = size / upem
+    return -y1 * k, -y0 * k
+
+
+def small_size():
+    """one size for all the small text: the e-mail fills three columns exactly, never larger than 2.2 mm"""
+    return min(2.2, span(3) / width(EMAIL, 1.0, 500))
+
+
+def side_en():
+    """English side, black. Slogan hangs from the top margin across four columns; under it, on the bottom
+    margin, two blocks on one baseline grid: name and title in columns 1-3, contacts in columns 4-6."""
+    s_slogan = fit(SLOGAN_EN, 900, span(4), tracking_em=-0.02)
+    step = s_slogan * 1.0
+    b1 = GT - ink(SLOGAN_EN[0], s_slogan, 900)[0]       # the ink of the first line touches the top margin
+    t = small_size()
+    rows = [GB - 2 * LEAD, GB - LEAD, GB]
+    out = svg_open("Dindar Ahmed business card, English side")
+    out += f"""<defs>
+<radialGradient id="glow" cx="1" cy="0" r="1">
+<stop offset="0" stop-color="{VIOLET}" stop-opacity="0.30"/>
 <stop offset="1" stop-color="{VIOLET}" stop-opacity="0"/>
 </radialGradient>
-<linearGradient id="yellow" x1="0" y1="0" x2="1" y2="0">
-<stop offset="0" stop-color="{Y1}"/><stop offset="1" stop-color="{Y4}"/>
-</linearGradient>
-<linearGradient id="yellowk" x1="1" y1="0" x2="0" y2="0">
-<stop offset="0" stop-color="{Y1}"/><stop offset="1" stop-color="{Y4}"/>
-</linearGradient>
 </defs>
 <rect width="{W}" height="{H}" fill="{BLACK}"/>
 <rect width="{W}" height="{H}" fill="url(#glow)"/>
-{line(NAME_EN, XS, 700, GL, top, SOFT, tracking=0.5)}{line(NAME_KU, S, 700, GR, top, SOFT, rtl=True)}<path d="M{GL} {rule:.3f}H{GR}" stroke="{WHITE}" stroke-opacity="0.22" stroke-width="0.12" fill="none"/>
-{line("TELL ME", XL, 900, GL, b1, WHITE, tracking=-0.1)}{line("WHAT ISN'T", XL, 900, GL, b2, "url(#yellow)", tracking=-0.1)}{line("SELLING", XL, 900, GL, b3, WHITE, tracking=-0.1, tail=(".", Y1))}{line(STATEMENT_KU[0], sk, 900, GR, b1, WHITE, rtl=True)}{line(STATEMENT_KU[1], sk, 900, GR, b2, "url(#yellowk)", rtl=True)}{line(STATEMENT_KU[2], sk, 900, GR, b3, WHITE, rtl=True, tail=(".", Y1))}</svg>
+{line(SLOGAN_EN[0], s_slogan, 900, GL, b1, WHITE, tracking=-0.02 * s_slogan)}{line(SLOGAN_EN[1], s_slogan, 900, GL, b1 + step, Y1, tracking=-0.02 * s_slogan)}{line(SLOGAN_EN[2], s_slogan, 900, GL, b1 + 2 * step, WHITE, tracking=-0.02 * s_slogan, tail=(".", Y1))}{line(NAME_EN, t * 1.15, 700, GL, rows[0], WHITE)}{line(TITLE_EN[0], t, 500, GL, rows[1], LAVENDER)}{line(TITLE_EN[1], t, 500, GL, rows[2], LAVENDER)}{line(PHONE, t, 500, col(3), rows[0], SOFT)}{line(EMAIL, t, 500, col(3), rows[1], SOFT)}{line(WEB, t, 500, col(3), rows[2], SOFT)}</svg>
 """
-    return s
+    return out
 
 
-def back():
-    """mirrors the front: English flush left, Kurdish flush right, names on the top margin, titles on row 1,
-    the same hairline between them; the contacts end on the bottom margin with their first cap line on row 3."""
-    lines = [PHONE, EMAIL, WEB]
-    first = row(3) + CAP * S                     # first contact line: cap-top on row 3
-    step = (GB - first) / (len(lines) - 1)       # last line on the bottom margin
-    contact = "".join(line(v, S, 400, GL, first + k * step, SOFT) for k, v in enumerate(lines))
-    name_y = GT + CAP * XL                       # cap-top of the names on the top margin
-    title_y = row(1) + CAP * XS                  # cap-top of the titles on row 1
-    rule = row(0) + RH                           # the same hairline as on the front (bottom of row 0)
-    s = svg_open("Dindar Ahmed business card, back")
-    s += f"""<rect width="{W}" height="{H}" fill="{BLACK}"/>
-{line(NAME_EN, XL, 900, GL, name_y, WHITE, tracking=-0.05)}{line(NAME_KU, XL * KU_OPTICAL, 900, GR, name_y, WHITE, rtl=True)}<path d="M{GL} {rule:.3f}H{GR}" stroke="{WHITE}" stroke-opacity="0.22" stroke-width="0.12" fill="none"/>
-{line(TITLE_EN, XS, 700, GL, title_y, Y1, tracking=0.45)}{line(TITLE_KU, S, 700, GR, title_y + 4.6, Y1, rtl=True)}{contact}</svg>
+def side_ku():
+    """Kurdish side, brand yellow: the English side mirrored for right-to-left reading. Slogan flush right from the
+    top margin across four columns; name and title flush right in columns 4-6; contacts (left to right) in 1-3."""
+    t = small_size()
+    rows = [GB - 2 * LEAD, GB - LEAD, GB]
+    s_en = fit(SLOGAN_EN, 900, span(4), tracking_em=-0.02)
+    s_slogan = min(CAP * s_en / ARAB, fit(SLOGAN_KU, 900, span(4), rtl=True))   # same letter height as the English
+    floor = rows[0] - CAP * t - GUT                     # the slogan's ink must end one gutter above the info block
+    while True:
+        step = s_slogan * 1.3
+        b1 = GT - ink(SLOGAN_KU[0], s_slogan, 900, rtl=True)[0]     # V marks of line 1 touch the top margin
+        bottom = b1 + 2 * step + ink(SLOGAN_KU[2], s_slogan, 900, rtl=True)[1]
+        if bottom <= floor:
+            break
+        s_slogan -= 0.1
+    fg, accent = BLACK, "#4b3bd0"         # a deeper violet than the website's, for contrast on yellow
+    out = svg_open("Dindar Ahmed business card, Kurdish side")
+    out += f"""<defs>
+<linearGradient id="yellow" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="{Y1}"/><stop offset="1" stop-color="{Y4}"/>
+</linearGradient>
+</defs>
+<rect width="{W}" height="{H}" fill="url(#yellow)"/>
+{line(SLOGAN_KU[0], s_slogan, 900, GR, b1, fg, rtl=True)}{line(SLOGAN_KU[1], s_slogan, 900, GR, b1 + step, accent, rtl=True)}{line(SLOGAN_KU[2], s_slogan, 900, GR, b1 + 2 * step, fg, rtl=True, tail=(".", accent))}{line(NAME_KU, t * 1.25, 700, GR, rows[1], fg, rtl=True)}{line(TITLE_KU, t * 1.1, 500, GR, rows[2], fg, rtl=True)}{line(PHONE, t, 500, GL, rows[0], fg)}{line(EMAIL, t, 500, GL, rows[1], fg)}{line(WEB, t, 500, GL, rows[2], fg)}</svg>
 """
-    return s
+    return out
 
 
 def grid_guide():
-    """the grid drawn over the artboard: columns cyan, rows magenta, trim and live area outlined"""
+    """the grid drawn over the artboard: columns, the small-text baselines, trim outlined"""
     g = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}mm" height="{H}mm" viewBox="0 0 {W} {H}">']
     for i in range(COLS):
         g.append(f'<rect x="{col(i):.3f}" y="{GT}" width="{CW:.3f}" height="{GB - GT}" fill="#00c8ff" fill-opacity="0.16"/>')
-    for j in range(ROWS):
-        g.append(f'<rect x="{GL}" y="{row(j):.3f}" width="{GR - GL}" height="{RH:.3f}" fill="#ff3b8d" fill-opacity="0.13"/>')
+    y = GB
+    while y > GT:
+        g.append(f'<path d="M{GL} {y:.3f}H{GR}" stroke="#ff3b8d" stroke-opacity="0.45" stroke-width="0.08"/>')
+        y -= LEAD
+    g.append(f'<rect x="{GL}" y="{GT}" width="{GR - GL}" height="{GB - GT}" fill="none" stroke="#ff3b8d" stroke-width="0.12"/>')
     g.append(f'<rect x="{BLEED}" y="{BLEED}" width="{W - 2 * BLEED}" height="{H - 2 * BLEED}" fill="none" stroke="#ffffff" stroke-width="0.15" stroke-dasharray="1 0.6"/>')
     g.append('</svg>')
     return "\n".join(g)
@@ -215,11 +252,10 @@ html, body {{ margin: 0; padding: 0; }}
 
 
 if __name__ == "__main__":
-    f = front()
+    f, b = side_en(), side_ku()
     open(os.path.join(HERE, "front.svg"), "w", encoding="utf-8").write(f)
-    b = back()
     open(os.path.join(HERE, "back.svg"), "w", encoding="utf-8").write(b)
     open(os.path.join(HERE, "grid.svg"), "w", encoding="utf-8").write(grid_guide())
     open(os.path.join(HERE, "print.html"), "w", encoding="utf-8").write(print_page(f, b))
     open(os.path.join(HERE, "print-marks.html"), "w", encoding="utf-8").write(print_page_marks(f, b))
-    print("front.svg, back.svg, grid.svg, print.html, print-marks.html written")
+    print(f"front.svg (English side), back.svg (Kurdish side), grid.svg, print pages written; small text {small_size():.2f} mm")

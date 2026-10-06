@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Make the print-ready package in FINAL/ from the pages build.py wrote.
 
-One card for everyone (bilingual front, bilingual back):
+One card for everyone (English side, Kurdish side):
   - *_print-ready.pdf     2 pages, 91 x 61 mm = 85 x 55 trim + 3 mm bleed, TrimBox/BleedBox set
   - *_with-crop-marks.pdf same, on a 103 x 73 mm page with crop marks
 Checks: no embedded fonts (all text is outlines) and the page sizes.
