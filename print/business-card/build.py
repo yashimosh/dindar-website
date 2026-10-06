@@ -35,6 +35,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 NAME_EN = "DINDAR AHMED"
 NAME_KU = "دیندار ئەحمەد"
 TITLE_EN = "MARKETING MANAGER AND CONSULTANT"
+TITLE_KU = "بەڕێوەبەر و ڕاوێژکاری مارکێتینگ"   # as in the website's page title
 PHONE = "+964 771 992 2486"
 EMAIL = "Dindar.Ahmed@mithra.agency"
 WEB = "dindarahmed.com"
@@ -114,7 +115,7 @@ def front_ku():
 </defs>
 <rect width="{W}" height="{H}" fill="{BLACK}"/>
 <rect width="{W}" height="{H}" fill="url(#glow)"/>
-{line(NAME_KU, 2.3, 700, R, T + 2.4, SOFT, rtl=True)}{line(STATEMENT_KU[0], size, 900, R, base - 2 * step, WHITE, rtl=True)}{line(STATEMENT_KU[1], size, 900, R, base - step, "url(#yellow)", rtl=True)}{line(STATEMENT_KU[2], size, 900, R, base, WHITE, rtl=True, tail=(".", Y1))}</svg>
+{line(NAME_KU, 2.3, 700, R, T + 2.4, SOFT, rtl=True)}{line(TITLE_KU, 1.9, 700, R, T + 6.6, LAVENDER, rtl=True)}{line(STATEMENT_KU[0], size, 900, R, base - 2 * step, WHITE, rtl=True)}{line(STATEMENT_KU[1], size, 900, R, base - step, "url(#yellow)", rtl=True)}{line(STATEMENT_KU[2], size, 900, R, base, WHITE, rtl=True, tail=(".", Y1))}</svg>
 """
     return s
 
@@ -149,7 +150,7 @@ def back():
     contact = "".join(line(v, 2.15, 400, L, B - (len(lines) - 1 - k) * step, SOFT) for k, v in enumerate(lines))
     s = svg_open("Dindar Ahmed business card, back")
     s += f"""<rect width="{W}" height="{H}" fill="{BLACK}"/>
-{line(NAME_EN, 4.6, 900, L, T + 3.9, WHITE, tracking=-0.05)}{line(NAME_KU, 2.7, 700, L, T + 9.1, LAVENDER, rtl=True, anchor_left=True)}{line(TITLE_EN, 1.55, 700, L, T + 13.4, Y1, tracking=0.45)}{contact}<rect x="{qx}" y="{qy}" width="{qs}" height="{qs}" rx="0.8" fill="{Y4}"/>
+{line(NAME_EN, 4.6, 900, L, T + 3.9, WHITE, tracking=-0.05)}{line(NAME_KU, 2.7, 700, L, T + 9.1, LAVENDER, rtl=True, anchor_left=True)}{line(TITLE_EN, 1.55, 700, L, T + 13.4, Y1, tracking=0.45)}{line(TITLE_KU, 2.0, 700, L, T + 17.9, Y1, rtl=True, anchor_left=True)}{contact}<rect x="{qx}" y="{qy}" width="{qs}" height="{qs}" rx="0.8" fill="{Y4}"/>
 <path d="{path}" fill="{BLACK}"/>
 </svg>
 """
