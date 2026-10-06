@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Deploy only the public site. Cloudflare Pages ignores .assetsignore, so a plain
-# `wrangler pages deploy .` would publish tools/ (including the licensed 29LT font files).
+# `wrangler pages deploy .` would publish tools/ (including licensed font files kept locally).
 # This copies just the site into a temp folder and deploys that.
 set -euo pipefail
 cd "$(dirname "$0")/.."

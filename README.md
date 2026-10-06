@@ -109,7 +109,7 @@ tools/deploy.sh
 
 Always deploy with `tools/deploy.sh`, never `wrangler pages deploy .`: Pages
 ignores `.assetsignore`, so deploying the repo root would publish `tools/`
-(build scripts, source fonts, and the 29LT files kept locally for other work).
+(build scripts and source fonts, including licensed font files kept locally).
 The script stages only the public site and refuses to run if any `.ttf`/`.otf`
 or tool file is in it; the woff2 webfonts in `assets/fonts/` are deployed.
 

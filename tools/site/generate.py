@@ -89,7 +89,7 @@ PAGES = {"home": "", "work": "work/", "about": "about/"}
 def url(loc, page):
     return PREFIX[loc] + PAGES[page]
 
-# a drawn diamond: Zawi has no ◆ glyph, and no text should fall back to another font
+# a drawn diamond, so the mark looks identical in every language and never depends on a font
 DIA = '<svg class="dia" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0l5 5-5 5-5-5z"/></svg>'
 DIAMOND = f'<span class="text-accent" aria-hidden="true">{DIA}</span>'
 

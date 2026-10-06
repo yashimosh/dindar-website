@@ -1,16 +1,14 @@
 node_modules/
 .wrangler/
 
-# 29Letters fonts: licensed to modify and use, NOT to redistribute.
-# This repo is public, so the font files never enter git.
-tools/fonts/src/
+# Licensed (non-free) fonts may be kept locally but never enter git:
+# this repo is public.
+tools/fonts/src*/
 tools/fonts/dist/
 *.ttf
 *.otf
 !print/business-card/fonts/NotoKufiArabic*.ttf
 tools/venv/
-tools/fonts/src_zawi/
-tools/fonts/src_zawi_var/
 # free fonts (SIL OFL) may live in git; their per-weight instances are rebuilt locally
 !tools/fonts/free/*.ttf
 tools/fonts/free/build/

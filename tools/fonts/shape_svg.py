@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Shape a line of text with HarfBuzz and return it as SVG path data.
 
-This is how UA Neo reaches the website without the font file ever being
-served: the build machine shapes the text (with proper Arabic joining) and
-emits plain vector outlines. Visitors receive shapes, not the font.
+The build machine shapes the text (with proper Arabic joining) and emits plain
+vector outlines, so print files and pages carry shapes, not the font.
 
     from shape_svg import shape_to_path
     d, width, ascent, descent = shape_to_path(font_path, "پێم بڵێ", size=100)
