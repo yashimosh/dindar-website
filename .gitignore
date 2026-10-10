@@ -12,3 +12,4 @@ tools/venv/
 # free fonts (SIL OFL) may live in git; their per-weight instances are rebuilt locally
 !tools/fonts/free/*.ttf
 tools/fonts/free/build/
+.DS_Store
