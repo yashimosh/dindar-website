@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """One-shot generator for the redesigned dindarahmed.com.
 Reads content_{loc}.json + ui_strings.json, writes plain static HTML
-(12 pages + 404) and assets/data/clients.json into the repo.
+(12 pages + 404) into the repo; it seeds assets/data/clients.json only if that file is missing.
 After this runs, the HTML in the repo is the source of truth."""
 import json, re, os, html as H
 from PIL import Image
@@ -22,6 +22,10 @@ LI = "https://www.linkedin.com/in/dindar-ahmad-36ba57205/"
 YT = "https://www.youtube.com/@mithra.production/videos"
 
 C = {l: json.load(open(f"{HERE}/content_{l}.json")) for l in LOCS}
+# Menu labels live in nav_labels.json (developer file, keys start with "#"); the CMS edits content_*.json only
+NAV = json.load(open(f"{HERE}/nav_labels.json"))
+for _l in LOCS:
+    C[_l].update(NAV[_l])
 UI = json.load(open(f"{HERE}/ui_strings.json"))
 # Kurdish uses the same phrase for "Featured Work" and "Case Studies"; where the
 # two headings would repeat back to back, use the menu's own case-studies term
@@ -255,7 +259,13 @@ def footer(loc, page):
 <p class="lbl text-white/70 mb-4">{e(c['contact']['email_title'])}</p>
 <a href="mailto:{EMAIL}" class="block text-[22px] sm:text-[30px] lg:text-[38px] leading-tight tracking-[-0.02em] text-white hover:text-accent transition-colors break-words rtl:text-right" dir="ltr">{EMAIL}</a>
 <p class="mt-5 text-[17px] leading-[1.6] text-white/75 max-w-md">{e(c['contact']['email_body'])}</p>
-<a href="mailto:{EMAIL}" class="mt-8 lbl inline-flex items-center gap-3 btn-fire px-7 py-4">{e(c['footer']['start_project'])} {ARROW}</a>
+<details class="start-pick mt-8">
+<summary class="lbl inline-flex items-center gap-3 btn-fire px-7 py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">{e(c['footer']['start_project'])} {ARROW}</summary>
+<div class="mt-3 flex flex-wrap gap-3">
+<a href="mailto:{EMAIL}" class="group lbl inline-flex items-center gap-3 border border-white/30 text-white px-7 py-4 hover:border-amber hover:text-amber transition-colors">{e(u['email'])} {ARROW}</a>
+<a href="{WA}" target="_blank" rel="noopener" class="group lbl inline-flex items-center gap-3 border border-white/30 text-white px-7 py-4 hover:border-amber hover:text-amber transition-colors">WhatsApp {ARROW}</a>
+</div>
+</details>
 </div>
 <div class="rv border border-edge p-6 md:p-10">
 <p class="lbl text-white/70 mb-4">{e(c['contact']['direct_title'])}</p>
@@ -661,4 +671,7 @@ for loc in LOCS:
     write(f"{base}about/index.html", about(loc))
     write(f"{base}work/index.html", work(loc))
 write("404.html", not_found())
-write("assets/data/clients.json", json.dumps(clients_json(), ensure_ascii=False, indent=1) + "\n")
+# clients.json is edited by hand or in the CMS (add a logo, rename a category).
+# It is only seeded here when missing, so a rebuild never overwrites those edits.
+if not os.path.exists(os.path.join(OUT, "assets/data/clients.json")):
+    write("assets/data/clients.json", json.dumps(clients_json(), ensure_ascii=False, indent=1) + "\n")

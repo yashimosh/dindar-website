@@ -13,3 +13,6 @@ tools/venv/
 !tools/fonts/free/*.ttf
 tools/fonts/free/build/
 .DS_Store
+
+# built by tools/build-pages.sh
+dist/

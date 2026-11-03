@@ -6,27 +6,6 @@
   "tw_description": "Marketing tied directly to sales. Brand campaigns, content strategy and sales-driven growth at Mithra Production.",
   "og_locale": "en_US"
  },
- "nav": {
-  "#case-studies": "Cases",
-  "#showreel": "Campaigns",
-  "#reels": "Reels",
-  "#clients": "Clients",
-  "#certificates": "Certificates",
-  "#expertise": "Expertise",
-  "#about": "About",
-  "#contact": "Contact"
- },
- "nav_mobile": {
-  "#work": "Work",
-  "#case-studies": "Case Studies",
-  "#showreel": "Campaigns",
-  "#reels": "Reels",
-  "#clients": "Clients",
-  "#certificates": "Certificates",
-  "#expertise": "Expertise",
-  "#about": "About",
-  "#contact": "Contact"
- },
  "nav_cta": "Get in Touch",
  "hero": {
   "eyebrow": "Dindar Ahmed · Marketing Manager and Consultant",
